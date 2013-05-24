@@ -236,10 +236,10 @@
 			$template->assign("days", $days);
 			$template->assign("myuserid", $myuser);
 			$template->assign("size", round(85/cal_days_in_month(CAL_GREGORIAN, substr($date2, 5, 2)))); 
-			$template->assign("annee", substr($date2, 0, 4));
+			$template->assign("annee", substr($date, 0, 4));
 			$template->assign("ismanager", $isManager);
 			
-			switch(substr($date2, 5, 2)){
+			switch(substr($date, 5, 2)){
 				case '01':
 					$template->assign("mois", $langfile["january"]);
 					break;
@@ -436,11 +436,11 @@
 			$template->assign("days", $days);
 			$template->assign("myuserid", $myuser);
 			$template->assign("size", round(85/cal_days_in_month(CAL_GREGORIAN, substr($date2, 5, 2)))); 
-			$template->assign("annee", substr($date2, 0, 4));
+			$template->assign("annee", substr($date, 0, 4));
 			$template->assign("ismanager", $isManager);
 			$template->assign("myteams", "X");
 			
-			switch(substr($date2, 5, 2)){
+			switch(substr($date, 5, 2)){
 				case '01':
 					$template->assign("mois", $langfile["january"]);
 					break;
