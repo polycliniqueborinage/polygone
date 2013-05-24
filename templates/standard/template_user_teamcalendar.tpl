@@ -15,7 +15,7 @@
     				{else}
     					<span>{#navigation_title_user_services_teamcalendar#}</span>
     				{/if}	
-    				<a href="./user_services.php?action=leave_overview">{#navigation_title_user_services_pending_requests#}</a>
+    				<!--<a href="./user_services.php?action=leave_overview">{#navigation_title_user_services_pending_requests#}</a>
     				<a href="./user_services.php?action=quota_overview">{#navigation_title_user_services_quotas#}</a>
     				<a href="./user_services.php?action=absence_request">{#navigation_title_user_services_leaverequest#}</a>
     				{if $ismanager == 'X'}
@@ -26,7 +26,7 @@
 	    					<a href="./user_services.php?action=my_teams_calendar">{#navigation_title_user_services_myteamscalendar#}</a>
 	    				{/if}
     				{/if}
-    				
+    				-->
     				
 				</div>
 			
