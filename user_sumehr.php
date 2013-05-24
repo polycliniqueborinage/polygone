@@ -1,5 +1,5 @@
 <?php
-
+//
 	require("./init.php");
 
 	if (!session_is_registered("userid")){
