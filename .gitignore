@@ -1,4 +1,12 @@
+templates_c/*
 templates_c/
 config/standard/config.php
+.DS_Store
+._.DS_Store
+.cache
+.git
+.gitignore
+.settings
+.svn
 .project
 .buildpath
