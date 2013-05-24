@@ -1,0 +1,63 @@
+<ul id='accordion_messages'>
+
+	{section name=protocol loop=$protocols}
+	
+		{if $smarty.section.protocol.index % 2 == 0}
+			<li class="bg_a">
+		{else}
+			<li class="bg_b">
+		{/if}
+	
+			<table cellpadding='0' cellspacing='0' width='100%'>
+			<tr>
+			<td class='b' style='width:2%'></td>
+			<td class='b' style='width:20%'>{$protocols[protocol].patient}</td>
+			<td class='b' style='width:20%'>{$protocols[protocol].user_sender}</td>
+			<td class='b' style='width:20%'>{$protocols[protocol].user_recipient}</td>
+			<td class='b' style='width:20%'>{$protocols[protocol].date}</td>
+			<td class="tools">
+			<a class="tool_html" href='#' title='{$export_html}' onclick="javascript:exportProtocol({$protocols[protocol].ID},'html')"/>
+			<a class="tool_pdf" href='#' title='{$export_pdf}' onclick="javascript:exportProtocol({$protocols[protocol].ID},'pdf')"/>
+			<a class="tool_rtf" href='#' title='{$export_rtf}' onclick="javascript:exportProtocol({$protocols[protocol].ID},'rtf')"/>
+			<a class="tool_xml" href='#' title='{$export_xml}' onclick="javascript:exportProtocol({$protocols[protocol].ID},'xml')"/>
+			</td>
+			</table>
+			</li>
+
+	{/section}	
+	
+	{section name=sumehr loop=$sumehrs}
+	
+		{if $smarty.section.sumehr.index % 2 == 0}
+			<li class="bg_a">
+		{else}
+			<li class="bg_b">
+		{/if}
+	
+			<table cellpadding='0' cellspacing='0' width='100%'>
+			<tr>
+			<td class='b' style='width:2%'></td>
+			<td class="tools">
+				<a class="tool_view" href='user_sumehr.php?action=view&patient_id={$sumehrs[sumehr].patient_id}' title='{$detail_alt}'/>
+				<a class="tool_edit" href='user_sumehr.php?action=edit&patient_id={$sumehrs[sumehr].patient_id}' title='{$edit_alt}'/>
+			</td>
+			<td class='b' style='width:20%'>{$sumehrs[sumehr].patient_familyname}</td>
+			<td class='b' style='width:20%'>{$sumehrs[sumehr].patient_firstname}</td>
+			<td class='b' style='width:18%'>{$sumehrs[sumehr].patient_birthdate}</td>
+			<td class='b' style='width:18%'>{$sumehrs[sumehr].latest_modification_date}</td>
+			<td class="tools">
+				{if $sumehrs[sumehr].sumehr_id != ''}
+					<a class="tool_html" href='#' title='{$export_html}' onclick="javascript:exportSumehr({$sumehrs[sumehr].patient_id},'html')"/>
+					<a class="tool_pdf" href='#' title='{$export_pdf}' onclick="javascript:exportSumehr({$sumehrs[sumehr].patient_id},'pdf')"/>
+					<a class="tool_rtf" href='#' title='{$export_rtf}' onclick="javascript:exportSumehr({$sumehrs[sumehr].patient_id},'rtf')"/>
+					<a class="tool_xml" href='#' title='{$export_xml}' onclick="javascript:exportSumehr({$sumehrs[sumehr].patient_id},'xml')"/>
+				{/if}
+			</td>
+			</table>
+			</li>
+
+	{/section}
+	
+</ul>
+
+	

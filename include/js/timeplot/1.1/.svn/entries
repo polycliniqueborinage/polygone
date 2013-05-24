@@ -1,0 +1,79 @@
+8
+
+dir
+214
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev/polygone/include/js/timeplot/1.1
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev
+
+
+
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f8ec6-6b70-4122-b4cc-51e5379b8f2c
+
+images
+dir
+
+lib
+dir
+
+locales
+dir
+
+scripts
+dir
+
+styles
+dir
+
+timeplot-api.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+7ae0ac71d5ddc211335ed929e6ea3315
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+timeplot-bundle.css
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+1df5e2f90cfc761cc47cddb32952aecd
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+timeplot-bundle.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+618d41c1a83a2fdb27fa3c037f2764be
+2009-10-05T11:07:16.378799Z
+107
+targoo
+

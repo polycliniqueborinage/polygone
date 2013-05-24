@@ -1,0 +1,82 @@
+function activeColorBlock(id){
+	$(".calendar-item").removeClass("colorsel");
+	$("#"+id).addClass("colorsel");
+}
+
+function blindtoggle(id){
+	$('#' + id).toggle();
+}
+
+function toggleBlock(id){
+	var state = jQuery('#' + id + '_toggle').attr('class');	
+	if(state == "win_none")
+	{
+		jQuery('#' + id).show();
+		jQuery('#' + id + '_toggle').attr("class","win_block");
+		//setCookie(id,'block','30','/','','');
+	}
+	else if(state == "win_block" || state == "")
+	{
+		jQuery('#' + id).hide();
+		jQuery('#' + id + '_toggle').attr("class","win_none");
+		//setCookie(id,'none','30','/','','');
+	}
+}
+
+function togglePage(){
+	var state = $('body').attr('class');
+	if(state == "fullpage") {
+		$('body').attr("class","");
+		setCookie('workspacecookie','','30','/','','');
+	} else  {
+		$('body').attr("class","fullpage");
+		setCookie('workspacecookie','fullpage','30','/','','');
+	}
+	
+}
+
+function toggleClass(id,class1,class2) {
+	if($('#' + id).attr("class") == class1) {
+		$('#' + id).attr("class", class2);
+	} else {
+		$('#' + id).attr("class", class1);
+	}
+}
+
+function setCookie( name, value, expires, path, domain, secure ) {
+	var today = new Date();
+	today.setTime( today.getTime() );
+	if ( expires )
+	{
+	expires = expires * 1000 * 60 * 60 * 24;
+	}
+	var expires_date = new Date( today.getTime() + (expires) );
+
+	document.cookie = name + "=" +escape( value ) +
+	( ( expires ) ? ";expires=" + expires_date.toGMTString() : "" ) +
+	( ( path ) ? ";path=" + path : "" ) +
+	( ( domain ) ? ";domain=" + domain : "" ) +
+	( ( secure ) ? ";secure" : "" );
+}
+
+function systemeMessage( id , time ) {
+	$('#' + id).fadeTo(10, 0.50);
+	$('#' + id).fadeTo(time, 0.99);
+	$('#' + id).fadeOut("fast");
+}
+
+// recherche patient simple
+function patientSimpleSearch(patient) {
+	$("#informationPatient").load("php_request/patient_simple_search.php", {patient:patient});
+}
+
+// recherche patient simple
+function userSimpleSearch(user) {
+	$("#informationUser").load("php_request/patient_simple_search.php", {patient:user});
+}
+
+// recherche patient simple
+function addressbookSimpleSearch(addressbook) {
+	$("#informationAddressbook").load("php_request/patient_simple_search.php", {patient:addressbook});
+}
+

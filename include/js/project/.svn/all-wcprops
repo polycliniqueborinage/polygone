@@ -1,0 +1,299 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/polydev/!svn/ver/213/polygone/include/js/project
+END
+common.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/177/polygone/include/js/project/common.js
+END
+calendar.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/polydev/!svn/ver/107/polygone/include/js/project/calendar.js
+END
+tableau.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/107/polygone/include/js/project/tableau.js
+END
+prevention.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/polydev/!svn/ver/107/polygone/include/js/project/prevention.js
+END
+user.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/112/polygone/include/js/project/user.js
+END
+tarification.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/js/project/tarification.js
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/107/polygone/include/js/project/index.php
+END
+product.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/151/polygone/include/js/project/product.js
+END
+ddt.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/107/polygone/include/js/project/ddt.js
+END
+bd_recherche_champs.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/polydev/!svn/ver/107/polygone/include/js/project/bd_recherche_champs.js
+END
+addressbook.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/polydev/!svn/ver/107/polygone/include/js/project/addressbook.js
+END
+recherche_tarification.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/polydev/!svn/ver/107/polygone/include/js/project/recherche_tarification.js
+END
+jquery.form.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/polydev/!svn/ver/107/polygone/include/js/project/jquery.form.js
+END
+prothese.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/polydev/!svn/ver/107/polygone/include/js/project/prothese.js
+END
+htmlarea.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/polydev/!svn/ver/107/polygone/include/js/project/htmlarea.js
+END
+sumehr.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/177/polygone/include/js/project/sumehr.js
+END
+autosuggest.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/polydev/!svn/ver/107/polygone/include/js/project/autosuggest.js
+END
+form.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/js/project/form.js
+END
+mutuelle.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/polydev/!svn/ver/107/polygone/include/js/project/mutuelle.js
+END
+tarification_prothese.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/polydev/!svn/ver/107/polygone/include/js/project/tarification_prothese.js
+END
+acte.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/js/project/acte.js
+END
+recherche_patients_modification.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/polydev/!svn/ver/107/polygone/include/js/project/recherche_patients_modification.js
+END
+functions.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/polydev/!svn/ver/107/polygone/include/js/project/functions.js
+END
+effects.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/107/polygone/include/js/project/effects.js
+END
+submit_validatorv.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/polydev/!svn/ver/107/polygone/include/js/project/submit_validatorv.js
+END
+modif_code_tarification.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/polydev/!svn/ver/107/polygone/include/js/project/modif_code_tarification.js
+END
+debt.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/js/project/debt.js
+END
+importprotocole.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/polydev/!svn/ver/107/polygone/include/js/project/importprotocole.js
+END
+localiteSearch.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/polydev/!svn/ver/107/polygone/include/js/project/localiteSearch.js
+END
+patient.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/161/polygone/include/js/project/patient.js
+END
+caisse.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/107/polygone/include/js/project/caisse.js
+END
+listing.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/107/polygone/include/js/project/listing.js
+END
+statistique.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/polydev/!svn/ver/107/polygone/include/js/project/statistique.js
+END
+aide.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/js/project/aide.js
+END
+ouvrier.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/193/polygone/include/js/project/ouvrier.js
+END
+protocol.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/polydev/!svn/ver/132/polygone/include/js/project/protocol.js
+END
+inputControl.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/js/project/inputControl.js
+END
+ajout_cecodi.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/js/project/ajout_cecodi.js
+END
+cecodi.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/107/polygone/include/js/project/cecodi.js
+END
+planning.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/polydev/!svn/ver/250/polygone/include/js/project/planning.js
+END
+ajax.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/js/project/ajax.js
+END
+agenda.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/177/polygone/include/js/project/agenda.js
+END
+modification_patient.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/polydev/!svn/ver/107/polygone/include/js/project/modification_patient.js
+END
+recherche_code_mutu.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/polydev/!svn/ver/107/polygone/include/js/project/recherche_code_mutu.js
+END
+prothese_refresh_detail.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/polydev/!svn/ver/107/polygone/include/js/project/prothese_refresh_detail.php
+END
+notice.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/107/polygone/include/js/project/notice.js
+END
+anomalie.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/polydev/!svn/ver/107/polygone/include/js/project/anomalie.js
+END
+group.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/polydev/!svn/ver/107/polygone/include/js/project/group.js
+END
+medecinepreventive.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/polydev/!svn/ver/107/polygone/include/js/project/medecinepreventive.js
+END

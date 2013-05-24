@@ -1,0 +1,311 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/polydev/!svn/ver/107/polygone/include/plugins
+END
+modifier.upper.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.upper.php
+END
+function.html_select_date.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.html_select_date.php
+END
+function.cycle.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.cycle.php
+END
+function.fetch.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.fetch.php
+END
+modifier.lower.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.lower.php
+END
+modifier.truncate.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.truncate.php
+END
+modifier.count_words.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.count_words.php
+END
+function.debug.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.debug.php
+END
+function.math.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.math.php
+END
+modifier.count_characters.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.count_characters.php
+END
+function.paginate_last.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.paginate_last.php
+END
+function.html_checkboxes.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.html_checkboxes.php
+END
+modifier.nl2br.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.nl2br.php
+END
+function.popup.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.popup.php
+END
+modifier.indent.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.indent.php
+END
+modifier.strip.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.strip.php
+END
+function.counter.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.counter.php
+END
+function.html_radios.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.html_radios.php
+END
+function.mailto.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.mailto.php
+END
+modifier.cat.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.cat.php
+END
+WS_FTP.LOG
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/plugins/WS_FTP.LOG
+END
+modifier.replace.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.replace.php
+END
+function.eval.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.eval.php
+END
+modifier.regex_replace.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.regex_replace.php
+END
+function.html_options.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.html_options.php
+END
+modifier.wordwrap.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.wordwrap.php
+END
+function.popup_init.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.popup_init.php
+END
+modifier.default.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.default.php
+END
+modifier.date_format.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.date_format.php
+END
+modifier.count_paragraphs.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.count_paragraphs.php
+END
+modifier.debug_print_var.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.debug_print_var.php
+END
+compiler.assign.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/polydev/!svn/ver/107/polygone/include/plugins/compiler.assign.php
+END
+modifier.count_sentences.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.count_sentences.php
+END
+outputfilter.trimwhitespace.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/polydev/!svn/ver/107/polygone/include/plugins/outputfilter.trimwhitespace.php
+END
+function.html_select_time.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.html_select_time.php
+END
+function.config_load.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.config_load.php
+END
+shared.make_timestamp.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/polydev/!svn/ver/107/polygone/include/plugins/shared.make_timestamp.php
+END
+function.html_image.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.html_image.php
+END
+function.html_table.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.html_table.php
+END
+modifier.string_format.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.string_format.php
+END
+modifier.strip_tags.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.strip_tags.php
+END
+function.paginate_next.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.paginate_next.php
+END
+function.paginate_prev.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.paginate_prev.php
+END
+function.assign_debug_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.assign_debug_info.php
+END
+modifier.spacify.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.spacify.php
+END
+function.paginate_middle.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.paginate_middle.php
+END
+function.paginate_first.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/polydev/!svn/ver/107/polygone/include/plugins/function.paginate_first.php
+END
+shared.escape_special_chars.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/polydev/!svn/ver/107/polygone/include/plugins/shared.escape_special_chars.php
+END
+modifier.escape.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.escape.php
+END
+block.textformat.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/polydev/!svn/ver/107/polygone/include/plugins/block.textformat.php
+END
+modifier.capitalize.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/polydev/!svn/ver/107/polygone/include/plugins/modifier.capitalize.php
+END

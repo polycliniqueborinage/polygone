@@ -1,0 +1,242 @@
+8
+
+dir
+214
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev/polygone/include/js
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev
+
+
+
+2010-03-25T12:39:11.008176Z
+213
+targoo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f8ec6-6b70-4122-b4cc-51e5379b8f2c
+
+ajax.php
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+0bd052cdd7f3efa4b2e0e724b67c608f
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+calendar.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+5c6a44823ddd3d55078078cf4f81caee
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+chat.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+f6d247cfee2a063f13524d2e5d981e6b
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+datepicker.php
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+1d30c859cde116d0702f165cbfe1886f
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+daterangepicker
+dir
+
+droppy
+dir
+
+gantt
+dir
+
+jqgrid
+dir
+
+jqmodal
+dir
+
+jquery
+dir
+
+jquery-1.3.2
+dir
+
+jquery-1.7.1
+dir
+
+jquery-validate
+dir
+
+jsval.php
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+283e3632ed44f6374c670a9b3f687357
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+lytebox.php
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+356cc7b91ae76b0a9e739452a909590c
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+multifile
+dir
+
+mycalendar.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+d4b5f830d799fbe3e10bb85d69a89b0a
+2009-10-05T11:07:16.378799Z
+107
+targoo
+has-props
+
+open-flash-chart.swf
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+43c3c8e314962ad7ca2ae035a7630825
+2009-10-05T11:07:16.378799Z
+107
+targoo
+has-props
+
+password_strength
+dir
+
+progressbar
+dir
+
+project
+dir
+
+proto.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+91cf8cd366d62ae7b8a17ec6159ad564
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+protoculous-packer.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+91cf8cd366d62ae7b8a17ec6159ad564
+2009-10-05T11:07:16.378799Z
+107
+targoo
+has-props
+
+protoculous-packer.php
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+2693d05bb4d1e438604081d296ea0534
+2009-10-05T11:07:16.378799Z
+107
+targoo
+has-props
+
+protoculous.php
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+fec59fbf8d3a1ecda858082fec58820c
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+rico
+dir
+
+shoutbox
+dir
+
+swfobject.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+cb4d4c5d40518d6d2fe5e83bd9753a36
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+timeline
+dir
+
+timeplot
+dir
+
+tiny_mce
+dir
+

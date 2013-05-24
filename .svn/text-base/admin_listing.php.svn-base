@@ -1,0 +1,397 @@
+<?php
+
+	require("./init.php");
+
+	if (!session_is_registered("userid")){
+		$template->assign("loginerror", 0);
+		$template->display("template_login.tpl");
+		die();
+	}
+		
+	// check if current client has this module enable
+	// check if current user has enough permission to access this page
+	if ($modules['admin_listing_adminstate']== null || $adminstate < $modules['admin_listing_adminstate']) {
+	    $errtxt = $langfile["general_nopermission"];
+	    $noperm = $langfile["general_accessdenied"];
+	    $template->assign("errortext", "$errtxt<br>$noperm");
+	    $template->display("template_error.tpl");
+	    die();
+	}
+	
+	$action = getArrayVal($_GET, "action");
+	$id = getArrayVal($_GET, "id");
+	$mode = getArrayVal($_GET, "mode");
+
+	$date_start = isset($_SESSION['date_start_listing_doctor']) ? $_SESSION['date_start_listing_doctor'] : date('d/m/Y');
+	$date_start = isset($_POST['date_start']) ? $_POST['date_start'] : $date_start;
+	
+	$date_end = isset($_SESSION['date_end_listing_doctor']) ? $_SESSION['date_end_listing_doctor'] : date('d/m/Y');
+	$date_end = isset($_POST['date_end']) ? $_POST['date_end'] : $date_end;
+	
+	$mainclasses = array("user" => "user", "management_current" => "management", "management_no_current" => "management_active", "admin" => "admin", "logout" => "logout");
+	$template->assign("mainclasses", $mainclasses);
+	
+	$mainmenu = array("listing" => "active");
+	$template->assign("mainmenu", $mainmenu);
+
+	// open/reduce workspace
+	if (getArrayVal($_COOKIE, "workspacecookie")) {
+	    $workspaceclass = $_COOKIE['workspacecookie'];
+		$template->assign("workspaceclass", $workspaceclass);
+	} else {
+	    $workspaceclass = "";
+		$template->assign("workspaceclass", $workspaceclass);
+	}
+	
+	// my log
+	$mylog = new mylog();
+	$date = (object) new dates();
+	$mailing	= (object) new mailing();
+	
+	// GET CURRENT DAY
+	if (isset($_SESSION['listing_day'])) {
+		$listingDay = $_SESSION['listing_day']; 
+	} else { 
+		$_SESSION['listing_day'] = date("d");
+		$listingDay = $_SESSION['listing_day']; 
+	}
+	
+	switch ($action) {
+		
+		case "till":
+			
+			// transform date
+			$date_start_before  = $date->operationDate($date->date_format_be2us($date_start),0,0,0);
+			$date_end_after  = $date->operationDate($date->date_format_be2us($date_end),1,0,0);
+			
+			$sqlglobal = "SELECT DATE_FORMAT(date, GET_FORMAT(DATE, 'EUR')), heure, caisse, code,  montant , mode, description  FROM caisses_transaction WHERE code!=5000";
+			
+			$sqlglobal= "SELECT concat('<div style=\'display: none;\' >',date,'</div>',date_format(date, '%d/%m/%Y')), heure, caisse, code,  montant , mode, description FROM caisses_transaction WHERE code!=5000";
+			$sqlglobal .= " AND date >= '$date_start_before'";
+			$sqlglobal .= " AND date < '$date_end_after'";
+			$sqlglobal .= "  ORDER BY date";
+			//echo $sqlglobal;
+			
+			$_SESSION['listing_till'] = $sqlglobal;
+
+			$title = $langfile["navigation_title_admin_listing_till"];
+	
+			$template->assign("date_start", $date_start);
+			$template->assign("date_end", $date_end);
+			$template->assign("title", $title);
+			$template->assign("workspaceclass", "fullpage");
+			
+			$template->display("template_admin_listing_till.tpl");
+			
+			break;
+			
+		case "doctor_pdf":
+			
+			include("./include/class.fpdf.php");
+			
+    		$title1 = "Total";
+			$title2 = "Médecin";
+			$title3 = "Polyclinique";
+			//hide
+			//$title4 = "Ticket modérateur";
+
+			$title31 = "Médecin";
+			$title32 = "Total";
+			$title33 = "Méd.";
+			$title34 = "Poly";
+			// hide
+			//$title35 = "T.M.";
+			
+			//Set maximum rows per page
+			$max = 43;
+			
+			$widthglobal				=array(187, 187, 186);
+			$headerglobal				=array($title1,$title2,$title3);
+			$row_heightglobale			= 16;
+			
+			$width						= array(50,30,150,110,44,52,50,50);
+			$header						= array($title5,$title6,$title7,$title8,$title9,$title10,$title11,$title12);
+			$row_height					= 12;
+			
+			$widthglobalresume			=array(164, 122, 122, 122);
+			$headerglobalresume			=array($title31,$title32,$title33,$title34);
+			$row_heightglobaleresume	= 16;
+			
+			//echo $_SESSION['latestrequest']."<br/><br/>";
+			
+			$pos_from 		= strpos($_SESSION['latestrequest'], 'FROM');
+			$pos_where 		= strpos($_SESSION['latestrequest'], 'WHERE');
+			$pos_orderby 	= strpos($_SESSION['latestrequest'], 'ORDER BY');
+			$pos_limit 		= strpos($_SESSION['latestrequest'], 'LIMIT');
+
+			//echo "pos_from".$pos_from."<br/><br/>";
+			//echo "pos_where".$pos_where."<br/><br/>";
+			//echo "pos_orderby".$pos_orderby."<br/><br/>";
+			//echo "pos_limit".$pos_limit."<br/><br/>";
+			
+			$from 			= substr($_SESSION['latestrequest'], $pos_from+4, $pos_where-($pos_from+4));
+			$where 			= substr($_SESSION['latestrequest'], $pos_where+5, $pos_orderby-($pos_where+5));
+			$orderby 		= substr($_SESSION['latestrequest'], $pos_orderby+8, $pos_limit-($pos_orderby+8));
+
+			//echo "from".$from."<br/><br/>";
+			//echo "where".$where."<br/><br/>";
+			//echo "orderby".$orderby."<br/><br/>";
+						
+			// create PDF
+		    $pdf = (object) new pdfhtml('P', 'pt', 'A4');
+			
+			// for each doctor
+			$sql = "SELECT DISTINCT me.nom AS medecin_nom, me.prenom AS medecin_prenom, me.inami AS medecin_inami FROM $from WHERE $where ORDER BY medecin_nom, medecin_prenom";
+			//echo $sql."<br/>";
+			
+			$result = mysql_query($sql);
+			
+			while($data = mysql_fetch_assoc($result)) 	{
+
+				// pour chaque medecin
+				$doctor_familyname 	= $data['medecin_nom'];
+				$doctor_firstname 	= $data['medecin_prenom'];
+				$doctor_inami 		= $data['medecin_inami'];
+
+				//Add first page
+				$pdf->AddPage();
+				
+				//initialize counter
+				$i = 7;
+
+				// Titre
+				$pdf->SetFont('Arial','B',16);
+				$pdf->Cell(18,10,"Listing pour ".$doctor_familyname." ".$doctor_firstname);
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Ln();
+				
+				// Resume sans prendre la correction dans le cout_mutuelle qui aurait cout_poly et cout_medecin=0
+				$sqlglobalresume= "SELECT sum(round(td.cout_mutuelle,2)) AS cout_mutuelle, SUM(ROUND(td.cout_poly,2)) AS cout_poly, SUM(ROUND(td.cout_medecin,2)) AS cout_medecin, SUM(GREATEST(ROUND(td.cout_mutuelle - (td.cout_medecin + td.cout_poly),2),0)) AS cout_tm FROM $from WHERE (td.cout_poly != '0' or td.cout_medecin != '0') AND ta.medecin_inami = '".$doctor_inami."' AND $where";
+				//echo $sqlglobalresume."<br/><br/>";
+				
+				$resultglobalresume = mysql_query($sqlglobalresume);
+				$data = mysql_fetch_assoc($resultglobalresume);
+	
+				$pdf->SetFillColor(220,220,232);
+				$pdf->SetFont('Arial','B',12);
+				$pdf->Cell($widthglobal[0], $row_heightglobale, $headerglobal[0], 'LTB');
+		    	$pdf->Cell($widthglobal[1], $row_heightglobale, $headerglobal[1], 'LTB');
+		    	$pdf->Cell($widthglobal[2], $row_heightglobale, $headerglobal[2], 'LRTB');
+		    	//$pdf->Cell($widthglobal[3], $row_heightglobale, $headerglobal[3], 'LRTB');
+				$pdf->Ln();
+		    	$pdf->Cell($widthglobal[0], $row_heightglobale, round($data['cout_mutuelle'],2), 'LTB');
+		    	$pdf->Cell($widthglobal[1], $row_heightglobale, round($data['cout_medecin'],2), 'LTB');
+		    	$pdf->Cell($widthglobal[2], $row_heightglobale, round($data['cout_poly'],2), 'LRTB');
+		    	//$pdf->Cell($widthglobal[3], $row_heightglobale, round($data['cout_tm'],2), 'LRTB');
+				
+		    	$pdf->Ln();
+				$pdf->Ln();
+		    	
+				$pdf->SetFont('Arial','B',11);
+				$pdf->Cell($width[0],$row_height,'Date','LTB');
+				$pdf->Cell($width[1],$row_height,'Mut','LTB');
+				$pdf->Cell($width[2],$row_height,'Patient','LTB');
+				$pdf->Cell($width[3],$row_height,'Matricule','LTB');
+				$pdf->Cell($width[4],$row_height,'% Méd.','LTB');
+				$pdf->Cell($width[5],$row_height,'Cecodi','LTB');	
+				$pdf->Cell($width[6],$row_height,'Méd.','LTB');
+				$pdf->Cell($width[7],$row_height,'Poly','LRTB');
+				//$pdf->Cell($width[8],$row_height,'T.M.','LRTB');
+				$pdf->Ln();
+				
+				$sqlglobal= "SELECT ta.date AS tarification_date, ta.mutuelle_code AS tarification_mutuelle_code, ta.patient_matricule AS tarification_patient_matricule, pa.nom AS patient_nom, pa.prenom AS patient_prenom, td.cecodi AS cecodi, ROUND(td.cout_mutuelle,2) AS cout_mutuelle, ROUND(td.cout_poly,2) AS cout_poly, ROUND(td.cout_medecin,2) AS cout_medecin, GREATEST(ROUND(td.cout_mutuelle - (td.cout_medecin + td.cout_poly),2),0) AS cout_tm FROM $from WHERE td.cout_medecin != '0' AND ta.medecin_inami = '".$doctor_inami."' AND $where ";
+				$sqlglobal .= " ORDER BY ta.cloture, td.id";
+				//echo $sqlglobal."<br/><br/>";
+				$resulttarif = mysql_query($sqlglobal);
+			
+				while($data = mysql_fetch_assoc($resulttarif)) 	{
+					
+					if ($i == $max) {
+					
+						// saut de page
+						$pdf->AddPage();
+						
+						
+						//initialize counter
+						$i = 0;
+						
+						$pdf->SetFont('Arial','B',11);
+						$pdf->SetFillColor(232,232,232);
+						$pdf->Cell($width[0],$row_height,'Date','LTB');
+						$pdf->Cell($width[1],$row_height,'Mut','LTB');
+						$pdf->Cell($width[2],$row_height,'Patient','LTB');
+						$pdf->Cell($width[3],$row_height,'Matricule','LTB');
+						$pdf->Cell($width[4],$row_height,'% Méd.','LTB');
+						$pdf->Cell($width[5],$row_height,'Cecodi','LTB');	
+						$pdf->Cell($width[6],$row_height,'Méd.','LTB');
+						$pdf->Cell($width[7],$row_height,'Poly','LRTB');
+						//$pdf->Cell($width[8],$row_height,'T.M.','LRTB');
+						$pdf->Ln();
+				
+			
+					}
+					
+				    $date 				= substr($data['tarification_date'],2);
+				    $mut 				= $data['tarification_mutuelle_code'];
+					$patient 			= $data['patient_nom']." ".$patient_prenom = $data['patient_prenom'];
+					$patient_matricule 	= $data['tarification_patient_matricule'];
+					$cecodi 			= $data['cecodi'];
+					$cout_mutuelle 		= $data['cout_mutuelle'];
+					$cout_medecin 		= $data['cout_medecin'];
+					$cout_poly 			= $data['cout_poly'];
+					
+					// gestion des corrections
+					//if ($cout_poly == 0 AND $cout_medecin == 0) {$cout_mutuelle=0;}
+					$cout_tm = round($cout_mutuelle-($cout_medecin+$cout_poly),2);
+					if ($cout_mutuelle != 0) {
+						$pourcentage = round((100*($cout_medecin/$cout_mutuelle)),0);
+					} else {
+						$pourcentage = "";
+					}
+					
+					$pdf->SetFillColor(255,255,255);
+					$pdf->SetFont('Arial','',10);
+					$pdf->Cell($width[0],$row_height,$date,'LB');
+					$pdf->Cell($width[1],$row_height,$mut,'LB');
+					$pdf->Cell($width[2],$row_height,$patient,'LB');
+					$pdf->Cell($width[3],$row_height,$patient_matricule,'LB');
+					$pdf->Cell($width[4],$row_height,$pourcentage,'LB');
+					$pdf->Cell($width[5],$row_height,$cecodi,'LB');	
+					$pdf->Cell($width[6],$row_height,$cout_medecin,'LB');
+					$pdf->Cell($width[7],$row_height,$cout_poly,'LRB');
+					//$pdf->Cell($width[8],$row_height,$cout_tm,'LRB');
+					$pdf->Ln();
+									
+				    $i = $i + 1;
+				
+				}
+				
+			}
+			
+			// envoie mail
+			$mail = "<html><table><tr><td></td></tr></table></html>";
+			
+			// print resume
+			$pdf->AddPage();
+	
+			//initialize counter
+			$i = 3;
+
+			// Titre
+			$pdf->SetFont('Arial','B',16);
+			$pdf->Cell(18,10,"Récapitulatif");
+			$pdf->Ln();
+			$pdf->Ln();
+			$pdf->Ln();
+			
+			$pdf->SetFont('Arial','',12);
+			$pdf->SetFillColor(232,232,232);
+
+			$pdf->Cell($widthglobalresume[0], $row_heightglobaleresume, $headerglobalresume[0], 'LTB');
+		    $pdf->Cell($widthglobalresume[1], $row_heightglobaleresume, $headerglobalresume[1], 'LTB');
+		    $pdf->Cell($widthglobalresume[2], $row_heightglobaleresume, $headerglobalresume[2], 'LTB');
+		    $pdf->Cell($widthglobalresume[3], $row_heightglobaleresume, $headerglobalresume[3], 'LRTB');
+		    //$pdf->Cell($widthglobalresume[4], $row_heightglobaleresume, $headerglobalresume[4], 'LRTB');
+			$pdf->Ln();
+		    
+			
+			//mail
+			$mail .= "<tr><td>".$headerglobalresume[0]."</td><td>".$headerglobalresume[1]."</td><td>".$headerglobalresume[2]."</td><td>".$headerglobalresume[3]."</td><td>".$headerglobalresume[4]."</td></tr>";
+			
+			
+		    $result = mysql_query($sql);
+
+			// for each doctor
+			while($data = mysql_fetch_assoc($result)) 	{
+
+				$doctor_familyname 		= $data['medecin_nom'];
+				$doctor_firstname 		= $data['medecin_prenom'];
+				$doctor_inami 			= $data['medecin_inami'];
+				
+				if ($i == $max) {
+					$pdf->AddPage();
+					$i = 0;
+					$pdf->SetFillColor(232,232,232);
+					$pdf->Cell($widthglobalresume[0], $row_heightglobaleresume, $headerglobalresume[0], 'LRTB');
+				    $pdf->Cell($widthglobalresume[1], $row_heightglobaleresume, $headerglobalresume[1], 'LRTB');
+				    $pdf->Cell($widthglobalresume[2], $row_heightglobaleresume, $headerglobalresume[2], 'LRTB');
+				    $pdf->Cell($widthglobalresume[3], $row_heightglobaleresume, $headerglobalresume[3], 'LRTB');
+				    //$pdf->Cell($widthglobalresume[4], $row_heightglobaleresume, $headerglobalresume[4], 'LRTB');
+					$pdf->Ln();
+				}
+	
+				// Resume sans prendre la correction dans le cout_mutuelle qui aurait cout_poly et cout_medecin=0
+				$sqlglobalresume= "SELECT SUM(ROUND(td.cout_mutuelle,2)) AS cout_mutuelle, SUM(ROUND(td.cout_poly,2)) AS cout_poly, SUM(ROUND(td.cout_medecin,2)) AS cout_medecin, SUM(GREATEST(ROUND(td.cout_mutuelle - (td.cout_medecin + td.cout_poly),2),0)) AS cout_tm FROM $from WHERE (td.cout_poly != '0' or td.cout_medecin != '0') AND ta.medecin_inami = '".$doctor_inami."' AND $where";
+				//echo $sqlglobalresume."<br/><br/>";
+				$resulttarifresume = mysql_query($sqlglobalresume);
+				$dataresume = mysql_fetch_assoc($resulttarifresume);
+		
+				$pdf->Cell($widthglobalresume[0], $row_heightglobaleresume, $doctor_familyname." ".$doctor_firstname, 'LRTB');
+			    $pdf->Cell($widthglobalresume[1], $row_heightglobaleresume, round($dataresume['cout_mutuelle'],2), 'LRTB');
+			    $pdf->Cell($widthglobalresume[2], $row_heightglobaleresume, round($dataresume['cout_medecin'],2), 'LRTB');
+			    $pdf->Cell($widthglobalresume[3], $row_heightglobaleresume, round($dataresume['cout_poly'],2), 'LRTB');
+			    //$pdf->Cell($widthglobalresume[4], $row_heightglobaleresume, round($dataresume['cout_tm'],2), 'LRTB');
+			    
+			    $pdf->Ln();
+			    
+			    //mail
+			    $mail .= "<tr><td>".$doctor_familyname." ".$doctor_firstname."</td><td>".round($dataresume['cout_mutuelle'],2)."</td><td>".round($dataresume['cout_medecin'],2)."</td><td>".round($dataresume['cout_poly'],2)."</td><td>".round($dataresume['cout_tm'],2)."</td></tr>";
+			    
+			    $i = $i + 1;
+		
+			}
+
+			// GRAND TOTALE
+			$sqlglobalresumetotal	= "SELECT SUM(ROUND(td.cout_mutuelle,2)) AS cout_mutuelle, SUM(ROUND(td.cout_poly,2)) AS cout_poly, SUM(ROUND(td.cout_medecin,2)) AS cout_medecin, SUM(GREATEST(ROUND(td.cout_mutuelle - (td.cout_medecin + td.cout_poly),2),0)) AS cout_tm FROM $from WHERE (td.cout_poly != '0' or td.cout_medecin != '0') AND $where";
+			//echo $sqlglobalresumetotal."<br/><br/>";
+			$resulttarifresumetotal = mysql_query($sqlglobalresumetotal);
+			$dataresumetotal 		= mysql_fetch_assoc($resulttarifresumetotal);
+	
+			$pdf->SetFont('Arial','B',16);
+		
+			$pdf->Cell($widthglobalresume[0], 18, "TOTAL", 'LTB');
+			$pdf->Cell($widthglobalresume[1], 18, round($dataresumetotal['cout_mutuelle'],2), 'LTB');
+			$pdf->Cell($widthglobalresume[2], 18, round($dataresumetotal['cout_medecin'],2), 'LTB');
+			$pdf->Cell($widthglobalresume[3], 18, round($dataresumetotal['cout_poly'],2), 'LRTB');
+			//$pdf->Cell($widthglobalresume[4], $row_heightglobaleresume, round($dataresumetotal['cout_tm'],2), 'LRTB');
+			
+			//mail
+			$mail .= "<tr><td>TOTAL</td><td>".round($dataresumetotal['cout_mutuelle'],2)."</td><td>".round($dataresumetotal['cout_medecin'],2)."</td><td>".round($dataresumetotal['cout_poly'],2)."</td><td>".round($dataresumetotal['cout_tm'],2)."</td></tr>";
+			
+			//$pdf->AutoPrint(true);
+			
+		    $pdf->Output("listing-medecin.pdf", "d");
+		    
+		    // Envoi mail ˆ ponchon
+		    $mail .= "</table></html>";
+		    $maildate = date('Y-m-d h:m:s');
+		    $mailing_id = $mailing->add('listing','polygone','polygone@polycliniqueborinage.org','Michel Ponchon','mponchon@gmail.com',$maildate,'Impression du listing des mŽdecins',$mail);
+			
+			break;
+		
+		// DOCTOR
+		default:
+			
+			// transform date
+			$date_start_before  = $date->operationDate($date->date_format_be2us($date_start),0,0,0);
+			$date_end_after  = $date->operationDate($date->date_format_be2us($date_end),1,0,0);
+			$sqlglobal= "SELECT concat('<div style=\'display: none;\' >',ta.cloture,'</div>',date_format(ta.cloture, '%d/%m/%Y')), concat('<div style=\'display: none;\' >',ta.date,'</div>',date_format(ta.date, '%d/%m/%Y')), pa.nom as patient_nom, pa.prenom as patient_prenom, concat(ta.ct1, '/' ,ta.ct2) as tarification_cts, ta.type as tarification_type, me.nom as medecin_nom, me.prenom as medecin_prenom, td.description as tarification_description, td.cecodi as tarification_cecodi, round(td.cout_mutuelle,2) as cout, td.cout_poly as cout_poly, round((td.cout_medecin/td.cout_mutuelle*100),0) as pourcentage, td.cout_medecin as cout_medecin, greatest(round(td.cout_mutuelle - (td.cout_medecin + td.cout_poly),2),0) as cout_tm from tarifications ta, tarifications_detail td, medecins me, patients pa where ta.etat = 'close' and ta.medecin_inami = me.inami and ta.patient_id = pa.id and td.tarification_id = ta.id";
+			$sqlglobal .= " AND ta.cloture >= '$date_start_before'";
+			$sqlglobal .= " AND ta.cloture < '$date_end_after'";
+			$sqlglobal .= " ORDER BY ta.cloture, td.id";
+			
+			$_SESSION['listing_doctor'] = $sqlglobal;
+
+			$title = $langfile["navigation_title_admin_listing_doctor"];
+	
+			$template->assign("date_start", $date_start);
+			$template->assign("date_end", $date_end);
+			$template->assign("title", $title);
+			$template->assign("workspaceclass", "fullpage");
+			
+			$template->display("template_admin_listing_doctor.tpl");
+			
+	}
+
+?>

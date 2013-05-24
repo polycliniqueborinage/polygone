@@ -1,0 +1,585 @@
+<?php
+
+	require("./init.php");
+
+	if (!session_is_registered("userid")){
+		$template->assign("loginerror", 0);
+		$template->display("template_login.tpl");
+		die();
+	}
+	
+	// check if current client has this module enable
+	// check if current user has enough permission to access this page
+	if ($modules['management_sumehr_adminstate']== null || $adminstate < $modules['management_sumehr_adminstate']) {
+	    $errtxt = $langfile["general_nopermission"];
+	    $noperm = $langfile["general_accessdenied"];
+	    $template->assign("errortext", "$errtxt<br>$noperm");
+	    $template->display("template_error.tpl");
+	    die();
+	}
+	
+	$POST_MAX_SIZE = ini_get('post_max_size');
+	$POST_MAX_SIZE = $POST_MAX_SIZE . "B";
+	
+	// GET param
+	$action = getArrayVal($_GET, "action");
+	$patientID = getArrayVal($_GET, "patient_id");
+	$userID = getArrayVal($_GET, "user_id");
+	$reportID = getArrayVal($_GET, "report_id");
+	$id = getArrayVal($_GET, "id");
+	$mode = getArrayVal($_GET, "mode");
+	$format = getArrayVal($_GET, "format");
+	
+	// Delete files
+	$delete = getArrayVal($_POST, "delete");
+	
+	// SEARCH
+	$searchType 		= getArrayVal($_POST, "search_type");
+	$searchValue 		= utf8_decode(trim(getArrayVal($_POST, "search_value")));
+	$searchPatientID 	= utf8_decode(trim(getArrayVal($_POST, "search_patient_id")));
+	$searchPatient 		= utf8_decode(trim(getArrayVal($_POST, "search_patient")));
+	$searchDoctorID 	= utf8_decode(trim(getArrayVal($_POST, "search_doctor_id")));
+	$searchDoctor 		= utf8_decode(trim(getArrayVal($_POST, "search_doctor")));
+	$searchLimit 		= getArrayVal($_POST, "limit");
+
+	// Download File
+	$key = getArrayVal($_GET, "key");
+	
+	$mainclasses = array("user" => "user_active", "management_current" => "management", "management_no_current" => "management", "admin" => "admin", "logout" => "logout");
+	$template->assign("mainclasses", $mainclasses);
+
+	$mainmenu = array("sumehr" => "active");
+	$template->assign("mainmenu", $mainmenu);
+
+	// open/reduce workspace
+	if (getArrayVal($_COOKIE, "workspacecookie")) {
+	    $workspaceclass = $_COOKIE['workspacecookie'];
+		$template->assign("workspaceclass", $workspaceclass);
+	} else {
+	    $workspaceclass = "";
+		$template->assign("workspaceclass", $workspaceclass);
+	}
+	
+	//protocol webservice url
+	if ($_SERVER['SERVER_NAME'] == 'localhost')
+	$protocol_webservice_url="http://localhost:55555";
+	else
+	$protocol_webservice_url="https://protocol.polycliniqueborinage.org";
+		
+	// my log
+	$mylog = (object) new mylog();
+	$group = (object) new group();
+	$sumehr = (object) new sumehr();
+	$patient = (object) new patient();
+	$user = (object) new user();
+	$myfile = new datei();
+	
+	switch ($action) {
+		
+		// AJAX CALL
+		case "module_search":
+			
+			$export_html = $langfile["dico_sumehr_export_html"];
+			$export_pdf = $langfile["dico_sumehr_export_pdf"];
+			$export_rtf = $langfile["dico_sumehr_export_rtf"];
+			$export_txt = $langfile["dico_sumehr_export_txt"];
+			$export_xml = $langfile["dico_sumehr_export_xml"];
+			
+			if ($searchPatient!='' and $searchDoctor!='') {
+				$sumehrs = $sumehr->modulesearchfrommanager($searchPatientID,$searchPatient,$searchDoctorID,$searchDoctor,$searchLimit);
+				
+				$template->assign("sumehrs", $sumehrs);
+				$template->assign("export_html", $export_html);
+				$template->assign("export_pdf", $export_pdf);
+				$template->assign("export_rtf", $export_rtf);
+				$template->assign("export_txt", $export_txt);
+				$template->assign("export_xml", $export_xml);
+				
+				$template->display("template_management_gestion_complete_search.tpl");
+			}
+			
+			
+			break;			
+
+		case "edit": 
+			
+			$title = $langfile["navigation_title_user_sumehr_edit"];
+			
+			if ($patientID !='' && $userID !='') {
+				
+				$sumehrReport 		= $sumehr->getReport($reportID);
+				$sumehrReportFiles 	= $sumehr->getReportFile($reportID);
+				$sumehr				= $sumehr->get($patientID,$userID);
+				$patient 			= $patient->get($patientID);
+				$user 				= $user->getProfile($userID);
+				
+				$template->assign("title", $title);
+				$template->assign("patient", $patient);
+				$template->assign("user", $user);
+				$template->assign("sumehr", $sumehr);
+				$template->assign("sumehrReport", $sumehrReport);
+				$template->assign("sumehrReportFiles", $sumehrReportFiles);
+				
+				
+				$template->display("template_management_sumehr_add.tpl");
+			}
+			
+	    break;
+
+   		case "submit":
+   			
+			// Delete unused file
+   			foreach ($delete as $reportFileID) {
+				$result = $sumehr->deleteFile($reportFileID);
+			}
+
+			$datetime = date('Y-m-d H:i:s');
+			
+			$id = getArrayVal($_POST, "id");
+			$reportID = getArrayVal($_POST, "report_id");
+			$patientID = getArrayVal($_POST, "patient_id");
+			$userID = getArrayVal($_POST, "user_id");
+			$text = getArrayVal($_POST, "text");
+			
+			if ($id!=''){
+				// Udpate Dossier
+				if ($reportID!=''){
+					echo "id".$reportID;
+					// update Report
+					$reportID = $sumehr->updateReport($id,$reportID,$datetime,$text);
+				} else {
+					echo "add report";
+					// Add report
+					$reportID = $sumehr->addReport($id,$datetime,$text);
+		  			$mylog->add('sumehr','add','create report');
+				}	
+			} else {
+				// Create dossier
+				$id = $sumehr->add($patientID,$userID);
+				$reportID = $sumehr->addReport($id,$datetime,$text);
+		  		$mylog->add('sumehr','add','create dossier');
+		  		$mylog->add('sumehr','add','create report');
+			}
+			
+			while (list ($k, $v) = each ($_FILES['file']['name'])) {
+				
+				if ($_FILES['file']['name'][$k] != ''){
+					echo "add file ".$_FILES['file']['name'][$k];
+					//The original name of the file on the client machine
+					$file_name = $_FILES['file']['name'][$k];
+					//The mime type of the file
+					$file_type = $_FILES['file']['type'][$k];
+			 	    $file_extension = substr($file_name, strrpos($file_name, '.') + 1);
+					//The size, in bytes, of the uploaded file. 
+					$file_size = $_FILES['file']['size'][$k];
+					//The size, in bytes, of the uploaded file. 
+					$file_tmpname = $_FILES['file']['tmp_name'][$k];
+	        		$file_error = $_FILES['file']['error'][$k];
+	        		//generate unique key
+	        		$key = md5(uniqid (rand (),true));
+	
+	        		//save db
+	        		// key - reportID - sumher_id - name - extension - size - type - file
+	        		$result = $sumehr->addFile($key, $reportID, $file_name, $file_extension, $file_size, $file_type, $file_tmpname);
+	        		$mylog->add('sumehr','add','add file');
+				}
+        		
+			}
+			
+			$mylog->add('sumehr','add','report');
+			$loc = $url . "management_sumehr.php?action=view&mode=edited&patient_id=" . $patientID."&user_id=".$userID;
+	        header("Location: $loc");
+
+	  	break;
+	  	
+	  	case "view_report":
+			
+			$sumehr = $sumehr->getReportHTML($patientID,$userID,$reportID,'management_sumehr.php');
+			echo $sumehr["sumehr_report_text"];
+			
+		break;
+
+		case "delete_report":
+			
+			$sumehr = $sumehr->deleteReport($patientID,$userID,$reportID);
+			
+		break;
+		
+	        
+		case "view":
+			
+			$title = $langfile["navigation_title_management_sumehr_view"];
+			
+			$tool_html_alt = $langfile["dico_sumehr_export_html"];
+			$tool_pdf_alt = $langfile["dico_sumehr_export_pdf"];
+			$tool_rtf_alt = $langfile["dico_sumehr_export_rtf"];
+			$tool_txt_alt = $langfile["dico_sumehr_export_txt"];
+			$tool_xml_alt = $langfile["dico_sumehr_export_xml"];
+			
+			$tool_html1 = "<a onclick=\"javascript=exportProtocol(";
+			$tool_html2 = ",\'html\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-html-hover.png\" alt=\"".$tool_html_alt."\" title=\"".$tool_html_alt."\" border=\"0\" /></a>";
+
+			$tool_pdf1 = "<a onclick=\"javascript=exportProtocol(";
+			$tool_pdf2 = ",\'pdf\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-pdf-hover.gif\" alt=\"".$tool_pdf_alt."\" title=\"".$tool_pdf_alt."\" border=\"0\" /></a>";
+			
+			$tool_word1 = "<a onclick=\"javascript=exportProtocol(";
+			$tool_word2 = ",\'rtf\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-word-hover.png\" alt=\"".$tool_rtf_alt."\" title=\"".$tool_rtf_alt."\" border=\"0\" /></a>";
+			
+			$tool_txt1 = "<a onclick=\"javascript=exportProtocol(";
+			$tool_txt2 = ",\'txt\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-txt-hover.png\" alt=\"".$tool_txt_alt."\" title=\"".$tool_txt_alt."\" border=\"0\" /></a>";
+			
+			$tool_xml1 = "<a onclick=\"javascript=exportProtocol(";
+			$tool_xml2 = ",\'xml\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-xml-hover.png\" alt=\"".$tool_xml_alt."\" title=\"".$tool_xml_alt."\" border=\"0\" /></a>";
+			
+			$sql = "SELECT LOWER(CONCAT(uss.firstname, ' ', uss.familyname)), LOWER(CONCAT(usr1.familyname, ' ', usr1.firstname,' ',usr2.familyname, ' ', usr2.firstname,' ',usr3.familyname, ' ', usr3.firstname,' ',usr4.familyname, ' ', usr4.firstname,' ',usr5.familyname, ' ', usr5.firstname)), CONCAT('<div style=display:none>',pr.date,'</div>',date_format(pr.date, '%d/%m/%Y')), concat('$tool_html1',pr.ID,'$tool_html2',' ','$tool_pdf1',pr.ID,'$tool_pdf2',' ','$tool_word1',pr.ID,'$tool_word2',' ','$tool_xml1',pr.ID,'$tool_xml2') FROM protocol pr, user uss, user usr1, user usr2, user usr3, user usr4, user usr5 WHERE pr.patient_ID = $patientID AND pr.user_sender_ID = uss.ID AND pr.user_recipient1_ID = usr1.ID AND pr.user_recipient2_ID = usr2.ID AND pr.user_recipient3_ID = usr3.ID AND pr.user_recipient4_ID = usr4.ID AND pr.user_recipient5_ID = usr5.ID";
+			echo "<!--".$sql."-->";
+			$_SESSION['sumehrlist'] = $sql;
+			
+			// Dossier Sumehr
+			// may be empty
+			$sumehrs = $sumehr->getAllReportHTML($patientID,$userID,'management_sumehr.php');
+			
+			$template->assign("title", $title);
+			$template->assign("patient_id", $patientID);
+			$template->assign("user_id", $userID);
+			$template->assign("sumehrs", $sumehrs);
+			
+			
+			$patient = $patient->get($patientID);
+			$user = $user->getProfile($userID);
+			
+			$template->assign("patient", $patient['firstname']." ".$patient['familyname']);
+			$template->assign("user", $user['firstname']." ".$user['familyname']);
+			
+			$template->display("template_management_sumehr_view.tpl");
+			
+		break;
+	  	
+		
+		case "download_file":
+			$sumehrs = $sumehr->getFile($key,$userID);
+			die();
+			
+		break;
+		
+		// LIST			
+		case "list":
+
+			$edit_alt = $langfile["dico_management_sumehr_edit_alt"];
+			$detail_alt = $langfile["dico_management_sumehr_detail_alt"];
+			
+			$tool_html_alt = $langfile["dico_management_sumehr_export_html"];
+			$tool_pdf_alt = $langfile["dico_management_sumehr_export_pdf"];
+			$tool_rtf_alt = $langfile["dico_management_sumehr_export_rtf"];
+			$tool_txt_alt = $langfile["dico_management_sumehr_export_txt"];
+			$tool_xml_alt = $langfile["dico_management_sumehr_export_xml"];
+			
+			$detail1 = "<a onclick=\"javascript=viewSumehr(";
+			$detail2 = ")\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-view-hover.png\" alt=\"".$detail_alt."\" title=\"".$detail_alt."\" border=\"0\" /></a>";
+			
+			$edit1 = "<a onclick=\"javascript=editSumehr(";
+			$edit2 = ")\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-edit-hover.png\" alt=\"".$edit_alt."\" title=\"".$edit_alt."\" border=\"0\" /></a>";
+
+			$tool_html1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_html2 = ",\'html\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-html-hover.png\" alt=\"".$tool_html_alt."\" title=\"".$tool_html_alt."\" border=\"0\" /></a>";
+
+			$tool_pdf1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_pdf2 = ",\'pdf\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-pdf-hover.gif\" alt=\"".$tool_pdf_alt."\" title=\"".$tool_pdf_alt."\" border=\"0\" /></a>";
+			
+			$tool_word1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_word2 = ",\'rtf\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-word-hover.png\" alt=\"".$tool_rtf_alt."\" title=\"".$tool_rtf_alt."\" border=\"0\" /></a>";
+			
+			$tool_txt1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_txt2 = ",\'txt\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-txt-hover.png\" alt=\"".$tool_txt_alt."\" title=\"".$tool_txt_alt."\" border=\"0\" /></a>";
+			
+			$tool_xml1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_xml2 = ",\'xml\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-xml-hover.png\" alt=\"".$tool_xml_alt."\" title=\"".$tool_xml_alt."\" border=\"0\" /></a>";
+			
+			$sql = "SELECT concat('$edit1',p.id,'$edit2',' ','$detail1',p.id,'$detail2'), LOWER(CONCAT(p.nom, ' ', p.prenom)), CONCAT('<div style=display:none>',p.date_naissance,'</div>',date_format(p.date_naissance, '%d/%m/%Y')), date_format(MAX(sr.datetime), '%d/%m/%Y %h:%m'), concat('$tool_html1',s.ID,'$tool_html2',' ','$tool_pdf1',s.ID,'$tool_pdf2',' ','$tool_word1',s.ID,'$tool_word2',' ','$tool_xml1',s.ID,'$tool_xml2') FROM sumehr s, sumehr_report sr, patients p, user u WHERE s.patient_ID = p.id AND s.user_ID = u.ID GROUP BY sr.sumehr_ID ORDER BY p.nom";
+			
+			$_SESSION['sumehrlist']=$sql;
+			
+			$title = $langfile["navigation_title_user_protocol_list"];
+	
+			$template->assign("title", $title);
+			$template->assign("workspaceclass", "fullpage");
+			
+			$template->display("template_user_sumehr_list.tpl");
+		
+			break;
+
+		// GRID			
+		case "grid":
+			
+			$edit_alt = $langfile["dico_management_sumehr_edit_alt"];
+			$detail_alt = $langfile["dico_management_sumehr_detail_alt"];
+			
+			$tool_html_alt = $langfile["dico_management_sumehr_export_html"];
+			$tool_pdf_alt = $langfile["dico_management_sumehr_export_pdf"];
+			$tool_rtf_alt = $langfile["dico_management_sumehr_export_rtf"];
+			$tool_txt_alt = $langfile["dico_management_sumehr_export_txt"];
+			$tool_xml_alt = $langfile["dico_management_sumehr_export_xml"];
+			
+			$detail1 = "<a onclick=\"javascript=viewSumehr(";
+			$detail2 = ")\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-view-hover.png\" alt=\"".$detail_alt."\" title=\"".$detail_alt."\" border=\"0\" /></a>";
+			
+			$edit1 = "<a onclick=\"javascript=editSumehr(";
+			$edit2 = ")\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-edit-hover.png\" alt=\"".$edit_alt."\" title=\"".$edit_alt."\" border=\"0\" /></a>";
+
+			$tool_html1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_html2 = ",\'html\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-html-hover.png\" alt=\"".$tool_html_alt."\" title=\"".$tool_html_alt."\" border=\"0\" /></a>";
+
+			$tool_pdf1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_pdf2 = ",\'pdf\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-pdf-hover.gif\" alt=\"".$tool_pdf_alt."\" title=\"".$tool_pdf_alt."\" border=\"0\" /></a>";
+			
+			$tool_word1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_word2 = ",\'rtf\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-word-hover.png\" alt=\"".$tool_rtf_alt."\" title=\"".$tool_rtf_alt."\" border=\"0\" /></a>";
+			
+			$tool_txt1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_txt2 = ",\'txt\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-txt-hover.png\" alt=\"".$tool_txt_alt."\" title=\"".$tool_txt_alt."\" border=\"0\" /></a>";
+			
+			$tool_xml1 = "<a onclick=\"javascript=exportSumehr(";
+			$tool_xml2 = ",\'xml\')\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-xml-hover.png\" alt=\"".$tool_xml_alt."\" title=\"".$tool_xml_alt."\" border=\"0\" /></a>";
+			
+			//$sql = " LOWER(CONCAT(p.nom, ' ', p.prenom)), CONCAT('<div style=display:none>',p.date_naissance,'</div>',date_format(p.date_naissance, '%d/%m/%Y')), date_format(MAX(sr.datetime), '%d/%m/%Y %h:%m'), concat('$tool_html1',s.ID,'$tool_html2',' ','$tool_pdf1',s.ID,'$tool_pdf2',' ','$tool_word1',s.ID,'$tool_word2',' ','$tool_xml1',s.ID,'$tool_xml2') FROM sumehr s, sumehr_report sr, patients p, user u WHERE s.patient_ID = p.id AND s.user_ID = u.ID GROUP BY sr.sumehr_ID ORDER BY p.nom";
+			
+			
+			function Strip($value) {
+				if(get_magic_quotes_gpc() != 0)
+			  	{
+			    	if(is_array($value))  
+						if ( array_is_associative($value) )
+						{
+							foreach( $value as $k=>$v)
+								$tmp_val[$k] = stripslashes($v);
+							$value = $tmp_val; 
+						}				
+						else  
+							for($j = 0; $j < sizeof($value); $j++)
+			        			$value[$j] = stripslashes($value[$j]);
+					else
+						$value = stripslashes($value);
+				}
+				return $value;
+			}
+			function array_is_associative ($array) {
+			    if ( is_array($array) && ! empty($array) )
+			    {
+			        for ( $iterator = count($array) - 1; $iterator; $iterator-- )
+			        {
+			            if ( ! array_key_exists($iterator, $array) ) { return true; }
+			        }
+			        return ! array_key_exists(0, $array);
+			    }
+			    return false;
+			}
+			
+			$wh = "";
+			$searchOn = Strip($_POST['_search']);
+			if($searchOn=='true') {
+				
+				$fld = Strip($_POST['searchField']);
+				//echo $fld;
+				$fldata = Strip($_POST['searchString']);
+				//echo $fldata;
+				$foper = Strip($_POST['searchOper']);
+				//echo $foper;
+				
+				// costruct where
+				$wh .= " AND ".$fld;
+				switch ($foper) {
+					case "bw":
+						$fldata .= "%";
+						$wh .= " LIKE '".$fldata."'";
+						break;
+					case "eq":
+						if(is_numeric($fldata)) {
+							$wh .= " = ".$fldata;
+						} else {
+							$wh .= " = '".$fldata."'";
+						}
+						break;
+					case "ne":
+						if(is_numeric($fldata)) {
+							$wh .= " <> ".$fldata;
+						} else {
+							$wh .= " <> '".$fldata."'";
+						}
+						break;
+					case "lt":
+						if(is_numeric($fldata)) {
+							$wh .= " < ".$fldata;
+						} else {
+							$wh .= " < '".$fldata."'";
+						}
+						break;
+					case "le":
+						if(is_numeric($fldata)) {
+							$wh .= " <= ".$fldata;
+						} else {
+							$wh .= " <= '".$fldata."'";
+						}
+						break;
+					case "gt":
+						if(is_numeric($fldata)) {
+							$wh .= " > ".$fldata;
+						} else {
+							$wh .= " > '".$fldata."'";
+						}
+						break;
+					case "ge":
+						if(is_numeric($fldata)) {
+							$wh .= " >= ".$fldata;
+						} else {
+							$wh .= " >= '".$fldata."'";
+						}
+						break;
+					case "ew":
+						$wh .= " LIKE '%".$fldata."'";
+						break;
+					case "cn":
+						$wh .= " LIKE '%".$fldata."%'";
+						break;
+					default :
+						$wh = "";
+				}
+			}
+			//echo "where".$wh;
+
+			$page = $_POST['page'];
+			 
+			// get how many rows we want to have into the grid - rowNum parameter in the grid  
+			$limit = $_POST['rows'];  
+			 
+			// get index row - i.e. user click to sort. At first time sortname parameter - 
+			// after that the index from colModel  
+			$sidx = $_POST['sidx'];  
+			 
+			// sorting order - at first time sortorder  
+			$sord = $_POST['sord'];  
+			 
+			// if we not pass at first time index use the first column for the index or what you want 
+			if(!$sidx) $sidx =1;  
+			 
+			// connect to the MySQL database server  
+			//$db = mysql_connect($dbhost, $dbuser, $dbpassword) or die("Connection Error: " . mysql_error());  
+			 
+			// select the database  
+			//mysql_select_db($database) or die("Error connecting to db.");  
+			 
+			// calculate the number of rows for the query. We need this for paging the result  
+			$result = mysql_query("SELECT COUNT(*) AS count FROM patients WHERE 1=1 $wh");
+			$row = mysql_fetch_array($result,MYSQL_ASSOC);  
+			$count = $row['count'];  
+			 
+			// calculate the total pages for the query  
+			if( $count > 0 ) {  
+			              $total_pages = ceil($count/$limit);  
+			} else {  
+			              $total_pages = 0;  
+			}  
+			 
+			// if for some reasons the requested page is greater than the total  
+			// set the requested page to total page  
+			if ($page > $total_pages) $page=$total_pages; 
+			 
+			// calculate the starting position of the rows  
+			$start = $limit*$page - $limit; 
+			 
+			// if for some reasons start position is negative set it to 0  
+			// typical case is that the user type 0 for the requested page  
+			if($start <0) $start = 0;  
+			 
+			// the actual query for the grid data  
+			$SQL = "SELECT
+					concat('$edit1',p.id,'$edit2',' ','$detail1',p.id,'$detail2') AS patient_link, 
+					p.id AS patient_id, 
+					LOWER(CONCAT(p.nom, ' ', p.prenom)) AS patient, 
+					p.date_naissance AS patient_date_naissance 
+					FROM patients AS p WHERE 1=1 $wh ORDER BY $sidx $sord LIMIT $start , $limit";
+			
+			$result = mysql_query( $SQL ) or die("Couldn't execute query.".mysql_error());  
+			 
+			$responce->page = $page;
+			$responce->total = $total_pages;
+			$responce->records = $count;
+			$total = 0;
+			$i=0;
+			while($row = mysql_fetch_array($result,MYSQL_ASSOC)) {
+				$total += $row[patient_id]; 
+				$responce->rows[$i]['id']=$row[patient_id];
+				$responce->rows[$i]['cell']=array(
+					$row[patient_link],
+					$row[patient],
+					$row[patient_date_naissance],
+					$row[patient_id]
+				); 
+				$i++;
+			} 
+			$responce->userdata['patient_id'] = $total; 
+			$responce->userdata['patient_date_naissance'] = 'Totals:'; 
+			
+			echo json_encode($responce); 
+			 
+				
+			break;
+		
+		case "load":
+			switch ($format) {
+				case "xml":
+					$submit_url = $protocol_webservice_url."/sumehr.xml";
+					$sumehr = $sumehr->getAllXML($id,$userid);
+					$template->assign("submit_url", $submit_url);
+					$template->assign("sumehr", $sumehr);
+					$template->display("template_user_sumehr_submit_form.tpl");
+				break;
+				case "html":
+					$submit_url = $protocol_webservice_url."/sumehr.html";
+					$sumehrs = $sumehr->getAllXML($id,$userid);
+					$template->assign("submit_url", $submit_url);
+					$template->assign("sumehr", $sumehr);
+					$template->display("template_user_sumehr_submit_form.tpl");
+				break;
+				case "pdf":
+					$submit_url = $protocol_webservice_url."/sumehr.pdf";
+					$sumehrs = $sumehr->getAllXML($id,$userid);
+					$template->assign("submit_url", $submit_url);
+					$template->assign("sumehr", $sumehr);
+					$template->display("template_user_sumehr_submit_form.tpl");
+				break;
+				case "rtf":
+					$submit_url = $protocol_webservice_url."/protocol.rtf";
+					$sumehrs = $sumehr->getAllXML($id,$userid);
+					$template->assign("submit_url", $submit_url);
+					$template->assign("sumehr", $sumehr);
+					$template->display("template_user_sumehr_submit_form.tpl");
+				break;
+				case "txt":
+					$submit_url = $protocol_webservice_url."/protocol.txt";
+					$sumehrs = $sumehr->getAllXML($id,$userid);
+					$template->assign("submit_url", $submit_url);
+					$template->assign("sumehr", $sumehr);
+					$template->display("template_user_sumehr_submit_form.tpl");
+				break;
+			}
+
+		break;
+
+		// GLOBAL SEARCH
+		case "global_search":
+	    	//$title = $langfile["navigation_title_user_protocol_global_search"];
+			//$template->assign("title", $title);
+			//$template->display("template_user_protocol_global_search.tpl");
+			
+			break;
+			
+		// PERSONAL SEARCH
+		default:
+	    	$title = $langfile["navigation_title_management_sumehr_personal_search"];
+	
+			$template->assign("title", $title);
+
+			$template->display("template_management_sumehr_global_search.tpl");
+	}
+
+?>

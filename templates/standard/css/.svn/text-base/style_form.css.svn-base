@@ -1,0 +1,334 @@
+form.main, form.login {
+	display:block;
+	margin:0;
+	font-family:Arial, helvetica, sans-serif;
+	font-size:9pt;
+	line-height:normal;
+	padding:0;
+}
+
+.block_a form.main .row input, .block_a form.main .row select, .block_a form.main .row input.file, .block_a form.main .row textarea {
+	color:#2a4069;
+	border-color:#8b9dba;
+}
+
+.block_b form.main .row input, .block_b form.main .row select, .block_b form.main .row input.file, .block_b form.main .row textarea {
+	color:#4c4b4b;
+	border-color:#bababa;
+}
+
+.block_c form.main .row input, .block_c form.main .row select, .block_c form.main .row input.file, .block_c form.main .row textarea {
+	color:#6b582a;
+	border-color:#bab78b;
+}
+
+form.main .row input, form.main .row select, form.main .row input.file, form.main .row textarea {
+	color:#2a4069;
+	border-color:#2a4069;
+}
+
+form.main div.row, form.main div.row_editor, form.login div.row {
+	clear:both;
+}
+
+form fieldset {
+	display:block;
+	border:none;
+	padding:0;
+	margin:0;
+}
+
+form.main .row label {
+	width:30%;
+	height:24px;
+	float:left;
+	padding-top:2px;
+}
+
+form.main .row label.error {
+	color:red;
+}
+
+form.main span.mandatory {
+	color:rgb(198,36,36);
+}
+
+form.main .row input, form.login .row input {
+	float:left;
+	margin-bottom:6px;
+	width: 30%;
+	height:17px;
+	padding:1px 3px 0px 3px;
+	border:1px solid;
+	font-family:Arial, helvetica, sans-serif;
+	font-size:9pt;
+}
+
+
+/* ## LOGIN - Form ################################ */
+
+.login form {
+	width: 200px;
+	margin: 0 auto 0 auto;
+	color: #0a182f;
+	font-weight: bold;
+	text-align: left;
+}
+
+.login form .row {
+	height: 38px;	
+}
+
+.login form label {
+	float: left;
+	display: block;
+	width: 34px;
+	height: 23px;
+	margin-right: 1px;
+	background-position: 0 0;
+	background-prepeat: no-repeat;	
+}
+
+.login .username {
+	background: url(../images/login-user.png);	
+}
+
+.login .pass {
+	background: url(../images/login-pass.png);	
+}
+
+.login .keep, login .keep-active {
+	background: url(../images/login-keeplogged.png);	
+}
+
+.login .keep-active {
+	background: url(../images/login-keeplogged.png) no-repeat -68px 0;	
+}
+
+.login label:hover {
+	background-position: -34px 0;
+	cursor: pointer;	
+}
+
+.login label.keep-active:hover {
+	background-position: -102px 0;
+}
+
+.login form input, .login form label.keep span, .login form label.keep-active span {
+	float: left;
+	width:153px;
+	height: 19px;
+	padding: 4px 6px 0 6px;
+	border:none;
+	font-size: 12px;
+	background: url(../images/input-bg-a.png) repeat-x 0 0;
+}
+
+.login form label.keep span, .login form label.keep-active span {
+	margin: 0 0 0 35px;	
+	background: url(../images/login-logged-butn.png) repeat-x 0 0;
+}
+
+.login form label.keep:hover span, .login form label.keep-active:hover span {
+	background-position: 0 -23px;	
+}
+
+
+#stay {
+	visibility: hidden;	
+}
+
+.loginbutn {
+	border: none;
+	margin: 0 84px 0 84px;
+	width: 32px;
+	height: 32px;
+	background: url(../images/login-butn.png) repeat-x 0 0;
+	outline: none;
+}
+
+.loginbutn:hover {
+	background-position: -32px 0;	
+	cursor: pointer;	
+}
+
+
+
+form.main .row input:focus, form.main .row textarea:focus, form.login input:focus{
+	background:#f7f9fb;
+}
+
+form.main .row select, form.main .row input.file {
+	width:218px;
+	border:1px solid;
+	float:left;
+	margin-bottom:6px;
+	padding:0;
+	font-family:Arial, helvetica, sans-serif;
+	font-size:9pt;
+}
+
+form.main .row option {
+	background:#fff;
+}
+
+form.main .row input.file {
+	height:20px;
+	width:218px;
+}
+
+form.main .row textarea {
+	width:210px;
+	height:90px;
+	font-size:9pt;
+	padding:2px 3px 2px 3px;
+	background:#fff;
+	border:1px solid;
+	color:#2a4069;
+	font-family:Arial, helvetica, sans-serif;
+	margin-bottom:6px;
+}
+
+form.main .row .checkbox{
+	width:auto;
+	float:left;
+	margin:1px 5px 0 0;
+	border:none;
+}
+
+.block_a form.main .row .error, .block_b form.main .row .input_error, .block_c form.main .row .error {
+	border-color:rgb(198,36,36);
+	color:rgb(198,36,36);
+}
+
+#search .row .text, #choices ul {
+	width:153px;
+	border:1px solid #8b9dba;
+	border-top:none;
+	padding-left:5px;
+}
+
+#choices ul {
+	width:156px;
+	background:#cedbec;
+	float:left;
+}
+#choices li {
+	height:31px;
+	line-height:31px;
+	float:left;
+}
+#choices li:hover {
+	cursor:pointer;
+	color: rgb(198,36,36);
+}
+#choices li img {
+	float:left;
+	margin:2px 0 2px 0;
+}
+
+
+/* ## Editor ## start */
+
+form.main div.row_editor {
+	padding-bottom:6px;
+}
+
+/* ## Editor ## end */
+
+
+
+/* ## Variable Button ##################################### */
+.butn, .block_b .butn, .block_c .butn {
+	float:left;
+	background: url(../img/butn_main_left_a.png) left bottom no-repeat;
+	padding:0 0 0 5px;
+	margin:0 5px 0 0;
+}
+.block_b .butn {
+	background: url(../img/butn_main_left_b.png) left bottom no-repeat;
+}
+.block_c .butn {
+	background: url(../img/butn_main_left_c.png) left bottom no-repeat;
+}
+.butn button, .block_b .butn button, .block_c .butn button {
+	width:auto;
+	float:left;
+	height:24px;
+	line-height:24px;
+	border:none;
+	padding:0 8px 2px 2px;
+	background: url(../img/butn_main_right_a.png) right bottom no-repeat;
+	cursor:pointer;
+	font-family:Arial, helvetica, sans-serif;
+	font-size:12px;
+	color:rgb(53,73,117);
+	white-space:nowrap;
+	text-align:left;
+}
+.block_b .butn button {
+	background: url(../img/butn_main_right_b.png) right bottom no-repeat;
+	color:#4c4b4b;
+}
+.block_c .butn button {
+	background: url(../img/butn_main_right_c.png) right bottom no-repeat;
+	color:#6b582a;
+}
+
+.butn:hover {
+	background-position:left top;
+}
+.butn:hover button {
+	background-position:right top;
+}
+button[disabled] {
+	color:#cad0dc;
+}
+
+/* autocomplete*/
+.ac_results {
+	padding: 0px;
+	border: 1px solid WindowFrame;
+	background-color: Window;
+	overflow: hidden;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results iframe {
+	display:none;/*sorry for IE5*/
+	display/**/:block;/*sorry for IE5*/
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
+	filter:mask();
+	width:3000px;
+	height:3000px;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: pointer;
+	display: block;
+	width: 100%;
+	font: menu;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background : Window url('../img/loader.gif') right center no-repeat;
+}
+
+.ac_over {
+	background-color: Highlight;
+	color: HighlightText;
+}

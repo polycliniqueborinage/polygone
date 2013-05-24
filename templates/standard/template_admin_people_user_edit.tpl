@@ -1,0 +1,411 @@
+{include file="template_header.tpl" js_jquery132="yes" js_ajax="yes" js_jquery_autocomplete="yes" js_user="yes" js_form="yes" password_strength="yes" js_jquery_validate="yes"}
+
+	<div id="middle">
+    	
+		{include file="template_primary_tabs_admin.tpl"}   
+      
+	  	<div id="main">
+        
+			<div id="tab_panel">
+			
+				<div class="secondary_tabs">
+						
+	  				<a href="./admin_people_user.php?action=view">{#dico_admin_people_user_menu_view#}</a>
+	  				<a href="./admin_people_user.php?action=list">{#dico_admin_people_user_menu_list#}</a>
+					<span>{#dico_admin_people_user_menu_edit#}</span> 
+
+				</div>
+			
+				<div class="ViewPane">
+				
+					<div class="infowin_left" id="systemmsg">
+						{if $mode == "error1"}
+						<span class="info_in_red"><img src="templates/standard/img/symbols/user.png" alt=""/>{#dico_admin_people_user_error1#}</span>
+						{/if}
+						<div class="error" style="display:none;">
+							<span class="info_in_red">
+							</span>.<br clear="all"/>
+    					</div>
+					</div>
+					<script>
+						systemeMessage('systemmsg');
+					</script>
+						
+					<div class="block_a" >
+					
+						<div class="in">
+					
+							<div class="headline">
+					
+								<h2><a href="javascript:void(0);" id="useredit_toggle" class="win_block" onclick = "toggleBlock('useredit');"><img src="./templates/standard/img/symbols/user.png" alt="" />
+									<span>{$user.name}</span></a>
+								</h2>
+						
+							</div>
+			
+							<div id = "useredit" style = "">
+			
+								<div class="block_in_wrapper">
+			
+								<form id="form" class="main" method="post" action="admin_people_user.php?action=submit&amp;id={$user.ID}" enctype="multipart/form-data" {literal}onsubmit="return validateCompleteForm(this,'input_error');"{/literal}>
+						
+									<fieldset>
+			
+										<div style="float:left;width:80%;">
+										
+											<input type = "hidden" value = "{$user.ID}" name = "id" id="id" />
+
+											<div class="row"><label for="name">{#dico_admin_people_user_login#}:</label><input type = "text" value = "{$user.name}" name = "name" id="name" class="{$errors.name}" realname="{#dico_admin_people_user_name#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+											
+											<div class="row"><label for="familyname">{#dico_admin_people_user_familyname#}<span class="mandatory">*</span>:</label><input type = "text" value = "{$user.familyname}" name = "familyname" id="familyname" class="{$errors.familyname}" realname="{#dico_admin_people_user_familyname#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+
+											<div class="row"><label for="firstname">{#dico_admin_people_user_firstname#}<span class="mandatory">*</span>:</label><input type = "text" value = "{$user.firstname}" name = "firstname" id="firstname" class="{$errors.firstname}" realname="{#dico_admin_people_user_firstname#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+											
+											<div class="row"><label for="birthday">{#dico_admin_people_user_birthday#}:</label><input type = "text" value = "{$user.birthday}" name = "birthday" id="birthday" realname="{#dico_admin_people_user_birthday#}" onfocus="javascript:this.select()" onkeyup="javascript:birthdayvalue = checkDate(this, '', '');" autocomplete="off" /></div>
+
+											<div class="row"><label for = "avatar">{#dico_admin_people_user_avatar#}:</label><input type = "file" class="file" name = "userfile" id="avatar" size="20" /></div>
+											
+											<div class = "row">
+												<label for = "gender">{#dico_admin_people_user_gender#}<span class="mandatory">*</span>:</label>
+												<select name = "gender" id = "gender" realname = "{#dico_admin_people_user_gender#}" class="{$errors.gender}" />
+												{if $user.gender == ""}
+													<option value = "" selected>{#dico_admin_people_user_chooseone#}</option>
+												{/if}
+												<option {if $user.gender == "m"}selected="selected"{/if} value = "m">{#dico_admin_people_user_male#}</option>
+												<option {if $user.gender == "f"}selected="selected"{/if} value = "f">{#dico_admin_people_user_female#}</option>
+												</select>
+											</div>
+
+											<div class="row">
+												<label for = "locale">{#dico_admin_people_user_locale#}:</label>
+												<select name = "locale" id="locale">
+													<option value = "" {if $user.locale == ""}selected="selected"{/if}>{#dico_admin_people_user_chooseone#}</option>
+												{section name = lang loop=$languages_fin}
+													<option value = "{$languages_fin[lang].val}" {if $languages_fin[lang].val == $user.locale}selected="selected"{/if}>{$languages_fin[lang].str}</option>
+												{/section}
+												</select>
+											</div>
+											
+											<div class="row"><label for = "adress1">{#dico_admin_people_user_address1#}:</label><input type = "text" value = "{$user.address1}" name = "address1" id="address1" realname ="{#dico_admin_people_user_address1#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+
+											<div class="row"><label for = "zip1city1">{#dico_admin_people_user_zip1city1#}:</label><input type = "text" value = "{$user.zip1} {$user.city1}" name = "zip1city1" id="zip1city1" realname ="{#dico_admin_people_user_zip1city1#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+
+											<div class="row"><label for = "state1">{#dico_admin_people_user_state1#}:</label><input type = "text" value = "{$user.state1}" name = "state1" id="state1" realname ="{#dico_admin_people_user_state1#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+
+											<div class="row"><label for = "country1">{#dico_admin_people_user_country1#}:</label><input type = "text" value = "{$user.country1}" name = "country1" id="country1" required="1" realname ="{#dico_admin_people_user_country1#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+
+											<div class="row"><label for = "company">{#dico_admin_people_user_company#}:</label><input type = "text" value = "{$user.company}" name = "company" id="company" realname ="{#dico_admin_people_user_company#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+
+											<div class="row"><label for = "workphone">{#dico_admin_people_user_workphone#}:</label><input type = "text" value = "{$user.workphone}" name = "workphone" id="workphone" realname ="{#dico_admin_people_user_workphone#}" onfocus="javascript:this.select()" autocomplete="off" /></div>
+
+											<div class="row"><label for = "privatephone">{#dico_admin_people_user_privatephone#}:</label><input type = "text" value = "{$user.privatephone}" name = "privatephone" id="privatephone" realname ="{#dico_admin_people_user_privatephone#}" onfocus="javascript:this.select()" autocomplete="off" /></div>
+
+											<div class="row"><label for = "mobilephone">{#dico_admin_people_user_mobilephone#}:</label><input type = "text" value = "{$user.mobilephone}" name = "mobilephone" id="mobilephone" realname ="{#dico_admin_people_user_mobilephone#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+
+											<div class="row"><label for = "fax">{#dico_admin_people_user_fax#}:</label><input type = "text" value = "{$user.fax}" name = "fax" id="fax" realname ="{#dico_admin_people_user_fax#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+
+											<div class="row"><label for = "email">{#dico_admin_people_user_email#}:</label><input type = "text" value = "{$user.email}" name = "email" id="email" class="{$errors.email}" realname ="{#dico_admin_people_user_email#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+											
+											<div class = "row"><label for = "web">{#dico_admin_people_user_web#}:</label><input type = "text" name = "web" id = "web" realname = "{#dico_admin_people_user_web#}" value = "{$user.web}" onfocus="javascript:this.select()" autocomplete="off"/></div>
+											
+											<div class="row">
+												<label for="length_consult">{#dico_admin_people_user_length_consult#}:</label>
+												<select name = "length_consult" id="length_consult">
+													<option value = "" {if $user.length_consult == ""}selected="selected"{/if}>{#dico_admin_people_user_chooseone#}</option>
+													<option {if $user.length_consult == "5"}selected="selected"{/if} value="5">5 {#dico_admin_people_user_minutes#}</option>
+													<option {if $user.length_consult == "10"}selected="selected"{/if} value="10">10 {#dico_admin_people_user_minutes#}</option>
+													<option {if $user.length_consult == "15"}selected="selected"{/if} value="15">15 {#dico_admin_people_user_minutes#}</option>
+													<option {if $user.length_consult == "20"}selected="selected"{/if} value="20">20 {#dico_admin_people_user_minutes#}</option>
+													<option {if $user.length_consult == "25"}selected="selected"{/if} value="25">25 {#dico_admin_people_user_minutes#}</option>
+													<option {if $user.length_consult == "30"}selected="selected"{/if} value="30">30 {#dico_admin_people_user_minutes#}</option>
+												</select>
+											</div>
+											
+											<div class="row">
+												<label for="type">{#dico_admin_people_user_type#}<span class="mandatory">*</span>:</label>
+												<select name = "type" id="type" {literal}onchange="javascript:changeType(this.value);"{/literal}  class="{$errors.type}">
+													<option value = "" {if $user.type == ""}selected="selected"{/if}>{#dico_admin_people_user_chooseone#}</option>
+													<option {if $user.type == "employee"}selected="selected"{/if} value = "employee">{#dico_admin_people_user_employee#}</option>
+													<option {if $user.type == "specialist"}selected="selected"{/if} value = "specialiste">{#dico_admin_people_user_specialist#}</option>
+													<option {if $user.type == "doctor_with_rate"}selected="selected"{/if} value = "doctor_with_rate">{#dico_admin_people_user_doctor_with_rate#}</option>
+													<option {if $user.type == "doctor_without_rate"}selected="selected"{/if} value = "doctor_without_rate">{#dico_admin_people_user_doctor_without_rate#}</option>
+													<option {if $user.type == "paramedical"}selected="selected"{/if} value = "paramedical">{#dico_admin_people_user_paramedical#}</option>
+													<option {if $user.type == "other"}selected="selected"{/if} value = "other">{#dico_admin_people_user_other#}</option>
+												</select>
+											</div>
+											
+											<div class="row">
+												<label for="length_consult">{#dico_admin_people_user_permissions#}:</label>
+												<select name = "admin" id="admin">
+													<option {if $user.admin == "0"}selected="selected"{/if} value="0">{#dico_admin_people_user_no_login#}</option>
+													<option {if $user.admin == "1"}selected="selected"{/if} value="1">{#dico_admin_people_user_user#}</option>
+													<option {if $user.admin == "3"}selected="selected"{/if} value="3">{#dico_admin_people_user_manager#}</option>
+													<option {if $user.admin == "4"}selected="selected"{/if} value="4">{#dico_admin_people_user_manager_advanced#}</option>
+													<option {if $user.admin == "5"}selected="selected"{/if} value="5">{#dico_admin_people_user_admin#}</option>
+												</select>
+											</div>	
+																					
+											<div class="clear_both"></div>
+			    		                    <h2>{#dico_admin_people_user_medical#}</h2>
+											<br/>
+
+											<div class="row"><label for = "speciality">{#dico_admin_people_user_specialite#}:</label>
+												<select name = "speciality" id = "speciality" realname = "{#dico_admin_people_user_specialite#}">
+													{if $user.speciality == ""}
+														<option value = "" selected>{#dico_admin_people_user_chooseone#}</option>
+													{/if}
+													{section name=speciality loop=$specialities}
+														<option {if $user.speciality == "{$specialities[speciality].ID}"}selected="selected"{/if} value = "{$specialities[speciality].ID}">{$specialities[speciality].VALUE}</option>
+													{/section}
+												</select>
+											</div>
+											
+											<div class="row"><label for="inami">{#dico_admin_people_user_inami#}:</label><input type = "text" value = "{$user.inami}" name = "inami" id="inami" maxlength="11"  class="{$errors.inami}" realname="{#dico_admin_people_user_inami#}" onKeyUp='javascript:valueinami = checkNumber(this, valueinami, 11, false);' autocomplete='off' onfocus="javascript:this.select()"/></div>
+											
+											<div class="row"><label for="taux_acte">{#dico_admin_people_user_taux_acte#}:</label><input type = "text" value = "{$user.taux_acte}" name = "taux_acte" id="taux_acte"  realname="{#dico_admin_people_user_taux_acte#}" onKeyUp="javascript:valueacte = checkPourcent(this, valueacte, 2, 2);" autocomplete='off' onfocus="javascript:this.select()"/></div>
+											
+											<div class="row"><label for="taux_consultation">{#dico_admin_people_user_taux_consultation#}:</label><input type = "text" value = "{$user.taux_consultation}" name = "taux_consultation" id="taux_consultation" realname="{#dico_admin_people_user_taux_consultation#}" onKeyUp="javascript:valueconsultation = checkPourcent(this, valueconsultation, 2, 2);" autocomplete='off' onfocus="javascript:this.select()"/></div>
+											
+											<div class="row"><label for="taux_prothese">{#dico_admin_people_user_taux_prothese#}:</label><input type = "text" value = "{$user.taux_prothese}" name = "taux_prothese" id="taux_prothese" realname="{#dico_admin_people_user_taux_prothese#}" onKeyUp="javascript:valueprothese = checkPourcent(this, valueprothese, 2, 2);" autocomplete="off" onfocus="javascript:this.select()"/></div>
+
+											<div class="row"><label for="code_analytique">{#dico_admin_people_user_code_analytique#}:</label><input type = "text" value = "{$user.code_analytique}" name = "code_analytique" id="code_analytique" realname="{#dico_admin_people_user_code_analytique#}" onKeyUp="javascript:valuecodeanalytique = checkNumber(this, valuecodeanalytique, 20, false);" autocomplete="off" onfocus="javascript:this.select()"/></div>
+
+											<div class="clear_both"></div>
+			    		                    <h2>{#dico_admin_people_user_timesheet#}</h2>
+											<br/>
+
+											<div class="row"><label for="hourly_cost">{#dico_admin_people_user_hourly_cost#}:</label><input type = "text" value = "{$user.hourly_cost}" name = "hourly_cost" id="hourly_cost" maxlength="11"  class="{$errors.hourly_cost}" realname="{#dico_admin_people_user_hourly_cost#}" onKeyUp='javascript:valuehourly_cost = checkNumber(this, valueinami, 11, false);' autocomplete='off' onfocus="javascript:this.select()"/></div>
+
+											<div class="clear_both"></div>
+			    		                    <h2>{#dico_admin_people_user_changepassword#}</h2>
+											<br/>
+			
+					                        <div class="row"><label for = "newpass">&nbsp</label></div>
+					                        
+					                        <div class="row"><label for = "newpass">{#dico_admin_people_user_newpass#}:</label><input type = "text" name = "newpass" class="password_test" id = "newpass" /></div>
+					                        
+											<div class="clear_both"></div>
+			    		                    <h2>{#navigation_title_management_workschedule_assign#}</h2>
+											<br/>
+			
+					                        <div class="row"><label for = "newpass">&nbsp</label></div>
+					                        
+					                        <div class="row"><label for = "wsr_id">{#navigation_admin_workschedule#}:</label>
+					                        	<select name = "wsr_id" id = "wsr_id">
+					                        
+					                        	<option value="0"></option>
+					                        
+					                        	{section name=wsr loop=$wsr}
+					                        
+					                        		{if $wsr[wsr].id == $user.wsr_id}
+					                        			<option value="{$wsr[wsr].id}" SELECTED>{$wsr[wsr].id} - {$wsr[wsr].description}</option>
+					                        		{else}
+					                        			<option value="{$wsr[wsr].id}">{$wsr[wsr].id} - {$wsr[wsr].description}</option>
+					                        		{/if}
+					                        
+					                        	{/section}
+					                        	
+					                        	</select>
+					                        </div>
+					                        
+					                        <div class="row"><label for = "refdate">{#dico_management_wsr_refdate#}:</label><input type = "text" name = "wsr_refdate" id = "wsr_refdate" value="{$user.wsr_refdate}" onkeyup="javascript:wsr_refdatevalue = checkDate(this, '', '');" /></div>
+					                        
+
+											<div class="row">
+												<label>&nbsp;</label>
+												<div class="butn"><button type="submit">{#dico_admin_people_user_send#}</button></div>
+											</div>
+										</div>
+			
+										<div style="float:left;" >
+											{if $user.avatar != ""}
+											<div class="avatar"><img src = "thumb.php?pic=files/{$cl_config}/avatar/{$user.avatar}" alt="" /></div>
+											{else}
+											<div class="avatar"><img src = "thumb.php?pic=templates/standard/img/no_avatar.jpg" alt="" /></div>
+											{/if}
+										</div>
+			
+									</fieldset>
+								</form>
+			
+								<div class="clear_both"></div> {*required ... do not delete this row*}
+								</div> {*block_in_wrapper end*}
+			
+							</div>{*useredit end*}
+			
+							<div class="clear_both"></div> {*required ... do not delete this row*}
+			
+						</div> {*IN end*}
+			
+					</div> {*Block B end*}			
+			
+				</div>
+					
+			</div>
+
+		</div>
+
+	</div>
+	
+	{include file="template_left.tpl" medecin_search="yes"}
+
+	{literal}
+	<script type="text/javascript">
+	$(document).ready(function() {
+	
+		$(".password_test").passStrength({
+			userid:	"#name"
+		});
+
+		user = $("#id").val();
+
+		//AUTOCOMPLETE
+		$("#zip1city1").autocomplete("php_request/localite_search.php", {
+			minChars: 1,
+			max: 6,
+			scroll: false,
+			autoFill: true,
+			// remove if dont match
+			mustMatch: false,
+			matchContains: true
+		});
+		
+		$("#country1").autocomplete("php_request/country_search.php", {
+			minChars: 0,
+			max: 6,
+			scroll: false,
+			autoFill: true,
+			// remove if dont match
+			mustMatch: false,
+			matchContains: true
+		});
+		
+		$("#state1").autocomplete("php_request/state_search.php", {
+			minChars: 0,
+			max: 6,
+			scroll: false,
+			autoFill: true,
+			// remove if dont match
+			mustMatch: false,
+			matchContains: true
+		});
+				
+		// VALIDATION
+		//jQuery.validator.addMethod("password", function( value, element ) {
+		//	var result = this.optional(element) || /\d/.test(value) && /[a-z]/i.test(value);
+		//	return result;
+		//}, "");
+		
+		jQuery.validator.addMethod("password", function( password, element ) {
+		
+			if (password=="") return true;
+			var score = 0; 
+	 		
+	 		//password length
+		 	score += password.length * 4;
+		 	score += ( $.fn.checkRepetition(1,password).length - password.length ) * 1;
+		 	score += ( $.fn.checkRepetition(2,password).length - password.length ) * 1;
+		 	score += ( $.fn.checkRepetition(3,password).length - password.length ) * 1;
+		 	score += ( $.fn.checkRepetition(4,password).length - password.length ) * 1;
+		 	
+		 	//password has 3 numbers
+		 	if (password.match(/(.*[0-9].*[0-9].*[0-9])/)){ score += 5;} 
+		 			    
+		 	//password has 2 symbols
+		 	if (password.match(/(.*[!,@,#,$,%,^,&,*,?,_,~].*[!,@,#,$,%,^,&,*,?,_,~])/)){ score += 5 ;}
+		 			    
+		 	//password has Upper and Lower chars
+		 	if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)){  score += 10;} 
+		 			    
+		 	//password has number and chars
+		 	if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)){  score += 15;} 
+		 			    //
+		 	//password has number and symbol
+		 	if (password.match(/([!,@,#,$,%,^,&,*,?,_,~])/) && password.match(/([0-9])/)){  score += 15;} 
+		 			    
+		 	//password has char and symbol
+		 	if (password.match(/([!,@,#,$,%,^,&,*,?,_,~])/) && password.match(/([a-zA-Z])/)){score += 15;}
+		 			    
+		 	//password is just a numbers or chars
+		 	if (password.match(/^\w+$/) || password.match(/^\d+$/) ){ score -= 10;}
+	
+			if ( score < 0 ){score = 0;}
+		 	if ( score > 100 ){  score = 100;} 
+		 			    
+			if (score > 68 ){ return true; }
+			else { return false; }
+			
+		}, "");
+		 			    		
+		$("#form").validate({
+			rules: {
+				name : { required: function(element){return ($("#admin").val() != '0');}, remote: "php_request/check_user.php?id="+user},
+			    firstname: "required",
+			    familyname: "required",
+	    		birthday : { date: true},
+				gender :  "required",
+	    		email: { email: true },
+	    		web: { url: true },
+	    		newpass  : { minlength:6, password: true },
+	    		type :  "required",
+	    		inami  : { minlength:11, maxlength:11, required: function(element){return ($("#type").val() == 'specialiste');} }
+   			},
+   			messages: {
+				name: {
+ 			    	required: "{/literal}{#dico_admin_error_required#}{literal}",
+ 				    remote: "{/literal}{#dico_admin_error_user_unique#}{literal}"
+ 				},
+				firstname: {
+ 			    	required: "{/literal}{#dico_admin_error_required#}{literal}"
+ 				},
+				familyname: {
+ 			    	required: "{/literal}{#dico_admin_error_required#}{literal}"
+ 				},
+				gender: {
+ 			    	required: "{/literal}{#dico_admin_error_required#}{literal}"
+ 				},
+				birthday: {
+ 			    	date: "{/literal}{#dico_admin_error_date#}{literal}",
+ 			    	required: "{/literal}{#dico_admin_error_required#}{literal}"
+ 				},
+				email: {
+    				email: "{/literal}{#dico_admin_error_email#}{literal}"
+ 				},
+				web: {
+    				url: "{/literal}{#dico_admin_error_web#}{literal}"
+ 				},
+				type: {
+ 			    	required: "{/literal}{#dico_admin_error_required#}{literal}"
+ 				},
+				inami: {
+ 			    	required: "{/literal}{#dico_admin_error_required#}{literal}",
+ 			    	minlength: "{/literal}{#dico_admin_error_inami#}{literal}",
+ 			    	maxlength: "{/literal}{#dico_admin_error_inami#}{literal}"
+ 				},
+				newpass: {
+ 			    	minlength: "{/literal}{#dico_user_error_minlength#}{literal}",
+ 			    	password: "{/literal}{#dico_user_error_password#}{literal}"
+ 				},
+ 				wsr_refdate: {
+ 			    	date: "{/literal}{#dico_admin_error_date#}{literal}"
+ 				}
+			}
+		});	
+	
+		$("form").bind("invalid-form.validate", function(e, validator) {
+			var errors = validator.numberOfInvalids();
+			if (errors) {
+				var message = errors == 1
+					? '{/literal}{#dico_management_error_one_field_error#}{literal}'
+					: '{/literal}{#dico_management_error_many_fields_error_1#}{literal}' + errors + '{/literal}{#dico_management_error_many_fields_error_2#}{literal}';
+					$("div.error span").html(message);
+					$("div.error").show();
+					$("div.infowin_left").show();
+					systemeMessage('systemmsg',3000);
+				}
+		});
+		
+		
+	});
+	</script>
+	{/literal}

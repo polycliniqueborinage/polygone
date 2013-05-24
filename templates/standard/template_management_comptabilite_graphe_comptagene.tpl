@@ -1,0 +1,351 @@
+{include file="template_header.tpl" js_jquery132="yes" js_jquery_ui_171="yes" js_ajax="yes" js_time_plot="yes" js_prevention="yes"}
+
+	<div id="middle">
+    	
+		{include file="template_primary_tabs_admin.tpl"}   
+      
+	  	<div id="main">
+        
+			<div id="tab_panel">
+			
+				<div class="secondary_tabs">
+   					<a href="./management_comptabilite.php?action=display_state">{#dico_management_comptabilite_display_state#}</a>
+    				<a href="./management_comptabilite.php?action=overview_account">{#navigation_title_management_comptabilite_overview#}</a>
+    				<a href="./management_comptabilite.php?action=comparison_account">{#dico_management_comptabilite_comparison_account#}</a>
+    				<a href="./management_comptabilite.php?action=modify_account">{#navigation_title_management_comptabilite_modify#}</a>
+    				<span>{#navigation_title_management_comptabilite_stat_comptagene#}</span>
+    				<!--<a href="./management_comptabilite.php?action=display_histo">{#navigation_title_management_comptabilite_stat_comptagene_histo#}</a>-->
+    				<a href="./management_comptabilite.php?action=automatic_flow">{#navigation_title_management_comptabilite_add#}</a> 
+
+				</div>
+			
+				<div class="ViewPane">
+							
+					<div id="tab_content">
+							
+						<div class="headline">
+					
+							<h2><a href="javascript:void(0);" id="parametres_toggle" class="win_block" onclick = "toggleBlock('parametres');"><img src="./templates/standard/img/symbols/flow.png" alt="" />
+								<span>{#navigation_title_management_comptabilite_graphique_parametres#}</span></a>
+							</h2>
+						
+						</div>						
+						<div id = "parametres" style = "">
+			
+							<div class="block_in_wrapper">
+								<div style="float:left;width:80%;">
+									
+								<form id="formdate" class="main" action="./management_comptabilite.php?action=display_graphe" method="post" enctype="multipart/form-data">
+									
+									<div class="row"><table><tr><td><label for = "mois_de"> {#dico_management_comptabilite_mois_de#}: </label></td><td><input type = "text" readonly name = "mois_de"  id="mois_de" value={$mois_de} realname="{#dico_management_comptabilite_mois_de#}" value = "01" autocomplete="off"/></td><td><label for = "mois_a"> {#dico_management_comptabilite_mois_a#}: </label></td><td><input type = "text" name = "mois_a"  id="mois_a" maxlength = "2" value={$mois_a} realname="{#dico_management_comptabilite_mois_a#}" autocomplete="off"/></td></tr></div>
+									<div class="row"><tr><td><label for = "annee_de">{#dico_management_comptabilite_annee_de#}:</label></td><td><input type = "text" name = "annee_de" id="annee_de" value={$annee_de} maxlength = "4" realname="{#dico_management_comptabilite_annee_de#}" autocomplete="off"/></td><td><label for = "annee_a">{#dico_management_comptabilite_annee_a#}:</label></td><td><input type = "text" name = "annee_a" id="annee_a" maxlength = "4" value={$annee_a} realname="{#dico_management_comptabilite_annee_a#}" autocomplete="off"/></td></tr></table></div>
+										
+									<div class="row">
+										<label>&nbsp;</label>
+										<div class="butn"><button type="submit">{#dico_management_protocol_button_send#}</button></div>
+									</div>	 
+										
+								</form>	
+										
+								</div>
+							<div class="clear_both"></div> {*required ... do not delete this row*}
+							</div> {*block_in_wrapper end*}
+			
+						</div>{*useredit end*}					
+					
+						<ul>
+							{section name=graphe loop=$graphe}
+							<li>
+								<a href="#fragment-{$graphe[graphe].ID}"><span>{$graphe[graphe].description|truncate:10:"...":true}</span></a>
+							</li>
+							{/section}
+						</ul>
+						
+						{section name=graphe loop=$graphe}
+							<div id="fragment-{$graphe[graphe].ID}" class="block_in_wrapper">
+						        <div class="label">
+						        {$graphe[graphe].description}
+						        </div>
+						        <div id="timeplot{$graphe[graphe].ID}" class="timeplot" style="height: 300px;"></div>
+						        <div class="block_in_wrapper">
+							        <div class="label">
+							        	<h3>{#dico_management_comptabilite_legende#}</h3>
+							        </div>
+							        {if $graphe[graphe].ID == 'serie1'}
+							        <div class="row"><font color='#000000'>{#dico_management_comptabilite_classe1#}</font><br></div>
+							        <div class="row"><font color='#FF0000'>{#dico_management_comptabilite_classe2#}</font><br></div>
+							        <div class="row"><font color='#00FF00'>{#dico_management_comptabilite_classe3#}</font><br></div>
+							        <div class="row"><font color='#FF00FF'>{#dico_management_comptabilite_classe4#}</font><br></div>
+							        <div class="row"><font color='#FFFF00'>{#dico_management_comptabilite_classe5#}</font><br></div>
+									{/if}
+									
+									{if $graphe[graphe].ID == 'serie2'}
+							        <div class="row"><font color='#000000'>{#dico_management_comptabilite_classe61_cgs#}</font><br></div>
+							        <div class="row"><font color='#FF0000'>{#dico_management_comptabilite_classe62_cgs#}</font><br></div>
+							        <div class="row"><font color='#00FF00'>{#dico_management_comptabilite_classe63_cgs#}</font><br></div>
+							        <div class="row"><font color='#FF00FF'>{#dico_management_comptabilite_classe64_cgs#}</font><br></div>
+									{/if}
+									
+									{if $graphe[graphe].ID == 'serie3'}
+							        <div class="row"><font color='#000000'>{#dico_management_comptabilite_classe60_vad#}</font><br></div>
+							        <div class="row"><font color='#FF0000'>{#dico_management_comptabilite_classe70_vad#}</font><br></div>
+							        <div class="row"><font color='#00FF00'>{#dico_management_comptabilite_classe72_vad#}</font><br></div>
+							        <div class="row"><font color='#0000FF'>{#dico_management_comptabilite_classe74_vad#}</font><br></div>
+									{/if}
+									
+									{if $graphe[graphe].ID == 'serie4'}
+							        <div class="row"><font color='#000000'>{#dico_management_comptabilite_benefice#}</font><br></div>
+							        <div class="row"><font color='#FF0000'>{#dico_management_comptabilite_benefice_fr#}</font><br></div>
+							        <div class="row"><font color='#00FF00'>{#dico_management_comptabilite_marge_brute#}</font><br></div>
+									{/if}
+									
+									{if $graphe[graphe].ID == 'serie5'}
+							        <div class="row"><font color='#000000'>{#dico_management_comptabilite_classe60_vad#}</font><br></div>
+							        <div class="row"><font color='#FF0000'>{#dico_management_comptabilite_classe70_vad#} + {#dico_management_comptabilite_classe72_vad#} + {#dico_management_comptabilite_classe74_vad#}</font><br></div>
+							        <div class="row"><font color='#00FF00'>{#dico_management_comptabilite_delta#}</font><br></div>
+									{/if}
+									
+									{if $graphe[graphe].ID == 'serie6'}
+							        <div class="row"><font color='#000000'>{#dico_management_comptabilite_chiffre_daffaire#}</font><br></div>
+							        <!--<div class="row"><font color='#00FF00'>{#dico_management_comptabilite_chiffre_daffaire_prec#}</font><br></div>-->
+							        <div class="row"><font color='#FF0000'>{#dico_management_comptabilite_couts_directs#}</font><br></div>
+							        <!--<div class="row"><font color='#FF00FF'>{#dico_management_comptabilite_couts_directs_prec#}</font><br></div>-->
+									
+									{/if}
+					
+								</div>
+								{if $graphe[graphe].ID == 'serie6'}
+								<div class="block_in_wrapper">
+							        <div class="label">
+							        	<h3>{#dico_management_comptabilite_bep_status#}</h3>
+							        </div>
+							        
+							        <div class="row">
+									<table border="1">
+									<th>{#dico_management_comptabilite_bep_status#}</th>
+									<th>{#dico_management_comptabilite_current_month#}</th>
+									<th>{#dico_management_comptabilite_chiffre_daffaire#}</th>
+									<th>{#dico_management_comptabilite_couts_directs#}</th>
+									<th>{#dico_management_comptabilite_delta#}</th>									
+									{section name=pointmort loop=$pointmort}
+									<tr>
+											<td bgcolor="{$pointmort[pointmort].state}"></td>
+											<td align="center">{$pointmort[pointmort].date}</td>
+											<td align="center">{$pointmort[pointmort].ca}</td>
+											<td align="center">{$pointmort[pointmort].cd}</td>
+											<td align="center">{$pointmort[pointmort].diff}</td>
+									</tr>
+									{/section}
+									</table>
+									</div>
+									
+								</div>	
+								{/if}
+							</div>
+						{/section}
+					
+					</div>
+					
+				</div>
+					
+			</div>
+
+		</div>
+
+	</div>
+	
+	{include file="template_left.tpl"}
+	
+	{section name=graphe loop=$graphe}
+		{literal}
+		<script>
+			var timeplot{/literal}{$graphe[graphe].ID}{literal};
+			var dataURL{/literal}{$graphe[graphe].ID}{literal} = "management_comptabilite.php?action=display_graphe_data&id={/literal}{$graphe[graphe].ID}{literal}&annee_de={/literal}{$annee_de}{literal}&annee_a={/literal}{$annee_a}{literal}&mois_de={/literal}{$mois_de}{literal}&mois_a={/literal}{$mois_a}{literal}";
+  		</script>
+		{/literal}
+	{/section}
+	
+	
+	{literal}
+	<script>
+		
+        
+        function onLoad() {
+        
+		  	{/literal}
+		  		{section name=graphe loop=$graphe}
+					{literal}
+					
+						var eventSource{/literal}{$graphe[graphe].ID}{literal} = new Timeplot.DefaultEventSource();
+						
+						var timeGeometry{/literal}{$graphe[graphe].ID}{literal} = new Timeplot.DefaultTimeGeometry({
+						    gridColor: new Timeplot.Color("#000000"),
+						    axisLabelsPlacement: "top"
+					  	});
+			
+						var valueGeometry{/literal}{$graphe[graphe].ID}{literal}_1 = new Timeplot.DefaultValueGeometry({
+						    gridColor: "#000000",
+						    axisLabelsPlacement: "right",
+							min: 0
+					  	});
+
+						var valueGeometry{/literal}{$graphe[graphe].ID}{literal}_2 = new Timeplot.DefaultValueGeometry({
+						    gridColor: "#FF0000",
+						    axisLabelsPlacement: "left",
+							min: 0
+					  	});
+						
+						var valueGeometry{/literal}{$graphe[graphe].ID}{literal}_3 = new Timeplot.DefaultValueGeometry({
+						    gridColor: "#00FF00",
+						    axisLabelsPlacement: "right",
+							min: 0
+					  	});
+					  	
+					  	var valueGeometry{/literal}{$graphe[graphe].ID}{literal}_4 = new Timeplot.DefaultValueGeometry({
+						    gridColor: "#FF00FF",
+						    axisLabelsPlacement: "left",
+							min: 0
+					  	});
+					  	
+					  	var valueGeometry{/literal}{$graphe[graphe].ID}{literal}_5 = new Timeplot.DefaultValueGeometry({
+						    gridColor: "#FFFF00",
+						    axisLabelsPlacement: "right",
+							min: 0
+					  	});
+					  	
+						if('{/literal}{$graphe[graphe].ID}{literal}' == 'serie3' || '{/literal}{$graphe[graphe].ID}{literal}' == 'serie4' || '{/literal}{$graphe[graphe].ID}{literal}' == 'serie5'){
+						var plotInfo{/literal}{$graphe[graphe].ID}{literal} = [
+					    	Timeplot.createPlotInfo({
+						      	id: "plot_{/literal}{$graphe[graphe].ID}{literal}_1",
+						      	dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},1),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_2,
+						      	lineColor: "#000000",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_2",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},2),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_1,
+						      	lineColor: "#FF0000",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_3",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},3),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_3,
+						      	lineColor: "#00FF00",
+						      	showValues: true
+					    	})
+					  	];
+				  		}
+				  		
+						if('{/literal}{$graphe[graphe].ID}{literal}' == 'serie1'){
+						var plotInfo{/literal}{$graphe[graphe].ID}{literal} = [
+					    	Timeplot.createPlotInfo({
+						      	id: "plot_{/literal}{$graphe[graphe].ID}{literal}_1",
+						      	dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},1),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_1,
+						      	lineColor: "#000000",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_2",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},2),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_2,
+						      	lineColor: "#FF0000",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_3",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},3),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_3,
+						      	lineColor: "#00FF00",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_4",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},4),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_4,
+						      	lineColor: "#FF00FF",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_5",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},5),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_5,
+						      	lineColor: "#ffff00",
+						      	showValues: true
+					    	})
+					  	];
+				  		}
+				  		if('{/literal}{$graphe[graphe].ID}{literal}' == 'serie2'){ 
+						var plotInfo{/literal}{$graphe[graphe].ID}{literal} = [
+					    	Timeplot.createPlotInfo({
+						      	id: "plot_{/literal}{$graphe[graphe].ID}{literal}_1",
+						      	dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},1),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_1,
+						      	lineColor: "#000000",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_2",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},2),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_2,
+						      	lineColor: "#FF0000",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_3",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},3),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_3,
+						      	lineColor: "#00FF00",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_4",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},4),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_4,
+						      	lineColor: "#FF00FF",
+						      	showValues: true
+					    	})
+					  	];
+				  		}
+				  		if('{/literal}{$graphe[graphe].ID}{literal}' == 'serie6'){ 
+						var plotInfo{/literal}{$graphe[graphe].ID}{literal} = [
+					    	Timeplot.createPlotInfo({
+						      	id: "plot_{/literal}{$graphe[graphe].ID}{literal}_1",
+						      	dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},1),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_1,
+						      	lineColor: "#000000",
+						      	showValues: true
+					    	}),
+						    Timeplot.createPlotInfo({
+							    id: "plot_{/literal}{$graphe[graphe].ID}{literal}_2",
+							    dataSource: new Timeplot.ColumnSource(eventSource{/literal}{$graphe[graphe].ID}{literal},2),
+						      	valueGeometry: valueGeometry{/literal}{$graphe[graphe].ID}{literal}_2,
+						      	lineColor: "#FF0000",
+						      	showValues: true
+					    	})
+					  	];
+				  		}				  		
+				  		timeplot{/literal}{$graphe[graphe].ID}{literal} = Timeplot.create(document.getElementById("timeplot{/literal}{$graphe[graphe].ID}{literal}"), plotInfo{/literal}{$graphe[graphe].ID}{literal});
+		            	timeplot{/literal}{$graphe[graphe].ID}{literal}.loadText(dataURL{/literal}{$graphe[graphe].ID}{literal}, ",", eventSource{/literal}{$graphe[graphe].ID}{literal});
+		            	
+					{/literal}
+				{/section}
+		  	{literal}
+
+        }
+        
+        
+        
+		$(document).ready(function(){
+			onLoad();
+    		$("#tab_content").tabs();
+  		});
+  	</script>
+	{/literal}
+	
+	
+
+

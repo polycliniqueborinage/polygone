@@ -1,0 +1,167 @@
+;;;;;
+Administration: 970 - NOUVELLE POLYCLINIQUE DU BORINAGE;;;;;
+Date: 22 mars 2013 par Michel Ponchon;;;;;
+ Bilan / Compte de résultat   ;;;;;
+;;;;;
+    ;;;;;
+Options visuelles;;;;;
+Bilan: Type;Bilan / Compte de résultats;Afficher;Les deux;Niveau;Compte
+Exercice;2012;Période;9 - 9;Non traité;v
+Comparer avec;;;;;
+;;;;;
+;2012;;;;
+;Nouveau solde (Débit);Nouveau solde (Crédit);;;
+Bilan;;;;;
+100000 - Fonds associatif;;21.510,71;;;
+140000 - Résultat reporté;;33.697,04;;;
+140200 - BENEFICE REPORTE 2011;;6.163,67
+165490 - Prov. pour autres risques et charges;;25.000,00
+172110 - Leasing Global concept;;2.105,40
+172120 - dette leasing Xerox;;12.807,16
+174000 - Aut.emp-Num Dexia 78000;;65.160,60
+174100 - Emprunt ing 15.000 - aménagement parking;;11.343,44
+179910 - Avance permanente LT Immobilière du 10 de grisoeul;28.314,78;
+211000 - Brevet Licence;4.427,67;
+211009 - Amort Brevet Licence;;4.427,67
+221210 - Frais aménagement de parking;8.269,86;
+230011 - Installation technique;4.721,74;
+230019 - Amort Installation Technique;;4.721,74
+230200 - Informatisation Dossier;6.534,00;
+230209 - Amort Informatisation Dossiers;;2.178,00
+231000 - Machines;29.205,74;
+231009 - Amort. et réd. val. sur machines;;28.842,91
+231030 - Sonde Radiographie;4.325,00;
+231039 - Amort Sonde Radio;;4.325,00
+231110 - Matériel Optique;13.986,39;
+231119 - Amort Materiel Optique;;13.986,39
+231200 - Mat Radio Tube;137.442,10;
+231209 - Amort Mat radio Tube;;127.228,94
+231210 - Mat Optique Fibroscope;5.786,95;
+231219 - Amlort Fibroscope Machida;;5.786,95
+231220 - Fauteuil ORL;15.487,96;
+231229 - Amort Fauteuil ORL;;5.560,41
+231230 - Mat Dentisterie;58.182,87;
+231239 - Amort Mat Dentisterie;;44.862,87
+231240 - MATERIEL DE CARDIOLOGIE;7.894,80;
+231249 - materiel DE cardio;;7.565,50
+231250 - Matériel gynécologie;9.000,00;
+231259 - amorissement mat gyneco;;1.800,00
+232010 - Matériel Informatique;19.425,51;
+232019 - Amort Matériel Informatique;;16.265,29
+232020 - Imprimante Xerox;18.400,00;
+232029 - Amortissement Xerox;;3.680,00
+232100 - Matériel de classement Armoire;3.753,07;
+232109 - Amort Mat classement;;2.723,68
+233000 - Matériel Optique;1.729,21;
+233009 - Amort Matériel Optique;;1.729,21
+234000 - Matériel Dermato;556,60;
+234009 - Amort Mat dermato;;556,60
+235010 - Echo doppler + 2 sondes -Radio;48.280,00;
+235019 - Amort Mat Echo + 2 sondes Radio;;41.382,85
+236010 - Matériel de Kiné;3.037,00;
+236019 - Amort Mat kiné;;3.037,00
+237000 - MATERIEL PNEUMOLOGIE CABINE ++;24.777,00;
+237009 - AMORT CAB PNEUMO;;12.388,50
+237110 - MATERIEL DE NETTOYAGE;740,00;
+237119 - AMORT MAT DE NETTOYAGE;;740,00
+238000 - Aménagements intérieurs;14.457,02;
+238009 - Amort. et réd. val. sur aménagements intérieurs;;5.408,20
+239000 - MATERIEL DE GYNECOLOGIE;1.500,18;
+239009 - AMORT MATERIEL GYNECO;;1.500,18
+239010 - Mammographie;13.189,79;
+239019 - Amort mammographie;;1.452,00
+239020 - GE Osteodensitomètre;27.588,00;
+239029 - Amort GE Osteodensitomètre;;8.276,40
+239030 - Numerisation Radiographie;104.929,60;
+240000 - Mobilier;1.630,73;
+240009 - Amort. et réd. val. sur mobilier;;1.367,78
+251000 - Installations en leasing;10.527,00;
+251009 - Amort. et réd. val. sur installations. en leas;;6.842,55
+269999 - AMORTISSEMENT PRECISIONEL;;45.000,00
+288101 - Caution SWDE;371,84;
+288301 - Provision ONSS;2.839,05;
+400000 - Clients;62.899,20;
+416100 - Avances et prêts au personnel;471,28;
+422110 - Dettes Leasing Global Concept;;1.579,05
+422115 - CT leasing ING Xerox;;886,09
+422120 - C.T. Dexia 78000;;2.514,26
+422121 - C.T. ING 15.000€;;1.835,92
+440000 - Fournisseurs;;94.756,94
+441015 - LOYER A PAYER 10 DG 20;;27.800,00
+453300 - PM mobiliers retenus sur intérêts;61,38;
+455000 - Rémunérations à payer;;6.266,21
+456200 - Prov. péc. vac.: employés;;19.837,93
+491003 - MEDECIN A VENTILLER;0,27;
+499999 - Compte attente;;1.380,00
+532200 - TERME DEXIA 088-82 +1 MOIS;10,24;
+550055 - livret orange ing;201,13;
+550200 - DEXIA 777-07;34.422,56;
+550250 - Belfius 0882 3177;1.000,00;
+550300 - C/C ING 363-0031142-45;2.384,32;
+550401 - ING BUS A/C 363-45;4,48;
+570001 - Caisse;819,12;
+570002 - coffre fort;6.592,02;
+580002 - TRFT CAISSE VERS BQUE;;2.750,00
+Résultats;;
+Résultats (Périodes: 1 - 8);;4.365,06
+Résultats (Année sélectionnée / Période);5.218,64;
+Total: Résultats;853,58;
+Total: Bilan;741.031,04;741.031,04
+;;
+Compte de résultats;;
+601821 - CONSOM MEDICAL ALPHA;494,07;
+601826 - CONSOMMABLE DIV MEDICAUX;79,13;
+601831 - ACHAT PROTHESES DENTAIRES;2.405,65;
+602000 - Service médecin;40.315,19;
+610012 - LOYER RENTING DEXIA 24 MOIS;1.330,36;
+610100 - Ent. et rép. terrains et constructions;23,03;
+610200 - Electricité;450,30;
+610212 - GAZ;31,63;
+611110 - CH LOCATIVE IMMEUBLE(LOYER);3.100,00;
+611111 - ENTRETIEN CONTAINER DECHET;132,13;
+611305 - LOYER EMG MEDELEC;493,97;
+611402 - ENTRETIEN RADIO Y;1.583,55;
+611403 - ENTRETIEN INSTAL ELECTRIQUE;166,36;
+612000 - Téléphone;228,82;
+612001 - TEL VERSATEL-MOBISTAR;59,44;
+612100 - Frais postaux;328,59;
+612150 - SECRETARIAT SOCIAL + TVA;205,58;
+612240 - Frais informatiques - location;1.026,00;
+612260 - FOURNITURE INFORMATIQUE - PAPIER RUBAN ENCRE;458,38;
+612400 - Fournitures de bureau;205,51;
+613034 - ATTESTATION DE SOINS - IMPRIME;602,20;
+613165 - ASSUR RESP OBJECTIVE;37,59;
+613169 - ASSURANCE RC PROTECTION JURIDIQUE;34,14;
+613170 - ASSURANCE INSTAL ELECTR ET ELECTRONIQUE;71,50;
+613212 - Honoraires experts-comptables;301,29;
+613222 - HONORAIRE ART DU SOIN;525,00;
+616100 - Rbt frais de déplacement;333,80;
+620200 - Rémunérations employés;7.839,29;
+620201 - CHARGES SOCIALES PATRONALES EMPLOYE;2.577,73;
+620221 - Rém. employés: prov. péc. vac. (+);1.348,00;
+621009 - Reduction Cotisations Sociales;;414,89
+622210 - ASSURANCE ACCIDENT DU TRAVAIL;176,93;
+623200 - Frais de cantine;143,80;
+633999 - DOTATION AMORTISSEMENT;5.000,00;
+640140 - TVA non recup. Leasing;67,74;
+650009 - Int dexia 78000€;572,67;
+650011 - INTERETS DEXIA;1,01;
+650014 - INT ING 15.000€;38,44;
+650020 - Intérêts de leasing: autres;218,24;
+652000 - MOINS VALUE SUR ACTIONS;2.544,35;
+657100 - Frais bancaires;12,59;
+657109 - FR BAKSYS ET THALES;140,25;
+659129 - difference de paiement mut129;25,67;
+659315 - différence de paiement mut 315;261,84;
+702000 - VENTE DECHET REBUS;;5.994,02
+708000 - Quote-part ristourne médecins;;62.726,95
+740999 - RISTOURNE APPOINTEMENTS;;119,58
+741100 - RETROCESSION AXL SPRL;;95,52
+741200 - RETROCESSION Roman Pais;;1.900,00
+752000 - pluss value réalisée sur actions;2.399,16;
+759315 - difference de paiement 315;;1.101,48
+759527 - difference de paiement mut527;;13,81
+759950 - difference de paiement mut950;;28,70
+765001 - INDEMNITE ASSURANCE;;777,33
+Résultats;;5.218,64
+Total: Compte de résultats;78.390,92;78.390,92

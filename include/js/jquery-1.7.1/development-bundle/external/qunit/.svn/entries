@@ -1,0 +1,52 @@
+8
+
+dir
+214
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev/polygone/include/js/jquery-1.7.1/development-bundle/external/qunit
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev
+
+
+
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f8ec6-6b70-4122-b4cc-51e5379b8f2c
+
+testrunner.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+8309500ad1d7475a0c773c50a6baf4c8
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+testsuite.css
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+2b1366350d1bdb2730f134a17c3eb40c
+2009-10-05T11:07:16.378799Z
+107
+targoo
+

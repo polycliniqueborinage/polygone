@@ -1,0 +1,54 @@
+8
+
+dir
+214
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev/polygone/include/js/multifile
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev
+
+
+
+2009-12-29T06:49:49.278527Z
+137
+targoo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f8ec6-6b70-4122-b4cc-51e5379b8f2c
+
+jquery.MultiFile.js
+file
+
+
+
+
+2009-05-12T16:56:40.000000Z
+e28daa352668ce7310d5f6500b78cde1
+2009-12-29T06:49:49.278527Z
+137
+targoo
+has-props
+
+jquery.multifile.pack.js
+file
+
+
+
+
+2009-05-12T16:56:40.000000Z
+3a7e20b1edf55455ec4e1eca2409e777
+2009-12-29T06:49:49.278527Z
+137
+targoo
+has-props
+

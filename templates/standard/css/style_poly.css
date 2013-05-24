@@ -1,0 +1,637 @@
+/* Hide Sidebars
+   =========================== */
+
+#left { 
+position: absolute; 
+top: 190px;
+background:transparent;
+left: 0; 
+width: 220px;  
+margin: 0; 
+}
+#middle { 
+position: relative; 
+top: -24px; 
+min-width: 150px; 
+background-color: transparent;	
+margin: 0 5px 10px 0px;  
+padding: 0 0 5px 0; 
+}
+
+#right { 
+width: 220px;
+position: absolute;
+margin: 0;
+top: 160px;
+right: 10px;
+color:#fff;
+background:#3A517D repeat scroll 0pt;
+}
+
+
+
+/* Hide Sidebars
+   =========================== */
+.fullpage #left {
+left: -158pt;
+}
+
+.fullpage #right { 
+display: none;
+}
+
+
+
+
+
+/* Primary Tabs */
+#menu {
+	position: relative;
+	width: 100%;
+	height: 2.1em;
+	background-color: transparent;
+}
+
+#menu ul#primary_tabs {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: -1px;
+}
+
+#secondmenu ul#sec_primary_tabs{
+	margin-bottom: 0px;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 0px;
+	padding: 0;
+	position: absolute;
+	bottom: -1px;
+}
+
+* html #menu ul#primary_tabs {
+    bottom: -2px;
+}
+
+#menu ul#primary_tabs li {
+    font-size: 11px;
+    float: left;
+    position: relative;
+	display: inline;
+	border: 0;
+	font-family: "Trebuchet MS", verdana;
+	color: #101010;
+	padding: 0;
+	margin: 3px 0 0 0;
+}
+
+#menu ul#primary_tabs li.nodelete a,
+#menu ul#primary_tabs li.active a.nodelete,
+#menu ul#primary_tabs li.active a.nodelete:hover {
+        padding: 2px 0 1px 0;
+        margin: 2px 2px 0 0;
+        width: 6em;
+        float: left;
+        text-align: center;
+}       
+
+#menu ul#primary_tabs a,
+#menu ul#primary_tabs li.active a {
+	margin: 1px 2px 0 0;
+	padding: 1px 18px 1px 3px;
+	float: left;
+	text-align: center;
+}	
+
+#menu ul#primary_tabs li.active a,
+#menu ul#primary_tabs li.active a:hover {
+	border: 1px solid #6C94C0;
+	border-bottom: none;
+	background: #C5DBF7;
+	padding-bottom: 3px;
+	margin-top: 1px;
+	text-decoration: none;
+	color: #000;
+	cursor: default;
+}
+
+#menu ul#primary_tabs a {
+	background: #f0f0ff; 
+	border: 1px solid #6C94C0;
+	border-bottom: none;
+	margin-top: 2px;
+}
+
+#menu ul#primary_tabs a:hover {
+	background: #c5f7c5;
+}
+
+#menu ul#primary_tabs li.nodelete {
+        position: static;
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
+}
+
+#menu ul#primary_tabs li.active a.nodelete,
+#menu ul#primary_tabs li.active a.nodelete:hover {
+        padding-bottom: 2px;
+}
+
+
+
+
+/* tabs on content*/
+#tabsmenu {
+	position: relative;
+	width: 100%;
+	height: 2.1em;
+	background-color: transparent;
+}
+
+#tabsmenu ul {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: -1px;
+}
+
+* html #tabsmenu ul {
+    bottom: -2px;
+}
+
+#tabsmenu ul li {
+    font-size: 11px;
+    float: left;
+    position: relative;
+	display: inline;
+	font-family: "Trebuchet MS", verdana;
+	color: #101010;
+}
+
+#tabsmenu ul li a,
+#tabsmenu ul li a:hover,
+#tabsmenu ul li.active a,
+#tabsmenu ul li.active a:hover {
+	border: 1px solid #6C94C0;
+	padding: 2px 0 1px 0;
+    margin: 2px 2px 0 0;
+    width: 7em;
+    float: left;
+    text-align: center;
+	border-bottom: none;
+	margin-top: 2px;
+}       
+
+
+#tabsmenu ul li.active a,
+#tabsmenu ul li.active a:hover {
+	border: 1px solid #6C94C0;
+	border-bottom: none;
+	background: #C5DBF7;
+	padding-bottom: 3px;
+	margin-top: 1px;
+	text-decoration: none;
+	color: #000;
+	cursor: default;
+}
+
+#tabsmenu ul li a:hover {
+	background: #c5f7c5;
+}
+
+#tabsmenu ul li {
+        position: static;
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
+}
+
+
+
+
+
+
+
+
+
+/* Container */
+#main {
+	border: 1px solid #6C94C0;
+	padding-bottom: 10px;
+}
+
+
+/* Secondary Tabs */
+#main .secondary_tabs {
+padding: 2px 2px 2px 2px;
+font-size: 10px;
+height: 15px;
+background: #C5DBF7;
+font-family: verdana, arial, sans-serif;
+}
+
+#main .secondary_tabs ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+#main .secondary_tabs ul li {
+display: inline;
+}
+
+#main .secondary_tabs ul li.active a {
+background: #fff;
+padding-bottom: 3px;
+color: #000;
+cursor: default;
+}
+
+#main .secondary_tabs a,
+#main .secondary_tabs span {
+padding: 1px 10px;
+}
+
+#main .secondary_tabs span {
+background: #fff;
+padding-bottom: 5px;
+}
+
+#main .secondary_tabs a:hover {
+	background: #c5f7c5;
+	padding-bottom: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* AGENDA */
+
+/*CHIP*/
+.gridcontainercell .chip {
+	z-index: 1; 
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	position: absolute;	
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+	color: #fff;
+	width: 100%;
+	line-height: 18px;
+	font-size: 10px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+}
+
+.gridcontainercell .chip .ui-selected{
+	filter:alpha(opacity=100);
+	-moz-opacity:1;
+	-khtml-opacity: 1;
+	opacity: 1;
+	color: #fff;
+	background-color: #000000!important;
+}
+.gridcontainercell .chip div {
+	padding: 0 5px;
+}
+.gridcontainercell .chip .title {
+	color: #fff;
+	padding: 0;
+	font-weight: bold;
+	cursor: move;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+}
+.gridcontainercell .chip .content {
+	position: relative;	
+}
+.gridcontainercell .chip .ui-resizable-s {
+	height: 10px;
+	bottom: -5px;	
+}
+.gridcontainercell .chip.moving {
+	width:99% !important;
+	left:0% !important; 
+	z-index:10 !important
+};
+
+
+.mainGrid{border-bottom:6px solid #c3d9ff;background:#c3d9ff}
+
+
+/* Resume*/
+#chipdayresume {position:relative;width:100%;}
+#chipdayresume .resume{top:0px;position: absolute;z-index: 1;}
+#chipdayresume .hour{display:-moz-inline-box;display:inline-block;top:0px; left:0px; padding:2px; position: relative;z-index:2;color:black;}
+#chipdayresume .hour a{color:black;}
+/**/
+
+
+/*main scrol zone*/
+#gridcontainer{
+	overflow-x:hidden;
+	overflow-y:scroll;
+	height:505px;
+	position:relative;
+	border-left:1px solid #a2bbdd;
+	border-right:1px solid #a2bbdd;
+	border-bottom:1px solid #a2bbdd;
+	background:#e8eef7
+}
+#gridcontainer table {
+	table-layout: fixed;
+	width: 100%;
+}
+/*hour*/
+.gridcontainerhour{
+	position:relative;
+	width:40px;
+	height:6048px;
+}
+
+/*worker*/
+.gridcontainerworker{
+	position:relative;
+	width:140px;
+	height:6048px;
+}
+
+.gridcontainerworker div.workers,
+.gridcontainerhour div.hours{
+	height: 6048px;
+	top: 0px; 
+	left: 0pt;
+}
+
+.gridcontainerworker div.workers div{
+	padding: 0pt;
+}
+
+
+/*cell*/
+.gridcontainercell{
+	position:relative;
+	width:auto;
+	height:6048px;
+}
+.gridcontainercell div.grid{
+	background:#transparent;
+	position:relative;
+	cursor:default;
+	top:0px;
+	height: 6048px;
+	left: 0pt;
+}
+/*DECO - decowner */
+.gridcontainercell .grid .decowner{
+	position:absolute;
+	background:#fff;
+    width:100%;
+	height:100%;
+	top:0px;
+	left:0;
+	z-index: 1;
+}
+.gridcontainercell .grid .hrule{
+	left:0;
+	width:100%;
+	margin: 0px;
+	padding:0px;
+	display:block;
+	border-collapse:collapse;
+	border-spacing:0;
+}
+/*EVENT - eventowner*/
+.gridcontainercell .grid .eventowner {
+	background:#fff;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0;
+	position:absolute;
+}
+
+.gridcontainercell .grid .eventowner .selectableitem {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: url(../images/calendar_top_background1.jpg) repeat-x top right;
+	border-left:1px solid #a2bbdd;
+	border-right:1px solid #a2bbdd;
+}
+
+.gridcontainercell a.del {
+	background-image: url(../images/butn-del.png);
+}
+
+.gridcontainercell a.pdf {
+	background-image: url(../images/butn-pdf.png);
+}
+
+.gridcontainercell .grid .eventowner .zebra {
+	border-left:1px solid #a2bbdd;
+	border-right:1px solid #a2bbdd;
+	background:url(../images/calendar_top_background2.jpg) repeat-x top right;
+}
+
+.gridcontainercell .grid .eventowner .selectableitem2 {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: #FEFFF1 url(../images/calendar_top_background3.jpg) repeat-x top right;
+	border-left:1px solid #a2bbdd;
+	border-right:1px solid #a2bbdd;
+}
+
+.gridcontainercell .grid .eventowner .zebra2 {
+	border-left:1px solid #a2bbdd;
+	border-right:1px solid #a2bbdd;
+	background: #FEFFF1 url(../images/calendar_top_background4.jpg) repeat-x top right;
+}
+
+.gridcontainercell .grid .eventowner .ui-selecting { 
+	border: 0px; 
+	background: #2a4069; 
+	-moz-opacity:0.1; 
+	opacity: 0.1; 
+	filter:alpha(opacity=10);
+}
+.gridcontainercell .grid .eventowner .ui-selecting { 
+	border: 0px; 
+	background: #2a4069; 
+	-moz-opacity:0.1; 
+	opacity: 0.1; 
+	filter:alpha(opacity=10);
+}
+
+       
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+       
+/* JQMODAL */
+/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+	
+.jqmWindow {
+    display: none;
+    
+    position: fixed;
+    top: 17%;
+    left: 50%;
+    
+    margin-left: -300px;
+    width: 600px;
+    
+    background-color: #EEE;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.jqmOverlay { background-color: #000; }
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+	width: expression(this.parentNode.offsetWidth+'px');
+	height: expression(this.parentNode.offsetHeight+'px');
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html .jqmWindow {
+     position: absolute;
+     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+.jqmClose{ background:#FFDD00; border:1px solid #FFDD00; color:#000; clear:right; float:right; padding:0 5px; cursor:pointer; }
+.jqmClose:hover{ background:#FFF; } 
+#jqmContent{ width:99%; height:99%; display: block; clear:both; margin:auto; margin-top:10px; background:#111; border:1px dotted #444; }
+
+
+/*password strength*/
+
+/*  ADVANCED STYLES */
+.top_testresult{
+	font-weight: bold;
+	font-size:13px;
+	font-family: arail,helvetica,san-serif;
+	color:#666;
+	padding:0;
+	margin:0 0 2px 0;
+}
+.top_testresult span{
+	padding:6px ;
+	margin:0;
+}
+.top_shortPass{
+	background:#edabab;
+	border:1px solid #bc0000;
+	display:block;
+}
+.top_shortPass span{
+	
+}
+.top_badPass{
+	background:#edabab;
+	border:1px solid #bc0000;
+	display:block;
+}
+.top_badPass span{
+	
+}
+.top_goodPass{
+	background:#ede3ab;
+	border:1px solid #bc9f00;
+	display:block;
+}
+.top_goodPass span{
+
+}
+.top_strongPass{
+	background:#d3edab;
+	border:1px solid #73bc00;
+	display:block;
+}
+.top_strongPass span{
+
+}
+
+
+/* 	RESULT STYLE  */
+.testresult{
+color:#666666;
+display:block;
+float:right;
+font-family:arial,helvetica,san-serif;
+font-size:13px;
+font-weight:bold;
+height:28px;
+margin-right:270px;
+margin-top:-77px;
+padding:0 0 12px 10px;
+}
+.testresult span{
+	padding:10px 20px 12px 10px;
+	margin: 0px 0px 0px 20px;
+	display:block;
+	float:right;
+	white-space: nowrap;
+}
+.shortPass{
+	background:url(../images/red.png) no-repeat 0 0;
+}
+.shortPass span{
+	background:url(../images/red.png) no-repeat top right;
+}
+.badPass{
+	background:url(../images/red.png) no-repeat 0 0;
+}
+.badPass span{
+	background:url(../images/red.png) no-repeat top right;
+}
+.goodPass{
+	background:url(../images/yellow.png) no-repeat 0 0;
+}
+.goodPass span{
+	background:url(../images/yellow.png) no-repeat top right;
+}
+.strongPass{
+	background:url(../images/green.png) no-repeat 0 0;
+}
+.strongPass span{
+	background:url(../images/green.png) no-repeat top right;
+}

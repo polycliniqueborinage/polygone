@@ -1,0 +1,794 @@
+100000;Fonds associatif;27 APR 09  16:58:00;0,00;0,00
+101000;Capital non appelé (-);8 FEB 02  20:39:00;0,00;0,00
+110000;Primes d'émission;8 FEB 02  20:39:00;0,00;0,00
+121000;PV rééval. sur terrains;8 FEB 02  20:39:00;0,00;0,00
+121001;PV rééval. sur bâtiments;8 FEB 02  20:39:00;0,00;0,00
+130000;Réserve légale;8 FEB 02  20:39:00;0,00;0,00
+131100;Autres réserves indisponibles;8 FEB 02  20:39:00;0,00;0,00
+133000;Réserves disponibles;8 FEB 02  20:39:00;0,00;0,00
+140000;Résultat reporté;27 APR 09  16:55:00;0,00;0,00
+141000;Perte reportée (-);8 FEB 02  20:39:00;0,00;0,00
+160000;Prov. pour pensions et obligat. sim.;8 FEB 02  20:39:00;0,00;0,00
+161000;Prov. pour charges fiscales;8 FEB 02  20:39:00;0,00;0,00
+162000;Prov. pour grosses répar. et gros ent.;8 FEB 02  20:39:00;0,00;0,00
+163001;Provision Passif Social;2 JUL 07  18:08:00;0,00;0,00
+165490;Prov. pour autres risques et charges;8 FEB 02  20:39:00;0,00;0,00
+170000;Emprunts subordonnés convert.;8 FEB 02  20:39:00;0,00;0,00
+170100;Emprunts subordonnés n. convert.;8 FEB 02  20:39:00;0,00;0,00
+171000;Emprunts obligataires n. subord. convert;8 FEB 02  20:39:00;0,00;0,00
+171100;Emprunts obligat. n. subord. n. convert.;8 FEB 02  20:39:00;0,00;0,00
+172000;Dettes de leasing immobilier;8 FEB 02  20:39:00;0,00;0,00
+172100;Dettes de leasing mobilier;8 FEB 02  20:39:00;0,00;0,00
+172110;Leasing Global concept;25 MAR 10  10:44:00;0,00;0,00
+173000;Etab. de crédit - dettes en compte;8 FEB 02  20:39:00;0,00;0,00
+173102;DETTE LT MAMMO LEASING;25 JUL 07  16:36:00;0,00;0,00
+173103;Dette LT refractomètre;2 JUL 07  18:10:00;0,00;0,00
+173104;Dette LT dexia  65.000€;2 JUL 07  18:12:00;0,00;0,00
+173105;Dette LT Ing 20850€;2 JUL 07  18:14:00;0,00;0,00
+173106;DETTE LT ING 85000€;3 AUG 07  10:15:00;0,00;0,00
+173107;DETTE LT ING PULMO 16000€;16 DEC 07  17:22:00;0,00;0,00
+174000;Autres emprunts;8 FEB 02  20:39:00;0,00;0,00
+175000;Fourn. - dettes comm - ent. liées;8 FEB 02  20:39:00;0,00;0,00
+175100;Effets à payer;8 FEB 02  20:39:00;0,00;0,00
+176000;Acomptes reçus sur cmdes;8 FEB 02  20:39:00;0,00;0,00
+178000;Cautionnements reçus en num.;8 FEB 02  20:39:00;0,00;0,00
+179900;Autres dettes diverses;8 FEB 02  20:39:00;0,00;0,00
+179910;Avance permanente LT Immobilière du 10 de grisoeul;2 JUL 07  18:15:00;0,00;641,76
+200000;Frais consti. et augment. de cap.;8 FEB 02  20:39:00;0,00;0,00
+200009;Amort. F. constit. et augment. capital;8 FEB 02  20:39:00;0,00;0,00
+202000;Autres frais d'établissement;8 FEB 02  20:39:00;0,00;0,00
+202009;Amort. sur autres frais d'étab.;8 FEB 02  20:39:00;0,00;0,00
+211000;Brevet Licence;3 JUL 07  09:07:00;0,00;0,00
+211009;Amort Brevet Licence;3 JUL 07  09:16:00;0,00;0,00
+211100;Software;8 FEB 02  20:39:00;0,00;0,00
+211109;Amort. et réd. val. sur software;8 FEB 02  20:39:00;0,00;0,00
+212000;Goodwill;8 FEB 02  20:39:00;0,00;0,00
+212009;Amort. et réd. val. sur goodwill;8 FEB 02  20:39:00;0,00;0,00
+220000;Terrains;8 FEB 02  20:39:00;0,00;0,00
+220200;Frais d'acquisition terrains;8 FEB 02  20:39:00;0,00;0,00
+220209;Réd. val. sur frais d'acquisit. terrains;8 FEB 02  20:39:00;0,00;0,00
+221000;Bâtiments;8 FEB 02  20:39:00;0,00;0,00
+221008;PV actées sur bâtiments;8 FEB 02  20:39:00;0,00;0,00
+221009;Amort. et réd. val. sur bâtiments;8 FEB 02  20:39:00;0,00;0,00
+221200;Frais d'acquisit. sur bâtiments;8 FEB 02  20:39:00;0,00;0,00
+221209;Amort. et réd. val. sur frais d'acq. bât;8 FEB 02  20:39:00;0,00;0,00
+230000;Installations;8 FEB 02  20:39:00;0,00;0,00
+230009;Amort. et réd. val. sur installations;8 FEB 02  20:39:00;0,00;0,00
+230011;Installation technique;3 JUL 07  09:20:00;0,00;0,00
+230019;Amort Installation Technique;3 JUL 07  09:22:00;0,00;0,00
+230200;Informatisation Dossier;3 JUL 07  09:24:00;0,00;0,00
+230209;Amort Informatisation Dossiers;3 JUL 07  09:25:00;0,00;0,00
+231000;Machines;8 FEB 02  20:39:00;0,00;0,00
+231009;Amort. et réd. val. sur machines;8 FEB 02  20:39:00;0,00;0,00
+231010;Machine et Gros Matériel;3 JUL 07  09:31:00;0,00;0,00
+231019;Amort Mach et Gros Matériel;3 JUL 07  09:32:00;0,00;0,00
+231030;Sonde Radiographie;3 JUL 07  09:34:00;0,00;0,00
+231039;Amort Sonde Radio;3 JUL 07  09:34:00;0,00;0,00
+231110;Matériel Optique;3 JUL 07  09:36:00;0,00;0,00
+231119;Amort Materiel Optique;3 JUL 07  09:37:00;0,00;0,00
+231200;Mat Radio Tube;3 JUL 07  09:39:00;0,00;0,00
+231209;Amort Mat radio Tube;3 JUL 07  09:41:00;0,00;0,00
+231210;Mat Optique Fibroscope;3 JUL 07  09:42:00;0,00;0,00
+231219;Amlort Fibroscope Machida;3 JUL 07  09:44:00;0,00;0,00
+231220;Fauteuil ORL;3 JUL 07  09:45:00;0,00;0,00
+231229;Amort Fauteuil ORL;3 JUL 07  09:46:00;0,00;0,00
+231230;Mat Dentisterie;3 JUL 07  09:47:00;0,00;0,00
+231239;Amort Mat Dentisterie;3 JUL 07  09:48:00;0,00;0,00
+231240;MATERIEL DE CARDIOLOGIE;5 NOV 07  14:40:00;0,00;0,00
+231249;materiel DE cardio;24 JAN 08  11:39:00;0,00;0,00
+232000;Outillages;8 FEB 02  20:39:00;0,00;0,00
+232009;Amort. et réd. val. sur outillages;8 FEB 02  20:39:00;0,00;0,00
+232010;Matériel Informatique;3 JUL 07  09:50:00;0,00;0,00
+232019;Amort Matériel Informatique;3 JUL 07  09:52:00;0,00;0,00
+232100;Matériel de classement Armoire;3 JUL 07  09:53:00;0,00;0,00
+232109;Amort Mat classement;3 JUL 07  09:55:00;0,00;0,00
+233000;Matériel Optique;3 JUL 07  09:58:00;0,00;0,00
+233009;Amort Matériel Optique;3 JUL 07  09:59:00;0,00;0,00
+234000;Matériel Dermato;3 JUL 07  10:01:00;0,00;0,00
+234009;Amort Mat dermato;3 JUL 07  10:06:00;0,00;0,00
+235010;Echo doppler + 2 sondes -Radio;3 JUL 07  10:10:00;0,00;0,00
+235019;Amort Mat Echo + 2 sondes Radio;3 JUL 07  10:11:00;0,00;0,00
+236010;Matériel de Kiné;3 JUL 07  10:13:00;0,00;0,00
+236019;Amort Mat kiné;3 JUL 07  10:15:00;0,00;0,00
+237000;MATERIEL PNEUMOLOGIE CABINE ++;8 DEC 07  11:34:00;0,00;0,00
+237009;AMORT CAB PNEUMO;24 JAN 08  11:56:00;0,00;0,00
+237110;MATERIEL DE NETTOYAGE;2 JAN 09  16:13:00;0,00;0,00
+237119;AMORT MAT DE NETTOYAGE;14 JAN 09  16:22:00;0,00;0,00
+238000;Aménagements intérieurs;5 NOV 07  11:23:00;0,00;0,00
+238009;Amort. et réd. val. sur aménagements intérieurs;5 NOV 07  11:20:00;0,00;0,00
+239000;MATERIEL DE GYNECOLOGIE;30 SEP 08  14:53:00;0,00;0,00
+239009;AMORT MATERIEL GYNECO;14 JAN 09  16:26:00;0,00;0,00
+239010;Mammographie;14 APR 09  23:07:00;0,00;0,00
+239019;Amort mammographie;14 APR 09  23:08:00;0,00;0,00
+240000;Mobilier;8 FEB 02  20:39:00;0,00;0,00
+240009;Amort. et réd. val. sur mobilier;8 FEB 02  20:39:00;0,00;0,00
+240010;Matériel de bureau;8 FEB 02  20:39:00;0,00;0,00
+240019;Amort. et réd. val. sur mat. de bureau;8 FEB 02  20:39:00;0,00;0,00
+240020;Matériel informatique;8 FEB 02  20:39:00;0,00;0,00
+240029;Amort. et réd. val. sur mat. informat.;8 FEB 02  20:39:00;0,00;0,00
+241000;Voitures;8 FEB 02  20:39:00;0,00;0,00
+241009;Amort. et réd. val. sur voitures;8 FEB 02  20:39:00;0,00;0,00
+241010;Voiture;3 JUL 07  10:16:00;0,00;0,00
+241019;Amort Voiture;3 JUL 07  10:18:00;0,00;0,00
+241100;Camions;8 FEB 02  20:39:00;0,00;0,00
+241109;Amort. et réd. val. sur camions;8 FEB 02  20:39:00;0,00;0,00
+251000;Installations en leasing;25 MAR 10  10:55:00;0,00;0,00
+251009;Amort. et réd. val. sur installations. en leas;25 MAR 10  10:55:00;0,00;0,00
+251100;Machines en leasing;8 FEB 02  20:39:00;0,00;0,00
+251109;Amort. et réd. val. sur machines en leas;8 FEB 02  20:39:00;0,00;0,00
+251200;Outillages en leasing;8 FEB 02  20:39:00;0,00;0,00
+251209;Amort. et réd. val. sur outillages en l.;8 FEB 02  20:39:00;0,00;0,00
+252000;Mobilier en leasing;8 FEB 02  20:39:00;0,00;0,00
+252009;Amort. et réd. val. sur mobilier en leas;8 FEB 02  20:39:00;0,00;0,00
+252010;Matériel de bureau en leasing;8 FEB 02  20:39:00;0,00;0,00
+252019;Amort. et réd. val. mat. de bur. en l.;8 FEB 02  20:39:00;0,00;0,00
+252020;Matériel informatique en leasing;8 FEB 02  20:39:00;0,00;0,00
+252029;Amort. et réd. val. mat. informat. en l.;8 FEB 02  20:39:00;0,00;0,00
+252100;Voitures en leasing;8 FEB 02  20:39:00;0,00;0,00
+252109;Amort. et réd. val. sur voitures en leas;8 FEB 02  20:39:00;0,00;0,00
+252110;Camions en leasing;8 FEB 02  20:39:00;0,00;0,00
+252111;Mammo Leasing;3 JUL 07  10:20:00;0,00;0,00
+252119;Amort. et réd. val. sur mammo en leas.;14 APR 09  19:23:00;0,00;0,00
+260000;Frais d'aménag. de locaux pris en loc.;8 FEB 02  20:39:00;0,00;0,00
+260009;Amort/réd. val. F. aménag. de loc. loués;8 FEB 02  20:39:00;0,00;0,00
+269999;AMORTISSEMENT PRECISIONEL;24 JUL 07  10:01:00;0,00;5000,00
+272100;Constructions en cours;8 FEB 02  20:39:00;0,00;0,00
+272109;Amort. et réd. val. sur constr. en cours;8 FEB 02  20:39:00;0,00;0,00
+280000;Participations dans des ent. liées;8 FEB 02  20:39:00;0,00;0,00
+280900;Réd. val. act. sur part. dd ent. liées;8 FEB 02  20:39:00;0,00;0,00
+282000;Participations ds ent. lien de part.;8 FEB 02  20:39:00;0,00;0,00
+284000;Autres actions et parts;8 FEB 02  20:39:00;0,00;0,00
+284001;Part Bacob Dexia;3 JUL 07  10:22:00;0,00;0,00
+288000;Cautionnements versés en num.;8 FEB 02  20:39:00;0,00;0,00
+288100;Garantie locative;8 FEB 02  20:39:00;0,00;0,00
+288101;Caution SWDE;3 JUL 07  10:23:00;0,00;0,00
+288200;Caution - téléphone;8 FEB 02  20:39:00;0,00;0,00
+288300;Caution - électricité;8 FEB 02  20:39:00;0,00;0,00
+288301;Provision ONSS;3 JUL 07  10:23:00;0,00;0,00
+288400;Garantie bancaire;8 FEB 02  20:39:00;0,00;0,00
+288500;Caution secrétariat social;8 FEB 02  20:39:00;0,00;0,00
+288600;Caution TVA;8 FEB 02  20:39:00;0,00;0,00
+290000;Créances comm. à + d'un an;8 FEB 02  20:39:00;0,00;0,00
+291000;Autres créances à plus d'un an;8 FEB 02  20:39:00;0,00;0,00
+300000;Matières premières;8 FEB 02  20:39:00;0,00;0,00
+310000;Fournitures;8 FEB 02  20:39:00;0,00;0,00
+310001;Stock Radio;3 JUL 07  11:28:00;0,00;0,00
+310102;Stock Dentisterie;3 JUL 07  11:32:00;0,00;0,00
+310103;Stock Papeterie;3 JUL 07  11:32:00;0,00;0,00
+310104;Stock Infirmier;3 JUL 07  11:33:00;0,00;0,00
+310105;Stock Mazout;3 JUL 07  11:34:00;0,00;0,00
+320000;Produits en cours de fabrication;8 FEB 02  20:39:00;0,00;0,00
+330000;Produits finis;8 FEB 02  20:39:00;0,00;0,00
+340000;Marchandises;8 FEB 02  20:39:00;0,00;0,00
+349000;Réd. val. actées sur marchandises (-);8 FEB 02  20:39:00;0,00;0,00
+370000;Commandes en cours d'exécution;8 FEB 02  20:39:00;0,00;0,00
+400000;Clients;8 FEB 02  20:39:00;46001,75;38602,72
+400001;Clients - entreprises du groupe;8 FEB 02  20:39:00;0,00;0,00
+400002;Fournisseurs avec un solde débiteur;8 FEB 02  20:39:00;0,00;0,00
+401000;Effets à recevoir;8 FEB 02  20:39:00;0,00;0,00
+404000;Factures à établir;8 FEB 02  20:39:00;0,00;0,00
+404100;Notes de crédit à recevoir;8 FEB 02  20:39:00;0,00;0,00
+406000;Acomptes;8 FEB 02  20:39:00;0,00;0,00
+407000;Créances douteuses;8 FEB 02  20:39:00;0,00;0,00
+408000;Ecarts de conversion;8 FEB 02  20:39:00;0,00;0,00
+409000;Réd. val. sur créances douteuses (-);8 FEB 02  20:39:00;0,00;0,00
+410000;Appel de fonds;8 FEB 02  20:39:00;0,00;0,00
+411000;TVA à récupérer;8 FEB 02  20:39:00;0,00;0,00
+411600;TVA à récupérer - révision;8 FEB 02  20:39:00;0,00;0,00
+411700;TVA étrangère à récupérer;8 FEB 02  20:39:00;0,00;0,00
+412000;Impôts et précomptes à récupérer;8 FEB 02  20:39:00;0,00;0,00
+412010;Versements anticipés portés à l'actif;8 FEB 02  20:39:00;0,00;0,00
+412100;Précompte mobilier à récupérer;8 FEB 02  20:39:00;0,00;0,00
+412800;Impôts et taxes étrangers à récupérer;8 FEB 02  20:39:00;0,00;0,00
+416000;Compte-courant dirigeant d'ent.;8 FEB 02  20:39:00;0,00;0,00
+416010;Compte-courant actionnaire;8 FEB 02  20:39:00;0,00;0,00
+416100;Avances et prêts au personnel;8 FEB 02  20:39:00;0,00;0,00
+416183;AVANCE DR VAN MIEGHEM;26 JAN 08  11:53:00;0,00;0,00
+416302;AVANCE CENTRE ESTHETHIQUE ASBL;4 JUL 07  15:21:00;0,00;0,00
+416400;Créances (C/C) sur ent. du groupe;8 FEB 02  20:39:00;0,00;0,00
+422000;Dettes de leasing immobilier;8 FEB 02  20:39:00;0,00;0,00
+422100;Dettes de leasing mobilier;8 FEB 02  20:39:00;0,00;0,00
+422101;DETTE C/T MAMMO LEASING;4 JUL 07  15:25:00;0,00;0,00
+422102;DETTE C/T REFRACTOMETRE;4 JUL 07  15:26:00;0,00;0,00
+422103;DETTE C/T DEXIA 65.000E;4 JUL 07  15:27:00;0,00;0,00
+422104;DETTE C/T ING 20850E DENBTISTERIE;4 JUL 07  15:28:00;0,00;0,00
+422105;CT ING 85000 E;14 AUG 07  11:50:00;938,33;0,00
+422106;CT ING 85000€;3 AUG 07  10:19:00;0,00;0,00
+422107;CT ING 16.000€;21 FEB 08  11:57:00;0,00;0,00
+422108;DETTE CT DEXIA 9000;25 JAN 10  11:55:00;0,00;0,00
+422110;Dettes Leasing Global Concept;25 MAR 10  10:45:00;0,00;0,00
+423000;Etab. de crédit - dettes en compte;8 FEB 02  20:39:00;0,00;0,00
+424000;Autres emprunts;8 FEB 02  20:39:00;0,00;0,00
+425000;Fourn. - créances comm. - entr. liées;8 FEB 02  20:39:00;0,00;0,00
+425100;Effets à payer;8 FEB 02  20:39:00;0,00;0,00
+426000;Acomptes reçus sur commandes;8 FEB 02  20:39:00;0,00;0,00
+428000;Cautionnements reçus en numéraire;8 FEB 02  20:39:00;0,00;0,00
+429900;Autres dettes diverses;8 FEB 02  20:39:00;0,00;0,00
+430000;Etab. de crédit - emp. à terme fixe;8 FEB 02  20:39:00;0,00;0,00
+433000;Etab. de crédit - dettes cpte courant;8 FEB 02  20:39:00;0,00;0,00
+439000;Autres emprunts;8 FEB 02  20:39:00;0,00;0,00
+440000;Fournisseurs;8 FEB 02  20:39:00;44773,87;57800,28
+440001;Fournisseurs - entreprises du groupe;8 FEB 02  20:39:00;0,00;0,00
+440002;Clients avec un solde créditeur;8 FEB 02  20:39:00;0,00;0,00
+441000;Effets à payer;8 FEB 02  20:39:00;0,00;0,00
+441015;LOYER A PAYER 10 DG 20;5 JUL 07  09:34:00;0,00;2875,00
+444000;Factures à recevoir;8 FEB 02  20:39:00;0,00;0,00
+444100;Notes de crédit à établir;8 FEB 02  20:39:00;0,00;0,00
+448000;Ecarts de conversion;8 FEB 02  20:39:00;0,00;0,00
+450000;Dettes fiscales estimées;8 FEB 02  20:39:00;0,00;0,00
+451000;TVA à payer;8 FEB 02  20:39:00;0,00;0,00
+451600;TVA due - révision;8 FEB 02  20:39:00;0,00;0,00
+452000;Impôts et taxes à payer;8 FEB 02  20:39:00;0,00;0,00
+453000;Précomptes professionnels retenus;8 FEB 02  20:39:00;0,00;0,00
+453200;PM mobiliers retenus sur dividendes;8 FEB 02  20:39:00;0,00;0,00
+453300;PM mobiliers retenus sur intérêts;8 FEB 02  20:39:00;0,00;0,00
+454000;ONSS à payer;8 FEB 02  20:39:00;0,00;0,00
+455000;Rémunérations à payer;8 FEB 02  20:39:00;5649,69;5760,10
+455001;AVANCE PRIME FIN D ANNEE;20 MAY 08  12:52:00;0,00;0,00
+456100;Prov. péc. vac.: personnel de direction;8 FEB 02  20:40:00;0,00;1612,00
+456200;Prov. péc. vac.: employés;8 FEB 02  20:39:00;0,00;0,00
+456201;PROV PEC VAV OUVRIER;5 JUL 07  10:12:00;0,00;0,00
+456300;Prov. péc. vac.: ouvriers;8 FEB 02  20:40:00;0,00;0,00
+457100;Prov. PFA: personnel de direction;8 FEB 02  20:40:00;0,00;0,00
+457200;Prov. PFA: employés;8 FEB 02  20:40:00;0,00;0,00
+457300;Prov. PFA: ouvriers;8 FEB 02  20:40:00;0,00;0,00
+458200;Prov. pr. et grat. a/s ONSS: employés;8 FEB 02  20:40:00;0,00;0,00
+458300;Prov. pr et grat. a/s ONSS: ouvriers;8 FEB 02  20:40:00;0,00;0,00
+459000;Retenues pers.: assurance-groupe;8 FEB 02  20:40:00;0,00;0,00
+460000;Acomptes reçus sur commandes;8 FEB 02  20:40:00;0,00;0,00
+467001;MEDECIN A VENTIL;17 JUL 07  10:28:00;0,00;0,00
+467002;RISTOURNE A VENTIL;17 JUL 07  10:30:00;0,00;0,00
+467003;CAISSE A VENTILER;17 JUL 07  10:47:00;0,00;0,00
+470000;Dividendes et tantièmes d'ex. antérieurs;8 FEB 02  20:40:00;0,00;0,00
+471000;Dividendes de l'exercice;8 FEB 02  20:40:00;0,00;0,00
+472000;Tantièmes de l'exercice;8 FEB 02  20:40:00;0,00;0,00
+482100;C/C IMMOB DU 10 DG 20;5 JUL 07  10:14:00;0,00;0,00
+483000;C/C ADMINISTRATEUR PONCHON;12 FEB 09  12:28:00;4940,00;0,00
+489000;Compte-courant dirigeant d'entreprise;8 FEB 02  20:40:00;0,00;0,00
+489010;Compte-courant actionnaire;8 FEB 02  20:40:00;0,00;0,00
+489100;Autres dettes diverses;8 FEB 02  20:40:00;0,00;0,00
+489101;LOYER A PAYER 10 DG 20;5 JUL 07  10:16:00;0,00;0,00
+489400;C/C entreprises liées;8 FEB 02  20:40:00;0,00;0,00
+490000;Charges à reporter;8 FEB 02  20:40:00;0,00;0,00
+491000;Produits acquis;8 FEB 02  20:40:00;0,00;0,00
+491001;CAISSE A PASSAGE;5 JUL 07  10:29:00;25919,64;25919,64
+491002;NOTRE RISTOURNE PASSAGE;5 JUL 07  10:30:00;30247,93;30247,93
+491003;MEDECIN A VENTILLER;7 SEP 07  15:17:00;36735,75;36735,75
+492000;Charges à imputer;8 FEB 02  20:40:00;0,00;0,00
+492100;Intérêts à imputer;8 FEB 02  20:40:00;0,00;0,00
+493000;Produits à reporter;8 FEB 02  20:40:00;0,00;0,00
+493100;Intérêts à reporter;8 FEB 02  20:40:00;0,00;0,00
+496000;Ecarts de conversion Actif;8 FEB 02  20:40:00;0,00;0,00
+497000;Ecarts de conversion Passif;8 FEB 02  20:40:00;0,00;0,00
+499254;TVA due;8 FEB 02  20:40:00;0,00;0,00
+499255;TVA acquisition intracom.;8 FEB 02  20:40:00;0,00;0,00
+499256;TVA co-contractant;8 FEB 02  20:40:00;0,00;0,00
+499257;TVA report de paiement;8 FEB 02  20:40:00;0,00;0,00
+499259;TVA déductible;8 FEB 02  20:40:00;0,00;0,00
+499600;Taxe d'égalisation;6 OCT 94  00:00:00;0,00;0,00
+499999;Compte d'attente;8 FEB 02  20:40:00;0,00;0,00
+510000;Actions: valeur d'acquisition;8 FEB 02  20:40:00;0,00;0,00
+510010;ACTION GOLD BULLION NOTES 2004 CAP;21 SEP 09  12:21:00;0,00;0,00
+510011;ACTION BEAR CAC 40;23 OCT 09  17:46:00;0,00;0,00
+510012;ACTION NEW GOLD MINE;23 OCT 09  17:53:00;0,00;0,00
+510013;ACTIONS XIRING;25 MAR 10  11:16:00;0,00;0,00
+510500;LINGOT OR;18 SEP 09  12:03:00;0,00;0,00
+520000;Titres à RF: valeur d'acquisition;8 FEB 02  20:40:00;0,00;0,00
+530000;Dépôts à terme: de plus d'un an;8 FEB 02  20:40:00;0,00;0,00
+531000;Dépôts à terme: + 1 mois et à 1 an au +;8 FEB 02  20:40:00;0,00;0,00
+532000;Dépôts à terme: d'un mois au plus;8 FEB 02  20:40:00;0,00;0,00
+532001;TERME 1 MOIS ING 363-45;5 JUL 07  10:37:00;0,00;0,00
+532002;DEXIA TERME 1 MOIS;5 JUL 07  10:39:00;0,00;0,00
+532200;TERME DEXIA 088-82 +1 MOIS;8 JUN 09  09:33:00;0,00;0,00
+532500;AXA EPARGNE;8 JUN 09  09:34:00;12,00;12,00
+550000;Banque: compte-courant;8 FEB 02  20:40:00;0,00;0,00
+550001;RABO;18 AUG 08  11:59:00;0,00;0,00
+550013;ACTIONS XIRING;26 OCT 09  17:17:00;0,00;0,00
+550200;DEXIA 777-07;5 JUL 07  10:42:00;62415,94;53377,11
+550300;C/C ING 363-0031142-45;5 JUL 07  10:45:00;33177,02;37498,74
+550400;C/C FORTIS 271-35;5 JUL 07  10:50:00;0,00;0,00
+550401;ING BUS A/C 363-45;5 JUL 07  11:04:00;13419,00;0,00
+550500;AXA COMPTE COURANT;8 JUN 09  09:34:00;200,00;35,50
+550501;SAXO BANQUE - PARIS;11 FEB 10  12:30:00;0,00;0,00
+560000;Chèques postaux: compte-courant;16 AUG 07  10:15:00;0,00;0,00
+570000;Caisse - espèces;25 JUL 07  16:37:00;0,00;0,00
+570001;Caisse;25 JUL 07  16:40:00;1470,77;648,94
+570002;coffre fort;13 NOV 08  11:33:00;2850,00;7640,00
+580000;Virements internes;8 FEB 02  20:40:00;0,00;0,00
+580001;TRFT BQUE A BQUE;5 JUL 07  11:24:00;36264,00;36464,00
+580002;TRFT CAISSE VERS BQUE;5 JUL 07  11:08:00;17400,00;17400,00
+580003;TRFT BANKSYS;11 JUL 07  11:21:00;17424,49;17395,00
+580900;Compte intermédiare financier;20 MAR 04  10:12:49;0,00;0,00
+580901;Compte intermédiare financier;20 MAR 04  10:12:49;0,00;0,00
+600000;Achats de matières premières;8 FEB 02  20:40:00;0,00;0,00
+601000;Achats de fournitures;8 FEB 02  20:40:00;64,58;0,00
+601700;CONSOMMATION PETIT OUTILLAGE;5 JUL 07  11:29:00;5,00;0,00
+601800;CONSOM OXYGENE-ACETYLENE;5 JUL 07  11:31:00;3,25;0,00
+601821;CONSOM MEDICAL ALPHA;5 JUL 07  11:34:00;29,65;0,00
+601822;CONSOMMABLE RADIO;5 JUL 07  11:43:00;317,49;0,00
+601824;CONSOMMABLE DENTAIRE;5 JUL 07  11:44:00;1531,85;0,00
+601825;CONSOMMABLE TEST;5 JUL 07  11:45:00;0,00;0,00
+601826;CONSOMMABLE DIV MEDICAUX;5 JUL 07  11:46:00;162,37;0,00
+601827;CONSOMABLE AIGUILLE EMG;19 JUL 07  11:28:00;0,00;0,00
+601828;CONSAMMABLE PLATRE;3 AUG 07  10:56:00;293,91;0,00
+601830;ACHAT MED EN PHAMACIE;5 JUL 07  11:48:00;0,00;0,00
+601831;ACHAT PROTHESES DENTAIRES;5 JUL 07  15:15:00;824,68;0,00
+601832;CONSOMMABLE CARDIO RADIO     /SONY;29 JUL 09  16:27:00;0,00;0,00
+601900;VARIATION STOCK FOURNITURES;5 JUL 07  15:23:00;0,00;0,00
+602000;Service médecin;4 JUL 07  10:44:00;37235,82;0,00
+602001;HONORAIRES;5 JUL 07  15:24:00;0,00;0,00
+602800;HONORAIRE ART DE SOIGNER;11 MAY 10  11:29:00;500,00;0,00
+602801;HONOR NATHALIE DANIEL;5 NOV 09  11:50:00;0,00;0,00
+602802;Honoraires Cornez VanDamma;6 JAN 10  10:36:00;0,00;0,00
+603000;Sous-traitances générales;8 FEB 02  20:40:00;0,00;0,00
+604000;Achats de marchandises;8 FEB 02  20:40:00;0,00;0,00
+606000;Frais de transport;8 FEB 02  20:40:00;0,00;0,00
+606010;Droits d'importation (douane);8 FEB 02  20:40:00;0,00;0,00
+606020;Assurances;8 FEB 02  20:40:00;0,00;0,00
+608000;RRR obtenus sur achats;8 FEB 02  20:40:00;0,00;0,00
+609000;Variation de stocks de mat. prem.;8 FEB 02  20:40:00;0,00;0,00
+609100;Variation de stocks de fournitures;8 FEB 02  20:40:00;0,00;0,00
+609400;Variation de stocks de marchand.;8 FEB 02  20:40:00;0,00;0,00
+610000;Loyer bureau;8 FEB 02  20:40:00;0,00;0,00
+610010;Loyer parking clientèle;8 FEB 02  20:40:00;0,00;0,00
+610011;Loyer parking personnel;8 FEB 02  20:40:00;0,00;0,00
+610020;Charges locatives;8 FEB 02  20:40:00;0,00;0,00
+610050;Précompte immobilier;8 FEB 02  20:40:00;0,00;0,00
+610100;Ent. et rép. terrains et constructions;8 FEB 02  20:40:00;177,51;0,00
+610110;Produits d'entretien;8 FEB 02  20:40:00;0,00;0,00
+610111;PRODUIT DE LESSIVE;5 JUL 07  16:36:00;0,00;0,00
+610112;SAC POUBELLE - PROD NETTOYAGE;6 JUL 07  16:34:00;0,00;0,00
+610113;DESINFECTION;16 JUL 07  10:13:00;0,00;0,00
+610200;Electricité;8 FEB 02  20:40:00;164,94;0,00
+610210;Chauffage;8 FEB 02  20:40:00;0,00;0,00
+610211;MAZOUT CHAUFFAGE;5 JUL 07  16:29:00;0,00;0,00
+610212;GAZ;5 JUL 07  16:31:00;1742,98;0,00
+610213;PROVISION GAZ;24 JUL 07  10:06:00;1500,00;0,00
+610220;Eau;8 FEB 02  20:40:00;345,96;0,00
+610221;bOISSON EAU SODA VIN;5 JUL 07  15:39:00;15,69;0,00
+610300;Assurance incendie;8 FEB 02  20:40:00;0,00;0,00
+610310;Assurance vol;8 FEB 02  20:40:00;0,00;0,00
+610400;Frais de sécurité;8 FEB 02  20:40:00;0,00;0,00
+610500;Frais de recyclage;8 FEB 02  20:40:00;0,00;0,00
+610990;Autres frais de bâtiment;8 FEB 02  20:40:00;0,00;0,00
+611000;Frais de transport;8 FEB 02  20:40:00;0,00;0,00
+611010;Frais de magasin;8 FEB 02  20:40:00;0,00;0,00
+611020;Assurance transport;8 FEB 02  20:40:00;0,00;0,00
+611030;Assurance dégâts machines;8 FEB 02  20:40:00;0,00;0,00
+611110;CH LOCATIVE IMMEUBLE(LOYER);5 JUL 07  15:26:00;2875,00;0,00
+611111;ENTRETIEN CONTAINER DECHET;5 JUL 07  16:43:00;118,97;0,00
+611200;Petit matériel;8 FEB 02  20:40:00;0,00;0,00
+611211;MISE A JOUR INFORMATIQUE;5 JUL 07  16:39:00;0,00;0,00
+611300;Location matériel et machines;8 FEB 02  20:40:00;0,00;0,00
+611305;LOYER EMG MEDELEC;23 DEC 09  15:31:00;0,00;0,00
+611310;Location camionnette;8 FEB 02  20:40:00;0,00;0,00
+611350;ENTRETIEN REPARATION VOITURE;5 JUL 07  16:24:00;0,00;0,00
+611364;N/A CONTROLE MED EMPLOYE;5 JUL 07  16:26:00;0,00;0,00
+611400;Ent. et rép. matériel et machines;8 FEB 02  20:40:00;3762,13;0,00
+611401;ENTRETIEN DENTISTERIE;6 JUL 07  16:36:00;0,00;0,00
+611410;CONTROLE VINCOTTE AIB;5 JUL 07  16:22:00;0,00;0,00
+611420;MINOLTA CONTRAT REPARATION;5 JUL 07  16:59:00;0,00;0,00
+611500;Emballage;8 FEB 02  20:40:00;0,00;0,00
+611990;Autres frais d'exploitation;8 FEB 02  20:40:00;0,00;0,00
+612000;Téléphone;8 FEB 02  20:40:00;195,76;0,00
+612001;TEL VERSATEL;5 JUL 07  16:33:00;0,00;0,00
+612002;TEL GSM;5 JUL 07  16:34:00;0,00;0,00
+612003;FRAIS MEDIBRIDGE;5 JUN 08  10:36:00;0,00;0,00
+612004;Location Téléphone Global Concept;3 DEC 08  11:35:00;0,00;0,00
+612005;téléphone page d'or;3 DEC 08  11:26:00;0,00;0,00
+612010;GSM/Mobilophone;8 FEB 02  20:40:00;0,00;0,00
+612020;Telefax;8 FEB 02  20:40:00;0,00;0,00
+612030;Internet & e-mail (comm. et entretien);8 FEB 02  20:40:00;0,00;0,00
+612040;Communication de données (hosting, …);8 FEB 02  20:40:00;0,00;0,00
+612100;Frais postaux;8 FEB 02  20:40:00;920,04;0,00
+612110;Timbres fiscaux;8 FEB 02  20:40:00;0,00;0,00
+612112;FRAIS DE SECURITE;22 FEB 10  18:09:00;0,00;0,00
+612120;Services postaux;8 FEB 02  20:40:00;0,00;0,00
+612150;SECRETARIAT SOCIAL + TVA;6 JUL 07  16:37:00;512,58;0,00
+612200;Frais informatiques - hard & access.;8 FEB 02  20:40:00;0,00;0,00
+612210;Frais informatiques - software;8 FEB 02  20:40:00;0,00;0,00
+612211;SITE INTERNET;6 JUL 07  16:33:00;0,00;0,00
+612220;Frais informatiques - entretien;8 FEB 02  20:40:00;726,00;0,00
+612230;Frais informatiques - assurances;8 FEB 02  20:40:00;0,00;0,00
+612240;Frais informatiques - location;8 FEB 02  20:40:00;0,00;0,00
+612250;Frais informatiques - consultance;8 FEB 02  20:40:00;0,00;0,00
+612260;FOURNITURE INFORMATIQUE - PAPIER RUBAN ENCRE;5 JUL 07  16:56:00;0,00;0,00
+612261;FOUR INFORMATIQUE CARTOUCHES;2 JAN 09  11:19:00;0,00;0,00
+612262;ACHAT PILES;2 JAN 09  11:25:00;0,00;0,00
+612263;ACHAT DOSSIERS MEDICAUX;2 MAR 10  13:56:00;0,00;0,00
+612300;Location matériel de bureau;8 FEB 02  20:40:00;0,00;0,00
+612310;Entretien matériel de bureau;8 FEB 02  20:40:00;0,00;0,00
+612320;Assurances matériel de bureau;8 FEB 02  20:40:00;0,00;0,00
+612400;Fournitures de bureau;8 FEB 02  20:40:00;57,89;0,00
+612410;Frais de photocopieur;8 FEB 02  20:40:00;141,57;0,00
+612450;FRAIS REPROBEL;14 JUL 07  09:13:00;0,00;0,00
+612500;Imprimés;8 FEB 02  20:40:00;0,00;0,00
+612600;Frais de doc. (abonnements, etc.);8 FEB 02  20:40:00;0,00;0,00
+612990;Autres frais administratifs;8 FEB 02  20:40:00;0,00;0,00
+613000;Redev. pour concess., lic. et brevets;8 FEB 02  20:40:00;0,00;0,00
+613010;Coltisations associations profess.;8 FEB 02  20:40:00;0,00;0,00
+613020;Autorisations;8 FEB 02  20:40:00;0,00;0,00
+613032;FRAIS INFIRMIERE IGL/ ART;5 JUL 07  17:06:00;0,00;0,00
+613033;FRAIS CECODI;5 JUL 07  17:06:00;0,00;0,00
+613034;ATTESTATION DE SOINS - IMPRIME;5 JUL 07  17:07:00;0,00;0,00
+613100;Indemnisations aux ent. du groupe;8 FEB 02  20:40:00;0,00;0,00
+613140;Assurance-crédit;8 FEB 02  20:40:00;0,00;0,00
+613150;Assurance responsabilité civile;8 FEB 02  20:40:00;0,00;0,00
+613160;ASSURANCE INCENDIE;6 JUL 07  16:28:00;0,00;0,00
+613161;ASSURANCE TOUT RISQUE MATERIEL;6 JUL 07  16:29:00;0,00;0,00
+613162;ASSURANCE VEHICULE;6 JUL 07  16:29:00;0,00;0,00
+613163;ASSURANCE DAS;6 JUL 07  16:30:00;0,00;0,00
+613164;ASSURANCE ADMINISTRTEURS;19 JUL 07  08:36:00;0,00;0,00
+613165;ASSUR RESP OBJECTIVE;10 MAR 08  11:51:00;0,00;0,00
+613166;ASSURANCE TALISMAN;23 JUL 09  11:33:00;0,00;0,00
+613167;ASSURANCE TOUT RISQUE INFORMATIQUE;25 JAN 10  11:35:00;0,00;0,00
+613168;ASSURANCE PERTE EXPLOITATION;25 JAN 10  11:40:00;0,00;0,00
+613169;ASSURANCE RC PROTECTION JURIDIQUE;25 JAN 10  11:42:00;0,00;0,00
+613201;Frais de gestion secrétariat social;8 FEB 02  20:40:00;0,00;0,00
+613202;Frais de gestion chèques-repas;8 FEB 02  20:40:00;0,00;0,00
+613210;Honoraires avocats;8 FEB 02  20:40:00;0,00;0,00
+613211;Honoraires notaires;8 FEB 02  20:40:00;0,00;0,00
+613212;Honoraires experts-comptables;8 FEB 02  20:40:00;0,00;0,00
+613213;Honoraires reviseur d'entreprises;8 FEB 02  20:40:00;0,00;0,00
+613215;Honoraires conseillers fiscaux;8 FEB 02  20:40:00;0,00;0,00
+613216;HONORAIRE FLAMENT VINCIANNE;19 NOV 09  15:19:00;0,00;0,00
+613219;Honoraires divers;8 FEB 02  20:40:00;0,00;0,00
+613220;Frais de huissiers/huissiers de just.;8 FEB 02  20:40:00;0,00;0,00
+613221;HONORAIRE ERNST YOUNG;6 JUL 07  16:32:00;0,00;0,00
+613222;HONORAIRE ART DU SOIN;16 JUL 07  10:01:00;0,00;0,00
+613223;FRAIS COTISATION GESTION GROUPES;22 FEB 10  18:12:00;0,00;0,00
+613250;Indemnités de management;8 FEB 02  20:40:00;0,00;0,00
+613300;Publications légales;8 FEB 02  20:40:00;0,00;0,00
+613500;Frais de voyages: avion, train, tram,…;8 FEB 02  20:40:00;0,00;0,00
+613510;Frais de voyages: hôtels;8 FEB 02  20:40:00;0,00;0,00
+614700;FRAIS DE BONNE POLITIQUE;6 JUL 07  16:38:00;0,00;0,00
+614701;FRAIS DE CHAPELLE;6 JUL 07  16:39:00;0,00;0,00
+615000;Annonces et insertions;8 FEB 02  20:40:00;0,00;0,00
+615100;Catalogues et imprimés livres;16 JUN 09  15:50:00;0,00;0,00
+615200;Echantillons;8 FEB 02  20:40:00;0,00;0,00
+615300;Foires et expositions;8 FEB 02  20:40:00;0,00;0,00
+615301;PUBLICITE;5 JUL 07  17:02:00;0,00;0,00
+615302;PUB TMB;5 JUL 07  17:03:00;0,00;0,00
+615400;Cadeaux à la clientèle;8 FEB 02  20:40:00;0,00;0,00
+615401;CADEAUX MEDECINS;5 JUL 07  16:58:00;0,00;0,00
+615500;Frais de promotion;8 FEB 02  20:40:00;0,00;0,00
+615600;Frais de restaurant - Belgique;8 FEB 02  20:40:00;0,00;0,00
+615610;Frais de restaurant - étranger;8 FEB 02  20:40:00;0,00;0,00
+615700;Frais de réception - accueil;8 FEB 02  20:40:00;0,00;0,00
+615800;Dons et libéralités;8 FEB 02  20:40:00;0,00;0,00
+615900;Sponsoring;8 FEB 02  20:40:00;0,00;0,00
+615990;Publicité;8 FEB 02  20:40:00;0,00;0,00
+616000;Frais de voitures: location;8 FEB 02  20:40:00;0,00;0,00
+616100;Rbt frais de déplacement;13 MAY 09  08:53:00;75,60;0,00
+616109;FRAIS KILOMETRIQUE PERSONNEL;13 AUG 07  09:49:00;0,00;0,00
+616200;Frais de voitures: ent. et rép.;8 FEB 02  20:40:00;0,00;0,00
+616300;Frais de voitures: assurances;8 FEB 02  20:40:00;0,00;0,00
+616400;Frais de voit.: péage, taxi et parking;8 FEB 02  20:40:00;0,00;0,00
+616500;Frais de voitures: ind. km;8 FEB 02  20:40:00;0,00;0,00
+616900;Frais de voitures: divers;8 FEB 02  20:40:00;0,00;0,00
+616901;TRANSPORT PATIENTS;6 JUL 07  16:35:00;0,00;0,00
+616902;FORMATION DU PERSONNEL;12 OCT 09  12:34:00;0,00;0,00
+617000;Sous-traitants;8 FEB 02  20:40:00;0,00;0,00
+617100;Pers. mis à disposition de l'ent.;8 FEB 02  20:40:00;0,00;0,00
+618000;Rém. dirigeant d'ent.;19 FEB 02  14:54:00;0,00;0,00
+618010;ATN (voiture) dirigeant d'ent.;19 FEB 02  14:54:00;0,00;0,00
+618100;Cotisations sociales dirigeant d'ent.;19 FEB 02  14:54:00;0,00;0,00
+618200;Assurance-groupe dirigeant d'ent.;19 FEB 02  14:54:00;0,00;0,00
+618300;Assurance décès dirigeant d'ent.;19 FEB 02  14:54:00;0,00;0,00
+620200;Rémunérations employés;8 FEB 02  20:40:00;8567,68;0,00
+620201;CHARGES SOCIALES PATRONALES EMPLOYE;6 JUL 07  16:41:00;2800,09;0,00
+620202;PEC VAC EMP PAYE;6 JUL 07  16:58:00;0,00;0,00
+620209;REDUCTEUR APPOINTEMENT;24 JUL 07  09:12:00;0,00;1662,82
+620210;ATN (voiture) employés;8 FEB 02  20:40:00;0,00;0,00
+620220;Rém. employés: pécules de vacances;8 FEB 02  20:40:00;0,00;0,00
+620221;Rém. employés: prov. péc. vac. (+);8 FEB 02  20:40:00;1612,00;0,00
+620222;Rém. employés: prov. péc. vac. (-);8 FEB 02  20:40:00;0,00;0,00
+620223;UTILISATION PROV PEC VAC EMPLOYE;6 JUL 07  17:11:00;0,00;0,00
+620230;Rém. employés: prime de fin d'année;8 FEB 02  20:40:00;0,00;0,00
+620231;Rém. employés: prov. PFA (+);8 FEB 02  20:40:00;0,00;0,00
+620232;Rém. employés: prov. PFA (-);8 FEB 02  20:40:00;0,00;0,00
+620240;Rém. empl.: pr/grat. soumises à ONSS;8 FEB 02  20:40:00;0,00;0,00
+620241;Rém. empl.: prov. pr/grat. soumis (+);8 FEB 02  20:40:00;0,00;0,00
+620242;Rém. empl.: prov. pr/grat. soumis(-);8 FEB 02  20:40:00;0,00;0,00
+620250;Rém. empl.: pr/grat. n soumises à ONSS;8 FEB 02  20:40:00;0,00;0,00
+620251;Rém. empl.: prov. pr/grat. n soumis(+);8 FEB 02  20:40:00;0,00;0,00
+620252;Rém. empl.: prov. pr/grat. n soumis(-);8 FEB 02  20:40:00;0,00;0,00
+620300;Salaires ouvriers;8 FEB 02  20:40:00;0,00;0,00
+620301;CHARGE PATRONALE OUVRIER;6 JUL 07  16:42:00;0,00;0,00
+620310;ATN (voiture) ouvriers;8 FEB 02  20:40:00;0,00;0,00
+620320;Sal. ouvriers: pécules de vacances;8 FEB 02  20:40:00;0,00;0,00
+620321;Sal. ouvriers: prov. péc. vac. (+);8 FEB 02  20:40:00;0,00;0,00
+620322;Sal. ouvriers: prov. péc. vac. (-);8 FEB 02  20:40:00;0,00;0,00
+620323;PEC.VAC.PAYE OUVRIER;24 JUL 07  13:56:00;0,00;0,00
+620330;Sal. ouvriers: prime de fin d'année;8 FEB 02  20:40:00;0,00;0,00
+620331;Sal. ouvriers: prov. PFA (+);8 FEB 02  20:40:00;0,00;0,00
+620332;Sal. ouvriers: prov. PFA (-);8 FEB 02  20:40:00;0,00;0,00
+620340;Sal. ouvr.: pr/grat. soumses à ONSS;8 FEB 02  20:40:00;0,00;0,00
+620341;Sal. ouvr.: prov. pr/grat. soumis(+);8 FEB 02  20:40:00;0,00;0,00
+620342;Sal. ouvr.: prov. pr/grat. soumis(-);8 FEB 02  20:40:00;0,00;0,00
+620350;Sal. ouvr.: pr/grat. n soumises à ONSS;8 FEB 02  20:40:00;0,00;0,00
+620351;Sal. ouvr.: prov. pr/grat. n soumis(+);8 FEB 02  20:40:00;0,00;0,00
+620352;Sal. ouvr.: prov. pr/grat. n soumis(-);8 FEB 02  20:40:00;0,00;0,00
+621000;Cotisations patronales ONSS dir. d'ent.;8 FEB 02  20:40:00;0,00;0,00
+621100;Cot. patronales ONSS A.T.N.(voitures);8 FEB 02  20:40:00;0,00;0,00
+621202;RISTOURNE COTIS. PAT. OUVRIERS;17 JUL 07  15:54:00;0,00;0,00
+621700;Redistribution charges sociales;8 FEB 02  20:40:00;0,00;0,00
+622000;Assurance-groupe;8 FEB 02  20:40:00;0,00;0,00
+622100;Assurance dirigeants d'ent.;8 FEB 02  20:40:00;0,00;0,00
+622200;Assurance hospitalisation;8 FEB 02  20:40:00;0,00;0,00
+622210;ASSURANCE ACCIDENT DU TRAVAIL;12 JUL 07  14:23:00;0,00;0,00
+622403;FRAIS DIVERS DE PERSONNEL;6 JUL 07  16:59:00;0,00;0,00
+623000;Abonnements sociaux;8 FEB 02  20:40:00;0,00;0,00
+623001;AUTRE FRAIS;24 JUL 07  09:13:00;36,00;0,00
+623020;Chèques-repas;8 FEB 02  20:40:00;0,00;0,00
+623030;Chèques-repas: retenues pers.les (-);8 FEB 02  20:40:00;0,00;0,00
+623110;Assurance accident du travail;8 FEB 02  20:40:00;0,00;0,00
+623200;Frais de cantine;8 FEB 02  20:40:00;0,00;0,00
+623300;Frais médicaux interentreprises;8 FEB 02  20:40:00;0,00;0,00
+623400;Fêtes de fin d'année, cadeaux de naiss.;8 FEB 02  20:40:00;0,00;0,00
+623500;MEDECINE INTERENTREPRISE;6 JUL 07  17:03:00;0,00;0,00
+623800;Frais de transport collectif;8 FEB 02  20:40:00;0,00;0,00
+623810;Ind. forf. frais de voy. et séj. du pers;8 FEB 02  20:40:00;0,00;0,00
+623900;Form. du pers. (séminaires, training);8 FEB 02  20:40:00;0,00;0,00
+624100;Pensions personnel;8 FEB 02  20:40:00;0,00;0,00
+630000;Dotation aux amortissements;18 MAR 08  10:49:00;0,00;0,00
+630002;Am. autres frais d'étab. et d'aug. cap.;8 FEB 02  20:40:00;0,00;0,00
+630112;Amort. software;8 FEB 02  20:40:00;0,00;0,00
+630113;Amort. goodwill;8 FEB 02  20:40:00;0,00;0,00
+630114;AMORT S/ INSTALLATION TECHNIQUE;6 JUL 07  17:05:00;0,00;0,00
+630115;AMORT S/ DENTISTERIE;6 JUL 07  17:06:00;0,00;0,00
+630116;AMORT S/ MAT RADIO;6 JUL 07  17:07:00;0,00;0,00
+630117;AMORT S/ MAT CLASSEMENT;6 JUL 07  17:08:00;0,00;0,00
+630220;Amort. bâtiments;8 FEB 02  20:40:00;0,00;0,00
+630221;Amort. frais acquisition bâtiments;8 FEB 02  20:40:00;0,00;0,00
+630228;AMORT MAT INFORMATIQUE;10 JUL 07  11:34:00;0,00;0,00
+630229;AMORT DERMATOLOGIE;10 JUL 07  15:00:00;0,00;0,00
+630230;Amort. installations;8 FEB 02  20:40:00;0,00;0,00
+630231;Amort. machines;8 FEB 02  20:40:00;0,00;0,00
+630232;Amort. outillages;8 FEB 02  20:40:00;0,00;0,00
+630233;AMORT KINE;10 JUL 07  15:00:00;0,00;0,00
+630234;AMORT OPTIQUE;10 JUL 07  15:01:00;0,00;0,00
+630235;AMORT ECHO DOPPLER;10 JUL 07  15:03:00;0,00;0,00
+630237;AMORT;10 JUL 07  15:05:00;0,00;0,00
+630238;AMORT DENTISTERIE;10 JUL 07  15:06:00;0,00;0,00
+630239;AMORT MAT ORL;10 JUL 07  15:06:00;0,00;0,00
+630240;Amort. mobilier;8 FEB 02  20:40:00;0,00;0,00
+630241;Amort. matériel de bureau;8 FEB 02  20:40:00;0,00;0,00
+630242;Amort. matériel informatique;8 FEB 02  20:40:00;0,00;0,00
+630243;Amort. voitures;8 FEB 02  20:40:00;0,00;0,00
+630244;Amort. camions;8 FEB 02  20:40:00;0,00;0,00
+630250;Amort. terrains et constr. en leas.;8 FEB 02  20:40:00;0,00;0,00
+630251;Amort. installations en leas.;25 MAR 10  10:56:00;0,00;0,00
+630252;Amort. machines en leas.;8 FEB 02  20:40:00;0,00;0,00
+630253;Amort. outillages en leas.;8 FEB 02  20:40:00;0,00;0,00
+630254;Amort. mobilier en leas.;8 FEB 02  20:40:00;0,00;0,00
+630255;Amort. matériel de bureau en leas.;8 FEB 02  20:40:00;0,00;0,00
+630256;Amort. matériel informatique en leas.;8 FEB 02  20:40:00;0,00;0,00
+630257;Amort. voitures en leas.;8 FEB 02  20:40:00;0,00;0,00
+630258;Amort. camions en leas.;8 FEB 02  20:40:00;0,00;0,00
+630260;Amortissement aménag. locaux pris en loc;8 FEB 02  20:40:00;0,00;0,00
+630261;Amort. locaux donnés en location;8 FEB 02  20:40:00;0,00;0,00
+630262;Amort. réserve immobilière;8 FEB 02  20:40:00;0,00;0,00
+630263;Amort. matériel d'emballage;8 FEB 02  20:40:00;0,00;0,00
+630264;Amort. biens mob. donnés en location;8 FEB 02  20:40:00;0,00;0,00
+630270;Amort. construction en cours;8 FEB 02  20:40:00;0,00;0,00
+630271;Amort. installations en construction;8 FEB 02  20:40:00;0,00;0,00
+630272;Amort. machines en construction;8 FEB 02  20:40:00;0,00;0,00
+630273;Amort. outillages en construction;8 FEB 02  20:40:00;0,00;0,00
+630274;Amort. mobilier en construction;8 FEB 02  20:40:00;0,00;0,00
+630275;Amort. matériel roulant en construction;8 FEB 02  20:40:00;0,00;0,00
+630280;AMORT OPTIQUE;10 JUL 07  15:07:00;0,00;0,00
+630281;AMORT;10 JUL 07  15:53:00;0,00;0,00
+630282;AMORT MAT DENTISTERIE;10 JUL 07  15:03:00;0,00;0,00
+631040;Réd. val. sur stocks marchandises (+);8 FEB 02  20:40:00;0,00;0,00
+631140;Réd. val. sur stocks marchandises (-);8 FEB 02  20:40:00;0,00;0,00
+633999;DOTATION AMORTISSEMENT;18 MAR 08  11:06:00;5000,00;0,00
+634000;Réd. val. créances comm. à 1an au+ (+);8 FEB 02  20:40:00;0,00;0,00
+634100;Réd. val. créances comm. à 1an au + (-);8 FEB 02  20:40:00;0,00;0,00
+634281;AMORT;10 JUL 07  15:08:00;0,00;0,00
+635000;Prov. pensions et obl. similaires (+);8 FEB 02  20:40:00;0,00;0,00
+635100;Prov. pensions et obl. similaires (-);8 FEB 02  20:40:00;0,00;0,00
+636000;Prov. grosses rép. et gros entr. (+);8 FEB 02  20:40:00;0,00;0,00
+636100;Prov. grosses rép. et gros entr. (-);8 FEB 02  20:40:00;0,00;0,00
+637000;Prov. pour autres risques et charges (+);8 FEB 02  20:40:00;0,00;0,00
+637100;Prov. pour autres risques et charges (-);8 FEB 02  20:40:00;0,00;0,00
+637999;AMORTISSEMENT PRECISIONNEL;24 JUL 07  10:00:00;0,00;0,00
+640000;Taxe de circ. voitures;8 FEB 02  20:40:00;0,00;0,00
+640003;TAXE  AFC NUCLEAIRE;10 JUL 07  15:10:00;0,00;0,00
+640010;Taxe de circ. véhicules prof.;8 FEB 02  20:40:00;0,00;0,00
+640020;Taxe radio voitures;8 FEB 02  20:40:00;0,00;0,00
+640030;Taxe radio véhicules prof.;8 FEB 02  20:40:00;0,00;0,00
+640100;Timbres fiscaux;8 FEB 02  20:40:00;0,00;0,00
+640110;Droits d'enregistrement;8 FEB 02  20:40:00;0,00;0,00
+640120;TVA non-récup. sur ATN (voitures);8 FEB 02  20:40:00;0,00;0,00
+640200;Taxes communales et provinciales;8 FEB 02  20:40:00;69,55;0,00
+640210;Taxes sur moteurs;8 FEB 02  20:40:00;0,00;0,00
+640220;Taxes sur personnel en service;8 FEB 02  20:40:00;0,00;0,00
+640230;Taxes reprobel;8 FEB 02  20:40:00;0,00;0,00
+640240;Autres taxes;8 FEB 02  20:40:00;0,00;0,00
+640300;Cotisation annuelle - sociétés;8 FEB 02  20:40:00;0,00;0,00
+640322;TAXE PATRIMONIALE ASBL;15 APR 10  17:30:00;0,00;0,00
+640400;Amende TVA fixe;8 FEB 02  20:40:00;0,00;0,00
+640410;Amende TVA proportionnelle;8 FEB 02  20:40:00;0,00;0,00
+640420;Autres amendes;8 FEB 02  20:41:00;0,00;0,00
+640500;Précompte immobilier;8 FEB 02  20:41:00;0,00;0,00
+648000;Charges d'exploitation diverses;8 FEB 02  20:41:00;0,00;0,00
+650000;Intérêts sur compte à vue;8 FEB 02  20:41:00;0,00;0,00
+650001;INTER ET COMMISSION;10 JUL 07  15:11:00;0,00;0,00
+650010;Intérêts sur emprunts;8 FEB 02  20:41:00;0,00;0,00
+650011;INTERETS DEXIA;11 JUL 07  15:35:00;0,00;0,00
+650012;INT ING V;26 JUL 07  11:31:00;0,00;0,00
+650013;INT FORTIS MAMO 271-35;30 JUL 07  08:51:00;0,00;0,00
+650020;Intérêts de leasing: autres;8 FEB 02  20:41:00;0,00;0,00
+650021;INT LEASING MAMMO FORTIS;10 JUL 07  15:12:00;0,00;0,00
+650023;INT REFRACTOMETRE;10 JUL 07  15:13:00;0,00;0,00
+650024;INT DEXIA 071-27  65000€;10 JUL 07  15:14:00;0,00;0,00
+650025;INT ING DENTISTERIE          20850€;10 JUL 07  15:15:00;0,00;0,00
+650026;INT ING 85000 E;27 JUL 07  11:17:00;239,64;0,00
+650027;int ING 16000;21 FEB 08  10:18:00;0,00;0,00
+650028;INT DEXIA 9000;3 MAR 10  11:53:00;0,00;0,00
+650030;Intérêts location / leasing voitures;8 FEB 02  20:41:00;0,00;0,00
+650060;Intérêts de retard;8 FEB 02  20:41:00;0,00;0,00
+650070;Intérêts c/c dirigeant d'entreprise;8 FEB 02  20:41:00;0,00;0,00
+650080;Intérêts sur entreprises du groupe;8 FEB 02  20:41:00;0,00;0,00
+650200;Autres charges des dettes;8 FEB 02  20:41:00;0,00;0,00
+652000;MOINS VALUE SUR ACTIONS;26 JAN 10  15:59:00;0,00;0,00
+654000;Différences de change;8 FEB 02  20:39:00;0,00;0,00
+655000;Ecarts de conversion des devis;8 FEB 02  20:39:00;0,00;0,00
+657000;Remises accordées aux clients;8 FEB 02  20:41:00;0,01;0,00
+657100;Frais bancaires;8 FEB 02  20:41:00;0,00;0,00
+657101;DROIT TIMBRE DEXIA;10 JUL 07  15:19:00;0,00;0,00
+657102;COMMISSION RESERVATION  DEXIA;10 JUL 07  15:20:00;0,00;0,00
+657103;DEXIA FRAIS EXPED BANCAIRE;10 JUL 07  15:23:00;0,00;0,00
+657104;FR GEST DEXIA CREDIT PROF;10 JUL 07  15:24:00;0,00;0,00
+657105;FR MISE EN FORCE CREDIT;10 JUL 07  15:26:00;0,00;0,00
+657106;FRAIS CREDIT CAISSE DEXIA;10 JUL 07  15:26:00;0,00;0,00
+657107;FRAIS DE PORT FORTIS;10 JUL 07  15:28:00;0,00;0,00
+657108;FRAIS GESTION FORTIS;10 JUL 07  15:29:00;0,00;0,00
+657109;FR BAKSYS ET THALES;10 JUL 07  15:29:00;68,75;0,00
+657110;FRAIS GESTION CCP;10 JUL 07  15:30:00;0,00;0,00
+657111;FRAIS ISABEL;10 JUL 07  15:22:00;0,00;0,00
+657112;DEXIA FRAIS TENUE DE COMPTE;11 JUL 07  15:37:00;0,00;0,00
+657113;ING TIMBRE;29 JUL 07  19:10:00;0,00;0,00
+657114;DROIT DE TIMBRE FORTIS;30 JUL 07  08:58:00;0,00;0,00
+657115;FRAIS ing;16 DEC 07  17:19:00;0,00;0,00
+657120;FRAIS GESTION AXA;8 JUN 09  12:08:00;47,50;12,00
+657200;Frais bancaires pour garanties bancaires;8 FEB 02  20:41:00;0,00;0,00
+657999;iMDEMNITE REEMPLOI REMB ANTICIPE;27 AUG 08  12:05:00;0,00;0,00
+659000;Différence de paiement;8 FEB 02  20:41:00;0,00;0,00
+659109;difference de paiement mut 109;14 APR 08  11:39:00;0,00;0,00
+659128;diff de paiement mut 128;1 SEP 08  10:28:00;0,00;0,00
+659129;difference de paiement mut129;25 MAR 08  13:29:00;13,55;0,00
+659135;Difference paiement mut 135;24 NOV 08  15:35:00;0,00;0,00
+659216;difference de paiement 216;21 MAR 08  12:13:00;0,00;0,00
+659226;Difference paiement mut 226;24 NOV 08  15:38:00;0,00;0,00
+659306;difference de paiement  mut 306;21 MAR 08  11:29:00;0,00;0,00
+659315;différence de paiement  mut 315;21 MAR 08  11:30:00;0,00;0,00
+659316;différence de paiement mut 316;20 MAY 08  13:33:00;0,00;0,00
+659319;Difference paiement mut 319;24 NOV 08  15:43:00;0,00;0,00
+659409;différence de paiement mut409;22 APR 08  14:36:00;14,31;0,00
+659509;difference de paiement 509;21 MAR 08  12:39:00;0,00;0,00
+659527;difference de paiement mut527;25 MAR 08  15:50:00;42,46;0,00
+659950;diff mut 950;1 SEP 08  11:27:00;0,00;0,00
+660000;REDUC VAL SUR FRAIS ETABLISSEMENT;10 JUL 07  16:12:00;0,00;0,00
+660230;PERTE SUR DESAFFECTATION;10 JUL 07  16:13:00;0,00;0,00
+663000;AUTRES CHARGES EXCEPTIONNELLES;25 MAR 10  11:07:00;0,00;0,00
+665300;PERTE ET CHARGE DIVERSE;10 JUL 07  16:14:00;0,00;0,00
+665301;FAUX BILLETS;10 JUL 07  16:15:00;0,00;0,00
+665400;SINISTRE ELECTRICITE;22 FEB 10  18:21:00;0,00;0,00
+670000;Versements anticipés;8 FEB 02  20:41:00;0,00;0,00
+670010;Précompte mobilier;8 FEB 02  20:41:00;0,00;0,00
+670011;PRECOMPTE MOBILIER FORTIS;10 JUL 07  16:16:00;0,00;0,00
+670012;PREC MOBILIER DEXIA;10 JUL 07  16:17:00;0,00;0,00
+670013;PREC MOBILIER ING;29 JUL 07  19:08:00;0,00;0,00
+670014;PRECOMPTE MOBILIER TERME DEXIA;16 AUG 07  08:39:00;0,00;0,00
+670100;Excéd. de vers. d'imp. portés à l'actif;8 FEB 02  20:41:00;0,00;0,00
+670200;Charges fiscales estimées;8 FEB 02  20:41:00;0,00;0,00
+671000;Suppl. d'impôts dus ou versés;8 FEB 02  20:41:00;0,00;0,00
+671100;Suppl. d'impôts estimés;8 FEB 02  20:41:00;0,00;0,00
+671200;Prov. fisc. constit. pour ex. antérieurs;8 FEB 02  20:41:00;0,00;0,00
+672000;Impôts étrangers sur le résultat de l'ex;8 FEB 02  20:41:00;0,00;0,00
+673000;Impôts étr. sur le résultat d'ex. ant.;8 FEB 02  20:41:00;0,00;0,00
+680000;Transferts aux impôts différés;8 FEB 02  20:41:00;0,00;0,00
+689000;Transferts aux réserves immunisées;8 FEB 02  20:41:00;0,00;0,00
+690000;Perte reportée de l'ex. précédent;8 FEB 02  20:41:00;0,00;0,00
+691000;Affect. au cap. et à la prime d'émiss.;8 FEB 02  20:41:00;0,00;0,00
+692000;Dotation à la réserve légale;8 FEB 02  20:41:00;0,00;0,00
+692100;Dotation aux autres réserves;8 FEB 02  20:41:00;0,00;0,00
+693000;Bénéfice à reporter;8 FEB 02  20:41:00;0,00;0,00
+694000;Rém. du capital;8 FEB 02  20:41:00;0,00;0,00
+695000;Administrateurs et gérants;8 FEB 02  20:41:00;0,00;0,00
+696000;Autres allocataires;8 FEB 02  20:41:00;0,00;0,00
+700000;Ventes;14 FEB 02  09:19:00;0,00;0,00
+700001;VENTE MEDICAMENTS;10 JUL 07  16:20:00;0,00;0,00
+702000;VENTE DECHET REBUS;10 JUL 07  16:21:00;0,00;0,00
+705001;SOINS INFIRLIER;10 JUL 07  16:22:00;0,00;37,21
+705100;TRAVAIL A FACON;10 JUL 07  16:22:00;0,00;0,00
+705201;RETROCESSION MAKOUL;1 SEP 08  08:50:00;0,00;220,00
+707000;Ventes d'immobilisés;14 FEB 02  09:19:00;0,00;0,00
+707001;TICKET MODERATEUR;10 JUL 07  16:24:00;868,94;5250,87
+707003;OSTEO;10 JUL 07  16:24:00;0,00;0,00
+707102;TIERS PAYANT;10 JUL 07  16:25:00;0,00;0,00
+707103;PAIEMENT RECVTIFICATIF PATIENT;10 JUL 07  16:33:00;0,00;0,00
+708000;Quote-part ristourne médecins;13 MAY 09  16:06:00;0,00;30247,93
+708020;RETROCESSION LAROUR;13 NOV 09  11:47:00;0,00;0,00
+708100;HONORAIRES PAYES;10 JUL 07  16:27:00;0,00;36735,75
+708200;RISTOURNE ACCOUSTIQUE M LEROY;10 JUL 07  16:28:00;0,00;0,00
+712000;Var. de stocks des en-cours de fabric.;14 FEB 02  09:21:00;0,00;0,00
+713000;Var. de stocks de produits finis;14 FEB 02  09:21:00;0,00;0,00
+740999;RISTOURNE APPOINTEMENTS;10 JUL 07  16:28:00;0,00;1245,10
+741000;PV réal. cour. d'immob. corporelles;14 FEB 02  09:20:00;0,00;0,00
+741100;RETROCESSION AXL SPRL;1 SEP 08  08:51:00;0,00;0,00
+741101;RETROCESSION MME DARDENNE;1 SEP 08  08:51:00;0,00;100,00
+741200;RETROCESSION MAB;1 SEP 08  08:51:00;0,00;1735,25
+741203;BANC SOLAIRE;10 JUL 07  16:31:00;0,00;0,00
+741204;RETROCESSION ACCOUSTIQUE LEROY;1 SEP 08  08:52:00;0,00;0,00
+743000;Refact. frais à des tiers (admis);14 FEB 02  09:20:00;0,00;0,00
+743010;Refact. frais à des tiers (non admis);14 FEB 02  09:20:00;0,00;0,00
+743502;ATN (voitures) employés;14 FEB 02  09:20:00;0,00;0,00
+743503;ATN (voitures) ouvriers;14 FEB 02  09:20:00;0,00;0,00
+743512;ATN (autres) employées;14 FEB 02  09:20:00;0,00;0,00
+743513;ATN (autres) ouvriers;14 FEB 02  09:20:00;0,00;0,00
+743520;Contrib. personn. - util. voit. de soc.;8 FEB 02  20:41:00;0,00;0,00
+745100;DEPLACEMENT LABO;10 JUL 07  16:33:00;0,00;0,00
+746000;Prestations de services;14 FEB 02  09:21:00;0,00;0,00
+748000;Récup. assurance voitures;8 FEB 02  20:41:00;0,00;0,00
+748010;Récup. assurance véh. prof.;8 FEB 02  20:41:00;0,00;0,00
+748020;Récup. assurance acc. du travail;8 FEB 02  20:41:00;0,00;0,00
+748021;RECUPERATION GROUPES;16 DEC 07  12:04:00;0,00;0,00
+748030;Récup. autres assurances;8 FEB 02  20:41:00;0,00;0,00
+749000;Produits divers;14 FEB 02  09:21:00;0,00;0,00
+750000;PRODUIT DES IMMOBILISATION FINANCIERES;10 JUL 07  16:36:00;0,00;0,00
+751010;Intérêts sur c/c dirigeant d'entreprise;8 FEB 02  20:41:00;0,00;0,00
+751020;Intérêts sur prêts au personnel;8 FEB 02  20:41:00;0,00;0,00
+751030;Intérêts d'entreprises du groupe;8 FEB 02  20:41:00;0,00;0,00
+751120;Intérêts sur compte à terme;8 FEB 02  20:41:00;0,00;0,00
+751200;Intérêts sur compte à vue;8 FEB 02  20:41:00;0,00;0,00
+751218;INTERET BRUTS FORTIS;10 JUL 07  16:36:00;0,00;0,00
+751219;INT BRUT ING;29 JUL 07  18:57:00;0,00;0,00
+751220;INT BRUT DEXIA;16 AUG 07  08:37:00;0,00;0,00
+751237;INTERET BRUT DEXIA;10 JUL 07  16:37:00;0,00;0,00
+751238;Int BRUT AXA;26 JAN 10  14:57:00;0,00;0,00
+752000;pluss value réalisée sur actions;8 JAN 10  12:44:00;0,00;0,00
+754000;Différences de change;8 FEB 02  20:39:00;0,00;0,00
+755000;Ecarts de conversion des devis;8 FEB 02  20:39:00;0,00;0,00
+756000;Produits financiers divers;8 FEB 02  20:41:00;0,00;0,00
+757000;Remises obtenues des fourn.;8 FEB 02  20:41:00;0,00;0,00
+758000;ESCOMPTES OBTENUS;10 JUL 07  16:39:00;0,00;0,00
+759000;Différences de paiement;29 APR 08  13:54:00;0,00;0,00
+759109;DIFFERENCE DE PAIEMENT MUT 109;24 NOV 08  15:33:00;0,00;0,00
+759111;diff de paiement mut 111;7 MAY 09  12:39:00;0,00;0,00
+759113;différence de paiement mut chret de roeselare;20 MAY 08  13:49:00;0,00;0,00
+759128;difference de paiement mut 128;21 MAR 08  12:33:00;0,00;0,00
+759129;difference de paiement mut129;21 MAR 08  11:56:00;0,00;0,00
+759135;difference de paiement mut135;25 MAR 08  12:04:00;0,00;0,00
+759216;difference de paiement mut216;25 MAR 08  14:11:00;0,00;0,00
+759305;DIFF PAIEMENT 305;29 JUL 08  11:18:00;0,00;1,55
+759306;DIFFERENCE PAIEMENT MUT 306;17 JUN 08  15:50:00;0,00;0,00
+759314;difference de paiement 314;21 MAR 08  12:21:00;0,00;2,46
+759315;difference de paiement 315;21 MAR 08  12:19:00;0,00;385,41
+759316;Différence de paiement mut316;29 APR 08  13:54:00;0,00;0,00
+759317;difference de paiement 317;21 MAR 08  11:16:00;0,00;0,00
+759409;difference de paiement mut409;25 MAR 08  16:56:00;0,00;0,00
+759413;difference de paiement mut413;25 MAR 08  15:56:00;0,00;2,29
+759509;difference de paiement mut509;21 MAR 08  12:42:00;0,00;0,00
+759527;difference de paiement mut527;25 MAR 08  14:34:00;0,00;193,72
+759605;difference de paiement mut605;21 MAR 08  12:46:00;0,00;0,00
+759910;difference paiement mut910;8 APR 08  15:37:00;0,00;0,00
+759950;difference de paiement mut950;21 MAR 08  12:12:00;0,00;23,05
+764000;BONIS HORS PERIODE;10 JUL 07  16:40:00;0,00;0,00
+765000;AUTRES PRODUITS EXCEPTIONNELS;10 JUL 07  16:40:00;0,00;0,00
+765001;INDEMNITE ASSURANCE;10 JUL 07  16:41:00;0,00;0,00
+765002;VENTE IMMOBILISES;18 MAR 08  11:09:00;0,00;0,00
+771000;Régularisations d'impôts dûs ou versés;8 FEB 02  20:41:00;0,00;0,00
+771100;Régularisations d'impôts estimés;8 FEB 02  20:41:00;0,00;0,00
+771200;Reprises de provisions fiscales;8 FEB 02  20:41:00;0,00;0,00
+773000;Impôts étrangers sur le résultat;8 FEB 02  20:41:00;0,00;0,00
+780000;Prélèvmnts sur les impôts différés;8 FEB 02  20:41:00;0,00;0,00
+789000;Prélèvmnts sur les réserves immunisées;8 FEB 02  20:41:00;0,00;0,00
+790000;Bénéfice reporté de l'ex. précéd.;8 FEB 02  20:41:00;0,00;0,00
+791000;Prélèvmnts sur le cap. et les pr. d'émis;8 FEB 02  20:41:00;0,00;0,00
+792000;Prélèvmnts sur la réserve légale;8 FEB 02  20:41:00;0,00;0,00
+792100;Prélèvmnts sur les autres réserves;8 FEB 02  20:41:00;0,00;0,00
+793000;Perte à reporter;8 FEB 02  20:41:00;0,00;0,00
+794000;Intervention d'associés dans la perte;8 FEB 02  20:41:00;0,00;0,00

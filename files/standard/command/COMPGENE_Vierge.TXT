@@ -1,0 +1,19 @@
+Numéro;Libellé français;Date de la dernière modification;Débit;Crédit
+100000;Fonds associatif;27 APR 09  16:58:00;0,00;0,00
+200000;L immobilisé;8 FEB 02  20:39:00;0,00;0,00
+300000;Stock;8 FEB 02  20:39:00;0,00;0,00
+400000;Tiers;8 FEB 02  20:39:00;0,00;0,00
+500000;Liquidités;8 FEB 02  20:39:00;0,00;0,00
+600000;Honoraires-Achats;8 FEB 02  20:39:00;0,00;0,00
+610000;Biens et Services;8 FEB 02  20:39:00;0,00;0,00
+620000;Rémunérations;8 FEB 02  20:39:00;0,00;0,00
+630000;Amortissements;27 APR 09  16:55:00;0,00;0,00
+640000;Autres frais exploitations;8 FEB 02  20:39:00;0,00;0,00
+650000;Frais financiers;8 FEB 02  20:39:00;0,00;0,00
+660000;Frais exceptionnels;8 FEB 02  20:39:00;0,00;0,00
+670000;Impots;8 FEB 02  20:39:00;0,00;0,00
+700000;Chiffre d affaire;2 JUL 07  18:08:00;0,00;0,00
+740000;Autre chiffre d affaire;8 FEB 02  20:39:00;0,00;0,00
+750000;Produits financiers;8 FEB 02  20:39:00;0,00;0,00
+760000;Produits exceptionnels;8 FEB 02  20:39:00;0,00;0,00
+770000;Impots;8 FEB 02  20:39:00;0,00;0,00

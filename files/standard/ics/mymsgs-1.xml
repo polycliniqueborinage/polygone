@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="Collabtive" -->
+<?xml-stylesheet href="" type="text/xsl"?>
+<rss version="2.0">
+    <channel>
+        <title>Mes messages</title>
+        <description></description>
+        <link>http://localhost:8888/collabtive/managemessage.php?action=mymsgs</link>
+        <lastBuildDate>Wed, 24 Sep 2008 21:03:04 +0100</lastBuildDate>
+        <generator>Collabtive</generator>
+        <item>
+            <title>test caro</title>
+            <link>http://localhost:8888/collabtive/managemessage.php?action=showmessage&amp;mid=1&amp;id=1</link>
+            <description><![CDATA[test test]]></description>
+            <author>root</author>
+        </item>
+    </channel>
+</rss>

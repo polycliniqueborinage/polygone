@@ -1,0 +1,893 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/polydev/!svn/ver/211/polygone/templates/standard
+END
+template_management_product_manuel_flow.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/polydev/!svn/ver/160/polygone/templates/standard/template_management_product_manuel_flow.tpl
+END
+template_calbody.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_calbody.tpl
+END
+template_management_tarification_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_tarification_add.tpl
+END
+template_user_agenda_fulllist.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/126/polygone/templates/standard/template_user_agenda_fulllist.tpl
+END
+template_user_agenda_day.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/polydev/!svn/ver/186/polygone/templates/standard/template_user_agenda_day.tpl
+END
+template_user_agenda_gestion_agenda_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_agenda_gestion_agenda_list.tpl
+END
+template_admin_activity_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_admin_activity_list.tpl
+END
+template_error.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_error.tpl
+END
+template_management_client_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/156/polygone/templates/standard/template_management_client_list.tpl
+END
+template_admin_people_user_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_admin_people_user_list.tpl
+END
+template_management_patient_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_patient_view.tpl
+END
+template_management_listing_mutuelle.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/polydev/!svn/ver/136/polygone/templates/standard/template_management_listing_mutuelle.tpl
+END
+template_admin_people_user_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/136/polygone/templates/standard/template_admin_people_user_view.tpl
+END
+template_management_gestion_simple_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/polydev/!svn/ver/211/polygone/templates/standard/template_management_gestion_simple_search.tpl
+END
+index.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/107/polygone/templates/standard/index.tpl
+END
+template_management_debt_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_debt_list.tpl
+END
+template_replyform.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_replyform.tpl
+END
+template_management_debt_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_debt_add.tpl
+END
+template_management_protocol_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/polydev/!svn/ver/232/polygone/templates/standard/template_management_protocol_view.tpl
+END
+template_management_product_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_product_add.tpl
+END
+template_management_cecodi_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_cecodi_view.tpl
+END
+template_management_prevention_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_prevention_add.tpl
+END
+template_admin_system.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_admin_system.tpl
+END
+template_management_addressbook_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_addressbook_view.tpl
+END
+template_admin_people_user_edit.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/136/polygone/templates/standard/template_admin_people_user_edit.tpl
+END
+template_admin_mailing_day.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/polydev/!svn/ver/126/polygone/templates/standard/template_admin_mailing_day.tpl
+END
+template_management_prevention_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_prevention_list.tpl
+END
+template_user_sumehr_submit_form.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_user_sumehr_submit_form.tpl
+END
+template_management_client_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/polydev/!svn/ver/181/polygone/templates/standard/template_management_client_add.tpl
+END
+template_addmessageform.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_addmessageform.tpl
+END
+template_user_agenda_gestion_agenda_event.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_user_agenda_gestion_agenda_event.tpl
+END
+template_admin_listing_doctor.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/149/polygone/templates/standard/template_admin_listing_doctor.tpl
+END
+template_management_project_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_project_search.tpl
+END
+template_user_profil_edit.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/polydev/!svn/ver/136/polygone/templates/standard/template_user_profil_edit.tpl
+END
+template_management_sumehr_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/polydev/!svn/ver/232/polygone/templates/standard/template_management_sumehr_add.tpl
+END
+template_management_acte_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_acte_search.tpl
+END
+template_management_planning_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/polydev/!svn/ver/251/polygone/templates/standard/template_management_planning_search.tpl
+END
+template_header_navigation.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_header_navigation.tpl
+END
+template_management_ouvrier_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/191/polygone/templates/standard/template_management_ouvrier_view.tpl
+END
+template_left.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/polydev/!svn/ver/211/polygone/templates/standard/template_left.tpl
+END
+template_admin_activity_day.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_admin_activity_day.tpl
+END
+template_primary_tabs_admin.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/polydev/!svn/ver/175/polygone/templates/standard/template_primary_tabs_admin.tpl
+END
+template_primary_tabs_management_current.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/polydev/!svn/ver/186/polygone/templates/standard/template_primary_tabs_management_current.tpl
+END
+template_management_client_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/156/polygone/templates/standard/template_management_client_view.tpl
+END
+template_management_user_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_user_search.tpl
+END
+template_management_planning_archive.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/polydev/!svn/ver/205/polygone/templates/standard/template_management_planning_archive.tpl
+END
+tabsmenue-desk.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/polydev/!svn/ver/107/polygone/templates/standard/tabsmenue-desk.tpl
+END
+template_management_acte_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_acte_add.tpl
+END
+template_management_product_flow_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/polydev/!svn/ver/151/polygone/templates/standard/template_management_product_flow_list.tpl
+END
+template_user_message_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_message_add.tpl
+END
+template_management_patient_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/polydev/!svn/ver/118/polygone/templates/standard/template_management_patient_search.tpl
+END
+template_user_agenda_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/polydev/!svn/ver/126/polygone/templates/standard/template_user_agenda_list.tpl
+END
+template_management_protocol_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/232/polygone/templates/standard/template_management_protocol_add.tpl
+END
+template_user_agenda_gestion_agenda_chip.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_user_agenda_gestion_agenda_chip.tpl
+END
+sidebar-a.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/polydev/!svn/ver/107/polygone/templates/standard/sidebar-a.tpl
+END
+template_user_protocol_personal_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_user_protocol_personal_search.tpl
+END
+template_projectmessages.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_projectmessages.tpl
+END
+template_admin_people_pourcent.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_admin_people_pourcent.tpl
+END
+template_user_agenda_gestion_agenda_hour.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_user_agenda_gestion_agenda_hour.tpl
+END
+template_management_menu_current.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_menu_current.tpl
+END
+template_mymessages.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_mymessages.tpl
+END
+template_management_project_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_project_list.tpl
+END
+template_management_protocol_submit_form.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_protocol_submit_form.tpl
+END
+template_primary_tabs_user.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/polydev/!svn/ver/175/polygone/templates/standard/template_primary_tabs_user.tpl
+END
+template_user_sumehr_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_user_sumehr_list.tpl
+END
+template_admin_people_group.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_admin_people_group.tpl
+END
+template_user_agenda_task_detail.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_agenda_task_detail.tpl
+END
+template_header_main.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/polydev/!svn/ver/180/polygone/templates/standard/template_header_main.tpl
+END
+template_management_project_gantt_chart.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_project_gantt_chart.tpl
+END
+template_management_prevention_timeplot.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_prevention_timeplot.tpl
+END
+template_management_prevention_activation.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_prevention_activation.tpl
+END
+template_user_agenda_schedule.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/126/polygone/templates/standard/template_user_agenda_schedule.tpl
+END
+template_user_agenda_gestion_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_agenda_gestion_list.tpl
+END
+template_management_prevention_motif_detail.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_prevention_motif_detail.tpl
+END
+template_management_gestion_complete_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/polydev/!svn/ver/251/polygone/templates/standard/template_management_gestion_complete_search.tpl
+END
+template_management_acte_gestion_simple_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_acte_gestion_simple_search.tpl
+END
+template_management_user_edit.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_user_edit.tpl
+END
+template_management_acte_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_acte_list.tpl
+END
+template_management_patient_gestion_overlay_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_patient_gestion_overlay_search.tpl
+END
+template_management_debt_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_debt_search.tpl
+END
+template_management_cecodi_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_cecodi_search.tpl
+END
+template_admin_people_user_detail.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/polydev/!svn/ver/113/polygone/templates/standard/template_admin_people_user_detail.tpl
+END
+template_user_message_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_message_view.tpl
+END
+template_management_ouvrier_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/polydev/!svn/ver/191/polygone/templates/standard/template_management_ouvrier_search.tpl
+END
+template_management_patient_detail.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_patient_detail.tpl
+END
+template_management_planning_build_worker_total.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/polydev/!svn/ver/242/polygone/templates/standard/template_management_planning_build_worker_total.tpl
+END
+template_management_acte_gestion_complete_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_acte_gestion_complete_search.tpl
+END
+template_management_planning_build_event.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/polydev/!svn/ver/242/polygone/templates/standard/template_management_planning_build_event.tpl
+END
+template_management_protocol_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_protocol_list.tpl
+END
+template_management_ouvrier_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/191/polygone/templates/standard/template_management_ouvrier_list.tpl
+END
+template_user_sumehr_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_user_sumehr_view.tpl
+END
+template_message.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_message.tpl
+END
+template_management_sumehr_global_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/polydev/!svn/ver/182/polygone/templates/standard/template_management_sumehr_global_search.tpl
+END
+template_admin_mailing_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/polydev/!svn/ver/126/polygone/templates/standard/template_admin_mailing_list.tpl
+END
+template_management_addressbook_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_addressbook_search.tpl
+END
+template_user_protocol_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_protocol_list.tpl
+END
+template_management_addressbook_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/polydev/!svn/ver/156/polygone/templates/standard/template_management_addressbook_add.tpl
+END
+template_management_project_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_project_add.tpl
+END
+template_management_user_detail.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_user_detail.tpl
+END
+template_user_sumehr_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_user_sumehr_add.tpl
+END
+header.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/107/polygone/templates/standard/header.tpl
+END
+template_management_patient_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_patient_list.tpl
+END
+template_user_agenda_week.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/polydev/!svn/ver/126/polygone/templates/standard/template_user_agenda_week.tpl
+END
+template_user_agenda_gestion_agenda_week_days.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_agenda_gestion_agenda_week_days.tpl
+END
+template_user_agenda_gestion_agenda_resume.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_agenda_gestion_agenda_resume.tpl
+END
+template_management_patient_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/112/polygone/templates/standard/template_management_patient_add.tpl
+END
+template_adduserform.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_adduserform.tpl
+END
+template_user_menu_simple.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_menu_simple.tpl
+END
+template_user_agenda_timeline.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/126/polygone/templates/standard/template_user_agenda_timeline.tpl
+END
+template_right.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/polydev/!svn/ver/211/polygone/templates/standard/template_right.tpl
+END
+template_management_client_gestion_overlay_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/polydev/!svn/ver/152/polygone/templates/standard/template_management_client_gestion_overlay_search.tpl
+END
+template_user_gestion_complete_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_user_gestion_complete_search.tpl
+END
+template_management_prevention_status.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_prevention_status.tpl
+END
+template_primary_tabs_management_no_current.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/polydev/!svn/ver/186/polygone/templates/standard/template_primary_tabs_management_no_current.tpl
+END
+template_management_cecodi_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_cecodi_list.tpl
+END
+template_user_agenda_task_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/126/polygone/templates/standard/template_user_agenda_task_add.tpl
+END
+template_management_client_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/polydev/!svn/ver/156/polygone/templates/standard/template_management_client_search.tpl
+END
+template_user_profil_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_profil_view.tpl
+END
+template_management_product_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_product_search.tpl
+END
+template_management_menu_no_current.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_menu_no_current.tpl
+END
+template_user_sumehr_personal_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_user_sumehr_personal_search.tpl
+END
+template_management_user_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_user_list.tpl
+END
+template_management_planning_build_chip.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/polydev/!svn/ver/211/polygone/templates/standard/template_management_planning_build_chip.tpl
+END
+template_management_ouvrier_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/211/polygone/templates/standard/template_management_ouvrier_add.tpl
+END
+template_management_product_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_product_view.tpl
+END
+template_management_acte_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_acte_view.tpl
+END
+template_management_debt_contact_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_debt_contact_list.tpl
+END
+template_login.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_login.tpl
+END
+template_user_menu.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_user_menu.tpl
+END
+template_management_planning_week.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/polydev/!svn/ver/236/polygone/templates/standard/template_management_planning_week.tpl
+END
+template_management_planning_build_ouvrier.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/polydev/!svn/ver/211/polygone/templates/standard/template_management_planning_build_ouvrier.tpl
+END
+template_addgroup.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_addgroup.tpl
+END
+template_management_agenda_day.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_agenda_day.tpl
+END
+template_admin_statistique_pie.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_admin_statistique_pie.tpl
+END
+template_management_product_automatic_flow.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/polydev/!svn/ver/160/polygone/templates/standard/template_management_product_automatic_flow.tpl
+END
+template_management_protocol_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/polydev/!svn/ver/232/polygone/templates/standard/template_management_protocol_search.tpl
+END
+template_user_protocol_global_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_user_protocol_global_search.tpl
+END
+template_management_patient_gestion_simple_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_patient_gestion_simple_search.tpl
+END
+template_admin_menu.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/polydev/!svn/ver/180/polygone/templates/standard/template_admin_menu.tpl
+END
+template_management_cecodi_add.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_cecodi_add.tpl
+END
+template_management_addressbook_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/polydev/!svn/ver/132/polygone/templates/standard/template_management_addressbook_list.tpl
+END
+template_management_sumehr_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_sumehr_view.tpl
+END
+template_management_debt_view.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/polydev/!svn/ver/176/polygone/templates/standard/template_management_debt_view.tpl
+END
+template_management_prevention_list_deleted.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_prevention_list_deleted.tpl
+END
+template_header.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/polydev/!svn/ver/211/polygone/templates/standard/template_header.tpl
+END
+template_management_product_list.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/polydev/!svn/ver/134/polygone/templates/standard/template_management_product_list.tpl
+END
+template_management_acte_gestion_overlay_search.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/polydev/!svn/ver/107/polygone/templates/standard/template_management_acte_gestion_overlay_search.tpl
+END
+template_admin_listing_till.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/polydev/!svn/ver/150/polygone/templates/standard/template_admin_listing_till.tpl
+END

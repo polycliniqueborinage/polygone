@@ -1,0 +1,133 @@
+8
+
+dir
+214
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev/polygone/include/js/jquery
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev
+
+
+
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f8ec6-6b70-4122-b4cc-51e5379b8f2c
+
+addon
+dir
+
+interface
+dir
+
+jquery.autocomplete.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+b6b2130d096918d6e5066fa2622cf237
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+jquery.form.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+2bd31999f24a62d12a568fdbb8d43759
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+jquery.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+a9331828c517ac5d97f93b3cfdbcc9bc
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+jquery.metadata.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+68aafcfe9aa1ab7d83a6ce8df302155e
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+jquery.validate.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+0fd04607bf5742e04608e053cdfde416
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+mktSignup.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+d09296c256e40eabde9e89077f55827b
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+stylesheet.css
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+8f20154f1b6762ee1be0b4e8fcfc9f25
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+thickbox-compressed.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+62ecf3e9b248f69a043ca7653866b146
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+ui
+dir
+

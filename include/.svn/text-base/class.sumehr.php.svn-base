@@ -1,0 +1,491 @@
+<?php
+/**
+ * Provides methods to interact with users
+ *
+ * @author Open Dynamics <info@o-dyn.de>
+ * @name user
+ * @version 0.4.7
+ * @package Collabtive
+ * @link http://www.o-dyn.de
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License v3 or laterg
+ */
+class sumehr
+{
+    public $mylog;
+    
+    /**
+     * Konstruktor
+     * Initialisiert den Eventlog
+     */
+    function __construct() {
+        $this->mylog = new mylog;
+    }
+
+    /**
+     * Add new dossier
+     * 
+     */
+    function add($patientID,$userID) {
+    	
+		$sql = "INSERT INTO `sumehr` (`patient_ID` , `user_ID`) VALUES ('$patientID', '$userID');";
+		$ins = mysql_query($sql);
+		$id = mysql_insert_id();
+		
+        if ($ins) {
+            return $id;
+        } else {
+            return false;
+        }
+        
+    }
+
+     /**
+     * Add new sumehr report
+     * 
+     */
+    function addReport($sumehrID,$datetime,$text) {
+    	
+    	$text = mysql_real_escape_string($text);
+    	$sumehrID = (int) mysql_real_escape_string($sumehrID);
+    	
+		$sql = "INSERT INTO `sumehr_report` (`sumehr_ID` ,`datetime` ,`text`) VALUES ('$sumehrID', '$datetime', '$text');";
+		
+		$ins = mysql_query($sql);
+		$id = mysql_insert_id();
+		
+        if ($ins) {
+            return $id;
+        } else {
+            return false;
+        }
+        
+    }
+    
+     /**
+     * Delete sumehr report
+     * 
+     */
+    function deleteReport($patientID,$userID,$reportID) {
+    	
+   	 	$sql = "UPDATE `sumehr_report` set `delete` = 1 WHERE ID = '$sumehrReportFileID'";
+		$del = mysql_query($sql);
+		if ($del) {
+            return true;
+        } else {
+            return false;
+        }		
+        
+    }
+    
+     /**
+     * Update new sumehr report
+     * 
+     */
+    function updateReport($sumehrID,$reportID,$datetime,$text) {
+    	
+    	$text = mysql_real_escape_string($text);
+    	$sumehrID = (int) mysql_real_escape_string($sumehrID);
+    	$reportID = (int) mysql_real_escape_string($reportID);
+    	
+		$sql = "UPDATE `sumehr_report` SET `datetime` = '$datetime', `text` = '$text' WHERE `ID` = $reportID LIMIT 1 ;";
+
+		$upd = mysql_query($sql);
+		
+        if ($upd) {
+            return $reportID;
+        } else {
+            return false;
+        }
+        
+    }
+    
+     /**
+     * Add new sumehr report
+     * 
+     */
+    function addFile($key,$sumehr_report_id,$file_name,$file_extension,$file_size,$file_type,$file_tmpname) {
+    	
+		$fp      = fopen($file_tmpname, 'r');
+		$file_content = fread($fp, filesize($file_tmpname));
+		$file_content = addslashes($file_content);
+		fclose($fp);
+		
+		$sql = "INSERT INTO `sumehr_upload` ( `sumher_report_ID` , `key` , `name` , `extension` , `size` , `type` , `file` )
+				VALUES ( '$sumehr_report_id', '$key', '$file_name', '$file_extension', '$file_size', '$file_type', '$file_content');";
+		$ins = mysql_query($sql);
+		$id = mysql_insert_id();
+        if ($ins) {
+            return $id;
+        } else {
+            return false;
+        }
+        
+    }
+
+    /**
+     * Get dossier if exist
+     * 
+     */
+    function get($patientID,$userID) {
+    	
+	    $patientID 	= (int) $patientID;
+	    $userID 	= (int) $userID;
+	    $sql 		= "SELECT ID, patient_ID, user_ID FROM sumehr WHERE patient_ID='$patientID' AND user_ID='$userID' LIMIT 1";
+	    
+        $sel = mysql_query($sql);
+        $sumehr = mysql_fetch_array($sel);
+        if (!empty($sumehr)) {
+            return $sumehr;
+        } else {
+            return false;
+        }
+        
+    }
+    
+    /**
+     * Get report if exist
+     * 
+     */
+    function getReport($reportID) {
+    	
+	    $reportID 	= (int) $reportID;
+	    $sql 		= "SELECT ID, sumehr_ID, datetime, text FROM `sumehr_report` WHERE ID='$reportID' LIMIT 1";
+	    
+        $sel = mysql_query($sql);
+        $sumehrReport = mysql_fetch_array($sel);
+        if (!empty($sumehrReport)) {
+            return $sumehrReport;
+        } else {
+            return false;
+        }
+        
+    }
+    
+	function getReportFile($reportID) {
+   		
+	    $sql = " SELECT `name`, `type`, `size`, `file`, `ID` FROM `sumehr_upload` WHERE `sumher_report_ID`='$reportID' AND `delete`='0'";
+		$sel = mysql_query($sql);
+        $sumehrReportFiles = array();
+                
+        while ($sumehrReportFile = mysql_fetch_array($sel)) {
+
+        	$sumehrReportFile["ID"] 	= $sumehrReportFile["ID"];
+            $sumehrReportFile["name"] 	= stripslashes($sumehrReportFile["name"]);
+            array_push($sumehrReportFiles, $sumehrReportFile);
+
+        }
+
+        if (!empty($sumehrReportFiles)) {
+        	return $sumehrReportFiles;
+        } else {
+            return false;
+        }
+        
+    }
+    
+   	function getFile($key,$userID) {
+   		
+   		// select one file with the key for the current id
+	    $sql = " SELECT 
+	    		`name`, `type`, `size`, `file` 
+	    		FROM `sumehr_upload` as su
+   				LEFT JOIN sumehr_report AS sr on sr.ID = su.sumher_report_ID
+   				LEFT JOIN sumehr AS s on s.ID = sr.sumehr_ID
+	    		WHERE `key`='$key' AND `delete`='0'  
+   				AND s.user_ID = '$userID'
+	    		LIMIT 1";
+
+	    $sel = mysql_query($sql);
+        $file = mysql_fetch_array($sel);
+        if (!empty($file)) {
+        	$size = $file['size'];
+        	$type = $file['type'];
+        	$name = $file['name'];
+        	header("Content-length: $size");
+			header("Content-type: $type");
+			header("Content-Disposition: attachment; filename=$name");
+			echo $file['file'];
+        } else {
+            return false;
+        }
+        
+    }
+    
+	function getReportHTML($patientID,$userID,$reportID,$url) {
+
+    	$patientID 	= (int) $patientID;
+	    $userID 	= (int) $userID;
+	    
+	    $sql 		= "SELECT 
+	    				p.prenom as patient_firstname, 
+	    				p.nom as patient_familyname, 
+	    				u.firstname as user_firstname, 
+	    				u.familyname as user_familyname, 
+	    				sr.ID AS sumehr_report_id, 
+	    				date_format(sr.datetime, '%d/%m/%Y %H:%i:%s') AS sumehr_report_datetime, 
+	    				sr.text AS sumehr_report_text, 
+	    				sr.id AS sumehr_report_id FROM sumehr s, sumehr_report sr, patients p, user u WHERE s.patient_ID = p.id AND s.user_ID = u.ID AND sr.sumehr_ID = s.ID AND patient_ID='$patientID' AND user_ID='$userID' AND sr.ID='$reportID' LIMIT 1";
+        
+	    $sel1 = mysql_query($sql);
+        
+        $sumehr = mysql_fetch_array($sel1);
+        $sumehr["sumehr_report_text"] 	= stripslashes($sumehr["sumehr_report_text"]);
+	    $sumehr["sumehr_report_text"] .= "<br/><br/>";
+            
+        $sql = "SELECT * FROM `sumehr_upload` WHERE sumher_report_ID='".$sumehr["sumehr_report_id"]."' AND `delete`='0' ORDER BY ID";
+        $sel2 = mysql_query($sql);
+	    $sumehr["sumehr_report_text"] .= "<ul>";
+        while ($file = mysql_fetch_array($sel2)){
+	    	$sumehr["sumehr_report_text"] .= "<li><img alt='' src='./templates/standard/images/butn-".$file["extension"]."-hover.png'/> <a target='_blank' href='".$url."?action=download_file&key=".$file["key"]."&user_id=".$userID."'>".$file["name"]."</a></li>"; 
+	    }
+	    $sumehr["sumehr_report_text"] .= "</ul>";
+	    $sumehr["patient_firstname"] 	= stripslashes($sumehr["patient_firstname"]);
+        $sumehr["patient_familyname"] 	= stripslashes($sumehr["patient_familyname"]);
+        $sumehr["user_familyname"] 		= stripslashes($sumehr["user_familyname"]);
+        $sumehr["user_firstname"] 		= stripslashes($sumehr["user_firstname"]);
+            
+        
+        if (!empty($sumehr)) {
+        	return $sumehr;
+        } else {
+            return false;
+        }
+    }
+    
+    function getAllReportHTML($patientID,$userID,$url) {
+
+    	$patientID 	= (int) $patientID;
+	    $userID 	= (int) $userID;
+	    
+	    $sql 		= "SELECT 
+	    				p.prenom as patient_firstname, 
+	    				p.nom as patient_familyname, 
+	    				u.firstname as user_firstname, 
+	    				u.familyname as user_familyname, 
+	    				sr.ID AS sumehr_report_id, 
+	    				date_format(sr.datetime, '%d/%m/%Y %H:%i:%s') AS sumehr_report_datetime, 
+	    				sr.text AS sumehr_report_text, 
+	    				sr.id AS sumehr_report_id FROM sumehr s, sumehr_report sr, patients p, user u 
+	    				WHERE s.patient_ID = p.id AND s.user_ID = u.ID AND sr.sumehr_ID = s.ID AND patient_ID='$patientID' AND user_ID='$userID' ORDER BY sr.datetime DESC";
+        
+	    $sel1 = mysql_query($sql);
+        
+        $sumehrs = array();
+                
+        while ($sumehr = mysql_fetch_array($sel1)) {
+        	
+            $sumehr["sumehr_report_id"] 	= $sumehr["sumehr_report_id"];
+            $sumehr["sumehr_report_text"] 	= stripslashes($this->subHTML($sumehr["sumehr_report_text"]));
+	        $sumehr["sumehr_report_text"] .= "<br/><br/>";
+            
+            $sql = "SELECT * FROM `sumehr_upload` WHERE sumher_report_ID='".$sumehr["sumehr_report_id"]."' AND `delete`='0' ORDER BY ID";
+            $sel2 = mysql_query($sql);
+	        $sumehr["sumehr_report_text"] .= "<ul>";
+            while ($file = mysql_fetch_array($sel2)){
+	    		$sumehr["sumehr_report_text"] .= "<li><img alt='' src='./templates/standard/images/butn-".$file["extension"]."-hover.png'/> <a target='_blank' href='".$url."?action=download_file&key=".$file["key"]."&user_id=".$userID."'>".$file["name"]."</a></li>"; 
+            }
+	        $sumehr["sumehr_report_text"] .= "</ul>";
+	        
+            $sumehr["patient_firstname"] 	= stripslashes($sumehr["patient_firstname"]);
+            $sumehr["patient_familyname"] 	= stripslashes($sumehr["patient_familyname"]);
+            $sumehr["user_familyname"] 		= stripslashes($sumehr["user_familyname"]);
+            $sumehr["user_firstname"] 		= stripslashes($sumehr["user_firstname"]);
+            array_push($sumehrs, $sumehr);
+        }
+        
+        if (!empty($sumehrs)) {
+        	return $sumehrs;
+        } else {
+            return false;
+        }
+    }
+    
+    function getAllXML($patientID,$userID) {
+
+    	$patientID 	= (int) $patientID;
+	    $userID 	= (int) $userID;
+	    
+	    $sql 		= "SELECT p.prenom as patient_firstname, p.nom as patient_familyname, u.firstname as user_firstname, u.familyname as user_familyname, sr.ID AS sumehr_report_id, date_format(sr.datetime, '%d/%m/%Y %h:%m') AS sumehr_report_datetime, sr.text AS sumehr_report_text FROM sumehr s, sumehr_report sr, patients p, user u WHERE s.patient_ID=p.id AND s.user_ID=u.ID AND patient_ID='$patientID' AND user_ID='$userID'ORDER BY sumehr_report_datetime DESC";
+        
+	    $sel = mysql_query($sql);
+        
+        $sumehrs = array();
+                
+        while ($sumehr = mysql_fetch_array($sel))
+        {
+            $sumehr["sumehr_report_text"] 	= stripslashes($sumehr["sumehr_report_text"]);
+            $sumehr["patient_firstname"] 	= stripslashes($sumehr["patient_firstname"]);
+            $sumehr["patient_familyname"] 	= stripslashes($sumehr["patient_familyname"]);
+            $sumehr["user_familyname"] 		= stripslashes($sumehr["user_familyname"]);
+            $sumehr["user_firstname"] 		= stripslashes($sumehr["user_firstname"]);
+            array_push($sumehrs, $sumehr);
+        }
+
+        if (!empty($sumehrs)) {
+        	return 1;
+        } else {
+            return 1;
+        }
+    }    
+    
+	/** Make a search for user
+     *
+     * @param value
+     * @return array
+     */
+    function modulesearchfromuser($userid, $value, $limit, $type) {
+    	
+    	if ($type == 'global' ) {
+   			$sql = "SELECT DISTINCT MAX(sr.datetime) as latest_modification_date, p.id as patient_id, p.nom as patient_nom, p.prenom as patient_prenom, date_format(p.date_naissance, '%d/%m/%Y') as patient_date_naissance, s.ID as sumehr_id
+   					FROM patients AS p
+   					LEFT JOIN sumehr AS s on s.patient_ID = p.ID
+   					LEFT JOIN sumehr_report AS sr on sr.sumehr_ID = s.ID
+   					LEFT JOIN user AS u on s.user_ID = u.ID
+   					WHERE ( lower(concat(p.nom,' ',p.prenom)) regexp '$value' OR lower(concat(p.prenom,' ',p.nom)) regexp '$value' ) 
+	   				GROUP BY sr.sumehr_ID, p.id
+   					ORDER BY patient_nom, patient_prenom 
+   					LIMIT $limit";
+   		} else {
+   			// personnal
+   			$sql = "SELECT DISTINCT date_format(MAX(sr.datetime), '%d/%m/%Y %H:%i:%s') as latest_modification_date, p.id as patient_id, p.nom as patient_nom, p.prenom as patient_prenom, date_format(p.date_naissance, '%d/%m/%Y') as patient_date_naissance, s.ID as sumehr_id
+   					FROM patients AS p
+   					LEFT JOIN sumehr AS s on s.patient_ID = p.ID
+   					LEFT JOIN sumehr_report AS sr on sr.sumehr_ID = s.ID
+   					LEFT JOIN user AS u on s.user_ID = u.ID
+   					WHERE ( lower(concat(p.nom,' ',p.prenom)) regexp '$value' OR lower(concat(p.prenom,' ',p.nom)) regexp '$value' ) 
+	   				GROUP BY sr.sumehr_ID, p.id
+   					ORDER BY patient_nom, patient_prenom 
+   					LIMIT $limit";
+    	}
+    	
+    	$sel = mysql_query($sql);
+
+        $sumehrs = array();
+
+        while ($sumehr = mysql_fetch_array($sel)) {
+        	
+            $sumehr["sumehr_id"] 				= $sumehr["sumehr_id"];
+            $sumehr["patient_id"] 				= $sumehr["patient_id"];
+            $sumehr["patient_familyname"] 		= stripslashes($sumehr["patient_nom"]);
+            $sumehr["patient_firstname"] 		= stripslashes($sumehr["patient_prenom"]);
+            $sumehr["patient_birthdate"] 		= stripslashes($sumehr["patient_date_naissance"]);
+            $sumehr["latest_modification_date"] = stripslashes($sumehr["latest_modification_date"]);
+            
+            array_push($sumehrs, $sumehr);
+            
+        }
+
+        if (!empty($sumehrs))  {	
+            return $sumehrs;
+        } else  {
+            return false;
+        }
+
+    }
+    
+    
+    /** Make a search for sumehr report
+     *
+     * @param value
+     * @return array
+     * 
+     **/
+	function modulesearchfrommanager($patientID,$patient,$doctorID,$doctor,$limit) {
+    	
+		$sql = "SELECT 
+					DISTINCT MAX(sr.datetime) as latest_modification_date,
+					p.id as patient_id, 
+					p.nom as patient_nom, 
+					p.prenom as patient_prenom, 
+					date_format(p.date_naissance, '%d/%m/%Y') as patient_date_naissance,
+					concat(u.familyname,' ',u.firstname) as user,
+					u.ID as user_id,
+					s.ID as sumehr_id
+   					FROM patients AS p
+   					LEFT JOIN user AS u on 1=1
+					LEFT JOIN sumehr AS s on s.patient_ID = p.id AND s.user_ID = u.id 
+   					LEFT JOIN sumehr_report AS sr ON sr.sumehr_ID = s.ID
+   					WHERE ( lower(concat(p.nom,' ',p.prenom)) regexp '$patient' OR lower(concat(p.prenom,' ',p.nom)) regexp '$patient' ) 
+   					AND ( lower(concat(u.firstname,' ',u.familyname)) regexp '$doctor' OR lower(concat(u.familyname,' ',u.firstname)) regexp '$doctor' ) 
+   					GROUP BY sr.sumehr_ID, p.id, u.ID
+   					ORDER BY patient_nom, patient_prenom 
+   					LIMIT $limit";
+   					
+		$sql = "SELECT 
+					p.id as patient_id, 
+					p.nom as patient_nom, 
+					p.prenom as patient_prenom, 
+					date_format(p.date_naissance, '%d/%m/%Y') as patient_date_naissance,
+					concat(u.familyname,' ',u.firstname) as user,
+					u.ID as user_id
+					FROM patients AS p
+   					LEFT JOIN user AS u on 1=1
+					WHERE ( lower(concat(p.nom,' ',p.prenom)) regexp '$patient' OR lower(concat(p.prenom,' ',p.nom)) regexp '$patient' ) 
+   					AND ( lower(concat(u.firstname,' ',u.familyname)) regexp '$doctor' OR lower(concat(u.familyname,' ',u.firstname)) regexp '$doctor' ) 
+   					LIMIT $limit";
+   					
+   		//echo $sql;
+   					
+   		$sel1 = mysql_query($sql);
+
+        $sumehrs = array();
+
+        while ($sumehr = mysql_fetch_array($sel1)) {
+        	
+            $sumehr["patient_id"] 				= $sumehr["patient_id"];
+            $sumehr["patient_familyname"] 		= stripslashes($sumehr["patient_nom"]);
+            $sumehr["patient_firstname"] 		= stripslashes($sumehr["patient_prenom"]);
+            $sumehr["patient_birthdate"] 		= stripslashes($sumehr["patient_date_naissance"]);
+            $sumehr["user_id"] 					= stripslashes($sumehr["user_id"]);
+            $sumehr["user"] 					= stripslashes($sumehr["user"]);
+            
+           	$sql = "SELECT 
+           			MAX(sr.datetime) as latest_modification_date, 
+           			s.ID as sumehr_id
+   					FROM sumehr AS s
+   					LEFT JOIN sumehr_report AS sr ON sr.sumehr_ID = s.ID
+   					WHERE s.patient_ID = '".$sumehr["patient_id"]."'
+   					AND s.user_ID = '".$sumehr["user_id"]."'
+   					GROUP BY sr.sumehr_ID
+   					LIMIT 1";
+   					
+	   		//echo $sql;
+           	
+   			$sel2 = mysql_query($sql);
+   			
+        	if (mysql_num_rows($sel2) == 1) {
+        		$sumehrdetail = mysql_fetch_array($sel2);
+        		$sumehr["sumehr_id"] 				= $sumehrdetail["sumehr_id"];
+        		$sumehr["latest_modification_date"] = stripslashes($sumehrdetail["latest_modification_date"]);
+			}
+            
+            array_push($sumehrs, $sumehr);
+            
+        }
+
+        if (!empty($sumehrs))  {	
+            return $sumehrs;
+        } else  {
+            return false;
+        }
+
+    }
+    
+	function deleteFile($sumehrReportFileID) {
+    	
+		$sql = "UPDATE `sumehr_upload` set `delete` = 1 WHERE ID = '$sumehrReportFileID'";
+		$del = mysql_query($sql);
+		if ($del) {
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+
+    function subHTML($html) {
+    	return substr($html,0,10)."...";
+    }
+}
+
+?>

@@ -1,0 +1,176 @@
+8
+
+dir
+218
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev/polygone/libraries/tcpdf
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev
+
+
+
+2010-03-29T07:59:06.088077Z
+218
+targoo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f8ec6-6b70-4122-b4cc-51e5379b8f2c
+
+2dbarcodes.php
+file
+
+
+
+
+2009-12-15T18:52:30.000000Z
+67184ee12e3fade091d7bddebc63774b
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+CHANGELOG.TXT
+file
+
+
+
+
+2010-03-20T14:26:24.000000Z
+a59e1acc8d49bbcbd72839a51e44fe05
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+LICENSE.TXT
+file
+
+
+
+
+2006-02-06T15:44:34.000000Z
+7fbc338309ac38fefcd64b04bb903e34
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+README.TXT
+file
+
+
+
+
+2010-03-20T14:26:24.000000Z
+38f705e39a02cacc78b1c0f7219e82c8
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+barcodes.php
+file
+
+
+
+
+2009-08-26T10:12:20.000000Z
+67594e885ef0d968daf6bad59da86dab
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+cache
+dir
+
+config
+dir
+
+doc
+dir
+
+examples
+dir
+
+fonts
+dir
+
+htmlcolors.php
+file
+
+
+
+
+2009-09-06T16:30:08.000000Z
+9f8666cb63af552763343f202e116fe8
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+images
+dir
+
+tcpdf.crt
+file
+
+
+
+
+2009-08-21T15:02:08.000000Z
+c137aab97f7e06a6038589968e10d976
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+tcpdf.fdf
+file
+
+
+
+
+2009-08-25T12:40:50.000000Z
+96f873c30a6f6a0f884d713d185d5bd8
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+tcpdf.php
+file
+
+
+
+
+2010-03-20T14:26:24.000000Z
+1288985a3c24e1cf9851159ea5c7c1c3
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+
+unicode_data.php
+file
+
+
+
+
+2009-08-17T17:37:04.000000Z
+9b5e7c572a485c7336db400d96dbdafa
+2010-03-29T07:59:06.088077Z
+218
+targoo
+has-props
+

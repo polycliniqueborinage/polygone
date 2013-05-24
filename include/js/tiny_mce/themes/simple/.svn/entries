@@ -1,0 +1,61 @@
+8
+
+dir
+214
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev/polygone/include/js/tiny_mce/themes/simple
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev
+
+
+
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f8ec6-6b70-4122-b4cc-51e5379b8f2c
+
+editor_template.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+6fe9d290ec33fdc530c3799279874902
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+editor_template_src.js
+file
+
+
+
+
+2009-10-05T11:07:16.000000Z
+c51dd3fe20a277468159c3eb0ff0ed9b
+2009-10-05T11:07:16.378799Z
+107
+targoo
+
+img
+dir
+
+langs
+dir
+
+skins
+dir
+

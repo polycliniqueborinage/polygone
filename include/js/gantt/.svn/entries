@@ -1,0 +1,54 @@
+8
+
+dir
+214
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev/polygone/include/js/gantt
+https://targoo@polycliniqueborinage.dyndns.org/svn/polydev
+
+
+
+2010-02-27T13:02:25.310339Z
+166
+targoo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f8ec6-6b70-4122-b4cc-51e5379b8f2c
+
+gantt.js
+file
+
+
+
+
+2010-01-26T11:06:22.000000Z
+6c6f46a0505722189d3b322169bf72e8
+2010-02-27T13:02:25.310339Z
+166
+targoo
+has-props
+
+grid.js
+file
+
+
+
+
+2010-02-12T13:08:22.000000Z
+8ec8640b5cfb85a52415a0a8416bf567
+2010-02-27T13:02:25.310339Z
+166
+targoo
+has-props
+

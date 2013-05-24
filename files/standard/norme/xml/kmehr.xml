@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<kmehrmessage>
+	<header>
+		<standard>
+			<cd S="CD-STANDARD" SV="1.0">20021205</cd>
+		</standard>
+		<!-- 	This a unique value inside the organisation 
+				Concatenate the id of the first sender healthcare party of the message followed by a dot and a local unique identifier 	
+		-->
+		<id S="ID-KMEHR" SV="1.0">#15858523580.ID#</id>
+		<!-- Creation Time -->
+		<date>#2001-10-02#</date>
+		<time>#06:03#</time>
+		<!-- who send the report -->
+		<sender>
+			<hcparty>
+				<id S="ID-HCPARTY" SV="1.0">#15858523580#</id>
+				<cd S="CD-HCPARTY" SV="1.0">#persphysician#</cd>
+				<firstname>#Alain#</firstname>
+				<familyname>#Juvenois#</familyname>
+			</hcparty>
+			<hcparty>
+				<cd S="CD-HCPARTY" SV="1.0">orghospital</cd>
+				<name>Nouvelle Polyclinique du Borinage</name>
+			</hcparty>
+		</sender>
+		<!-- who received the report -->
+		<recipient>
+			<hcparty>
+				<id S="ID-HCPARTY" SV="1.0"></id>
+				<cd S="CD-HCPARTY" SV="1.0"></cd>
+				<firstname></firstname>
+				<familyname></familyname>
+				<address>
+				<cd S="CD-ADDRESS" SV="1.0">work</cd>
+					<country>
+						<cd S="CD-COUNTRY" SV="1.0">be</cd>
+					</country>
+					<zip></zip>
+					<city></city>
+					<street></street>
+				</address>
+			</hcparty>
+			<hcparty>
+				<id S="ID-HCPARTY" SV="1.0"></id>
+				<cd S="CD-HCPARTY" SV="1.0"></cd>
+				<firstname></firstname>
+				<familyname></familyname>
+				<address>
+				<cd S="CD-ADDRESS" SV="1.0">work</cd>
+					<country>
+						<cd S="CD-COUNTRY" SV="1.0">be</cd>
+					</country>
+					<zip></zip>
+					<city></city>
+					<street></street>
+				</address>
+			</hcparty>
+			<hcparty>
+				<id S="ID-HCPARTY" SV="1.0"></id>
+				<cd S="CD-HCPARTY" SV="1.0"></cd>
+				<firstname></firstname>
+				<familyname></familyname>
+				<address>
+				<cd S="CD-ADDRESS" SV="1.0">work</cd>
+					<country>
+						<cd S="CD-COUNTRY" SV="1.0">be</cd>
+					</country>
+					<zip></zip>
+					<city></city>
+					<street></street>
+				</address>
+			</hcparty>
+			<hcparty>
+				<id S="ID-HCPARTY" SV="1.0"></id>
+				<cd S="CD-HCPARTY" SV="1.0"></cd>
+				<firstname></firstname>
+				<familyname></familyname>
+				<address>
+				<cd S="CD-ADDRESS" SV="1.0">work</cd>
+					<country>
+						<cd S="CD-COUNTRY" SV="1.0">be</cd>
+					</country>
+					<zip></zip>
+					<city></city>
+					<street></street>
+				</address>
+			</hcparty>
+			<hcparty>
+				<id S="ID-HCPARTY" SV="1.0"></id>
+				<cd S="CD-HCPARTY" SV="1.0"></cd>
+				<firstname></firstname>
+				<familyname></familyname>
+				<address>
+				<cd S="CD-ADDRESS" SV="1.0">work</cd>
+					<country>
+						<cd S="CD-COUNTRY" SV="1.0">be</cd>
+					</country>
+					<zip></zip>
+					<city></city>
+					<street></street>
+				</address>
+			</hcparty>
+		</recipient>
+	</header>
+	<folder>
+		<id S="ID-KMEHR" SV="1.0">1</id>
+		<patient>
+			<id S="ID-PATIENT" SV="1.0">32031011931</id>
+			<id S="LOCAL" SL="ISPPC-ID-PATIENT" SV="3.4">3001234</id>
+			<firstname></firstname>
+			<familyname></familyname>
+			<birthdate>
+				<date></date>
+			</birthdate>
+			<sex>
+				<cd S="CD-SEX" SV="1.0"></cd>
+			</sex>
+			<address>
+				<cd S="CD-ADDRESS" SV="1.0">home</cd>
+				<country>
+					<cd S="CD-COUNTRY" SV="1.0">be</cd>
+				</country>
+				<zip></zip>
+				<city></city>
+				<street></street>
+			</address>
+		</patient>
+		<transaction>
+			<id S="ID-KMEHR" SV="1.0">1</id>
+			<cd S="CD-TRANSACTION" SV="1.0">contact</cd>
+			<!-- Contact Time -->
+			<date>#2001-10-01#</date>
+			<time>#15:25#</time>
+			<author>
+				<hcparty>
+					<id S="ID-HCPARTY" SV="1.0">#15858523580#</id>
+					<cd S="CD-HCPARTY" SV="1.0">#persphysician#</cd>
+					<firstname>#Alain#</firstname>
+					<familyname>#Juvenois#</familyname>
+				</hcparty>
+			</author>
+			<!-- Complete information -->
+			<iscomplete>true</iscomplete>
+			<!-- Medical validate -->
+			<isvalidated>true</isvalidated>
+			<text L="fr">#infection due to tropical insect bite#</text>
+		</transaction>
+	</folder>
+</kmehrmessage>

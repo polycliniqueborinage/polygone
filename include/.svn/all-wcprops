@@ -1,0 +1,353 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/polydev/!svn/ver/214/polygone/include
+END
+class.calendar.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/class.calendar.php
+END
+SmartyPaginate.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/polydev/!svn/ver/107/polygone/include/SmartyPaginate.class.php
+END
+class.patient.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/155/polygone/include/class.patient.php
+END
+class.dates.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/polydev/!svn/ver/203/polygone/include/class.dates.php
+END
+class.user.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/polydev/!svn/ver/131/polygone/include/class.user.php
+END
+class.acte.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/polydev/!svn/ver/107/polygone/include/class.acte.php
+END
+class.messages.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/class.messages.php
+END
+class.datei.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/polydev/!svn/ver/138/polygone/include/class.datei.php
+END
+class.datenbank.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/polydev/!svn/ver/107/polygone/include/class.datenbank.php
+END
+initfunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/107/polygone/include/initfunctions.php
+END
+class.timetracker.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/107/polygone/include/class.timetracker.php
+END
+class.planning.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/239/polygone/include/class.planning.php
+END
+class.mylog.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/polydev/!svn/ver/107/polygone/include/class.mylog.php
+END
+class.tasklist.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/class.tasklist.php
+END
+class.Snoopy.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/107/polygone/include/class.Snoopy.php
+END
+class.protocol.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/231/polygone/include/class.protocol.php
+END
+class.product.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/162/polygone/include/class.product.php
+END
+chart_object.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/107/polygone/include/chart_object.php
+END
+Config_File.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/107/polygone/include/Config_File.class.php
+END
+class.ouvrier.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/243/polygone/include/class.ouvrier.php
+END
+class.PclZip.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/107/polygone/include/class.PclZip.php
+END
+class.openid.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/107/polygone/include/class.openid.php
+END
+class.vCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/polydev/!svn/ver/107/polygone/include/class.vCard.php
+END
+class.rss.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/polydev/!svn/ver/107/polygone/include/class.rss.php
+END
+flash-chart.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/polydev/!svn/ver/107/polygone/include/flash-chart.php
+END
+class.addressbook.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/polydev/!svn/ver/107/polygone/include/class.addressbook.php
+END
+class.mailing.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/131/polygone/include/class.mailing.php
+END
+class.cecodi.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/107/polygone/include/class.cecodi.php
+END
+class.debt.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/polydev/!svn/ver/107/polygone/include/class.debt.php
+END
+class.testtools.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/polydev/!svn/ver/107/polygone/include/class.testtools.php
+END
+class.product2.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/class.product2.php
+END
+class.speciality.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/107/polygone/include/class.speciality.php
+END
+class.ical.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/polydev/!svn/ver/107/polygone/include/class.ical.php
+END
+class.message.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/107/polygone/include/class.message.php
+END
+class.hft_image.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/polydev/!svn/ver/107/polygone/include/class.hft_image.php
+END
+class.smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/polydev/!svn/ver/107/polygone/include/class.smtp.php
+END
+class.sumehr.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/178/polygone/include/class.sumehr.php
+END
+class.plugin.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/107/polygone/include/class.plugin.php
+END
+class.settings.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/165/polygone/include/class.settings.php
+END
+class.prevention.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/polydev/!svn/ver/107/polygone/include/class.prevention.php
+END
+class.ct1ct2.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/113/polygone/include/class.ct1ct2.php
+END
+class.tags.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/polydev/!svn/ver/107/polygone/include/class.tags.php
+END
+class.emailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/121/polygone/include/class.emailer.php
+END
+class.tarification.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/polydev/!svn/ver/107/polygone/include/class.tarification.php
+END
+class.task.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/polydev/!svn/ver/130/polygone/include/class.task.php
+END
+class.mutuel.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/113/polygone/include/class.mutuel.php
+END
+Smarty_Compiler.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/polydev/!svn/ver/107/polygone/include/Smarty_Compiler.class.php
+END
+class.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/polydev/!svn/ver/107/polygone/include/class.group.php
+END
+class.xls.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/polydev/!svn/ver/107/polygone/include/class.xls.php
+END
+class.fpdf.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/polydev/!svn/ver/107/polygone/include/class.fpdf.php
+END
+class.company.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/polydev/!svn/ver/107/polygone/include/class.company.php
+END
+class.milestone.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/polydev/!svn/ver/107/polygone/include/class.milestone.php
+END
+class.search.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/107/polygone/include/class.search.php
+END
+class.importer.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/polydev/!svn/ver/107/polygone/include/class.importer.php
+END
+class.image.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/polydev/!svn/ver/107/polygone/include/class.image.php
+END
+class.Smarty.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/107/polygone/include/class.Smarty.php
+END
+class.agenda.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/polydev/!svn/ver/178/polygone/include/class.agenda.php
+END
+class.PHPmailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/polydev/!svn/ver/107/polygone/include/class.PHPmailer.php
+END

@@ -1,0 +1,1965 @@
+navigation_management_client[strings]
+
+{* DAC Title *}
+navigation_title_user_menu = Ma page personnelle
+navigation_title_user_agenda_day = Mon agenda personnel journalier
+navigation_title_user_agenda_week = Mon agenda personnel hebdomadaire
+navigation_title_user_agenda_timeline = Ma ligne du temps personnelle
+navigation_title_user_agenda_list = Mes rendez-vous personnels
+navigation_title_user_agenda_fulllist = Liste de tous mes rendez-vous personnels
+navigation_title_user_agenda_schedule = Mon planning
+navigation_title_user_profil_view = Mon profil
+navigation_title_user_profil_edit = Edition de mon profil
+navigation_title_user_profil_submit = Validation de mon profil
+navigation_title_user_message_view = Mes messages
+navigation_title_user_message_view_group = Mes messages par groupe
+navigation_title_user_message_view_detail = Suivi du message
+navigation_title_user_message_view_reply = Répondre
+navigation_title_user_message_add = Ajouter un message
+navigation_title_user_message_reply = R&eacute;pondre
+navigation_title_user_protocol_global_search = Recherche parmis tous les protocoles
+navigation_title_user_protocol_personal_search = Recherche parmis mes protocoles
+navigation_title_user_protocol_list = Liste de mes protocoles
+navigation_title_user_sumehr_personal_search = Recherche parmis mes dossiers m&eacute;dicaux
+navigation_title_user_sumehr_edit = Modification d'un dossier m&eacute;dical
+navigation_title_admin_people_group_view = Gestion des groupes
+navigation_title_admin_people_user_view = Gestion des utilisateurs
+navigation_title_admin_people_user_edit = Edition d'un utilisateur
+navigation_title_admin_statistique_pourcent = Statistique (Pourcentage)
+navigation_title_admin_statistique_production_factor = Statistique (Facteur de production)
+navigation_title_admin_system = Gestion du syst&egrave;me
+navigation_title_admin_activity_day = Activit&eacute; du jour
+navigation_title_admin_activity_all = Listes des activit&eacute;s
+navigation_title_admin_mailing_day = Mails envoy&eacute;s aujourd'hui
+navigation_title_admin_mailing_all = Listes des mails envoy&eacute;s
+navigation_title_admin_listing_doctor = Listing pour les m&eacute;decins externes
+navigation_title_admin_listing_specialist = Listing pour les sp&eacute;cialistes de la Poly
+navigation_title_admin_listing_till = Listing des caisses
+navigation_title_admin_project_cost_center_list = Lsiting des centres de couts
+navigation_title_admin_project_task_list = Lsiting des taches
+navigation_title_admin_project_assign_task = Assigner les taches
+navigation_title_management_current_menu = Gestion courante
+navigation_title_management_no_current_menu = Gestion avanc&eacute;e
+navigation_title_management_protocol_search = Recherche de protocoles
+navigation_title_management_protocol_add = Ajout d'un protocole
+navigation_title_management_protocol_list = List des protocoles
+navigation_title_management_protocol_view = D&eacute;tail d'un protocol
+navigation_title_management_protocol_edit = Edition d'un protocol
+navigation_title_management_debt_search = Recherche des dettes
+navigation_title_management_debt_add = Ajout d'une dette
+navigation_title_management_debt_list = Liste d&eacute;taill&eacute;e des dettes
+navigation_title_management_debt_contact_list = Liste des contacts endett&eacute;s
+navigation_title_management_debt_view = D&eacute;tail d'une dette
+navigation_title_management_debt_edit = Edition d'une dette
+navigation_title_management_comptabilite_add = Charger des donn&eacute;es Compta
+navigation_title_management_comptabilite_graphique = Graphique
+navigation_title_management_comptabilite_histo     = Histogramme
+navigation_title_management_comptabilite_graphique_parametres = Param&egrave;tres
+navigation_title_management_comptabilite_graphique_benefice = Histogramme B&eacute;n&eacute;fice
+navigation_title_management_comptabilite_graphique_classe6 = Histogramme Classe 6*
+navigation_title_management_comptabilite_graphique_classe7 = Histogramme Classe 7*
+navigation_title_management_comptabilite_stat_comptagene = Statistiques graphiques
+navigation_title_management_comptabilite_stat_comptagene_histo = Statistiques en b&acirc;tons
+navigation_title_management_product_search = Recherche des produits
+navigation_title_management_product_add = Ajout d'un produit
+navigation_title_management_product_list = Liste des produits
+navigation_title_management_product_flow_list = Liste des Entr&eacute;es/Sorties
+navigation_title_management_product_view = D&eacute;tail d'un produit
+navigation_title_management_product_edit = Edition d'un produit
+navigation_title_management_product_stock_critique = Stock critique
+navigation_title_management_agenda_day = Gestion des agendas journaliers
+navigation_title_management_patient_search = Recherche d'un patient
+navigation_title_management_patient_add = Ajout d'un patient
+navigation_title_management_patient_list = List des patients
+navigation_title_management_client_search = Recherche d'un client
+navigation_title_management_client_add = Ajout d'un client
+navigation_title_management_client_edit = Edition d'un client
+navigation_title_management_client_list = List des clients
+navigation_title_management_addressbook_add = Ajout d'un contact
+navigation_title_management_addressbook_view = D&eacute;tail d'un contact
+navigation_title_management_addressbook_edit = Edition d'un contact
+navigation_title_management_addressbook_search = Recherche des contacts
+navigation_title_management_addressbook_list = Liste des contacts
+navigation_title_management_user_search = Recherche des utilisateurs
+navigation_title_management_user_list = Liste des utilisateurs
+navigation_title_management_user_add = Ajout d'un utilisateur
+navigation_title_management_cecodi_add = Ajout d'un code INAMI
+navigation_title_management_cecodi_view = D&eacute;tail d'un code INAMI
+navigation_title_management_cecodi_edit = Edition d'un code INAMI
+navigation_title_management_cecodi_search = Recherche des codes INAMI
+navigation_title_management_cecodi_list = Liste des codes INAMI
+navigation_title_management_acte_add = Ajout d'un acte interne
+navigation_title_management_acte_view = D&eacute;tail d'un acte interne
+navigation_title_management_acte_edit = Edition d'un acte interne
+navigation_title_management_acte_search = Recherche parmis les actes internes
+navigation_title_management_acte_list = Liste des actes internes
+navigation_title_management_prevention_status = Status de la medecine pr&eacute;ventive
+navigation_title_management_prevention_add = Cr&eacute;ation un nouveau motif de medecine pr&eacute;ventive
+navigation_title_management_prevention_edit = Edition d'un motif de medecine pr&eacute;ventive
+navigation_title_management_prevention_activation = Activation et d&eacute;sactivation des motifs
+navigation_title_management_prevention_list = Liste des contacts en cours
+navigation_title_management_prevention_list_deleted = Liste des contacts trait&eacute;s
+navigation_title_management_prevention_timeplot = Evolution de la m&eacute;decine pr&eacute;ventive
+navigation_title_management_listing_mutuelle = Listing pour les mutuelles
+navigation_title_management_listing_doctor = Listing pour les m&eacute;decins
+navigation_title_management_sumehr_view = Dossier
+navigation_title_management_sumehr_personal_search = Recherche parmis les dossiers m&eacute;dicaux
+navigation_title_ouvrier_search   = Recherche parmis les ouvriers
+navigation_title_ouvrier_add   = Ajo&ucirc;t d'un ouvrier
+navigation_title_ouvrier_edit = Edition
+navigation_title_ouvrier_list  = Liste de tous les ouvriers
+navigation_title_ouvrier_view = D&eacute;tails
+navigation_title_planning_archive = Archive
+navigation_title_planning_week = Semaine
+navigation_title_planning_search = Recherche
+
+
+{* DAC Navigation *}
+navigation_first_menu_user = Mon compte
+navigation_first_menu_protocol = Protocole
+navigation_first_menu_management_current = Gestion courante
+navigation_first_menu_management_no_current = Gestion avanc&eacute;e
+navigation_first_menu_administration = Administration
+navigation_first_menu_logout = Sortir
+
+{* DAC Navigation second User *}
+navigation_user_menu = Home
+navigation_user_agenda = Agenda
+navigation_user_profil = Profil
+navigation_user_message = Messages
+navigation_user_protocol = Protocole
+navigation_user_sumehr = Dossier
+navigation_user_project = Projet
+
+{* DAC Navigation second Management *}
+navigation_management_agenda = Agenda
+navigation_management_tarification = Tarification
+navigation_management_prothese = Prothese
+navigation_management_patient = Patient
+navigation_management_client = Client
+navigation_management_prestation = Prestation
+navigation_management_caisse = Caisse
+navigation_management_listing = Listing
+navigation_management_user = Utilisateurs
+navigation_management_addressbook = AdresseBook
+navigation_management_protocol = Protocole
+navigation_management_sumehr = Dossier
+navigation_management_menu_current = Menu
+navigation_management_menu_no_current = Menu
+navigation_management_debt = Dette
+navigation_management_sumehr = Dossier
+navigation_management_project = Project
+navigation_management_product = Stock
+navigation_management_acte = Acte&nbsp;Interne
+navigation_management_prevention = Pr&eacute;vention
+navigation_management_cecodi = CECODI
+navigation_management_planning = Planning
+navigation_management_ouvrier = Ouvrier
+
+{* DAC Navigation second Admin *}
+navigation_admin_menu = Menu
+navigation_admin_people_group = Groupes
+navigation_admin_people_user = Utilisateurs
+navigation_admin_listing = Listing
+navigation_admin_statistique = Statistiques
+navigation_admin_system = Systeme
+navigation_admin_activity = Activit&eacute;
+navigation_admin_mailing = Mailing
+navigation_admin_project = Project
+
+{* Buttons *}
+dico_button_send = Sauvegarder
+dico_button_edit = Edition
+dico_button_cancel = Annuler
+dico_button_view = D&eacute;tail
+dico_button_add_report = Ajouter un rapport
+dico_button_delete = Supprimer
+dico_button_save = Sauvegarder
+dico_button_save_as = Sauvegarder comme...
+dico_button_ok = Ok
+
+{* Sytem message *}
+dico_systemmsg_saved = Sauv&eacute;
+dico_systemmsg_edited = Edit&eacute;;
+
+{* DAC GENERAL *}
+dico_general_monday    	= Lundi
+dico_general_tuesday    = Mardi
+dico_general_wednesday  = Mercredi
+dico_general_thursday  	= Jeudi
+dico_general_friday    	= Vendredi
+dico_general_saturday	= Samedi
+dico_general_sunday    	= Dimanche
+
+
+general_usersonline = Online
+general_chat = Chat
+general_accessdenied = Acc&eacute;s refus&eacute;
+general_confirmdel = Voulez-vous vraiment supprimer cet &eacute;l&eacute;ment ?\nLa suppression ne peut pas &eacute;tre annul&eacute;e.
+general_error = Erreur
+general_goback = Veuillez revenir en arri&egrave;re et corriger l'erreur.
+general_nopermission = Permission n&eacute;cessaire
+dico_general_delete = Suppression
+dico_general_devise = Euro
+dico_general_calendar_previous = &lt;Pr&eacute;cedent
+dico_general_calendar_january = Janvier
+dico_general_calendar_february = F&eacute;vrier
+dico_general_calendar_march = Mars
+dico_general_calendar_april = Avril
+dico_general_calendar_may = May
+dico_general_calendar_june = Juin
+dico_general_calendar_july = Juillet
+dico_general_calendar_august = Ao&ucirc;t
+dico_general_calendar_september = Septembre
+dico_general_calendar_october = Octobre
+dico_general_calendar_november = Novembre
+dico_general_calendar_december = D&eacute;cembre
+
+dico_general_calendar_today = Ajourd\'hui
+dico_general_calendar_tomorrow = Demain
+dico_general_calendar_next_week = La semaine prochaine
+dico_general_calendar_next_month = Mois prochain
+dico_general_calendar_specific_date = Date au choix
+
+dico_general_calendar_next = Suivant&gt;
+dico_general_send = Envoyer
+dico_general_stayloggedin = Rester logg&eacute;
+dico_general_loginbutton = Login
+dico_general_name = Login
+dico_general_password = password
+dico_general_login_error = Erreur dans l'authentification !
+
+
+{* DAC user_ *}
+dico_user_error_required = &nbsp;Ce champs est obligatoire !
+dico_user_error_email = &nbsp;Format incorrect ! (smith@mail.be)
+dico_user_error_date = &nbsp;Format incorrect ! (11/11/1978)
+dico_user_error_web = &nbsp;Format incorrect ! (http://web.com)
+dico_user_error_equalTo = &nbsp;R&eacute;p&eacute;ter le mot de passe !
+dico_user_error_oldpass = &nbsp;Mot de passe incorrect !
+dico_user_error_minlength = &nbsp;Minimum 6 caract&egrave;res
+dico_user_error_password = &nbsp;Votre mot de passe est trop simple!
+dico_user_profil_hacktime = Mot de passe d&eacute;couvert en 
+
+{* DAC user_menu *}
+dico_user_menu_login_language = Langue
+dico_user_menu_login_chooseone = Choisir
+dico_user_menu_login_de = Allemand
+dico_user_menu_login_en = Anglais
+dico_user_menu_login_fr = Fran√ßais
+dico_user_menu_login_it = Italien
+dico_user_menu_login_nl = N√©erlandais
+
+dico_user_menu_tasks_opened_title = Mes t&acirc;ches en cours
+dico_user_menu_tasks_closed_title = Mes t&acirc;ches clotur&eacute;es
+dico_user_menu_task_colum_task = T&acirc;ches
+dico_user_menu_task_colum_dayleft = Jours restants
+
+dico_user_menu_agenda_title = Mon agenda
+dico_user_menu_agenda_span = Mon agenda
+
+dico_user_menu_button_delete = Supprimer
+dico_user_menu_button_cancel = Annuler
+dico_user_menu_button_close = Cl&ocirc;turer
+dico_user_menu_button_open = Ouvrir
+
+dico_user_menu_confirm_delete_task = Voulez-vous vraiment supprimer cette t&acirc;che ?
+
+dico_user_menu_task_deleted = La t&acirc;che a &eacute;t&eacute; correctement supprim&eacute;e
+dico_user_menu_task_added = La t&acirc;che a &eacute;t&eacute; correctement ajout&eacute;e
+dico_user_menu_task_edited = La t&acirc;che a &eacute;t&eacute; correctement mise &agrave; jour
+dico_user_menu_task_closed = La t&acirc;che a &eacute;t&eacute; correctement cl&ocirc;tur&eacute;e
+dico_user_menu_task_opened = La t&acirc;che a &eacute;t&eacute; correctement r&eacute;ouverte
+
+dico_user_menu_messages_title = Mes messages
+dico_user_menu_messages_span = Mes messages
+dico_user_menu_messages_colum_message = Titre
+dico_user_menu_messages_colum_group = Groupe
+dico_user_menu_messages_colum_sendby = Envoy&eacute; par
+dico_user_menu_messages_colum_on = Le
+dico_user_menu_messages_colum_replies = R&eacute;ponses
+dico_user_menu_messages_colum_text = Texte
+dico_user_menu_messages_file = Fichiers
+dico_user_menu_messages_answer = R&eacute;ponde
+dico_user_menu_messages_delete = Effacer
+dico_user_menu_messages_add = Ajouter un nouveau message
+dico_user_menu_messages_attachfiles = Attacher des fichiers
+dico_user_menu_messages_attachfile = Attacher un fichier
+dico_user_menu_messages_chooseone = Choisir
+
+{* user_agenda *}
+dico_user_agenda_menu_day = Journ&eacute;e
+dico_user_agenda_menu_week = Semaine
+dico_user_agenda_menu_list = Liste
+dico_user_agenda_menu_fulllist = Liste Compl&egrave;te
+dico_user_agenda_menu_timeline = TimeLine
+dico_user_agenda_menu_schedule = Horaire
+dico_user_agenda_menu_task_add = Ajout d'une t&acirc;che
+dico_user_agenda_menu_task_edit = Edition d'une t&acirc;che
+dico_user_agenda_agenda_from = Agenda pour le
+dico_user_agenda_previous_day = Jour pr&eacute;c&eacute;dent
+dico_user_agenda_previous_week = Semaine pr&eacute;c&eacute;dente
+dico_user_agenda_next_day = Jour suivant
+dico_user_agenda_next_week = Semaine suivante
+dico_user_agenda_today = Aujourd'hui
+dico_user_agenda_morning = Matin&eacute;e
+dico_user_agenda_evening = Soir&eacute;e
+dico_user_agenda_addbox_title = Ajout d'un rendez-vous
+dico_user_agenda_updatebox_title = Mise &agrave; jour d'un rendez-vous
+dico_user_agenda_addbox_from = A partir de
+dico_user_agenda_addbox_to = jusque
+dico_user_agenda_addbox_length = , pour une dur&eacute;e de 
+dico_user_agenda_addbox_time = minutes 
+dico_user_agenda_addbox_patient = Patient
+dico_user_agenda_addbox_motif = Acte
+dico_user_agenda_addbox_location = Lieu
+dico_user_agenda_addbox_comment = Commentaire
+dico_user_agenda_addbox_start = D&eacute;but
+dico_user_agenda_addbox_end = Fin
+dico_user_agenda_addbox_date = Date
+dico_user_agenda_addbox_button_add = Ajouter
+dico_user_agenda_addbox_button_del = Supprimer
+dico_user_agenda_addbox_button_edit = Editer
+dico_user_agenda_addbox_button_update = Valider
+dico_user_agenda_addbox_button_cancel = Annuler
+dico_user_agenda_addbox_comment_view_patient = Detail patient
+dico_user_agenda_addbox_comment_view_motif = Detail acte
+dico_user_agenda_addbox_birth_on = n&eacute; le
+dico_user_agenda_addbox_living_in = domicili&eacute; &agrave;
+dico_user_agenda_viewbox_title = D&eacute;tail d'un rendez-vous
+dico_user_agenda_addbox_patient_addresse = Adresse
+dico_user_agenda_addbox_motif_description = Description
+dico_user_agenda_task_submenu_edit = Edition d'une t&acirc;che
+dico_user_agenda_task_submenu_create = Cr&eacute;ation d'une t&acirc;che
+dico_user_agenda_task_end_date = Date de fin
+dico_user_agenda_task_title = Titre
+dico_user_agenda_task_textcomment = Commentaire
+dico_user_agenda_task_reminder = Rappel
+dico_user_agenda_task_reminder_no = Pas de rappel
+dico_user_agenda_task_reminder_today = Le jour m&ecirc;me
+dico_user_agenda_task_reminder_yesterday = La veille
+dico_user_agenda_task_detail = D&eacutetail
+dico_user_agenda_task_delete = Suppression
+dico_user_agenda_task_edit = Edtion
+dico_user_agenda_upload_in_progress = Chargement en cours...
+dico_user_agenda_update_done = L'&eacute;ventement a &eacute;t&eacute; mis &agrave jour
+dico_user_agenda_add_done = L'&eacute;ventement a &eacute;t&eacute; correctement ajout&eacute;
+dico_user_agenda_delete_done = L'&eacute;ventement a &eacute;t&eacute; correctement supprim&eacute;
+dico_user_agenda_schedule_update_done = L'horaire a &eacute;t&eacute; mis &agrave jour 
+dico_user_agenda_confirm_delete_task = Voulez-vous supprimer cet &eacute;ventement ?
+
+
+{* user_profil *}
+dico_user_profil_userwasedited = Utilisateur a &eacute;t&eacute; modifi&eacute;
+dico_user_profil_email = Courriel
+dico_user_profil_web = Web
+dico_user_profil_address = Adresse
+dico_user_profil_login = Login
+dico_user_profil_name = Nom
+dico_user_profil_firstname = Nom
+dico_user_profil_familyname = Pr&eacute;nom
+dico_user_profil_birthday = Date de naissance
+dico_user_profil_avatar = Avatar
+dico_user_profil_email = Adresse Mail
+dico_user_profil_address1 = Adresse
+dico_user_profil_zip1city1 = Code Postal - Localit&eacute;
+dico_user_profil_state1 = Province
+dico_user_profil_country1 = Pays
+dico_user_profil_company = Compagnie
+dico_user_profil_workphone = T&eacute;l&eacute;phone professionel
+dico_user_profil_privatephone = T&eacute;l&eacute;phone priv&eacute;
+dico_user_profil_mobilephone = T&eacute;l&eacute;phone mobile (GSM)
+dico_user_profil_fax = Fax
+dico_user_profil_locale = Localisation
+dico_user_profil_female = F&eacute;minin
+dico_user_profil_gender = Sexe
+dico_user_profil_male = Masculin
+dico_user_profil_newpass = Nouveau mot de passe
+dico_user_profil_oldpass = Ancien mot de passe
+dico_user_profil_password = Mot de passe
+dico_user_profil_vcardexport = Export Vcard
+dico_user_profil_edituser = Modification de son compte
+dico_user_profil_changepassword = Modifier le mot de passe
+dico_user_profil_repeatpass = R&eacute;p&eacute;ter mot de passe
+dico_user_profil_error1 = Corriger le champ &eacute;rron&eacute;
+dico_user_profil_error2 = Corriger les champs &eacute;rron&eacute;s
+dico_user_profil_error3 = Les mots de passe ne correspondent pas !
+dico_user_profil_error4 = L'ancien mot de passe est incorrect !
+dico_user_profil_send = Envoyer
+dico_user_profil_cancel = Annuler
+dico_user_profil_chooseone = Choisir
+dico_user_profil_menu_account =  Mon compte
+dico_user_profil_agenda_config = Configuration de l'agenda
+dico_user_profil_agenda_slotminutes = Minutes par slot
+dico_user_profil_agenda_mintime = Heure minimum
+dico_user_profil_agenda_maxtime = Heure maximum
+dico_user_profil_agenda_firsthour = Premi&egrave;re heure
+dico_user_profil_agenda_sessionminutes = Minutes par session
+dico_user_profil_agenda_permission = Permission
+
+{* user_message *}
+dico_user_message_title = Titre
+dico_user_message_text = Texte
+dico_user_message_attachfile = Attacher un fichier
+dico_user_message_chooseone = Choisissez
+dico_user_message_or = ou
+dico_user_message_addfile = Ajouter un fichier
+dico_user_message_file = Fichier
+dico_user_message_send = Envoyer
+dico_user_message_add = Ajouter un nouveau message
+dico_user_message_for_the_group = Pour le groupe
+dico_admin_people_group_members = Membres 
+
+{* user_protocol *}
+dico_user_protocol_menu_personal_search =  Recherche Personnelle
+dico_user_protocol_menu_global_search = Recherche globale
+dico_user_protocol_menu_list = Liste Personelle
+
+dico_user_protocol_complete_search = Recherche compl&egrave;te
+dico_user_protocol_search_colum_action = Actions
+dico_user_protocol_search_colum_export = Exportation
+dico_user_protocol_search_colum_patient = Patient
+dico_user_protocol_search_colum_user = Sp&eacute;cialiste Poly
+dico_user_protocol_search_colum_addressbook = M&eacute;decin traitant
+dico_user_protocol_search_colum_date = Date
+
+{* ouvrier *}
+	{* Menu *}
+dico_ouvrier_menu_search = Recherche
+dico_ouvrier_menu_add    = Ajo&ucirc;t
+dico_ouvrier_menu_list   = Liste
+dico_ouvrier_menu_view   = D&eacute;tails
+dico_ouvrier_menu_edit = Edition
+	{* Sous Menu *}
+dico_ouvrier_submenu_edit = Edition de 
+dico_ouvrier_submenu_create = Cr&eacute;ation d'un ouvrier
+dico_ouvrier_submenu_view = D&eacute;tail de
+dico_ouvrier_submenu_search = Recherche d'un ouvrier
+	{* Label *}
+dico_ouvrier_saved       = Ouvrier enregistr&eacute;
+dico_ouvrier_edited      = Ouvrier modifi&eacute;
+dico_ouvrier_name = Nom
+dico_ouvrier_familyname      = Nom
+dico_ouvrier_firstname = Pr&eacute;nom
+dico_ouvrier_salaire_horaire = Salaire horaire
+dico_ouvrier_bonus_recurrent = Somme &agrave; d&eacute;duire
+dico_ouvrier_cout_recurrent  = Somme &agrave; rembourser
+
+dico_ouvrier_complete_search = Recherche sur base du nom ou pr&eacute;nom
+	{* List Colum *}
+dico_ouvrier_search_colum_action          = Actions
+dico_ouvrier_search_colum_familyname      = Nom
+dico_ouvrier_search_colum_firstname       = Pr&eacute;nom
+dico_ouvrier_search_colum_salaire_horaire = Salaire horaire
+dico_ouvrier_search_colum_bonus_recurrent = Bonus r&eacute;current
+dico_ouvrier_search_colum_cout_recurrent  = Co&ucirc;t r&eacute;current
+	{* Divers *}
+dico_ouvrier_edit_alt        = Edition
+dico_ouvrier_detail_alt      = D&eacute;tails
+dico_ouvier_confirme_delete_question = Voulez-vous supprimer cet ouvrier ?
+dico_global_left_ouvrier_title = Ouvriers
+
+
+{* sumehr *}
+	{* Label *}
+dico_sumehr_patient_search = Recherche sur le patient
+dico_sumehr_doctor_search = Recherche sur le docteur
+	{* Menu *}
+dico_sumehr_menu_search =  Recherche
+dico_sumehr_menu_add = Ajout
+dico_sumehr_menu_edit = Edition
+dico_sumehr_menu_list = Liste
+dico_sumehr_menu_view = D&eacute;tail
+	{* Sub Menu *}
+dico_sumehr_submenu_view = Dossier entre
+dico_sumehr_submenu_view_and = et
+dico_sumehr_submenu_edit = Edition du dossier de
+dico_sumehr_submenu_create = Cr&eacute;ation d'un dossier pour
+	{* Tabs *}
+dico_sumehr_management_subtab_general = G&eacute;n&eacute;ral
+	{* List Colum *}
+dico_sumehr_complete_search = Recherche compl&egrave;te
+dico_sumehr_search_colum_action = Actions
+dico_sumehr_search_colum_export = Exportation
+dico_sumehr_search_colum_patient_familyname = Nom
+dico_sumehr_search_colum_patient_firstname = Pr&eacute;nom
+dico_sumehr_search_colum_patient_birthdate = Date de naissance
+dico_sumehr_search_colum_latest_date = Derni&egrave;re modification
+dico_sumehr_search_colum_user = Sp&eacute;cialiste Poly
+dico_sumehr_search_colum_doctor = M&eacute;decin Traitant
+dico_sumehr_search_colum_protocol_date = Date du protocole
+dico_sumehr_search_colum_export = Exportation
+	{* Divers *}
+dico_sumehr_export_html = html
+dico_sumehr_export_pdf = pdf
+dico_sumehr_export_rtf = rtf
+dico_sumehr_export_txt = txt
+dico_sumehr_export_xml = xml
+dico_sumehr_confirme_delete_question = Voulez-vous supprimer ce rapport et tous les fichiers attach&eacute;s ?
+dico_sumehr_confirme_delete_sumher_question = Voulez-vous supprimer ce dossier et tous ses rapports ?
+
+
+{* management_ *}
+dico_management_error_equalto = not the same value as previous password
+dico_management_error_password = 6 characters long and at least 1 number and 1 character
+dico_management_error_required = &nbsp;Ce champs est obligatoire !
+dico_management_error_code_mutuelle_format = &nbsp;Format incorrect ! (325)
+dico_management_error_code_mutuelle_unique = &nbsp;Ce code est deja pris !
+dico_management_error_email = &nbsp;Format incorrect ! (smith@mail.be)
+dico_management_error_date = &nbsp;Format incorrect ! (11/11/1978)
+dico_management_error_web = &nbsp;Format incorrect ! (http://web.com)
+dico_management_error_inami = &nbsp;Format incorrect ! (12345678910)
+dico_management_error_one_field_error = Un champs est manquant. Veuillez le compl&egrave;ter !
+dico_management_error_many_fields_error_1 = 
+dico_management_error_many_fields_error_2 = &nbsp;champs sont manquants. Veuillez les compl&egrave;ter !
+dico_management_error_product_unique = &nbsp;Ce produit existe d&eacute;j&agrave;
+dico_management_error_acte_unique = &nbsp;Cet acte interne existe d&eacute;j&agrave;
+dico_management_error_product_exist = &nbsp;Ce produit doit exister !
+
+dico_management_error_patient_id = &nbsp;Ce patient doit exister !
+dico_management_error_addressbook_id = &nbsp;Ce contact doit exister !
+dico_management_error_user_id = &nbsp;Ce m&eacute;decin doit exister !
+
+{* management_patient_ *}
+{* management_client_ *}
+dico_management_patient_menu_search = Recherche
+dico_management_patient_menu_add = Ajout
+dico_management_patient_menu_list = Liste
+dico_management_patient_menu_edit = Edition
+dico_management_patient_menu_view = D&eacute;tail
+
+dico_management_patient_submenu_edit =  Edition du patient
+dico_management_patient_submenu_create = Cr&eacute;ation d'un nouveau contact
+dico_management_patient_submenu_view = D&eacute;tail de la fiche contact de
+dico_management_patient_submenu_search = Recherche d'un patient sur base de son nom et de son pr&eacute;nom
+dico_management_client_submenu_search = Recherche d'un client sur base de son nom et de son pr&eacute;nom
+dico_management_client_submenu_create = Cr&eacute;ation d'un nouveau client
+dico_management_client_submenu_edit = Edition du client
+ 
+dico_management_patient_subtab_general = G&eacute;n&eacute;ral
+dico_management_patient_subtab_info = Info
+dico_management_patient_subtab_comment = Commentaire
+ 
+dico_management_patient_search_colum_action = Actions
+dico_management_patient_search_colum_familyname = Nom
+dico_management_patient_search_colum_firstname = Pr&eacute;nom
+dico_management_patient_search_colum_birthday = Naissance
+dico_management_patient_search_colum_titulaire = Titulaire
+dico_management_patient_search_colum_mutuelle = Mutuelle
+dico_management_patient_search_colum_privatephone = T&eacute;l&eacute;phone
+dico_management_patient_search_colum_mobilephone = GSM
+dico_management_patient_search_colum_matricule = Matricule
+dico_management_patient_search_colum_tp = TP
+dico_management_patient_search_colum_ct1_ct2 = CT1/CT2
+dico_management_patient_search_colum_mail = Email
+
+dico_management_patient_search = Recherche sur le patient ou le titulaire
+dico_management_client_search = Recherche sur le client
+
+dico_management_patient_btn_idcard = Lecteur carte
+
+dico_management_patient_create = Cr&eacute;ation d'un patient
+dico_management_patient_titulaire_name = Titulaire
+dico_management_patient_firstname = Pr&eacute;nom
+dico_management_patient_familyname = Nom
+dico_management_patient_birthday = Date de naissance
+dico_management_patient_female = F&eacute;minin
+dico_management_patient_gender = Sexe
+dico_management_patient_male = Masculin
+dico_management_patient_nationality = Nationnalit&eacute;
+dico_management_patient_chooseone = Choisir..
+dico_management_patient_be = Belge
+dico_management_patient_it = Italien
+dico_management_patient_tr = Turc
+dico_management_patient_de = Allemand
+dico_management_patient_en = Anglais
+dico_management_patient_es = Espagnol
+dico_management_patient_fr = Francais
+dico_management_patient_jp = Japonais
+dico_management_patient_pl = Polonais
+dico_management_patient_pt = Portugais
+dico_management_patient_ro = Roumain
+dico_management_patient_ru = Russe
+dico_management_patient_bg = Bulgare
+dico_management_patient_da = Danois
+dico_management_patient_email = Courriel
+dico_management_patient_web = Web
+dico_management_patient_address = Adresse
+dico_management_patient_login = Login
+dico_management_patient_name = Nom
+dico_management_patient_birthday = Date de naissance
+dico_management_patient_avatar = Avatar
+dico_management_patient_email = Adresse Mail
+dico_management_patient_address1 = Adresse
+dico_management_patient_zip1city1 = Code Postal - Localit&eacute;
+dico_management_patient_state1 = Province
+dico_management_patient_country1 = Pays
+dico_management_patient_company = Compagnie
+dico_management_patient_workphone = T&eacute;l&eacute;phone professionel
+dico_management_patient_privatephone = T&eacute;l&eacute;phone priv&eacute;
+dico_management_patient_mobilephone = T&eacute;l&eacute;phone mobile (GSM)
+dico_management_patient_fax = Fax
+dico_management_patient_send = Enregistrer
+dico_management_patient_niss = Num&eacute;ro de registre nationale
+dico_management_patient_mutuel_code = Mutuelle
+dico_management_patient_mutuel_matricule = Matricule Mutuelle
+dico_management_patient_sis = Num&eacute;ro de la carte SIS
+dico_management_patient_ct1ct2 = CT1CT2
+dico_management_patient_tiers_payant = Tiers payant
+dico_management_patient_doctor = Dr Traitant
+dico_management_patient_receive_mail = Accepte de rececoir des mails
+dico_management_patient_checkminimum = V&eacute;rifier le minimum de champs
+
+dico_management_patient_error1 = error 1
+dico_management_patient_error2 = error 2
+dico_management_patient_edited = Patient modifi&eacute;
+dico_management_patient_saved = Patient enregistr&eacute;
+dico_management_client_edited = Client modifi&eacute;
+dico_management_client_added = Client enregistr&eacute;
+dico_management_client_deleted = Client supprim&eacute;
+
+dico_management_patient_button_edit = Edition
+dico_management_patient_button_save = Sauvegarde
+
+dico_management_patient_confirme_delete_question = Voulez-vous supprimer ce patient et toutes les informations le concernant ?
+dico_management_client_confirme_delete_question = Voulez-vous supprimer ce client et toutes les informations le concernant ?
+
+dico_global_left_patient_title = Patients
+dico_global_left_client_title = Clients
+
+
+
+{* management_acte_ *}
+dico_management_acte_menu_search = Recherche
+dico_management_acte_menu_add = Ajout
+dico_management_acte_menu_list = List
+dico_management_acte_menu_edit = Edition
+dico_management_acte_menu_view = D&eacute;tail
+
+dico_management_acte_submenu_edit =  Edition d'un acte interne
+dico_management_acte_submenu_create = Cr&eacute;ation d'un acte interne
+dico_management_acte_submenu_view = D&eacute;tail de l'acte interne 
+
+dico_management_acte_code = Code
+dico_management_acte_description = Description
+dico_management_acte_cecodis = Cecodis
+dico_management_acte_couttr = cout TR
+dico_management_acte_couttp = cout TP
+dico_management_acte_coutvp = cout VP
+dico_management_acte_coutsm = cout SM
+dico_management_acte_length = Dur&eacute;e
+dico_management_acte_minutes = minutes
+dico_management_acte_send = Enregistrer
+dico_management_acte_complete_search = Recherche compl&egrave;te
+
+dico_management_acte_error1 = error 1
+dico_management_acte_error2 = error 2
+dico_management_acte_edited = L'acte interne a &eacute;t&eacute; correctement modifi&eacute;e
+dico_management_acte_saved = L'acte interne a &eacute;t&eacute; enregistr&eacute;e
+
+dico_management_acte_button_edit = Edition
+dico_management_acte_button_save = Sauvegarde
+
+dico_global_left_acte_title = Acte interne
+
+dico_management_acte_search_colum_action = Actions
+dico_management_acte_search_colum_code = Code
+dico_management_acte_search_colum_description = Description
+dico_management_acte_search_colum_cecodis = Code cecodi associ&eacute;s
+dico_management_acte_search_colum_couttr = Co&ucirc;t TR
+dico_management_acte_search_colum_couttp = Co&ucirc;t TP
+dico_management_acte_search_colum_coutvp = Co&ucirc;t VP
+dico_management_acte_search_colum_coutsm = Co&ucirc;t SM
+dico_management_acte_search_colum_length = Dur&eacute;e
+
+
+
+{* management_protocol_ *}
+dico_management_protocol_menu_search = Recherche
+dico_management_protocol_menu_add = Ajout
+dico_management_protocol_menu_list = List
+dico_management_protocol_menu_edit = Edition
+dico_management_protocol_menu_view = D&eacute;tail
+
+dico_management_protocol_submenu_edit =  Edition d'un protocol
+dico_management_protocol_submenu_create = Cr&eacute;ation d'un nouveau protocol
+dico_management_protocol_submenu_view = D&eacute;tail du protocol
+
+dico_management_protocol_personal_search = Recherche sur le patient
+dico_management_protocol_complete_search = Recherche compl&egrave;te ( Patient, M&eacute;decins )
+dico_management_protocol_date = Date du protocole
+dico_management_protocol_patient = Patient
+dico_management_protocol_user = M&eacute;decin protocolant
+dico_management_protocol_addressbook = M&eacute;decin traitant
+dico_management_protocol_text = Contenu
+dico_management_protocol_send = Enregistrer le protocol
+
+dico_management_protocol_error1 = error 1
+dico_management_protocol_error2 = error 2
+dico_management_protocol_edited = Le protocole a &eacute;t&eacute; modifi&eacute;e
+dico_management_protocol_saved = Le protocole a &eacute;t&eacute; enregistr&eacute;e
+
+dico_management_protocol_button_edit = Edition
+dico_management_protocol_button_save = Sauvegarde
+dico_management_protocol_button_delete = Supprimer
+dico_management_protocol_button_cancel = Annuler
+dico_management_protocol_button_send = Envoyer
+
+dico_management_protocol_confirme_delete_question = Voulez-vous supprimer d&eacute;finitivement ce protocole ?
+
+dico_management_protocol_edit_alt = Edition du protocol
+dico_management_protocol_detail_alt = D&eacute;tail du protocol
+dico_management_protocol_delete_alt = Suppression du protocol
+
+dico_management_protocol_export_html = Exportation au format HTML
+dico_management_protocol_export_pdf = Exportation au format PDF
+dico_management_protocol_export_rtf = Exportation au format WORD (DOC)
+dico_management_protocol_export_txt = Exportation au format texte
+dico_management_protocol_export_xml = Exportation au format XML (Kmehr)
+
+dico_global_left_protocol_title = Addressebook
+
+dico_management_protocol_search_colum_action = Actions
+dico_management_protocol_search_colum_export = Export
+dico_management_protocol_search_colum_attachment = Attachements
+dico_management_protocol_search_colum_patient = Patient
+dico_management_protocol_search_colum_user = Sp&eacute;cialiste Poly
+dico_management_protocol_search_colum_addressbook = M&eacute;decin traitant
+dico_management_protocol_search_colum_date = Date
+dico_management_protocol_search_colum_export = Exportation
+
+
+
+
+
+{* management_adressbook_ *}
+dico_management_addressbook_menu_search = Recherche
+dico_management_addressbook_menu_add = Ajout
+dico_management_addressbook_menu_list = Liste
+dico_management_addressbook_menu_edit = Edition
+dico_management_addressbook_menu_view = D&eacute;tail
+
+dico_management_addressbook_submenu_edit =  Edition de
+dico_management_addressbook_submenu_create = Cr&eacute;ation d'un nouveau contact
+dico_management_addressbook_submenu_view = D&eacute;tail de la fiche contact de
+dico_management_addressbook_submenu_search = Recherche d'un contact
+
+dico_management_addressbook_type = Type
+dico_management_addressbook_chooseone = Choisir
+dico_management_addressbook_mutuel = Mutuelle
+dico_management_addressbook_other = Autre
+dico_management_addressbook_doctor = M&eacute;decin
+dico_management_addressbook_supplier = Fournisseur
+dico_management_addressbook_client = Client
+dico_management_addressbook_code = Code
+dico_management_addressbook_speciality = Specialit&eacute;
+dico_management_addressbook_inami = Code INAMI
+dico_management_addressbook_firstname = Pr&eacute;nom
+dico_management_addressbook_familyname = Nom
+dico_management_addressbook_email = Adresse Mail
+dico_management_addressbook_address1 = Adresse
+dico_management_addressbook_zip1city1 = Code Postal - Localit&eacute;
+dico_management_addressbook_state1 = Province
+dico_management_addressbook_country1 = Pays
+dico_management_addressbook_company = Compagnie
+dico_management_addressbook_workphone = T&eacute;l&eacute;phone professionel
+dico_management_addressbook_privatephone = T&eacute;l&eacute;phone priv&eacute;
+dico_management_addressbook_mobilephone = T&eacute;l&eacute;phone mobile (GSM)
+dico_management_addressbook_fax = Fax
+dico_management_addressbook_web = Site Web
+dico_management_addressbook_tva = Num&eacute;ro de TVA
+dico_management_addressbook_textcomment = Commentaire
+dico_management_addressbook_send = Enregistrer
+dico_management_addressbook_complete_search = Recherche compl&egrave;te
+
+dico_management_error_addressbook_unique = Ce code mutuelle existe deja
+
+dico_management_addressbook_error1 = error 1
+dico_management_addressbook_error2 = error 2
+dico_management_addressbook_edited = Le contact a &eacute;t&eacute; correctement modifi&eacute;
+dico_management_addressbook_saved = Le contact a &eacute;t&eacute; correctement enregistr&eacute;
+
+dico_management_user_button_edit = Edition
+dico_management_user_button_save = Sauvegarde
+
+dico_management_addressbook_confirme_delete_question = Voulez-vous supprimer ce contact ainsi que toutes ses dettes ?
+
+dico_management_addressbook_edit_alt = Edition du contact
+dico_management_addressbook_detail_alt = D&eacute;tail du contact
+dico_management_addressbook_delete_alt = Suppression du contact
+
+dico_global_left_addressbook_title = Addressebook
+
+dico_management_addressbook_search_colum_action = Actions
+dico_management_addressbook_search_colum_type = Type
+dico_management_addressbook_search_colum_code = Code
+dico_management_addressbook_search_colum_compagny = Compagnie
+dico_management_addressbook_search_colum_familyname = Nom
+dico_management_addressbook_search_colum_firstname = Pr&eacute;nom
+dico_management_addressbook_search_colum_workphone = T&eacute;l&eacute;phone Professionel
+dico_management_addressbook_search_colum_privatephone = T&eacute;l&eacute;phone Priv&eacute;
+dico_management_addressbook_search_colum_mobilephone = T&eacute;l&eacute;phone Mobile
+dico_management_addressbook_search_colum_fax = Fax
+dico_management_addressbook_search_colum_email = Email
+
+
+
+
+{* management_user_ *}
+dico_management_user_menu_search = Recherche
+dico_management_user_menu_list = Liste
+dico_management_user_menu_edit = Edition
+dico_management_user_menu_add = Ajout
+dico_management_user_menu_detail = D&eacute;tail
+dico_management_user_submenu_edit =  Edition de
+dico_management_user_submenu_create = Cr&eacute;ation d'un nouveau utilisateur
+dico_management_user_submenu_view = D&eacute;tail de l'utilisateur
+dico_management_user_submenu_search = Recherche d'un utilisateur
+dico_management_user_send = Enregistrer
+dico_management_user_complete_search = Recherche compl&egrave;te
+dico_management_user_edited = L'utilisateur a &eacute;t&eacute; correctement modifi&eacute;
+dico_management_user_added = L'utilisateur a &eacute;t&eacute; correctement ajout&eacute;
+dico_management_user_button_edit = Edition
+dico_management_user_button_save = Sauvegarde
+dico_management_user_button_cancel = Annuler
+dico_management_user_edit_alt = Edition du contact
+dico_management_user_detail_alt = D&eacute;tail du contact
+dico_management_user_delete_alt = Suppression du contact
+dico_management_user_search_colum_action = Actions
+dico_management_user_search_colum_login = Login
+dico_management_user_search_colum_familyname = Nom
+dico_management_user_search_colum_firstname = Pr&eacute;nom
+
+
+
+{* planning_ *}
+	{* Label *}
+	{* Menu *}
+dico_planning_menu_week = Semaine
+dico_planning_menu_archive = Archive
+dico_planning_menu_search = Rechercher
+	{* Sub Menu *}
+dico_planning_submenu_search = Recherche d'un planning
+	{* Tabs *}
+dico_planning_management_subtab_general = G&eacute;n&eacute;ral
+	{* List Colum *}
+dico_planning_search_colum_action = Actions
+dico_planning_search_colum_planning_name = Nom
+dico_planning_search_colum_planning_time = Date
+dico_planning_search_colum_patient_familyname = Nom
+dico_planning_search_colum_patient_firstname = Pr&eacute;nom
+dico_planning_search_colum_patient_birthdate = Date de naissance
+dico_planning_search_colum_latest_date = Derni&egrave;re modification
+dico_planning_search_colum_user = Sp&eacute;cialiste Poly
+dico_planning_search_colum_doctor = M&eacute;decin Traitant
+dico_planning_search_colum_protocol_date = Date du protocole
+dico_planning_search_colum_export = Exportation
+	{* Divers *}
+dico_planning_complete_search = Recherche d'un planning sur base du nom
+dico_planning_confirm_delete_question = Voulez-vous supprimer cette entr&eacute;e ?
+dico_planning_confirm_delete_day_entry_question = Voulez-vous supprimer toutes les entr&eacute;e pour ce jour ?
+dico_planning_confirm_delete_user_entry_question = Voulez-vous supprimer toutes les entr&eacute;e pour cette personne ?
+dico_planning_confirm_delete_all_entry_question = Voulez-vous supprimer toutes les entr&eacute;es ?
+dico_planning_confirm_delete_version_question = Voulez-vous supprimer cette version ?
+dico_planning_confirm_load_question = Voulez-vous reloader cette version ? Toutes les modifications non sauvegard&eacute;es seront perdues.
+dico_planning_current_week = Planning en cours
+dico_global_left_planning_title = Planning
+dico_planning_saved_name = Nom du fichier
+	{* Alert *}
+dico_planning_alert_upload_in_progress = Chargement en cours
+dico_planning_alert_save_new_version = Version sauvegard&eacute;e
+	{* Box *}
+dico_planning_search_colum_name = Nom du planning
+dico_planning_default_salaire_horaire = Salaire Horaire
+dico_planning_default_bonus_recurrent = Somme &agrave; rembourser
+dico_planning_default_cout_recurrent = Somme &agrave; d&eacute;duire
+dico_planning_salaire_horaire = Salaire Horaire
+dico_planning_salaire_daily = Salaire Journalier
+dico_planning_bonus_recurrent = Somme &agrave; rembourser
+dico_planning_cout_recurrent = Somme &agrave; d&eacute;duire
+dico_planning_bonus_recurrent_comment = Commentaire
+dico_planning_cout_recurrent_comment = Commentaire
+dico_planning_hour = Heure
+dico_planning_chantier = Chantier
+dico_planning_revenue = B&eacute;n&eacute;fice
+dico_planning_comment = Commentaire
+dico_planning_ouvrier = Ouvrier
+	{* pdf *}
+dico_planning_title_fisrt_line = Planning de la semaine pour
+dico_planning_details    = D&eacute;tails
+dico_planning_nb_heures    = Nombre d'heures
+
+
+{* management_cecodi_ *}
+dico_management_cecodi_menu_search = Recherche
+dico_management_cecodi_menu_add = Ajout
+dico_management_cecodi_menu_list = Liste
+dico_management_cecodi_menu_edit = Edition
+dico_management_cecodi_menu_view = D&eacute;tail
+
+dico_management_cecodi_submenu_edit =  Edition de
+dico_management_cecodi_submenu_create = Cr&eacute;ation d'un nouveau contact
+dico_management_cecodi_submenu_view = D&eacute;tail de la fiche contact de
+dico_management_cecodi_submenu_search = Recherche d'un contact sur base de son code, de sa compagnie, de son nom ou de son pr&eacute;nom
+
+dico_management_cecodi_code = Code
+dico_management_cecodi_age = Age
+dico_management_cecodi_description = Description
+dico_management_cecodi_class = Classe
+dico_management_cecodi_condition = Condition
+dico_management_cecodi_type = Type
+dico_management_cecodi_chooseone = Choisir
+dico_management_cecodi_consultation = Consultation
+dico_management_cecodi_acte = Acte technique
+dico_management_cecodi_hono_travailleur = hono_travailleur
+dico_management_cecodi_a_vipo = a_vipo
+dico_management_cecodi_b_tiers_payant = b_tiers_payant
+dico_management_cecodi_kdb = kdb
+dico_management_cecodi_bc = bc
+dico_management_cecodi_amount_tp = Prix TP
+dico_management_cecodi_amount_tr = Prix TR
+dico_management_cecodi_amount_vp = Prix VP
+dico_management_cecodi_amount_tpfortr = tpfortr
+
+dico_management_cecodi_variant = Variance
+dico_management_cecodi_send = Enregistrer
+dico_management_cecodi_complete_search = Recherche compl&egrave;te
+
+dico_management_error_cecodi_unique = Ce code mutuelle existe deja
+
+dico_management_cecodi_error1 = error 1
+dico_management_cecodi_error2 = error 2
+dico_management_cecodi_edited = Le contact a &eacute;t&eacute; correctement modifi&eacute;e
+dico_management_cecodi_saved = Le contact a &eacute;t&eacute; correctement enregistr&eacute;e
+
+dico_management_cecodi_button_edit = Edition
+dico_management_cecodi_button_save = Sauvegarde
+dico_management_cecodi_button_delete = Supprimer
+dico_management_cecodi_button_cancel = Annuler
+
+dico_management_cecodi_confirme_delete_question = Voulez-vous supprimer ce contact ainsi que toutes ses dettes ?
+
+dico_management_cecodi_edit_alt = Edition du contact
+dico_management_cecodi_detail_alt = D&eacute;tail du contact
+dico_management_cecodi_delete_alt = Suppression du contact
+
+dico_global_left_cecodi_title = Addressebook
+
+dico_management_cecodi_search_colum_action = Actions
+dico_management_cecodi_search_colum_type = Type
+dico_management_cecodi_search_colum_code = Code
+dico_management_cecodi_search_colum_compagny = Compagnie
+dico_management_cecodi_search_colum_familyname = Nom
+dico_management_cecodi_search_colum_firstname = Pr&eacute;nom
+dico_management_cecodi_search_colum_workphone = T&eacute;l&eacute;phone Professionel
+dico_management_cecodi_search_colum_privatephone = T&eacute;l&eacute;phone Priv&eacute;
+dico_management_cecodi_search_colum_mobilephone = T&eacute;l&eacute;phone Mobile
+dico_management_cecodi_search_colum_fax = Fax
+dico_management_cecodi_search_colum_email = Email
+
+
+
+
+{* management_debt_ *}
+dico_management_debt_menu_search = Recherche
+dico_management_debt_menu_add = Ajout
+dico_management_debt_menu_list = Liste
+dico_management_debt_menu_edit = Edition
+dico_management_debt_menu_view = D&eacute;tail
+dico_management_debt_menu_contact_list = Contact
+
+dico_management_debt_submenu_edit =  Edition d'une dette de 
+dico_management_debt_submenu_create = Cr&eacute;ation d'un nouvelle dette
+dico_management_debt_submenu_view = D&eacute;tail de la dette de
+dico_management_debt_submenu_search = Recherche d'une dette sur base du nom ou du pr&eacute;nom du contact
+
+dico_management_debt_search = Recherche sur dette pr&eacute;c&eacute;dentes
+dico_management_debt_firstname = Pr&eacute;nom
+dico_management_debt_familyname = Nom
+dico_management_debt_email = Adresse Mail
+dico_management_debt_address1 = Adresse
+dico_management_debt_zip1city1 = Code Postal - Localit&eacute;
+dico_management_debt_state1 = Province
+dico_management_debt_country1 = Pays
+dico_management_debt_workphone = T&eacute;l&eacute;phone professionel
+dico_management_debt_privatephone = T&eacute;l&eacute;phone priv&eacute;
+dico_management_debt_mobilephone = T&eacute;l&eacute;phone mobile (GSM)
+dico_management_debt_fax = Fax
+dico_management_debt_send = Enregistrer
+dico_management_debt_complete_search = Recherche compl&egrave;te
+dico_management_debt_amount = Montant
+dico_management_debt_textcomment = Commentaire
+dico_management_debt_textcomment_addressbook = Commentaire sur le contact
+dico_management_debt_textcomment_debt = Commentaire sur la dette
+dico_management_debt_creation_date = Date
+dico_management_debt_type = Type
+dico_management_debt_chooseone = Choisir...
+dico_management_debt_type0 = Pas de type
+dico_management_debt_type1 = rare
+dico_management_debt_type2 = occasionnelle
+dico_management_debt_type3 = r&eacute;guli&egrave;re
+dico_management_debt_type4 = fraudeur
+
+dico_management_debt_error1 = error 1
+dico_management_debt_error2 = error 2
+dico_management_debt_edited = La dette a &eacute;t&eacute; correctement modifi&eacute;e
+dico_management_debt_saved = La dette a &eacute;t&eacute; correctement enregistr&eacute;e
+dico_management_debt_deleted = La dette a &eacute;t&eacute; correctement supprim&eacute;
+
+dico_management_debt_button_edit = Edition
+dico_management_debt_button_save = Sauvegarde
+dico_management_debt_button_delete = Supprimer
+dico_management_debt_button_cancel = Annuler
+
+dico_management_debt_confirme_delete_question = Voulez-vous supprimer cette dette ?
+
+dico_global_left_debt_title = Dettes en cours...
+
+dico_management_debt_edit_alt = Edition de la dette
+dico_management_debt_detail_alt = D&eacute;tail de la dette
+dico_management_debt_delete_alt = Suppression de la dette
+
+dico_management_debt_search_colum_action = Actions
+dico_management_debt_search_colum_amount = Montant
+dico_management_debt_search_colum_creation_date = Date
+dico_management_debt_search_colum_type = Type
+dico_management_debt_search_colum_contact = Contact
+dico_management_debt_search_colum_workphone = T&eacute;l&eacute;phone Professionel
+dico_management_debt_search_colum_privatephone = T&eacute;l&eacute;phone Priv&eacute;
+dico_management_debt_search_colum_mobilephone = T&eacute;l&eacute;phone Mobile
+dico_management_debt_search_colum_comment = Commentaire
+
+
+{* management_product_ *}
+dico_product_file_upload = Fichier &agrave; charger
+dico_product_report_generate = G&eacute;n&eacute;rer le rapport
+
+dico_management_product_menu_manuel_flow = Gestion
+dico_management_product_menu_search = Recherche
+dico_management_product_menu_add = Ajout
+dico_management_product_menu_list = Produits
+dico_management_product_menu_flow_list = E/S
+dico_management_product_menu_edit = Edition
+dico_management_product_menu_view = D&eacute;tail
+dico_management_product_menu_automatic_flow = Commande
+dico_management_product_menu_report = Rapport
+dico_management_product_menu_stock_critique = Stock critique
+dico_management_product_search_colum_command_price = Montant de la commande
+
+dico_management_product_submenu_edit =  Edition d'un produit
+dico_management_product_submenu_search =  Recherche d'un produit
+dico_management_product_submenu_create = Cr&eacute;ation d'un nouveau produit
+dico_management_product_submenu_view = D&eacute;tail pour le produit
+dico_management_product_submenu_history = Historique pour le produit
+dico_management_product_submenu_manuel_flow = Gestion du stock
+dico_management_product_submenu_automatic_flow = Importation de la commande
+dico_management_product_submenu_list = Liste des produits
+dico_management_product_submenu_flow_list = Liste des Entr&eacute;e/Sortie
+dico_management_product_submenu_command = Commande
+
+dico_management_product_complete_search = Recherche sur le nom du produit
+dico_management_product_name = Nom du produit
+dico_management_product_description = Description du produit
+dico_management_product_unit = Unit&eacute; de conditionnement
+
+dico_management_product_unit1 = flacon
+dico_management_product_unit2 = ml
+dico_management_product_unit3 = tablette
+dico_management_product_unit4 = comprim&eacute;
+dico_management_product_unit5 = bo&icirc;te
+
+dico_management_product_size = Taille d'un conditionnement
+dico_management_product_dose = Dose normal
+dico_management_product_stock = Stock minimum
+dico_management_product_starting_stock = Stock de d&eacute;part
+dico_management_product_current_stock = Stock courant
+dico_management_product_search = Recherche sur produit
+dico_management_product_quantity = Quantit&eacute;
+dico_management_product_date = Date
+dico_management_product_consumer = Consommateur
+dico_management_product_proprietaire = Propri&eacute;taire
+dico_management_product_adresse = Adresse
+dico_management_product_lot_number = Num&eacute;ro de lot
+dico_management_product_type = Type
+dico_management_product_type1 = Sortie
+dico_management_product_type2 = Entr&eacute;e
+dico_management_product_type3 = P&eacute;rim&eacute;
+dico_management_product_type4 = Cass&eacute;
+dico_management_product_comment = Commentaire
+dico_management_product_sail_price = Prix avec TVA
+dico_management_product_sail_price_short = P. TVA
+dico_management_product_sail_price_htva = Prix hors TVA
+dico_management_product_sail_price_htva_short = P. HTVA
+dico_management_product_tva = TVA
+dico_management_product_total_price = Prix total
+dico_management_product_stock_price = Montant du stock
+dico_management_product_stock_sail_price = Montant du stock
+
+dico_management_product_error1 = error 1
+dico_management_product_error2 = error 2
+dico_management_product_deleted = Le produit a &eacute;t&eacute; supprim&eacute;
+dico_management_product_edited = Le produit a &eacute;t&eacute; modifi&eacute;
+dico_management_product_saved = Le produit a &eacute;t&eacute; enregistr&eacute;
+dico_management_product_stocked = Le stock du produit a &eacute;t&eacute; mise &agrave; jour
+
+dico_management_product_button_edit = Edition
+dico_management_product_button_save = Sauvegarde
+dico_management_product_button_delete = Supprimer
+dico_management_product_button_cancel = Annuler
+dico_management_product_report_submit = Prendre les dates en consid&eacute;ration
+
+dico_management_product_confirme_delete_question = Voulez-vous supprimer ce produit ?
+dico_management_product_pdfstock_title = Etat du stock au
+
+dico_global_left_product_title = Produits
+
+dico_management_product_edit_alt = Edition du produit
+dico_management_product_detail_alt = D&eacute;tail du produit
+dico_management_product_delete_alt = Suppression du produit
+
+dico_management_product_search_colum_action = Actions
+dico_management_product_search_colum_name = Produit
+dico_management_product_search_colum_unit = Unit&eacute; de conditionnement
+dico_management_product_search_colum_size = Taille d'un conditionnement
+dico_management_product_search_colum_size_light = Taille
+dico_management_product_search_colum_dose = Dose normal
+dico_management_product_search_colum_stock = Stock minimum
+dico_management_product_search_colum_current_stock = Stock courant
+dico_management_product_search_colum_description = Description
+dico_management_product_search_colum_quantity = Quantit&eacute;
+dico_management_product_search_colum_consumer_name = Consommateur
+dico_management_product_consumer_type = Type d'animal
+dico_management_product_search_colum_proprietaire_name = Propri&eacute;taire
+dico_management_product_search_colum_proprietaire_adresse = Adresse
+dico_management_product_search_colum_lot_number = Lot
+dico_management_product_search_colum_date = Date
+dico_management_product_search_colum_comment = Commentaire
+dico_management_product_search_colum_type = Type
+dico_management_product_search_colum_es = E/S
+dico_management_product_search_colum_commande = Commande
+dico_management_product_search_colum_sail_price_htva = Prix hors TVA
+dico_management_product_search_colum_tva = TVA
+dico_management_product_search_colum_sail_price = Prix avec TVA
+dico_management_product_search_colum_stock_sail_price = Montant du stock
+
+dico_management_product_pdf_title_part1 = Etat des consommations du 
+dico_management_product_pdf_title_part2 = au
+
+
+{* report *}
+dico_management_product_report_menu = Rapport
+dico_management_product_report_begda = Date de d&eacute;but de la s&eacute;lection
+dico_management_product_report_endda = Date de fin de la s&eacute;lection
+
+
+
+
+{* management_listing_ *}
+dico_management_listing_report_generate = G&eacute;n&eacute;rer le rapport
+
+dico_management_listing_menu_mutuelle = Mutuelle
+dico_management_listing_menu_doctor = M&eacute;decin
+dico_management_listing_menu_report = Rapport
+
+dico_management_listing_unit1 = flacon
+dico_management_listing_unit2 = ml
+dico_management_listing_unit3 = tablette
+dico_management_listing_unit4 = comprim&eacute;
+dico_management_listing_unit5 = boite
+
+dico_management_listing_size = Taille d'un conditionnement
+dico_management_listing_dose = Dose normal
+dico_management_listing_stock = Stock minimum
+dico_management_listing_starting_stock = Stock de d&eacute;part
+dico_management_listing_current_stock = Stock courant
+dico_management_listing_search = Recherche sur produit
+dico_management_listing_quantity = Quantit&eacute;
+dico_management_listing_date = Date
+dico_management_listing_consumer = Consommateur
+dico_management_listing_lot_number = Num&eacute;ro de lot
+dico_management_listing_type = Type
+dico_management_listing_type1 = Sortie
+dico_management_listing_type2 = Entr&eacute;e
+dico_management_listing_comment = Commentaire
+
+dico_management_listing_error1 = error 1
+dico_management_listing_error2 = error 2
+dico_management_listing_deleted = Le produit a &eacute;t&eacute; supprim&eacute;
+dico_management_listing_edited = Le produit a &eacute;t&eacute; modifi&eacute;
+dico_management_listing_saved = Le produit a &eacute;t&eacute; enregistr&eacute;
+dico_management_listing_stocked = Le stock du produit a &eacute;t&eacute; mise &agrave; jour
+
+dico_management_listing_button_edit = Edition
+dico_management_listing_button_save = Sauvegarde
+dico_management_listing_button_delete = Supprimer
+dico_management_listing_button_cancel = Annuler
+dico_management_listing_report_submit = Prendre les dates en consid&eacute;ration
+
+dico_management_listing_edit_alt = Edition du produit
+dico_management_listing_detail_alt = D&eacute;tail du produit
+dico_management_listing_delete_alt = Suppression du produit
+
+dico_management_listing_mutuelle_colum_ID = ID
+dico_management_listing_mutuelle_colum_close_date = Cloture
+dico_management_listing_mutuelle_colum_act-date = Prestation
+dico_management_listing_mutuelle_colum_mutuelle = Mut.
+dico_management_listing_mutuelle_colum_patient_family_name = Pat. Nom
+dico_management_listing_mutuelle_colum_patient_first_name = Pr&eacute;nom
+dico_management_listing_mutuelle_colum_patient_matricul = Matricule
+dico_management_listing_mutuelle_colum_patient_ct1ct2 = CT1/CT2
+dico_management_listing_mutuelle_colum_titulaire_family_name = Titu. Nom
+dico_management_listing_mutuelle_colum_titulaire_first_name = Pr&eacute;nom
+dico_management_listing_mutuelle_colum_titulaire_matricul = Matricule
+dico_management_listing_mutuelle_colum_doctor_family_name = M&eacute;d. Nom
+dico_management_listing_mutuelle_colum_doctor_first_name = Pr&eacute;nom
+dico_management_listing_mutuelle_colum_cecodi = CECODI
+dico_management_listing_mutuelle_colum_amount = Cout
+
+
+dico_management_listing_pdf_title_part1 = Etat des consommations du 
+dico_management_listing_pdf_title_part2 = au
+
+
+
+
+{* management_prevention_ *}
+dico_management_prevention_menu_status = Statut
+dico_management_prevention_menu_list = En cours
+dico_management_prevention_menu_list_deleted = Trait&eacute;s
+dico_management_prevention_menu_add = Ajout
+dico_management_prevention_menu_edit = Edition
+dico_management_prevention_menu_activation = Activation
+dico_management_prevention_menu_batch = Batch
+dico_management_prevention_menu_timeplot = Evolution
+
+dico_management_prevention_submenu_status = Status
+dico_management_prevention_submenu_list = Liste
+dico_management_prevention_submenu_add = Ajout
+dico_management_prevention_submenu_edit = edit
+dico_management_prevention_submenu_activation = Activation
+dico_management_prevention_submenu_timeplot = Evolution
+
+dico_management_prevention_status_to_contact = Nombre de patients &agrave; contacter
+dico_management_prevention_status_contacted = Nombre de patients d&eacute;j&agrave; contact&eacute;s
+dico_management_prevention_status_call_back = Nombre de patients &agrave; recontacter
+dico_management_prevention_status_close = TERMINE
+dico_management_prevention_status_number_motif = Nombre de motifs
+dico_management_prevention_status_number_motif_actif = Nombre de motifs actifs
+dico_management_prevention_status_deleted = Nombre de patients trait&eacute;s
+
+dico_management_prevention_description = Description
+dico_management_prevention_period = P&eacute;riode avant rappel
+dico_management_prevention_period_title = P&eacute;riode pr&eacute;c&eacute;dant le rappel
+dico_management_prevention_period_unit = P&eacute;riode (base)
+dico_management_prevention_period_unit_day = Jours
+dico_management_prevention_period_unit_month = Mois
+dico_management_prevention_period_unit_year = Ann&eacute;es
+dico_management_prevention_main_text = Contenu
+dico_management_prevention_rappel = Rappel
+dico_management_prevention_signature = Signature
+dico_management_prevention_sender_name = Nom de l'exp&eacute;diteur
+dico_management_prevention_sender_address1 = Adresse
+dico_management_prevention_sender_zip1city1 = Code Postal - Localit&eacute;
+dico_management_prevention_sender_mail = E-Mail
+dico_management_prevention_sender_reply = Reply Mail
+dico_management_prevention_request = Requ&ecirc;te
+dico_management_prevention_sender_request_title = Requ&ecirc;te SQL &agrave; d&eacute;finir avec mariquecalcus SPRL
+dico_management_prevention_sender_request_important = !Attention de changer que si vous comprenez les risques!
+dico_management_prevention_frequency = R&eacute;currence
+dico_management_prevention_frequency_title = R&eacute;currence par rapport au premier janvier
+dico_management_prevention_frequency_year = Annuelle
+dico_management_prevention_frequency_6month = Semestre
+dico_management_prevention_frequency_3month = Trimestrielle
+dico_management_prevention_frequency_month = Mesuelle
+dico_management_prevention_frequency_week = Hebdomadaire
+dico_management_prevention_chooseone = Choisir
+
+dico_management_prevention_date = Date du preventione
+dico_management_prevention_patient = Patient
+dico_management_prevention_user = M&eacute;decin
+dico_management_prevention_addressbook = M&eacute;decin traitant
+dico_management_prevention_text = Contenu
+dico_management_prevention_send = Enregistrer le prevention
+
+dico_management_prevention_error1 = error 1
+dico_management_prevention_error2 = error 2
+dico_management_prevention_motif_edited = Le motif a &eacute;t&eacute; modifi&eacute;
+dico_management_prevention_motif_added = Le motif a &eacute;t&eacute; enregistr&eacute;
+dico_management_prevention_motif_deleted = Le motif a &eacute;t&eacute; supprim&eacute;
+dico_management_prevention_contact_deleted = Le contact a &eacute;t&eacute; supprim&eacute;
+dico_management_error_prevention_unique = &nbsp;Ce motif existe d&eacute;j&agrave;
+
+dico_management_prevention_button_edit = Edition
+dico_management_prevention_button_save = Sauvegarde
+dico_management_prevention_button_delete = Supprimer
+dico_management_prevention_button_cancel = Annuler
+
+dico_management_prevention_confirme_delete_motif = Voulez-vous supprimer ce motif ainsi que tous les contacts li&eacute;s ?
+dico_management_prevention_confirme_delete_contact = Voulez-vous supprimer ce contact ?
+
+dico_management_prevention_edit = Edition
+dico_management_prevention_edit_alt = Edition du motif
+dico_management_prevention_detail = D&eacute;tail
+dico_management_prevention_detail_alt = D&eacute;tail du motif
+dico_management_prevention_delete = Suppression
+dico_management_prevention_delete_alt = Suppression du motif
+dico_management_prevention_batch = Dernier lancement le 
+dico_management_prevention_print_test = Imprimer un cas de test
+dico_management_prevention_first_insertion = nouveaux contacts
+dico_management_prevention_to_call_back = rappels
+dico_management_prevention_init_contact = deuxi&egrave;mes contacts
+dico_management_prevention_still_exist = d&eacute;j&agrave; existants
+dico_management_prevention_deleted = supprim&eacute;s
+
+
+dico_management_prevention_colum_patient_familyname = Nom
+dico_management_prevention_colum_patient_firstname = Pr&eacute;nom
+dico_management_prevention_colum_patient_address = Adresse
+dico_management_prevention_colum_patient_private_phone = T&eacute;l&eacute;phone
+dico_management_prevention_colum_patient_mobile_phone = GSM
+dico_management_prevention_colum_modif_date = Date de modification
+dico_management_prevention_colum_status = Status
+dico_management_prevention_colum_patient_mail = E-Mail
+dico_management_prevention_colum_select = Selection
+dico_management_prevention_colum_modif_description = Motif
+dico_management_prevention_colum_gender_M = Monsieur 
+dico_management_prevention_colum_gender_F = Madame
+
+dico_management_prevention_to_contact = A CONTACTER
+dico_management_prevention_contacted = DEJA CONTACTE
+dico_management_prevention_presented = RENDEZ-VOUS PRIS
+dico_management_prevention_call_back = A RECONTACTER
+dico_management_prevention_close = TERMINE
+
+
+{* management_tarificationt_ *}
+dico_management_patient_tarification_add = Ajout
+dico_management_patient_tarification_load = Reprise
+dico_management_patient_tarification_search = Recherche
+dico_management_patient_tarification_list_day = List jour
+dico_management_patient_tarification_list_all = List complete
+
+{* Prises de sang *}
+dico_sumehr_menu_search_analyse = Recherche prises de sang
+dico_sumehr_menu_view_analyse   = D&eacute;tails prises de sang
+
+dico_sumehr_search_colum_analyse_patient = Patient
+dico_sumehr_search_colum_analyse_date    = Date de l'analyse
+dico_sumehr_search_colum_analyse_doctor  = M&eacute;decin prescripteur
+
+dico_sumehr_submenu_view_analyse          = Prise de sang effectu&eacute;e le
+dico_sumehr_submenu_view_analyse_pour     = pour
+dico_sumehr_submenu_view_analyse_demandee = demand&eacute;e par
+
+dico_sumehr_tableheader_analyse_code        = Code
+dico_sumehr_tableheader_analyse_label       = Label
+dico_sumehr_tableheader_analyse_reference   = R&eacute;f&eacute;rence
+dico_sumehr_tableheader_analyse_unite       = Unit&eacute;
+dico_sumehr_tableheader_analyse_info        = Indicateur
+dico_sumehr_tableheader_analyse_resultat    = R&eacute;sultat
+
+dico_sumehr_menu_view_analyse_pdf             = Details prises de sang
+dico_sumehr_tableheader_analyse_reference_pdf = Reference
+dico_sumehr_tableheader_analyse_unite_pdf     = Unite
+dico_sumehr_tableheader_analyse_resultat_pdf  = Resultat
+
+{* admin stats *}
+
+navigation_title_admin_listing_prestations_medecins     = Prestations des m&eacute;decins
+navigation_title_admin_listing_prestations_medecins_pdf = Prestations des medecins
+
+dico_admin_listing_prestations_colum_medecin_prenom            = Pr&eacute;nom du m&eacute;decin
+dico_admin_listing_prestations_colum_medecin_nom                = Nom du m&eacute;decin
+dico_admin_listing_prestations_colum_medecin_inami              = Num&eacute;ro Inami
+dico_admin_listing_prestations_colum_medecin_duration          = Prestations (min)
+dico_admin_listing_prestations_colum_medecin_duration2          = Prestations (format&eacute;e)
+dico_admin_listing_prestations_colum_medecin_duration3          = Prestations (cht)
+dico_admin_listing_prestations_colum_medecin_pourcentage     = Pourcentage
+dico_admin_listing_prestations_colum_medecin_pourcentage_cum = Pourcentage cumul&eacute;
+
+dico_admin_listing_prestations_colum_medecin_pdf          = Medecins
+dico_admin_listing_prestations_colum_inami_pdf            = Inami
+dico_admin_listing_prestations_colum_duration_pdf         = Prest (min)
+dico_admin_listing_prestations_colum_duration2_pdf        = Prest (form)
+dico_admin_listing_prestations_colum_duration3_pdf        = Prest (cht)
+dico_admin_listing_prestations_colum_pourcentage_pdf      = Pourc.
+dico_admin_listing_prestations_colum_pourcentage_cum_pdf = Pourc. cum.
+
+dico_admin_listing_prestations_medecins_fields_filter  = Filtrer les prestations nulles
+
+{* comptabilite *}
+navigation_title_management_comptabilite_overview = Vue par compte
+
+dico_management_comptabilite_submenu_upload = Chargement du fichier Ernst & Young
+dico_management_comptabilite_display_state  = Etat des comptes et co&eacute;ficients
+dico_management_comptabilite_modify_account = Modification des comptes
+dico_management_comptabilite_classes        = Classes
+dico_management_comptabilite_parametres     = Param&egrave;tres
+dico_management_comptabilite_coeficients    = Co&eacute;ficients
+navigation_title_management_comptabilite_modify = Modifier un compte
+navigation_management_comptabilite = Comptabilit&eacute;
+
+navigation_title_management_comptabilite_overview_comparison = Vue d'ensemble pour la comparaison d'une ann&eacute;e &agrave; l'autre
+dico_management_comptabilite_overview_comparison = Comparaison
+dico_management_comptabilite_comparison_account  = Comparaison
+dico_management_comptabilite_cumul_annee       = Cumul ann&eacute;e
+dico_management_comptabilite_delta_pourcentage = Delta - Pourcentage
+dico_management_comptabilite_info_benefice           = Classe1 + Classe2 + Classe3 + Classe4 + Classe5
+dico_management_comptabilite_info_beneficefr_part1     = -1 * ( Classe70 + Classe72 + Classe74 + Classe75 + Classe76 -
+dico_management_comptabilite_info_beneficefr_part2     = ( Classe60 + Classe61 + Classe62 + Classe63 + Classe64 + Classe65 + Classe66 + Classe67 ) )
+dico_management_comptabilite_info_marge_brute         = Classe70 - Classe60
+dico_management_comptabilite_info_vad                 = Classe70 + Classe72 + Classe74 - Classe60
+dico_management_comptabilite_info_cgs                = Classe61 + Classe62 + Classe63 + Classe64
+dico_management_comptabilite_info_tee                = VAD/CGS
+dico_management_comptabilite_info_fr                = Classe1 + Classe2
+dico_management_comptabilite_info_bfr                = Classe3 + Classe4
+dico_management_comptabilite_info_tr                = Valeur absolue (FR) + Valeur absolue (BFR)
+dico_management_comptabilite_info_vadbfr            = VAD/BFR
+dico_management_comptabilite_info_tef                = FR/BFR
+dico_management_comptabilite_info_cash                = (-1) * B&eacute;n&eacute;fice FR + Classe63
+dico_management_comptabilite_rapport = Rapport
+dico_management_comptabilite_solde_cumul = Solde au cumul
+
+
+dico_comptabilite_upload_ernstandyoung      = M&eacute;thode Ernst and Young
+dico_comptabilite_upload_autremethode       = Autre M&eacute;thode
+
+dico_management_comptabilite_numero_compte = Num&eacute;ro du compte
+dico_management_comptabilite_details_compte = D&eacute;tails compte
+dico_management_comptabilite_denomiation_compte = D&eacute;nomination du compte
+dico_management_comptabilite_credit = Cr&eacute;dit
+dico_management_comptabilite_debit = D&eacute;bit
+
+dico_comptabilite_saved    = Compte sauvegard&eacute;
+dico_comptabilite_uploaded = Comptes charg&eacute;s
+
+dico_management_comptabilite_classe72_vad_cumul = Classe 72 VAD cumul&eacute;e
+dico_management_comptabilite_classe72_vad = Classe 72 VAD
+
+dico_management_comptabilite_no_account = Aucun compte n'est disponible avec ce num&eacute;ro et &agrave; cette date
+
+dico_management_comptabilite_classe1 = Classe 1 FR
+dico_management_comptabilite_classe2 = Classe 2 FR
+dico_management_comptabilite_classe3 = Classe 3 BFR
+dico_management_comptabilite_classe4 = Classe 4 BFR
+dico_management_comptabilite_classe5 = Classe 5
+
+dico_management_comptabilite_classe1_cumul = Classe 1 FR cumul&eacute;e
+dico_management_comptabilite_classe2_cumul = Classe 2 FR cumul&eacute;e
+dico_management_comptabilite_classe3_cumul = Classe 3 BFR cumul&eacute;e
+dico_management_comptabilite_classe4_cumul = Classe 4 BFR cumul&eacute;e
+dico_management_comptabilite_classe5_cumul = Classe 5 cumul&eacute;e
+
+dico_management_comptabilite_classe60_vad = Classe 60 VAD
+dico_management_comptabilite_classe61_cgs = Classe 61 CGS
+dico_management_comptabilite_classe62_cgs = Classe 62 CGS
+dico_management_comptabilite_classe63_cgs = Classe 63 CGS
+dico_management_comptabilite_classe64_cgs = Classe 64 CGS
+
+dico_management_comptabilite_classe60_vad_cumul = Classe 60 VAD cumul&eacute;e
+dico_management_comptabilite_classe61_cgs_cumul = Classe 61 CGS cumul&eacute;e
+dico_management_comptabilite_classe62_cgs_cumul = Classe 62 CGS cumul&eacute;e
+dico_management_comptabilite_classe63_cgs_cumul = Classe 63 CGS cumul&eacute;e
+dico_management_comptabilite_classe64_cgs_cumul = Classe 64 CGS cumul&eacute;e
+
+dico_management_comptabilite_classe65     = Classe 65
+dico_management_comptabilite_classe66     = Classe 66
+dico_management_comptabilite_classe67     = Classe 67
+dico_management_comptabilite_classe70_vad = Classe 70 VAD
+dico_management_comptabilite_classe74_vad = Classe 74 VAD
+dico_management_comptabilite_classe75     = Classe 75
+dico_management_comptabilite_classe76     = Classe 76
+
+dico_management_comptabilite_classe65_cumul     = Classe 65 cumul&eacute;e
+dico_management_comptabilite_classe66_cumul     = Classe 66 cumul&eacute;e
+dico_management_comptabilite_classe67_cumul     = Classe 67 cumul&eacute;e
+dico_management_comptabilite_classe70_vad_cumul = Classe 70 VAD cumul&eacute;e
+dico_management_comptabilite_classe74_vad_cumul = Classe 74 VAD cumul&eacute;e
+dico_management_comptabilite_classe75_cumul     = Classe 75 cumul&eacute;e
+dico_management_comptabilite_classe76_cumul     = Classe 76 cumul&eacute;e
+
+dico_management_comptabilite_benefice    = B&eacute;n&eacute;fice(+)
+dico_management_comptabilite_benefice_fr = B&eacute;n&eacute;fice FR
+dico_management_comptabilite_benefice_marge_brute = Benefice et marge brute
+
+dico_management_comptabilite_benefice_cumul    = B&eacute;n&eacute;fice(+) cumul&eacute;
+dico_management_comptabilite_benefice_fr_cumul = B&eacute;n&eacute;fice FR cumul&eacute;
+dico_management_comptabilite_benefice_marge_brute_cumul = Benefice et marge brute cumul&eacute;
+
+dico_management_comptabilite_delta = Delta
+dico_management_comptabilite_benefice_vad_delta =  VAD Delta
+
+dico_management_comptabilite_element = El&eacute;ment
+dico_management_comptabilite_courant = Courant
+dico_management_comptabilite_cumule  = Cumul&eacute;
+
+dico_management_comptabilite_marge_brute = Marge Brute
+dico_management_comptabilite_vad         = VAD
+dico_management_comptabilite_cgs         = CGS
+dico_management_comptabilite_tee         = TEE=VAD/CGS
+dico_management_comptabilite_fr          = FR
+dico_management_comptabilite_bfr         = BFR
+dico_management_comptabilite_tr          = TR
+dico_management_comptabilite_verif       = V&eacute;rification
+dico_management_comptabilite_tee         = TEE
+dico_management_comptabilite_vadbfr      = VAD/BFR
+
+dico_management_comptabilite_marge_brute_cumul = Marge Brute cumul&eacute;e
+dico_management_comptabilite_vad_cumul         = VAD cumul&eacute;
+dico_management_comptabilite_cgs_cumul         = CGS cumul&eacute;
+dico_management_comptabilite_tee_cumul         = TEE=VAD/CGS cumul&eacute;
+dico_management_comptabilite_fr_cumul          = FR cumul&eacute;
+dico_management_comptabilite_bfr_cumul         = BFR cumul&eacute;
+dico_management_comptabilite_tr_cumul          = TR cumul&eacute;
+dico_management_comptabilite_verif_cumul       = V&eacute;rification cumul&eacute;e
+dico_management_comptabilite_tee_cumul         = TEE cumul&eacute;
+dico_management_comptabilite_vadbfr_cumul      = VAD/BFR cumul&eacute;
+   
+dico_management_comptabilite_tef         = TEF (FR/BFR)
+dico_management_comptabilite_cash        = Cash Flow brut
+
+dico_management_comptabilite_tef_cumul         = TEF (FR/BFR) cumul&eacute;
+dico_management_comptabilite_cash_cumul        = Cash Flow brut cumul&eacute;
+
+dico_management_comptabilite_rapport = Rapport
+dico_management_comptabilite_solde_cumul = Solde au cumul
+
+dico_comptabilite_upload_comptagene      = Comptabilit&eacute; g&eacute;n&eacute;rale
+dico_comptabilite_upload_comptes         = Comptes
+dico_comptabilite_upload_comptes_mois    = Mois
+dico_comptabilite_upload_comptes_annee   = Ann&eacute;e
+
+dico_management_comptabilite_mois_de     = De (mois)
+dico_management_comptabilite_mois_a      = &agrave; (mois)
+dico_management_comptabilite_annee_de    = De (ann&eacute;e)
+dico_management_comptabilite_annee_a     = &agrave; (ann&eacute;e)
+
+dico_management_comptabilite_legende = L&eacute;gende
+
+dico_management_comptabilite_element     = Element
+dico_management_comptabilite_courant     = Courant
+dico_management_comptabilite_cumule      = Cumul
+dico_management_comptabilite_indicateur  = Indicateur
+
+dico_management_comptabilite_classe      = Classe
+dico_management_comptabilite_nom         = Description
+dico_management_comptabilite_faits       = Faits
+dico_management_comptabilite_conclusions = Conclusions
+dico_management_comptabilite_actions     = Actions
+
+dico_management_comptabilite_chiffre_daffaire      = Chiffre d'affaire
+dico_management_comptabilite_chiffre_daffaire_prec = Chiffre d'affaire ann&eacute;e pr&eacute;c&eacute;dente
+dico_management_comptabilite_couts_directs         = Full costs
+dico_management_comptabilite_couts_directs_prec    = Full costs ann&eacute;e pr&eacute;c&eacute;dente
+dico_management_comptabilite_point_mort = Point mort
+
+dico_management_comptabilite_bep_status = Statut Point Mort
+dico_management_comptabilite_current_month = Date
+dico_management_comptabilite_delta = Diff&eacute;rence
+
+{* Textes Poly > Polygone  partie 1*}
+dico_global_left_titulaire_title = Titulaires
+dico_management_patient_mutuelle_matricule = Matricule Mutuelle
+dico_management_patient_mutuelle_code = Code Mutuelle
+dico_management_patient_address1 = Adresse
+dico_management_patient_reduction_tiers_payant = RÈduction du tiers payant
+dico_management_patient_tiers_payant_info = Refus d'accorder la r&eacute;duction du tiers payant
+dico_management_patient_vipo_info = Refus d'accorder la r&eacute;duction vipo
+dico_management_patient_mutuelle_info = Refus de la prise en charge du remboursement aux mutuelles
+dico_management_patient_interdit_info = Interdit d'&eacute;tablissement
+dico_management_patient_rating_rendez_vous_info = Rating rendez-vous
+dico_management_patient_rating_frequentation_info = Rating fr&eacute;quentation
+dico_management_patient_rating_preference_info = Rating pr&eacute;f&eacute;rence
+
+dico_management_patient_rating_rdv_1 = Ne se pr&eacute;sente jamais aux rendez-vous
+dico_management_patient_rating_rdv_2 = Manque r&eacute;guli&egrave;rement les rendez-vous
+dico_management_patient_rating_rdv_3 = Manque occasionellement les rendez-vous
+dico_management_patient_rating_rdv_4 = Manque tr&egrave;s rarement les rendez-vous
+dico_management_patient_rating_rdv_5 = Ne rate jamais les rendez-vous
+
+dico_management_patient_rating_frequentation_1 = Ne vient plus jamais dans l'&eacute;tablissement
+dico_management_patient_rating_frequentation_2 = Fr&eacute;quente rarement l'&eacute;tablissement
+dico_management_patient_rating_frequentation_3 = Fr&eacute;quente normalement l'&eacute;tablissement
+dico_management_patient_rating_frequentation_4 = Fr&eacute;quente r&eacute;guli&egrave;rement l'&eacute;tablissement
+dico_management_patient_rating_frequentation_5 = Fr&eacute;quente tr&egrave;s souvent l'&eacute;tablissement
+
+dico_management_patient_rating_preference_1 = M&eacute;diocre
+dico_management_patient_rating_preference_2 = Moyen
+dico_management_patient_rating_preference_3 = Normal
+dico_management_patient_rating_preference_4 = Tr&egrave;s bien
+dico_management_patient_rating_preference_5 = Excellent
+
+dico_management_patient_rating_not_defined = Non d&eacute;fini
+
+dico_management_patient_fumeur = Fumeur
+dico_management_patient_oui = Oui
+dico_management_patient_non = Non
+dico_management_patient_obese = Surpoids
+
+navigation_title_management_patient_add   = Cr&eacute;ation d'un patient
+navigation_title_management_patient_edit  = Edition d'un patient
+navigation_title_management_prothese_add  = Ajout d'une tarification pour une proth&egrave;se
+
+{*Gestion des temps*}
+navigation_admin_workschedule                        = Horaires
+navigation_title_management_daily_wsr_add            = Ajo&ucirc;t d'un horaire journalier
+navigation_title_management_daily_wsr_edit           = Edition d'un horaire journalier
+dico_management_dws_delete                           = Suppression d'un horaire journalier
+dico_management_workschedule_confirm_delete_question = Voulez vous vraiment supprimer cette entr&eacute;e?
+navigation_title_management_daily_wsr_liste          = Liste horaire journalier
+navigation_title_management_workschedule_add         = Cr&eacute;ation d'un horaire
+navigation_title_management_workschedule_edit        = Edition d'un horaire
+navigation_title_management_workschedule_liste       = Liste des horaires
+navigation_title_management_workschedule_assign      = Assigner un horaire
+
+dico_management_dws_column_id          = Identifiant
+dico_management_dws_column_description = Description
+dico_management_dws_column_begtime     = Heure d&eacute;but
+dico_management_dws_column_endtime     = Heure de fin
+dico_management_dws_column_begbreak    = D&eacute;but pause
+dico_management_dws_column_endbreak    = Fin pause
+dico_management_dws_column_nb_hours    = Nombre d'heures
+
+dico_management_wsr_column_id          = Identifiant
+dico_management_wsr_column_description = Description
+dico_management_wsr_column_nbweeks     = Nombre de semaines dans l'horaire 
+
+dico_management_daily_wsr_id = ID de l'horaire journalier
+dico_management_daily_wsr_description = Description de l'horaire journalier
+dico_management_daily_wsr_begtime = Heure de d&eacute;but
+dico_management_daily_wsr_endtime = Heure de fin
+dico_management_daily_wsr_begbreak = Heure de d&eacute;but de la pause
+dico_management_daily_wsr_endbreak = Heure de fin de la pause
+dico_management_daily_wsr_nb_hours = Nombre d'heures
+
+dico_management_wsr_id = ID de l'horaire
+dico_management_wsr_description = Description de l'horaire
+
+dico_management_wsr_column_index    = index
+dico_management_wsr_column_nb_hours = Nb heures
+dico_management_wsr_column_avg_text = Moyenne h / semaine
+
+dico_management_wsr_index = Index de la semaine
+dico_management_wsr_jour1 = Lundi
+dico_management_wsr_jour2 = Mardi
+dico_management_wsr_jour3 = Mercredi
+dico_management_wsr_jour4 = Jeudi
+dico_management_wsr_jour5 = Vendredi
+dico_management_wsr_jour6 = Samedi
+dico_management_wsr_jour7 = Dimanche
+
+dico_management_workschedule_add_line = Ajouter une semaine &agrave; l'horaire 
+dico_management_wsr_choice = Choix
+dico_management_wsr_delete = Supprimer un horaire
+
+dico_management_wsr_refdate = Date de r&eacute;f&eacute;rence
+
+dico_management_error_required_all_days = Tous les jours doivent &ecirc;tre s&eacute;lectionn&eacute;s!
+
+{* admin_ *}
+dico_admin_error_required = &nbsp;Ce champs est obligatoire !
+dico_admin_error_email = &nbsp;Format incorrect ! (smith@mail.be)
+dico_admin_error_date = &nbsp;Format incorrect ! (11/11/1978)
+dico_admin_error_web = &nbsp;Format incorrect ! (http://web.com)
+dico_admin_error_group_unique = &nbsp;Ce group existe d&eacute;j&agrave; !
+dico_admin_error_user_unique = &nbsp;Cet utilisateur existe d&eacute;j&agrave; !
+dico_admin_error_inami = &nbsp;Format incorrect ! (12345678912) !
+
+
+{* admin_people_group *}
+dico_admin_people_group_group = Groupes
+dico_admin_people_group_addgroup = Ajouter un groupe
+dico_admin_people_group_desc = Description
+dico_admin_people_group_deassign = Retirer du groupe
+dico_admin_people_group_messages_colum_group = Groupes
+dico_admin_people_group_name = Nom
+dico_admin_people_group_description = Description
+dico_admin_people_group_wasdeleted = Le groupe a &eacute;t&eacute; correctement supprim&eacute;
+dico_admin_people_group_wasadded = Le groupe a &eacute;t&eacute; correctement ajout&eacute;
+dico_admin_people_group_deassigned = L'utilisateur a &eacute;t&eacute; supprim&eacute; de ce groupe
+dico_admin_people_group_error1 = Impossible d'ajouter un groupe sans nom
+dico_admin_people_group_error2 = Impossible d'ajouter ce groupe !
+dico_admin_people_group_button_edit = Edition
+dico_admin_people_group_button_save = Sauvegarde
+dico_admin_people_group_button_delete = Supprimer
+dico_admin_people_group_button_cancel = Annuler
+dico_admin_people_group_button_add = Ajouter
+
+dico_admin_people_group_confirme_delete_question = Voulez-vous supprimer ce groupe ?
+dico_admin_people_group_messages_colum_group = Groupe
+
+
+
+{* admin_people_user *}
+dico_admin_people_user_menu_view = User/Groupes
+dico_admin_people_user_menu_list = Liste
+dico_admin_people_user_menu_edit = Edit
+dico_admin_people_user_menu_detail = D&eacute;tail
+dico_admin_people_user_wasdeleted = L'utilisateur a &eacute;t&eacute; supprim&eacute;
+dico_admin_people_user_wasadded = L'utilisateur a &eacute;t&eacute; correctement ajout&eacute;
+dico_admin_people_user_wasedited = L'utilisateur a &eacute;t&eacute; correctement modifi&eacute;
+dico_admin_people_user_permissionswereedited = Les permissions ont &eacute;t&eacute; modifi&eacute;es
+dico_admin_people_user_administration = Gestion des utilisateurs
+dico_admin_people_user_adduser = Ajouter un utilisateur
+dico_admin_people_user_name = Login
+dico_admin_people_user_password = Mot de passe
+dico_admin_people_user_familyname = Nom
+dico_admin_people_user_firstname = Pr&eacute;nom
+dico_admin_people_user_groups = Groupes
+dico_admin_people_user_permissions = Permissions
+dico_admin_people_user_user = Utilisateur
+dico_admin_people_user_no_login = Sans compte
+dico_admin_people_user_manager = Manager
+dico_admin_people_user_manager_advanced = Manager Avanc&eacute;
+dico_admin_people_user_admin = Administrateur
+dico_admin_people_user_addbutton = Ajouter
+dico_admin_people_user_cancel = Annuler
+dico_admin_people_user_lastlogin = Derniere connexion
+dico_admin_people_user_email = Courriel
+dico_admin_people_user_web = Web
+dico_admin_people_user_address = Adresse
+dico_admin_people_user_login = Login
+dico_admin_people_user_birthday = Date de naissance
+dico_admin_people_user_avatar = Avatar
+dico_admin_people_user_email = Adresse Mail
+dico_admin_people_user_address1 = Adresse
+dico_admin_people_user_authentificate = Authentification
+dico_admin_people_user_zip1city1 = Code Postal - Localit&eacute;
+dico_admin_people_user_state1 = Province
+dico_admin_people_user_country1 = Pays
+dico_admin_people_user_permission = Permission
+dico_admin_people_user_company = Compagnie
+dico_admin_people_user_workphone = T&eacute;l&eacute;phone professionel
+dico_admin_people_user_privatephone = T&eacute;l&eacute;phone priv&eacute;
+dico_admin_people_user_mobilephone = T&eacute;l&eacute;phone mobile (GSM)
+dico_admin_people_user_fax = Fax
+dico_admin_people_user_locale = Localisation
+dico_admin_people_user_female = F&eacute;minin
+dico_admin_people_user_gender = Sexe
+dico_admin_people_user_male = Masculin
+dico_admin_people_user_taux_acte = Taux acte m&eacute;dical
+dico_admin_people_user_taux_consultation = Taux consulatation
+dico_admin_people_user_taux_prothese = Taux Proth&egrave;se
+dico_admin_people_user_code_analytique = Code Analytique
+dico_admin_people_user_length_consult = Dur&eacute;e consultation
+dico_admin_people_user_inami = Num&eacute;ro INAMI
+dico_admin_people_user_specialite = Specialit&eacute;
+dico_admin_people_user_minutes = minutes
+dico_admin_people_user_orl = O.R.L.
+dico_admin_people_user_general = G&eacute;n&eacute;raliste
+dico_admin_people_user_newpass = Nouveau mot de passe
+dico_admin_people_user_oldpass = Ancien mot de passe
+dico_admin_people_user_password = Mot de passe
+dico_admin_people_user_vcardexport = Export Vcard
+dico_admin_people_user_edituser = Modification de son compte
+dico_admin_people_user_changepassword = Modifier le mot de passe
+dico_admin_people_user_repeatpass = R&eacute;p&eacute;ter mot de passe
+dico_admin_people_user_error1 = Corriger le champ &eacute;rron&eacute;
+dico_admin_people_user_error2 = Corriger les champs &eacute;rron&eacute;s
+dico_admin_people_user_error3 = Les mots de passe ne correspondent pas!
+dico_admin_people_user_error4 = Compl&eacute;ter les informations obligatoires !
+dico_admin_people_user_error5 = Cet utilisateur existe d&eacute;j&agrave; !
+dico_admin_people_user_send = Envoyer
+dico_admin_people_user_cancel = Annuler
+dico_admin_people_user_medical = Donn&eacute;es m&eacute;dicales
+dico_admin_people_user_timesheet = Donn&eacute;es des feuilles de pr&eacute;sences
+dico_admin_people_user_hourly_cost = Cout horaire
+dico_admin_people_user_agenda = Donn&eacute;es de l'agenda
+dico_admin_people_user_default_group = Groupes par d&eacute;faut
+dico_admin_people_user_type = Type
+dico_admin_people_user_chooseone = Choisir
+dico_admin_people_user_doctor_with_rate = M&eacute;decin avec comission
+dico_admin_people_user_doctor_without_rate = M&eacute;decin sans comission
+dico_admin_people_user_employee = Employ&eacute;e
+dico_admin_people_user_specialist = Sp&eacute;cialiste
+dico_admin_people_user_paramedical = Param&eacute;dical
+dico_admin_people_user_other = Autre
+dico_admin_people_user_wasedited = L'utilisateur a &eacute;t&eacute; modifi&eacute;
+dico_admin_people_user_colum_action = Actions
+dico_admin_people_user_confirme_delete_question = Voulez-vous supprimer cet utilisateur  ?
+dico_admin_people_user_edit_alt = Edition de cet utilisateur
+dico_admin_people_user_detail_alt = D&eacute;tail de cet utilisateur
+
+dico_admin_error_user_unique = Cet utilisateur existe d&eacute;j&agrave;
+
+{* admin_statistique *}
+dico_statistique_menu_default = menu
+dico_statistique_menu_production_factor = F/Prod
+dico_statistique_menu_submenu_production_factor = Facteur de production
+
+{* admin_people_system *}
+dico_admin_system_submenu_view = D&eacute;tail du syst&egrave;me
+
+dico_admin_system_globaltitle = Titre global
+dico_admin_system_subtitle = Sous-titre
+dico_admin_system_locale = Localisation
+dico_admin_system_timezone = Fuseau Horaire
+dico_admin_system_template = Template
+dico_admin_system_name = Groupes
+dico_admin_system_settingschanged = Les param&egrave;tres ont &eacute;t&eacute; correctement modifi&eacute;s
+dico_admin_system_button_save = Sauvegarde
+
+{* dico_admin_activity *}
+dico_admin_activity_list = List
+dico_admin_activity_day = journ&eacute;e
+dico_admin_activity_search_colum_date = Date/Heure
+dico_admin_activity_search_colum_user_name = Utilisateur
+dico_admin_activity_search_colum_object = Objet
+dico_admin_activity_search_colum_type = Type
+dico_admin_activity_search_colum_action = D&eacute;tail
+dico_admin_activity_submenu_day = Activit&eacute;s
+
+
+{* dico_admin_mailing *}
+dico_admin_mailing_list = List
+dico_admin_mailing_day = journ&eacute;e
+dico_admin_mailing_search_colum_rubric = Rubrique
+dico_admin_mailing_search_colum_user_name = Contact
+dico_admin_mailing_search_colum_user_email = Email
+dico_admin_mailing_search_colum_subject = Sujet
+dico_admin_mailing_search_colum_content = Sujet
+dico_admin_mailing_search_colum_date = Sujet
+dico_admin_mailing_search_colum_mailsend = Envoy&eacute;
+
+{* dico_admin_listing_doctor *}
+dico_admin_listing_menu_specialist = Sp&eacute;cialiste
+dico_admin_listing_menu_doctor = M&eacute;decin
+dico_admin_listing_menu_till = Caisse
+
+dico_admin_listing_doctor_colum_close = Cl&ocirc;ture
+dico_admin_listing_doctor_colum_date = Prestation
+dico_admin_listing_doctor_colum_patient_familyname = Patient
+dico_admin_listing_doctor_colum_patient_firstname = Pr&eacute;nom
+dico_admin_listing_doctor_colum_patient_type = Type
+dico_admin_listing_doctor_colum_patient_ct1ct2 = CT1CT2
+dico_admin_listing_doctor_colum_doctor_familyname = M&eacute;decin
+dico_admin_listing_doctor_colum_doctor_firstname = Pr&eacute;nom
+dico_admin_listing_doctor_colum_prestation_description = Description
+dico_admin_listing_doctor_colum_prestation_cecodi = Cecodi
+dico_admin_listing_doctor_colum_prestation_cost = Co&ucirc;t
+dico_admin_listing_doctor_colum_prestation_cost_poly = Poly
+dico_admin_listing_doctor_colum_prestation_pourcent = Pourcentage
+dico_admin_listing_doctor_colum_prestation_cost_doctor = M&eacute;decin
+dico_admin_listing_doctor_colum_prestation_tm = T.M.
+
+
+{* dico_admin_listing_till *}
+dico_admin_listing_till_colum_date = Date
+dico_admin_listing_till_colum_hour = Heure
+dico_admin_listing_till_colum_till = Caisse
+dico_admin_listing_till_colum_code = Code
+dico_admin_listing_till_colum_amount = Montant
+dico_admin_listing_till_colum_type = Mode
+dico_admin_listing_till_colum_description = Description
+
+
+{* dico_admin_project *}
+dico_admin_project_assign_task = Assigner les taches au employ&eacute;es
+
+dico_admin_project_menu_dashboard = Dashboard
+dico_admin_project_cost_center_menu_list = Cost Center
+dico_admin_project_project_task_menu_list = Tache
+dico_admin_project_assign_task_menu_list = Tache/Employ&eacute;e
+
+dico_admin_project_cost_center_administration = Gestion des centres de couts
+dico_admin_project_task_administration = Gestion des taches
+
+dico_admin_project_name = Nom
+dico_admin_project_description = Description
+
+dico_admin_project_addbutton = Ajout
+dico_admin_people_user_cancel = Annuler
+
+dico_management_project_edit_alt = Edition
+dico_management_project_detail_alt = D&eacue;tail
+
+dico_admin_project_colum_name = Login
+dico_admin_project_colum_firstname = Pr&eacute;nom
+dico_admin_project_colum_familyname = Nom
+
+
+navigation_title_timesheet_stats_tasks             = Statistiques t&acirc;ches
+navigation_title_timesheet_stats_cc                = Statistiques centre de co&ucirc;ts
+navigation_title_timesheet_stats_costs_tasks       = Statistiques co&ucirc;ts t&acirc;ches
+navigation_title_timesheet_stats_costs_cc          = Statistiques co&ucirc;ts centre de co&ucirc;ts
+dico_management_timesheet_stats_code               = Code
+dico_management_timesheet_stats_name               = Nom
+dico_management_timesheet_stats_nbhours            = Nb heures
+dico_management_timesheet_stats_couts              = Co&ucirc;ts
+dico_management_timesheet_stats_nbhours_cumule     = Nb heures cumul&eacute;es
+dico_management_timesheet_stats_couts_cumule       = Co&ucirc;ts cumul&eacute;s
+dico_management_timesheet_stats_pourcentage        = Pourcentage
+dico_management_timesheet_stats_pourcentage_cumule = Pourcentage cumul&eacute;
+dico_management_timesheet_stats_user               = Utilisateur
+dico_management_timesheet_stats_all_users          = Tous les utilisateurs
+
+dico_admin_project_project_stat_cc         = Stat. Ct de co&ucirc;ts
+dico_admin_project_project_stat_cost_cc    = Stat. co&ucirc;ts cc
+dico_admin_project_project_stat_task       = Stat. T&acirc;ches
+dico_admin_project_project_stat_cost_task  = Stat. co&ucirc;ts Tch
+
+{* left *}
+dico_global_left_user_title = Utilisateurs
+dico_global_left_patient_title = Patients
+dico_global_left_addressbook_title = Adressebook
+dico_global_left_search = Recherche ...
+
+
+{* Languages *}
+
+bg = Bulgare
+cz = Tch√®que
+da = Danois
+de = Allemand
+en = Anglais
+es = Espagnol
+es_gl = Galicien
+fr = Francais
+it = Italien
+jp = Japonais
+lt = Lituanien
+nl = Neerlandais
+pl = Polonais
+pt = Portugais
+pt_br = Portugais (Br√©sil)
+ro = Roumain
+rs = Serbe
+ru = Russe
+tr = Turc
+
+{* Calendar *}
+
+timezone =
+prevmonth = Mois dernier
+nextmonth = Mois prochain
+monday = Lun
+tuesday = Mar
+wednesday = Mer
+thursday = Jeu
+friday = Ven
+saturday = Sam
+sunday = Dim
+january = Janvier
+february = F√©vrier
+march = Mars
+april = Avril
+may = Mai
+june = Juin
+july = Juillet
+august = Ao√ªt
+september = Septembre
+october = Octobre
+november = Novembre
+december = D√©cembre
+
+{* Errors *}
+
+accessdenied = Acc√®s refus√©
+confirmdel = Voulez-vous vraiment supprimer cet √©l√©ment ?\nLa suppression ne peut pas √™tre annul√©e.
+error = Erreur
+goback = Veuillez revenir en arri√®re et corriger l'erreur.
+nopermission = Permission n√©cessaire
+notyourproject = Vous n'√™tes pas assign√© √† ce projet.
+wrongfield = Veuillez remplir le champ \"%FIELDNAME%\" correctement.
+wrongfields = Veuillez remplir les champs suivants correctement:\n\n
+wrongselect = Veuillez faire une s√©lection valide pour le champ \"%FIELDNAME%\".
