@@ -1148,12 +1148,12 @@
 			$compta[17]["cumul_prec"] = round( (-1) * $comptabilite->get_cumul('75', '01', $mois, $annee_prec), 2);
 			$compta[17]["rapport"]    = round( ( ($compta[17]["cumul"] / $compta[17]["cumul_prec"]) - 1 ) * 100, 2);
 			if($compta[17]["rapport"] < 0)
-				$compta[17]["indicateur"]  = "<img src=\"./templates/standard/img/17x17/flag_red.png\" alt=\"\" />";
+				$compta[17]["indicateur"]  = "<img src=\"./templates/standard/img/16x16/flag_red.png\" alt=\"\" />";
 			else{
 				if($compta[17]["rapport"] == 0)
-					$compta[17]["indicateur"]  = "<img src=\"./templates/standard/img/17x17/flag_yellow.png\" alt=\"\" />";
+					$compta[17]["indicateur"]  = "<img src=\"./templates/standard/img/16x16/flag_yellow.png\" alt=\"\" />";
 				else
-					$compta[17]["indicateur"]  = "<img src=\"./templates/standard/img/17x17/flag_green.png\" alt=\"\" />";
+					$compta[17]["indicateur"]  = "<img src=\"./templates/standard/img/16x16/flag_green.png\" alt=\"\" />";
 			}			
 			
 			$classe = $comptabilite->get_classe('76', $mois, $annee);
