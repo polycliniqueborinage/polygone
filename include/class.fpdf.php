@@ -1009,6 +1009,7 @@ class FPDF
             else
                 $dest = 'F';
         }
+        ob_end_clean(); 
         switch ($dest)
         {
             case 'I':
