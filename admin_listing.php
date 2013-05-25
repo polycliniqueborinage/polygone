@@ -280,7 +280,7 @@
 		case "specialist_pdf":
 			
 			include("./include/class.fpdf.php");
-			
+			 ob_end_clean(); 
     		$title1 = "Total";
 			$title2 = "Médecin";
 			$title3 = "Polyclinique";
