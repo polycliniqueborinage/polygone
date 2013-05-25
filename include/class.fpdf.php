@@ -1009,7 +1009,7 @@ class FPDF
             else
                 $dest = 'F';
         }
-        ob_end_clean(); 
+         
         switch ($dest)
         {
             case 'I':
@@ -1025,6 +1025,7 @@ class FPDF
                     header('Content-Length: ' . strlen($this->buffer));
                     header('Content-disposition: inline; filename="' . $name . '"');
                 }
+                ob_end_clean();
                 echo $this->buffer;
                 break;
             case 'D':
