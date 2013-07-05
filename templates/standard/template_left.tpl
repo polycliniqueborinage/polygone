@@ -238,6 +238,54 @@
 					<br/>
 					{/if}
 					
+					{if $employee_search == "yes"}
+    	    		<a class="taskControl" href="#">{#dico_global_left_employee_title#}</a>
+				
+					<div class="boxglobal">
+					
+						<div class="boxsearch">
+							<a onclick="$('#findEmployeeForm').toggle()" href="#" class="controls" style="display: block;">{#dico_global_left_search#}</a>
+						</div>
+
+						<div id="findEmployeeForm" class="inlineForm" style="display: none;">
+							
+							<form onsubmit="">
+	                  			<input autocomplete="off" class="text-input" id="findEmployeeInput" type="text" onFocus="this.select()" onKeyUp="javascript:employeeSimpleSearch('',this.value);">
+    	              			<input class="button" name="commit" value="" type="submit">
+        	          		</form>
+                			
+                			<div id="informationEmployee" class="boxresult"></div>
+                			
+						</div>
+						
+					</div>
+					<br/>
+					{/if}
+					
+					{if $workday_search == "yes"}
+    	    		<a class="taskControl" href="#">{#dico_global_left_workday_title#}</a>
+				
+					<div class="boxglobal">
+					
+						<div class="boxsearch">
+							<a onclick="$('#findWorkdayForm').toggle()" href="#" class="controls" style="display: block;">{#dico_global_left_search#}</a>
+						</div>
+
+						<div id="findWorkdayForm" class="inlineForm" style="display: none;">
+							
+							<form onsubmit="">
+	                  			<input autocomplete="off" class="text-input" id="findWorkdayInput" type="text" onFocus="this.select()" onKeyUp="javascript:workdaySimpleSearch('',this.value);">
+    	              			<input class="button" name="commit" value="" type="submit">
+        	          		</form>
+                			
+                			<div id="informationWorkday" class="boxresult"></div>
+                			
+						</div>
+						
+					</div>
+					<br/>
+					{/if}										
+					
 					{if $patient_search == "yes"}
     	    		<a class="taskControl" href="#">{#dico_global_left_patient_title#}</a>
 				

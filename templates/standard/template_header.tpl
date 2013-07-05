@@ -213,6 +213,12 @@
 		{/literal}
 	{/if}
 	
+	{if $js_user_services == "yes"}
+		{literal}
+		<script type="text/javascript" src="include/js/project/user_services.js"></script>
+		{/literal}
+	{/if}
+	
 	{if $js_addressbook == "yes"}
 		{literal}
 		<script type="text/javascript" src="include/js/project/addressbook.js"></script>

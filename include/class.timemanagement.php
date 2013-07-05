@@ -489,82 +489,84 @@ class timemanagement
     	
     	$absence = $this->getAbsence($timegroupe, $absenceid);
 		
-		//compute nb of absence unit
-		if($absence["type"] == 'D'){
-     		$requested_quota = floor((strtotime($endda) - strtotime($begda))/(60*60*24));
-		}
-		else{
-			if($begda != $endda){
-				$current_day_details = $workschedule->get_wsr_ondate($userdetails["wsr_id"], $begda, $userdetails["wsr_refdate"]);
-				if($beghr == '00:00' || $beghr == '00:00:00') $beghr = $current_day_details["begtime"];
-				$requested_quota = $this->getNbHours($current_day_details["endtime"], $beghr);
-				
-				if($beghr < $current_day_details["begbreak"] && $current_day_details["begbreak"] != '00:00:00'){
-					$requested_quota = $requested_quota - $this->getNbHours($current_day_details["endbreak"], $current_day_details["begbreak"]);
-				}
-				
-				$current_day = date('Y-m-d', strtotime('+1 day', strtotime($begda))); 
-				
-				while($current_day != $endda){
-					$current_day_details = $workschedule->get_wsr_ondate($userdetails["wsr_id"], $current_day, $userdetails["wsr_refdate"]);
-					$requested_quota += $current_day_details["nb_hours"];
-					$current_day = date('Y-m-d', strtotime('+1 day', strtotime($current_day)));
-					
-				}
-				$current_day_details = $workschedule->get_wsr_ondate($userdetails["wsr_id"], $endda, $userdetails["wsr_refdate"]);
-				
-				if($endhr == '00:00' || $endhr == '00:00:00') $endhr = $current_day_details["endtime"];
-				$requested_quota += $this->getNbHours($endhr, $current_day_details["begtime"]);
-				
-				if($endhr > $current_day_details["endbreak"] && $current_day_details["endbreak"] != '00:00:00'){
-					$requested_quota = $requested_quota - $this->getNbHours($current_day_details["endbreak"], $current_day_details["begbreak"]);
-				}
-				
-			}else{
-				if($beghr == "00:00" || $endhr == "00:00" || $beghr == "00:00:00" || $endhr == "00:00:00"){
+    	if($absence["rule"] != null){
+			//compute nb of absence unit
+			if($absence["type"] == 'D'){
+	     		$requested_quota = floor((strtotime($endda) - strtotime($begda))/(60*60*24));
+			}
+			else{
+				if($begda != $endda){
 					$current_day_details = $workschedule->get_wsr_ondate($userdetails["wsr_id"], $begda, $userdetails["wsr_refdate"]);
-					$requested_quota = $current_day_details["nb_hours"];
-				} else {
-					$requested_quota = $this->getNbHours($endhr, $beghr);
+					if($beghr == '00:00' || $beghr == '00:00:00') $beghr = $current_day_details["begtime"];
+					$requested_quota = $this->getNbHours($current_day_details["endtime"], $beghr);
+					
+					if($beghr < $current_day_details["begbreak"] && $current_day_details["begbreak"] != '00:00:00'){
+						$requested_quota = $requested_quota - $this->getNbHours($current_day_details["endbreak"], $current_day_details["begbreak"]);
+					}
+					
+					$current_day = date('Y-m-d', strtotime('+1 day', strtotime($begda))); 
+					
+					while($current_day != $endda){
+						$current_day_details = $workschedule->get_wsr_ondate($userdetails["wsr_id"], $current_day, $userdetails["wsr_refdate"]);
+						$requested_quota += $current_day_details["nb_hours"];
+						$current_day = date('Y-m-d', strtotime('+1 day', strtotime($current_day)));
+						
+					}
+					$current_day_details = $workschedule->get_wsr_ondate($userdetails["wsr_id"], $endda, $userdetails["wsr_refdate"]);
+					
+					if($endhr == '00:00' || $endhr == '00:00:00') $endhr = $current_day_details["endtime"];
+					$requested_quota += $this->getNbHours($endhr, $current_day_details["begtime"]);
+					
+					if($endhr > $current_day_details["endbreak"] && $current_day_details["endbreak"] != '00:00:00'){
+						$requested_quota = $requested_quota - $this->getNbHours($current_day_details["endbreak"], $current_day_details["begbreak"]);
+					}
+					
+				}else{
+					if($beghr == "00:00" || $endhr == "00:00" || $beghr == "00:00:00" || $endhr == "00:00:00"){
+						$current_day_details = $workschedule->get_wsr_ondate($userdetails["wsr_id"], $begda, $userdetails["wsr_refdate"]);
+						$requested_quota = $current_day_details["nb_hours"];
+					} else {
+						$requested_quota = $this->getNbHours($endhr, $beghr);
+					}
 				}
 			}
-		}
-		//get list of quotas to reduce
-		$list_quotas = $this->getListQuotas($timegroupe, $absence["rule"], $userid, $begda, $endda);
-		
-		//while there is quota to reduce, take it from the list
-		$cursor = 0; 
-		While($requested_quota > 0){
-			if($requestType == "submit"){
-				$dispo = $list_quotas[$cursor]["start_saldo"] - $list_quotas[$cursor]["used_saldo"] - $list_quotas[$cursor]["requested_saldo"];
-				
-				if($dispo >= $requested_quota){
-					$new_requested = $list_quotas[$cursor]["requested_saldo"] + $requested_quota;
-					$this->processQuotaRequested($userid, $list_quotas[$cursor]["quota_id"], $list_quotas[$cursor]["begda"], $list_quotas[$cursor]["endda"], $new_requested);
-					$requested_quota = 0;
+			//get list of quotas to reduce
+			$list_quotas = $this->getListQuotas($timegroupe, $absence["rule"], $userid, $begda, $endda);
+			
+			//while there is quota to reduce, take it from the list
+			$cursor = 0; 
+			While($requested_quota > 0){
+				if($requestType == "submit"){
+					$dispo = $list_quotas[$cursor]["start_saldo"] - $list_quotas[$cursor]["used_saldo"] - $list_quotas[$cursor]["requested_saldo"];
+					
+					if($dispo >= $requested_quota){
+						$new_requested = $list_quotas[$cursor]["requested_saldo"] + $requested_quota;
+						$this->processQuotaRequested($userid, $list_quotas[$cursor]["quota_id"], $list_quotas[$cursor]["begda"], $list_quotas[$cursor]["endda"], $new_requested);
+						$requested_quota = 0;
+					}
+					else{
+						$new_requested = $list_quotas[$cursor]["requested_saldo"] + $dispo;
+						$this->processQuotaRequested($userid, $list_quotas[$cursor]["quota_id"], $list_quotas[$cursor]["begda"], $list_quotas[$cursor]["endda"], $new_requested);
+						$requested_quota -= $dispo;
+					}
+				} else { 
+					$dispo = $list_quotas[$cursor]["start_saldo"] - $list_quotas[$cursor]["used_saldo"] - $list_quotas[$cursor]["requested_saldo"] + $requested_quota;
+					if($dispo >= $requested_quota){
+						$new_requested 	= $list_quotas[$cursor]["requested_saldo"] 	- $requested_quota;
+						$new_used 		= $list_quotas[$cursor]["used_saldo"] 		+ $requested_quota;
+						$this->processQuotaUsed($userid, $list_quotas[$cursor]["quota_id"], $list_quotas[$cursor]["begda"], $list_quotas[$cursor]["endda"], $new_used, $new_requested);
+						$requested_quota = 0;
+					}
+					else{
+						$new_requested 	= $list_quotas[$cursor]["requested_saldo"] 	- $dispo;
+						$new_used 		= $list_quotas[$cursor]["used_saldo"] 		+ $dispo;
+						$this->processQuotaUsed($userid, $list_quotas[$cursor]["quota_id"], $list_quotas[$cursor]["begda"], $list_quotas[$cursor]["endda"], $new_used, $new_requested);
+						$requested_quota -= $dispo;
+					}
 				}
-				else{
-					$new_requested = $list_quotas[$cursor]["requested_saldo"] + $dispo;
-					$this->processQuotaRequested($userid, $list_quotas[$cursor]["quota_id"], $list_quotas[$cursor]["begda"], $list_quotas[$cursor]["endda"], $new_requested);
-					$requested_quota -= $dispo;
-				}
-			} else { 
-				$dispo = $list_quotas[$cursor]["start_saldo"] - $list_quotas[$cursor]["used_saldo"] - $list_quotas[$cursor]["requested_saldo"] + $requested_quota;
-				if($dispo >= $requested_quota){
-					$new_requested 	= $list_quotas[$cursor]["requested_saldo"] 	- $requested_quota;
-					$new_used 		= $list_quotas[$cursor]["used_saldo"] 		+ $requested_quota;
-					$this->processQuotaUsed($userid, $list_quotas[$cursor]["quota_id"], $list_quotas[$cursor]["begda"], $list_quotas[$cursor]["endda"], $new_used, $new_requested);
-					$requested_quota = 0;
-				}
-				else{
-					$new_requested 	= $list_quotas[$cursor]["requested_saldo"] 	- $dispo;
-					$new_used 		= $list_quotas[$cursor]["used_saldo"] 		+ $dispo;
-					$this->processQuotaUsed($userid, $list_quotas[$cursor]["quota_id"], $list_quotas[$cursor]["begda"], $list_quotas[$cursor]["endda"], $new_used, $new_requested);
-					$requested_quota -= $dispo;
-				}
+				$cursor++;
 			}
-			$cursor++;
-		}
+    	}
     }
     
 	function alignQuota($userid, $absenceid, $begda, $endda, $beghr, $endhr) {

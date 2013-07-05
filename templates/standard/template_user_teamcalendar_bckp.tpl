@@ -15,9 +15,9 @@
     				{else}
     					<span>{#navigation_title_user_services_teamcalendar#}</span>
     				{/if}	
-    				<!--<a href="./user_services.php?action=leave_overview">{#navigation_title_user_services_pending_requests#}</a>
+    				<a href="./user_services.php?action=leave_overview">{#navigation_title_user_services_pending_requests#}</a>
     				<a href="./user_services.php?action=quota_overview">{#navigation_title_user_services_quotas#}</a>
-    				<a href="./user_services.php?action=absence_request">{#navigation_title_user_services_leaverequest#}</a>-->
+    				<a href="./user_services.php?action=absence_request">{#navigation_title_user_services_leaverequest#}</a>
     				{if $ismanager == 'X'}
     					<a href="./user_services.php?action=tasks_overview">{#navigation_user_mss#}</a>
     					{if $multipleteams == 'X'}
@@ -69,39 +69,30 @@
 								</div>
 			
 								<div class="clear_both"></div> {*required ... do not delete this row*}
-								<div>
+								
 								{if $multipleteams == 'X'}
-									{#navigation_title_user_services_myteamscalendar#}:
 									{section name=myteam loop=$myteams}
-										<input id='{$myteams[myteam].id}' type='checkbox' CHECKED onchange="hidediv({$myteams[myteam].id}, {$nb_max_members})" /> {$myteams[myteam].description} 
-										{if $smarty.section.myteam.iteration%10 == 0}
-											<br>
-										{/if} 
+										<input id='{$myteams[myteam].id}' type='checkbox' CHECKED onchange="hidediv({$myteams[myteam].id}, {$nb_max_members})" /> {$myteams[myteam].description} <br> 
 									{/section}
 								{/if}
 								
-								</div>
-								<div class="clear_both"></div> {*required ... do not delete this row*}
-								
-								<br><br>
-								
 								<div>
-								<div style="width:100%;display:table;margin:auto;border:1px solid black;">
-									<div style="display:table-row;width:100%;border:1px solid black;background-color:#EBEBEB;font-weight:bold;">
-										<div style="width:15%; display:table-cell;border:1px solid black;"></div>
+								<table cellpadding="0" cellspacing="0" border=1 style="width:100%">
+								
+									<tr style="display:block;width:100%">
+										<th  style="width:15%;"></th>
 										{section name=date loop=$dates}
-											<div style="width:{$size}%;text-align:center; display:table-cell;border:1px solid black;">
+											<th align="center" style="width:{$size}%">
 												{$dates[date]}
-											</div>
+											</th>
 										{/section}
-									</div>
+									</tr>
 									
 									{section name=groupmember loop=$groupmembers}
 									<!--<div>-->
 									
-									<div id='group-{$groupmembers[groupmember].user_group_id}-line-{$smarty.section.groupmember.iteration}' style="display:block;display:table-row;width:100%;border:1px solid black;">
-										<div id='group-{$groupmembers[groupmember].user_group_id}-line-{$smarty.section.groupmember.iteration}_0' style="width:15%; text-align:left; display:table-cell;border:1px solid black;">
-
+									<tr id='group-{$groupmembers[groupmember].user_group_id}-line-{$smarty.section.groupmember.iteration}' style="display:block;width:100%">
+										<td align="left" style="width:15%">
 											{if $groupmembers[groupmember].ID == $groupchief.ID}
 												<b><u>
 											{/if}	
@@ -115,7 +106,7 @@
 											{if $groupmembers[groupmember].ID == $groupchief.ID}
 												</u></b>
 											{/if}  
-										</div>
+										</td>
 										{section name=day loop=$groupmembers[groupmember] start=11 max=$max}
 											{if $smarty.section.day.iteration % 8 == 1}
 											{assign var=id 		 value=$smarty.section.day.index-6}
@@ -124,18 +115,18 @@
 											{assign var=endtime  value=$smarty.section.day.index-3}
 											{assign var=begbreak value=$smarty.section.day.index-2}
 											{assign var=endbreak value=$smarty.section.day.index-1}
-											<div id='group-{$groupmembers[groupmember].user_group_id}-line-{$smarty.section.groupmember.iteration}_{$smarty.section.day.iteration}' style="display:table-cell;background-color:{$groupmembers[groupmember][day.index_next].daycolor};width:{$size}%;text-align:center;border:1px solid black;" 
-												onmouseover="document.getElementById('divdetails-{$smarty.section.groupmember.iteration}-{$smarty.section.day.iteration}').style.display = 'block';document.getElementById('divabs-{$smarty.section.groupmember.iteration}-{$smarty.section.day.iteration}').style.display = 'block'"
-											    onmouseout ="document.getElementById('divdetails-{$smarty.section.groupmember.iteration}-{$smarty.section.day.iteration}').style.display = 'none';document.getElementById('divabs-{$smarty.section.groupmember.iteration}-{$smarty.section.day.iteration}').style.display = 'none'"> 
-												{$groupmembers[groupmember][day].nb_hours}
-											</div>  <!-- END OF CELLS-->
+											<td  align="center" style="background-color:{$groupmembers[groupmember][day.index_next].daycolor};width:{$size}%" 
+											    onmouseover="document.getElementById('divdetails-{$smarty.section.groupmember.iteration}-{$smarty.section.day.iteration}').style.display = 'block';document.getElementById('divabs-{$smarty.section.groupmember.iteration}-{$smarty.section.day.iteration}').style.display = 'block'"
+											    onmouseout ="document.getElementById('divdetails-{$smarty.section.groupmember.iteration}-{$smarty.section.day.iteration}').style.display = 'none';document.getElementById('divabs-{$smarty.section.groupmember.iteration}-{$smarty.section.day.iteration}').style.display = 'none'">
+											{$groupmembers[groupmember][day].nb_hours}
+											</td>
 											{/if}
 										{/section}
-									</div> <!-- END OF ROWS-->
+									</tr>
 									<!--</div>-->
 									{/section}
 									
-								</div> <!-- END OF TABLE-->
+								</table>
 								
 								<br>
 								
@@ -215,9 +206,9 @@
 				for(i=1; i<=max; i++)
 				if(document.getElementById('group-'+id+'-line-'+i)){ 
 					if(document.getElementById(id).checked)
-						document.getElementById('group-'+id+'-line-'+i).style = "display:block;display:table-row;width:100%;border:1px solid black;";
+						document.getElementById('group-'+id+'-line-'+i).style.display = 'block';
 					else 
-						document.getElementById('group-'+id+'-line-'+i).style = 'display:none';
+						document.getElementById('group-'+id+'-line-'+i).style.display = 'none';
 				}
 				
 			}

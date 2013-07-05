@@ -368,6 +368,111 @@ class workschedule
         }
     }
     
+    /**
+     * Get specific work schedule
+     *
+     * @param id id of the requested wsr
+     * @return array $wsrs
+     */
+    function get_detailed_wsr($id) {
+    	
+    	$sql = "SELECT
+    			w.id    as `id`,
+    			w.index as `index`,
+    			w.description as `description`, 
+    			w.day1  as `day1`, 
+    			w.day2  as `day2`, 
+    			w.day3  as `day3`, 
+    			w.day4  as `day4`, 
+    			w.day5  as `day5`,
+    			w.day6  as `day6`,
+    			w.day7  as `day7`  
+    			FROM work_schedule AS w
+    			WHERE id = '$id'";
+
+        $sel = mysql_query($sql);
+        $wsrs = array();
+        $i=0;
+        while( $wsr = mysql_fetch_array($sel) ){
+        
+	            $wsr["id"] 					= stripcslashes($wsr["id"]);
+	            $wsr["index"] 				= stripcslashes($wsr["index"]);
+	            $wsr["description"] 		= stripcslashes($wsr["description"]);
+	            
+	            $wsr["day1"] 				= stripcslashes($wsr["day1"]);
+	            $detailed_day1 = $this->get_daily($wsr["day1"]);
+	            $wsr["day1_description"] 	= $detailed_day1["description"];
+	            $wsr["day1_begtime"] 		= $detailed_day1["begtime"];
+	            $wsr["day1_endtime"] 		= $detailed_day1["endtime"];
+	            $wsr["day1_begbreak"] 		= $detailed_day1["begbreak"];
+	            $wsr["day1_endbreak"] 		= $detailed_day1["endbreak"];
+	            $wsr["day1_nb_hours"] 		= $detailed_day1["nb_hours"];
+	        
+	            $wsr["day2"] 				= stripcslashes($wsr["day2"]);
+	            $detailed_day2 = $this->get_daily($wsr["day2"]);
+	            $wsr["day2_description"] 	= $detailed_day2["description"];
+	            $wsr["day2_begtime"] 		= $detailed_day2["begtime"];
+	            $wsr["day2_endtime"] 		= $detailed_day2["endtime"];
+	            $wsr["day2_begbreak"] 		= $detailed_day2["begbreak"];
+	            $wsr["day2_endbreak"] 		= $detailed_day2["endbreak"];
+	            $wsr["day2_nb_hours"] 		= $detailed_day2["nb_hours"];
+	            
+	            $wsr["day3"] 				= stripcslashes($wsr["day3"]);
+	            $detailed_day3 = $this->get_daily($wsr["day3"]);
+	            $wsr["day3_description"] 	= $detailed_day3["description"];
+	            $wsr["day3_begtime"] 		= $detailed_day3["begtime"];
+	            $wsr["day3_endtime"] 		= $detailed_day3["endtime"];
+	            $wsr["day3_begbreak"] 		= $detailed_day3["begbreak"];
+	            $wsr["day3_endbreak"] 		= $detailed_day3["endbreak"];
+	            $wsr["day3_nb_hours"] 		= $detailed_day3["nb_hours"];
+	            
+	            $wsr["day4"] 				= stripcslashes($wsr["day4"]);
+	            $detailed_day4 = $this->get_daily($wsr["day4"]);
+	            $wsr["day4_description"] 	= $detailed_day4["description"];
+	            $wsr["day4_begtime"] 		= $detailed_day4["begtime"];
+	            $wsr["day4_endtime"] 		= $detailed_day4["endtime"];
+	            $wsr["day4_begbreak"] 		= $detailed_day4["begbreak"];
+	            $wsr["day4_endbreak"] 		= $detailed_day4["endbreak"];
+	            $wsr["day4_nb_hours"] 		= $detailed_day4["nb_hours"];
+	            
+	            $wsr["day5"] 				= stripcslashes($wsr["day5"]);
+	            $detailed_day5 = $this->get_daily($wsr["day5"]);
+	            $wsr["day5_description"] 	= $detailed_day5["description"];
+	            $wsr["day5_begtime"] 		= $detailed_day5["begtime"];
+	            $wsr["day5_endtime"] 		= $detailed_day5["endtime"];
+	            $wsr["day5_begbreak"] 		= $detailed_day5["begbreak"];
+	            $wsr["day5_endbreak"] 		= $detailed_day5["endbreak"];
+	            $wsr["day5_nb_hours"] 		= $detailed_day5["nb_hours"];
+	            
+	            $wsr["day6"] 				= stripcslashes($wsr["day6"]);
+	            $detailed_day6 = $this->get_daily($wsr["day6"]);
+	            $wsr["day6_description"] 	= $detailed_day6["description"];
+	            $wsr["day6_begtime"] 		= $detailed_day6["begtime"];
+	            $wsr["day6_endtime"] 		= $detailed_day6["endtime"];
+	            $wsr["day6_begbreak"] 		= $detailed_day6["begbreak"];
+	            $wsr["day6_endbreak"] 		= $detailed_day6["endbreak"];
+	            $wsr["day6_nb_hours"] 		= $detailed_day6["nb_hours"];
+	            
+	            $wsr["day7"] 				= stripcslashes($wsr["day7"]);
+	            $detailed_day7 = $this->get_daily($wsr["day7"]);
+	            $wsr["day7_description"] 	= $detailed_day7["description"];
+	            $wsr["day7_begtime"] 		= $detailed_day7["begtime"];
+	            $wsr["day7_endtime"] 		= $detailed_day7["endtime"];
+	            $wsr["day7_begbreak"] 		= $detailed_day7["begbreak"];
+	            $wsr["day7_endbreak"] 		= $detailed_day7["endbreak"];
+	            $wsr["day7_nb_hours"] 		= $detailed_day7["nb_hours"];
+	            
+	            //array_push($wsrs, $wsr);
+	            $wsrs[$i] = $wsr;
+	            $i++;
+        } 
+        if (!empty($wsrs))  {	
+            return $wsrs;
+        } else  {
+            return false;
+        }
+    }    
+    
     function get_max_index($id) {
     	
     	$sql = "SELECT

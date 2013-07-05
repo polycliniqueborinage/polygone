@@ -66,15 +66,15 @@
 	if($isManager){
 		$myTeams = $usergroup->getGroupForManager($myuser);
 		$myTeamMembers = array(); 
-		for($i=0;$i<count($myTeam); $i++){
+		for($i=0;$i<count($myTeams); $i++){
 			$teamMember = $usergroup->getGroupMembers($myTeams[$i]["id"]);
 			for($j=0; $j<count($teamMember); $j++){
 				if($teamMember[$j]["ID"] != $myuser)
 					array_push($myTeamMembers, $teamMember[$j]);
-				else{
+				/*else{
 					if($i == 0)
 						array_push($myTeamMembers, $teamMember[$j]);
-				}	
+				}	*/
 			}
 				
 		}
@@ -166,7 +166,7 @@
 				$current_week = $start_week;
 				$current_day  = $start_day;
 				
-				for($d=1; $d<=cal_days_in_month(CAL_GREGORIAN, substr($date2, 5, 2), substr($date2, 0, 4)); $d++){
+				for($d=1; $d<=cal_days_in_month(CAL_GREGORIAN, $month, $year); $d++){
 					 $daily_info = $workschedule->get_daily($wsr[$current_week-1]["day".$current_day]); 
 
 					if ($d < 10)	
@@ -210,7 +210,7 @@
 					}
 						
 					if($i == 0){
-						$dates[$d-1] = $langfile["dico_management_wsr_jour".$current_day."_short"]." ".$d;				
+						$dates[$d-1] = $langfile["dico_management_wsr_jour".$current_day."_short"]."<br>".$d;				
 					}
 					
 					$current_day  += 1;
@@ -235,7 +235,8 @@
 			$template->assign("next_date", $next_date);
 			$template->assign("days", $days);
 			$template->assign("myuserid", $myuser);
-			$template->assign("size", round(85/cal_days_in_month(CAL_GREGORIAN, substr($date2, 5, 2)))); 
+			$template->assign("max", 8*cal_days_in_month(CAL_GREGORIAN, $month, $year));
+			$template->assign("size", substr(85/cal_days_in_month(CAL_GREGORIAN, $month, $year), 0, 5)); 
 			$template->assign("annee", substr($date, 0, 4));
 			$template->assign("ismanager", $isManager);
 			
@@ -366,7 +367,7 @@
 				$current_week = $start_week;
 				$current_day  = $start_day;
 				
-				for($d=1; $d<=cal_days_in_month(CAL_GREGORIAN, substr($date2, 5, 2), substr($date2, 0, 4)); $d++){
+				for($d=1; $d<=cal_days_in_month(CAL_GREGORIAN, $month, $year); $d++){
 					 $daily_info = $workschedule->get_daily($wsr[$current_week-1]["day".$current_day]); 
 
 					if ($d < 10)	
@@ -410,7 +411,7 @@
 					}
 						
 					if($i == 0){
-						$dates[$d-1] = $langfile["dico_management_wsr_jour".$current_day."_short"]." ".$d;				
+						$dates[$d-1] = $langfile["dico_management_wsr_jour".$current_day."_short"]."<br>".$d;				
 					}
 					
 					$current_day  += 1;
@@ -423,10 +424,11 @@
 						$current_week = 1;
 	
 				}
+				
 			}
-			$title = $langfile["navigation_title_management_daily_wsr_liste"];
 			$template->assign("title", $title);
 			$template->assign("groupmembers", $myTeamMembers);
+			$template->assign("nb_max_members", count($myTeamMembers));
 			$template->assign("absences", $absences);
 			$template->assign("groupchief", $groupchief);
 			$template->assign("current_date", $date2);
@@ -435,10 +437,12 @@
 			$template->assign("next_date", $next_date);
 			$template->assign("days", $days);
 			$template->assign("myuserid", $myuser);
-			$template->assign("size", round(85/cal_days_in_month(CAL_GREGORIAN, substr($date2, 5, 2)))); 
+			$template->assign("max", 8*cal_days_in_month(CAL_GREGORIAN, $month, $year));
+			$template->assign("size", substr(85/cal_days_in_month(CAL_GREGORIAN, $month, $year), 0, 5));
 			$template->assign("annee", substr($date, 0, 4));
 			$template->assign("ismanager", $isManager);
-			$template->assign("myteams", "X");
+			$template->assign("multipleteams", "X");
+			$template->assign("myteams", $myTeams);
 			
 			switch(substr($date, 5, 2)){
 				case '01':
@@ -540,7 +544,7 @@
 			$endda			= date("Y-m-d");
 			
 			$absences = $timemanagement->getPendingAbsencesUser($myuser);
-			$quotas   = $timemanagement->getUserActualQuotas($myuser, $begda, $endda);
+			//$quotas   = $timemanagement->getUserActualQuotas($myuser, $begda, $endda);
 			
 			$template->assign("absences", $absences);
 			$template->assign("quotas", $quotas);
@@ -549,6 +553,8 @@
 			break;
 
 		case "tasks_overview":
+			
+			$template->assign("workspaceclass", "");
 			
 			$tasks = $mss_services->getPendingTasksUser($myuser);
 			$requests = array();
@@ -567,7 +573,15 @@
 				$request["actions"] .= "</tr></table>";
 				$request["type"] 		= $langfile["dico_management_tasks_type_absence"];
 				$request["requester"] 	= $tasks[$i]["requester_name"];
-				$request["request"] 	= $tasks[$i]["absence_id"]." : ".$tasks[$i]["begda"]." - ".$tasks[$i]["endda"]." / ".$tasks[$i]["nb_hours"]."h - ".$tasks[$i]["comment"];
+				
+				if($tasks[$i]["typehd"] == 'H')
+					$unit = $langfile["dico_userservices_remainingquota_hours"];
+				else
+					$unit = $langfile["dico_userservices_remainingquota_days"];
+					
+				$request["request"] 	= $tasks[$i]["absence_id"]." : ".$tasks[$i]["begda"]." - ".$tasks[$i]["endda"]." / ".$tasks[$i]["nb_hours"]." ".$unit;
+				if($tasks[$i]["comment"] != "")
+					$request["request"] .= " - ".$tasks[$i]["comment"];
 				array_push($requests, $request);
 			}
 			
@@ -604,7 +618,22 @@
 		    
 		    break;
 			
-		
+		case "modulesearch":
+
+			$employees = $mss_services->modulesearch($id,$value,$limit);
+			
+			$template->assign("employees", $employees);
+
+			if ($type == 'complete') {
+				$template->display("template_management_gestion_complete_search.tpl");
+			} else {
+				if ($type == 'simple') {
+					$template->display("template_management_gestion_simple_search.tpl");
+				} else {
+				}
+			}
+			
+			break;
 			
 		default:
 	    	$loc = $url . "user_services.php?action=team_calendar";

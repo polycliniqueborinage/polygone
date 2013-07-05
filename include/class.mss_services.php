@@ -38,7 +38,8 @@ class mss_services
 						wf.id									as wf_id, 
 						wf.description	 						as status_description, 
 						wf.next_status	 						as nextstatus, 
-						ua.user_id								as requester, 
+						ua.user_id								as requester,
+						ab.type									as typehd, 
 						concat(u.firstname, ' ', u.familyname) 	as requester_name 
 				FROM user_absences ua, workflow wf, user u, absences ab 
 				WHERE wf.id          =  ab.wf_id 
@@ -57,11 +58,20 @@ class mss_services
 	        $absence["requestid"] 	 		= stripslashes($absence["requestid"]);
         	$absence["absence_id"] 	 		= stripslashes($absence["absence_id"]);
 	        $absence["type"] 				= "abs";
+	        $absence["typehd"] 				= $absence["typehd"];
         	$absence["begda"] 				= stripslashes(date("d-m-Y", strtotime($absence["begda"])));
 	        $absence["endda"]  				= stripslashes(date("d-m-Y", strtotime($absence["endda"])));
 	        $absence["beghr"] 				= stripslashes($absence["beghr"]);
 	        $absence["endhr"] 				= stripslashes($absence["endhr"]);
 	        $absence["nb_hours"]			= $timemanagement->getNbHours($absence["endhr"], $absence["beghr"]);
+	        if($absence["nb_hours"] == 0){
+	        	if($absence["begda"] == $absence["endda"])
+	        		$absence["nb_hours"] = 1;
+	        	else
+	        		$absence["nb_hours"] = abs(strtotime($absence["endda"]) - strtotime($absence["begda"]))/(24*60*60) + 1;
+
+	        	$absence["typehd"] 				= 'D';	
+	        }
 	        $absence["comment"]  			= stripslashes($absence["textcomment"]);
 	        $absence["wf_id"] 				= stripslashes($absence["wf_id"]);
 	        $absence["status"] 				= stripslashes($absence["status_id"]);
@@ -113,6 +123,43 @@ class mss_services
             return false;
         }
     }	
+
+	 /* Make a search
+     *
+     * @param value
+     * @return array
+     */
+    function modulesearch($id,$value,$limit) {
+    
+    	$workschedule 	= (object) new workschedule();
+    	
+    	if ($id!='undefined' && $id!='undefined' && $id!= null)
+			$sql = "SELECT * FROM user WHERE ID='$id'";
+		else
+			$sql = "SELECT * FROM user WHERE ( lower(concat(familyname, ' ' ,firstname)) regexp '$value' OR lower(concat(firstname, ' ' ,familyname)) regexp '$value' OR lower(name) regexp '$value' ) Limit $limit";
+		
+		$sel = mysql_query($sql);
+
+        $users = array();
+
+        while ($user = mysql_fetch_array($sel)) {
+        	$user["name"] 			= stripslashes($user["name"]);
+            $user["firstname"] 		= stripslashes($user["firstname"]);
+            $user["familyname"] 	= stripslashes($user["familyname"]);
+        	
+            $user["wsr"] = $workschedule->get_detailed_wsr($user["wsr_id"]);
+            
+            array_push($users, $user);
+        }
+
+        if (!empty($users))  {	
+            return $users;
+        }
+        else  {
+            return false;
+        }
+
+    }   
     
 }
 

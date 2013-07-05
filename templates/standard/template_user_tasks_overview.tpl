@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery132="yes" js_ajax="yes" js_jquery_autocomplete="yes" js_form="yes" js_jquery_validate="yes" }
+{include file="template_header.tpl" js_jquery132="yes" js_ajax="yes" js_jquery_autocomplete="yes" js_form="yes" js_jquery_validate="yes" js_user_services="yes" }
 	
 	<div id="middle">
     	
@@ -108,6 +108,10 @@
 
 	</div>
 	
+	</div>
+	
+
+{include file="template_left.tpl" employee_search="yes" workday_search="yes"}
 
 	{literal}
 

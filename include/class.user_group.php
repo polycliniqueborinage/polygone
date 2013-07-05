@@ -142,7 +142,7 @@ class user_group
     }
     
     function getGroupForUser($userid){
-    	$sel = mysql_query("SELECT ug.id as id, ug.description as description, ug.leader as leaderid, u.name as leadername, u.firstname as leaderfirstname, ga.ponderation FROM user u, user_group ug, group_assignment ga WHERE u.ID = ug.leader AND ga.group_id = ug.id AND ga.user_id = '$userid' ORDER BY ga.ponderation ");
+    	$sel = mysql_query("SELECT ug.id as id, ug.description as description, ug.leader as leaderid, u.familyname as leadername, u.firstname as leaderfirstname, ga.ponderation FROM user u, user_group ug, group_assignment ga WHERE u.ID = ug.leader AND ga.group_id = ug.id AND ga.user_id = '$userid' ORDER BY ga.ponderation ");
     	
         $ugs = array();
         while($ug = mysql_fetch_array($sel)){
@@ -163,8 +163,7 @@ class user_group
     }
     
 	function getGroupForManager($userid){
-    	$sel = mysql_query("SELECT ug.id as id, ug.description as description, ug.leader as leaderid, u.name as leadername, u.firstname as leaderfirstname, ga.ponderation FROM user u, user_group ug, group_assignment ga WHERE u.ID = ug.leader AND ga.group_id = ug.id AND ug.leader = '$userid' ORDER BY ga.ponderation ");
-    	
+    	$sel = mysql_query("SELECT ug.id as id, ug.description as description, ug.leader as leaderid, u.familyname as leadername, u.firstname as leaderfirstname, ga.ponderation FROM user u, user_group ug, group_assignment ga WHERE u.ID = ug.leader AND ga.group_id = ug.id AND ug.leader = '$userid' GROUP BY id ORDER BY ga.ponderation ");
         $ugs = array();
         while($ug = mysql_fetch_array($sel)){
 	        $ug["id"] 				= stripcslashes($ug["id"]);
@@ -184,7 +183,7 @@ class user_group
     }
     
 	function getGroupMembers($group){
-        $sel = mysql_query("SELECT u.ID, u.firstname as firstname, u.familyname, u.wsr_id as wsr_id, u.wsr_refdate as wsr_refdate, ug.leader as leader, ug.description FROM user u, group_assignment ga, user_group ug WHERE u.ID = ga.user_id AND ga.group_id = '$group' AND ga.group_id = ug.id");
+        $sel = mysql_query("SELECT u.ID, u.firstname as firstname, u.familyname, u.wsr_id as wsr_id, u.wsr_refdate as wsr_refdate, ug.id as user_group_id, ug.leader as leader, ug.description FROM user u, group_assignment ga, user_group ug WHERE u.ID = ga.user_id AND ga.group_id = '$group' AND ga.group_id = ug.id");
         
         $users = array();
 
@@ -195,6 +194,7 @@ class user_group
             $user["wsr_id"]  			= stripcslashes($user["wsr_id"]);
             $user["wsr_refdate"]		= stripcslashes($user["wsr_refdate"]);
             $user["user_group"]			= stripcslashes($user["description"]);
+            $user["user_group_id"]		= stripcslashes($user["user_group_id"]);
            
             array_push($users, $user);
         }
