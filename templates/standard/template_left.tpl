@@ -237,7 +237,7 @@
 					</div>
 					<br/>
 					{/if}
-					
+					<!--
 					{if $employee_search == "yes"}
     	    		<a class="taskControl" href="#">{#dico_global_left_employee_title#}</a>
 				
@@ -285,7 +285,7 @@
 					</div>
 					<br/>
 					{/if}										
-					
+					-->
 					{if $patient_search == "yes"}
     	    		<a class="taskControl" href="#">{#dico_global_left_patient_title#}</a>
 				

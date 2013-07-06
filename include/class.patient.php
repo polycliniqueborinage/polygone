@@ -310,7 +310,6 @@ class patient
             
             array_push($patients, $patient);
         }
-
         if (!empty($patients))  {	
             return $patients;
         }

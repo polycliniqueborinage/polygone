@@ -34,57 +34,6 @@
     </table>
 	{/if}
 	
-	{section name=employee loop=$employees}
-		{if $smarty.section.employee.index % 2 == 0}
-			<li class="bg_a">
-		{else}
-			<li class="bg_b">
-		{/if}
-				<a href="#" onclick="" title="{$employees[employee].familyname} ">{$employees[employee].familyname} {$employees[employee].firstname} </a>
-			</li>
-	{/section}
-	{if $employees[1] == '' && $employees[0] != ''}
-    <table>
-    	
-    	<tr valign="top">
-	    	<td>{$employees[0]["wsr"][0].day1_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][0].day2_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][0].day3_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][0].day4_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][0].day5_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][0].day6_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][0].day7_nb_hours}</td>
-		</tr>
-    	<tr valign="top">
-	    	<td>{$employees[0]["wsr"][1].day1_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][1].day2_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][1].day3_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][1].day4_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][1].day5_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][1].day6_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][1].day7_nb_hours}</td>
-		</tr>
-    	<tr valign="top">
-	    	<td>{$employees[0]["wsr"][2].day1_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][2].day2_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][2].day3_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][2].day4_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][2].day5_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][2].day6_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][2].day7_nb_hours}</td>
-		</tr>
-		<tr valign="top">
-	    	<td>{$employees[0]["wsr"][3].day1_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][3].day2_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][3].day3_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][3].day4_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][3].day5_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][3].day6_nb_hours}</td>
-	    	<td>{$employees[0]["wsr"][3].day7_nb_hours}</td>
-		</tr>
-    </table>
-	{/if}	
-	
 	{section name=product loop=$products}
 		{if $smarty.section.product.index % 2 == 0}
 			<li class="bg_a">
@@ -129,13 +78,10 @@
 		</tr>
     </table>
 	{/if}
-	
-	
 											
 	<!-- Proprietaire attention use by protocol -->
-										
-	
-	{section name=titulaire loop=$titulaires}
+		
+	{section name=titulaire loop=$titulaires} 
 		{if $smarty.section.titulaire.index % 2 == 0}
 			<li class="bg_a">
 		{else}
@@ -162,14 +108,14 @@
 	{/if}
 
 	{section name=patient loop=$patients}
-		{if $smarty.section.patient.index % 2 == 0}
-			<li class="bg_a">
-		{else}
-			<li class="bg_b">
-		{/if}
-				<a href="#" onclick="javascript:patientAutoComplete('', {$patients[patient].patient_id})" title="{$patients[patient].patient_date_naissance}">{$patients[patient].nom} {$patients[patient].prenom}</a>
-			</li>
-	{/section}
+            {if $smarty.section.patient.index % 2 == 0}
+                    <li class="bg_a">
+            {else}
+                    <li class="bg_b">
+            {/if}
+                            <a href="#" onclick="javascript:patientAutoComplete('', {$patients[patient].patient_id})" title="{$patients[patient].patient_date_naissance}">{$patients[patient].nom} {$patients[patient].prenom}</a>
+                    </li>
+    {/section}
 	{if $patients[1] == '' && $patients[0] != ''}
     <table>
     	<tr valign="top">

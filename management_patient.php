@@ -261,7 +261,7 @@
 			if ($type == 'complete') {
 				$template->display("template_management_gestion_complete_search.tpl");
 			} else {
-				if ($type == 'simple') {
+				if ($type == 'simple') { 
 					$template->display("template_management_gestion_simple_search.tpl");
 				} else {
 					$template->display("template_management_patient_gestion_overlay_search.tpl");
