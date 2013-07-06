@@ -33,7 +33,7 @@
 		</tr>
     </table>
 	{/if}
-	
+	 
 	{section name=product loop=$products}
 		{if $smarty.section.product.index % 2 == 0}
 			<li class="bg_a">
