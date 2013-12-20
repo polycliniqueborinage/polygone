@@ -1,5 +1,5 @@
-{include file="template_header.tpl" js_jquery132="yes" js_ajax="yes" js_protocol="yes" js_form="yes" js_jquery_validate="yes" js_jquery_multifile="yes" tinymce="yes"}
-
+{include file="template_header.tpl" js_jquery191="yes" js_ajax="yes" js_protocol="yes" js_form="yes" js_jquery_validate="yes" js_jquery_multifile="yes" tinymce="yes"}
+ 
 	{literal}
 	<script type="text/javascript">
 		tinyMCE.init({
@@ -198,6 +198,25 @@
 	<script type="text/javascript">
 	var date='';
 	$(document).ready(function() {
+	
+	
+		// fix date validation for chrome
+			jQuery.extend(jQuery.validator.methods, {
+				date: function (value, element) {
+					var isChrome = window.chrome;
+					// make correction for chrome
+					if (isChrome) {
+						var d = new Date();
+						return this.optional(element) || 
+						!/Invalid|NaN/.test(new Date(d.toLocaleDateString(value)));
+					}
+					// leave default behavior
+					else {
+						return this.optional(element) || 
+						!/Invalid|NaN/.test(new Date(value));
+					}
+				}
+			});
 	
 		// VALIDATION
 		jQuery.validator.addMethod("patient_id", function( value, element ) {

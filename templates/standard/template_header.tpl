@@ -20,7 +20,7 @@
 		<script type="text/javascript" src="include/js/jquery/ui/ui.core.js"></script>
 		<script type = "text/javascript" src = "include/js/project/ajax.js" ></script>
 		{/literal}
-	{/if}
+	{/if} 
 
 	{if $js_jquery132 == "yes"}
 		{literal}
@@ -32,6 +32,13 @@
 		{literal}
 			<script type="text/javascript" src="include/js/jquery-1.4.2/jquery-1.4.2.min.js"></script>
 		{/literal}
+	{/if}
+	
+	{if $js_jquery191 == "yes"}
+		{literal}
+			<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+			<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+		{/literal}	
 	{/if}
 
 	{if $js_jquery_ui_171 == "yes"}
@@ -212,13 +219,13 @@
 		<script type="text/javascript" src="include/js/project/patient.js"></script>
 		{/literal}
 	{/if}
-	<!--
+	
 	{if $js_user_services == "yes"}
 		{literal}
 		<script type="text/javascript" src="include/js/project/user_services.js"></script>
 		{/literal}
 	{/if}
-	-->
+	
 	{if $js_addressbook == "yes"}
 		{literal}
 		<script type="text/javascript" src="include/js/project/addressbook.js"></script>
@@ -308,8 +315,8 @@
 		{literal}
 			<script type="text/javascript" src="include/js/project/workschedule.js"></script>
 		{/literal}
-	{/if}	
-
+	{/if}
+	
 	{if $js_new_datepicker == "yes"}
 	        {literal}
 	            <link rel="stylesheet" title="Style CSS" href="templates/standard/css/cwcalendar.css" type="text/css" media="all" />
@@ -371,6 +378,7 @@
 	{/if}
 	
 </head>
+
 <body class="{$workspaceclass}">
 
 	{if $menu == "yes"}
@@ -378,6 +386,7 @@
 	{/if}
 
 	{if $showheader != "no"}
-	{include file="template_header_main.tpl"}
+		{include file="template_header_main.tpl"}
 	{/if}
 	
+</body>
