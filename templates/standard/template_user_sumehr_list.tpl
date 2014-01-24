@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery132="yes" js_ajax="yes"  js_jquery_ui_171="yes" js_jqgrid="yes" js_sumehr="yes"}
+{include file="template_header.tpl" js_jquery191="yes" js_ajax="yes"  js_jquery_ui_171="yes" js_jqgrid="yes" js_sumehr="yes"}
 
 	<div id="middle">
 		

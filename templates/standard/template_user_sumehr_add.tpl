@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery132="yes" js_ajax="yes" js_sumehr="yes" js_form="yes" js_jquery_validate="yes" js_jquery_multifile="yes" tinymce_jquery="yes"}
+{include file="template_header.tpl" js_jquery191="yes" js_ajax="yes" js_sumehr="yes" js_form="yes" js_jquery_validate="yes" js_jquery_multifile="yes" tinymce_jquery="yes"}
 
 	{literal}
 	<script type="text/javascript">

@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery132="yes" js_jquery_ui_171="yes" js_jqmodal="yes" js_jquery_prettyphoto="no" js_jquery_prettyphoto3="yes" js_rico="yes" js_sumehr="yes" js_protocol="yes"}
+{include file="template_header.tpl" js_jquery191="yes" js_jquery_ui_171="yes" js_jqmodal="yes" js_jquery_prettyphoto="no" js_jquery_prettyphoto3="yes" js_rico="yes" js_sumehr="yes" js_protocol="yes"}
 
 	<div id="middle">
     	
