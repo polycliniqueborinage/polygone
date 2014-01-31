@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery132="yes" js_common="yes" js_rico="yes" js_prevention="yes"}
+{include file="template_header.tpl" js_jquery132="yes" js_jquery191="yes" js_jquery_ui_171="yes" js_jqgrid="yes"  js_common="yes" js_rico="yes" js_prevention="yes"}
 
 	<div id="print">
 	</div>
@@ -66,7 +66,7 @@
 								</div>
 								
 								<div id="useredit">
-								
+								<!--
 									<div class="table_head">
 										<table id="preventionlist" class="ricoLiveGrid" cellpadding="0" cellspacing="0" width="100%">
 											<tr>
@@ -88,7 +88,15 @@
 									
 										
 									</div> {*Table_Body End*}
-									
+								-->
+								
+									<table width='97%'>
+										<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
+										<table id="colr">
+										</table>
+										<div id="pcolr"></div> 
+										</td></tr>
+									</table>	
 									<div class="clear_both"></div> {*required ... do not delete this row*}
 									
 								</div>
@@ -140,7 +148,7 @@
 		</div>
 	
 	</div>
-	
+	<!--
 	{literal}
 	<script type='text/javascript'>
 	
@@ -167,4 +175,170 @@
 		});
 	</script>
 	{/literal}
+	-->
+		{literal}
+	<script type='text/javascript'>
+		var id_list = "";
+		jQuery(document).ready(function(){
+            
+        	jQuery("#colr").jqGrid({
+                    // display all
+                    scroll: 1,
+                    //Column Reordering
+                    sortable: true,
+                    url:'management_prevention.php?action=json_list',
+                    datatype: 'json', 
+                    mtype: 'POST',
+                    colNames:[
+                    	'{/literal}{#dico_management_prevention_colum_patient_familyname#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_patient_firstname#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_patient_address#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_patient_private_phone#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_patient_mobile_phone#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_patient_mail#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_modif_description#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_modif_date#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_status#}{literal}',
+                    	'{/literal}{#dico_management_prevention_colum_select#}{literal}'
+                    	],
+                    colModel :[ 
+                        {
+                        	name:'nom',
+                        	index:'nom',
+                        	width:80,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {	name:'prenom',
+                        	index:'prenom',                         
+                        	width:80,    
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        }, 
+                        {
+                        	name:'address',
+                        	index:'address',
+                        	width:200,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'telephone',
+                        	index:'telephone',
+                        	width:80,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'gsm',
+                        	index:'gsm',
+                        	width:80,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'mail',
+                        	index:'mail',
+                        	width:100,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'description',
+                        	index:'description',
+                        	width:170,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'date_derniere_modification',
+                        	index:'date_derniere_modification',
+                        	width:70,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'statut',
+                        	index:'statut',
+                        	width:90,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'select',
+                        	index:'select',
+                        	width:40,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+					], 
+                    
+                    pager: jQuery('#pcolr'), 
+                    //reading the data at once
+                    gridview: false,
+                    rowNum:50, 
+                    rowList:[10,20,30], 
+                    //sortname: 'familyname', 
+                    //sortorder: "desc", 
+                    viewrecords: true,
+                    multiselect: false, 
+                    width: 1000, 
+                    height: "300", 
+                    caption: "Pr&eacute;vention",
+                    shrinkToFit :true,
+                    // fit screen size
+                    autowidth: true,
+                    // add row in the bottom
+                    footerrow : false, 
+                    userDataOnFooter : false, 
+                    altRows : true,
+                    cellEdit: false,
+                    //editurl: "admin_people_user.php?action=action_cost_center",
+                    
+                    edit : {
+						width:1000,
+					},
+                    
+                    
+                  });
+        
+        	jQuery("#colr").jqGrid('navGrid','#pcolr',{del:false,add:false,edit:false,search:true}); 
+        	//jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false}); 
+        	jQuery("#colr").jqGrid('filterToolbar', { searchOperators: true, stringResult: false, searchOnEnter: false });
+        	      
+		}); 
+	
+		
+	</script>
+	{/literal}	
 

@@ -180,7 +180,7 @@ class prevention
      */
     function addMotif($description, $period, $period_unit, $main_text, $rappel, $request, $frequency, $sender_name, $sender_address1, $sender_zip1city1, $sender_mail, $sender_reply) {
     	
-        $description = mysql_real_escape_string($description);
+        $description = mysql_real_escape_string(htmlentities($description, ENT_NOQUOTES, "UTF-8"));
         $period = mysql_real_escape_string($period);
         $period_unit = mysql_real_escape_string($period_unit);
         $main_text = mysql_real_escape_string($main_text);
@@ -466,6 +466,170 @@ class prevention
 	  return(($diff / 86400)+1);
 
 	}
+	
+	function countGeneral(){
+		
+		$sel = mysql_query("SELECT count(id_patient) AS total FROM `mp_pile` WHERE statut!='termine'");
+		
+        $count = mysql_fetch_array($sel);
+        
+        if (!empty($count)) {
+            return $count['total'];
+        } else {
+            return 0;
+        }
+	}
+	
+	function countTraite(){
+		
+		$sel = mysql_query("SELECT count(id_patient) AS total FROM `mp_pile` WHERE statut='termine'");
+		
+        $count = mysql_fetch_array($sel);
+        
+        if (!empty($count)) {
+            return $count['total'];
+        } else {
+            return 0;
+        }
+	}
+	
+   	function get_jsonGeneral($sql,$langfile,$url) {
+   		
+		$permission[0] = $langfile["dico_admin_people_user_no_login"];
+		$permission[1] = $langfile["dico_admin_people_user_user"];
+		$permission[3] = $langfile["dico_admin_people_user_manager"];
+		$permission[4] = $langfile["dico_admin_people_user_manager_advanced"];
+		$permission[5] = $langfile["dico_admin_people_user_admin"];
+   		
+		$checkbox1 = "<input type='checkbox' name='cases' value='";
+		$checkbox2 = "' onclick=javascript:controle('";
+		$checkbox3 = "') id='check";
+		$checkbox4 = "' />";
+		
+		$status1 = $langfile["dico_management_prevention_to_contact"];
+		$status2 = $langfile["dico_management_prevention_contacted"];
+		$status3 = $langfile["dico_management_prevention_presented"];
+		$status4 = $langfile["dico_management_prevention_call_back"];
+		$status5 = $langfile["dico_management_prevention_close"];
+		
+		$i = 0;
+		$rows = array();
+		
+        $sel = mysql_query($sql);
+        
+        while ($mp = mysql_fetch_array($sel)) {        	
+        	$rows[$i]['id']=$mp["id_patient"]."-".$mp["id_motif"];
+        	switch($mp["statut"]){
+        		case "a_contacter":
+        			$mp["statut"] = $status1;
+        			break;
+        		case "contacte":
+        			$mp["statut"] = $status2;
+        			break;
+        		case "rdv_pris":
+        			$mp["statut"] = $status3;
+        			break;
+        		case "a_rappeler":
+        			$mp["statut"] = $status4;
+        			break;
+        		case "termine":
+        			$mp["statut"] = $statut5;
+        			break;				
+        	}
+        	$mp["select"] = $checkbox1.$mp["id_motif"]."_".$mp["id_patient"].$checkbox2.$mp["id_motif"]."_".$mp["id_patient"].$checkbox3.$mp["id_motif"]."_".$mp["id_patient"].$checkbox4;
+        	$tmp = htmlentities($mp["description"], ENT_NOQUOTES, "UTF-8");// = mysql_real_escape_string(stripcslashes($mp["description"]));
+			$rows[$i]['cell']=array(
+				$mp["nom"],
+			    $mp["prenom"],
+			    $mp["address"],
+				$mp["telephone"],
+			    $mp["gsm"],
+			    $mp["mail"],
+			    //stripcslashes($mp["description"]),
+			    //$mp["description"],
+			    html_entity_decode($tmp),
+			    substr($mp["date_derniere_modification"], 8, 2)."/".substr($mp["date_derniere_modification"], 5, 2)."/".substr($mp["date_derniere_modification"], 0, 4),
+			    $mp["statut"],
+			    $mp["select"],
+			);
+			$i++;
+        }
+        
+        if (!empty($rows)) {
+            return $rows;
+        } else {
+            return false;
+        }
+        
+    }
+    
+	function get_jsonTraite($sql,$langfile,$url) {
+   		
+		$permission[0] = $langfile["dico_admin_people_user_no_login"];
+		$permission[1] = $langfile["dico_admin_people_user_user"];
+		$permission[3] = $langfile["dico_admin_people_user_manager"];
+		$permission[4] = $langfile["dico_admin_people_user_manager_advanced"];
+		$permission[5] = $langfile["dico_admin_people_user_admin"];
+   		
+		$checkbox1 = "<input type='checkbox' name='cases' value='";
+		$checkbox2 = "' onclick=javascript:controle('";
+		$checkbox3 = "') id='check";
+		$checkbox4 = "' />";
+		
+		$status1 = $langfile["dico_management_prevention_to_contact"];
+		$status2 = $langfile["dico_management_prevention_contacted"];
+		$status3 = $langfile["dico_management_prevention_presented"];
+		$status4 = $langfile["dico_management_prevention_call_back"];
+		$status5 = $langfile["dico_management_prevention_close"];
+		
+		$i = 0;
+		$rows = array();
+		
+        $sel = mysql_query($sql);
+        
+        while ($mp = mysql_fetch_array($sel)) {        	
+        	$rows[$i]['id']=$mp["id_patient"]."-".$mp["id_motif"];
+        	switch($mp["statut"]){
+        		case "a_contacter":
+        			$mp["statut"] = $status1;
+        			break;
+        		case "contacte":
+        			$mp["statut"] = $status2;
+        			break;
+        		case "rdv_pris":
+        			$mp["statut"] = $status3;
+        			break;
+        		case "a_rappeler":
+        			$mp["statut"] = $status4;
+        			break;
+        		case "termine":
+        			$mp["statut"] = $statut5;
+        			break;				
+        	}
+        	$mp["select"] = $checkbox1.$mp["id_motif"]."_".$mp["id_patient"].$checkbox2.$mp["id_motif"]."_".$mp["id_patient"].$checkbox3.$mp["id_motif"]."_".$mp["id_patient"].$checkbox4;
+        	$tmp = htmlentities($mp["description"], ENT_NOQUOTES, "UTF-8");// = mysql_real_escape_string(stripcslashes($mp["description"]));
+			$rows[$i]['cell']=array(
+				$mp["nom"],
+			    $mp["prenom"],
+			    $mp["address"],
+				$mp["telephone"],
+			    $mp["gsm"],
+			    $mp["mail"],
+			    //stripcslashes($mp["description"]),
+			    //$mp["description"],
+			    html_entity_decode($tmp),
+			    substr($mp["date_derniere_modification"], 8, 2)."/".substr($mp["date_derniere_modification"], 5, 2)."/".substr($mp["date_derniere_modification"], 0, 4),
+			);
+			$i++;
+        }
+        
+        if (!empty($rows)) {
+            return $rows;
+        } else {
+            return false;
+        }
+        
+    }
 }
 
 ?>

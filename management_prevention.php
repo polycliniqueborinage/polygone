@@ -533,6 +533,176 @@
 			$status = $prevention->getTimeplotData($id);
 						
 			break;
+			
+		case "json_list":
+			
+			$examp 	= $_REQUEST["q"]; //query number
+			$page 	= $_REQUEST['page']; // get the requested page
+			$limit 	= $_REQUEST['rows']; // get how many rows we want to have into the grid
+			$sidx 	= $_REQUEST['sidx']; // get index row - i.e. user click to sort
+			$sord 	= $_REQUEST['sord']; // get the direction
+			if($sidx == '') $sidx = 'statut';
+			if($sord == '') $sidx = 'ASC';
+			
+			// search on
+			$searchOn = $_REQUEST['_search'];
+			
+			// filter
+			$filterOn = $_REQUEST['filters'];
+			
+			$wh = " 1 = 1 ";
+			
+			if($searchOn  || $filterOn) {
+			    
+			    $searchString = html_entity_decode($_REQUEST['filters']);
+			    
+			    // add simple search
+			    if ($search_account_name) {
+			        $wh .= "AND a.name like '".$search_account_name."%'";
+			    }
+			        
+			}
+			
+	$search_name 		= $_REQUEST['nom'];
+			$search_firstname 	= $_REQUEST['prenom'];
+			$search_address 	= $_REQUEST['address'];
+			$search_telephone	= $_REQUEST['telephone'];
+			$search_gsm			= $_REQUEST['gsm'];
+			$search_mail		= $_REQUEST['mail'];
+			$search_description	= $_REQUEST['description'];
+			$search_date		= $_REQUEST['date_derniere_modification'];
+			$search_statut		= $_REQUEST['statut'];
+			
+			$wh = "";
+			    // add simple search
+		    if ($search_name != "") {
+		        $wh .= "AND nom like '%".$search_name."%'";
+		    }
+			if ($search_firstname != "") {
+		        $wh .= "AND prenom like '%".$search_firstname."%'";
+		    }
+			if ($search_address != "") {
+		        $wh .= "AND (rue like '%".$search_address."%' OR code_postal like '%".$search_address."%' OR commune like '%".$search_address."%')";
+		    }		    
+			if ($search_telephone != "") {
+		        $wh .= "AND telephone like '%".$search_telephone."%'";
+		    }
+			if ($search_gsm != "") {
+		        $wh .= "AND gsm like '%".$search_gsm."%'";
+		    }
+			if ($search_mail != "") {
+		        $wh .= "AND mail like '%".$search_mail."%'";
+		    }
+			if ($search_description != "") {
+		        $wh .= "AND description like '%".$search_description."%'";
+		    }		    
+			if ($search_date != "") {
+		        $wh .= "AND date_derniere_modification like '%".$search_date."%'";
+		    }
+			if ($search_statut != "") {
+		        $wh .= "AND statut like '%".$search_statut."%'";
+		    }
+			
+			// pagination
+			$count = $prevention->countGeneral();
+			$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
+			$page = ($page > $total_pages) ? $total_pages : $page;
+			$start = $limit * $page - $limit;			
+			$start = ($start < 0) ? 0 : $start;
+			
+			//$sqlglobal= "select * FROM user WHERE ".$wh." ORDER BY ".$sidx." ".$sord." LIMIT ".$start.",".$limit;
+			$sqlglobal= "SELECT pa.nom, pa.prenom, concat(pa.rue,' ',pa.code_postal,' ',pa.commune) as address, pa.telephone, pa.gsm, pa.mail, mp.description as description, pi.date_derniere_modification, pi.statut, pi.id_motif,pi.id_patient FROM mp_pile pi, patients pa, medecine_preventive mp WHERE statut!='termine' AND pa.id = pi.id_patient AND mp.motif_ID = pi.id_motif ".$wh." ORDER BY ".$sidx." ".$sord;
+			
+			
+			$responce->page = $page;
+			$responce->total = $total_pages;
+			$responce->records = $count;
+			
+			$responce->rows = $prevention->get_jsonGeneral($sqlglobal,$langfile,'management_prevention.php');
+			
+			echo json_encode($responce);
+			
+		break;
+
+	case "json_list_traite":
+			
+			$examp 	= $_REQUEST["q"]; //query number
+			$page 	= $_REQUEST['page']; // get the requested page
+			$limit 	= $_REQUEST['rows']; // get how many rows we want to have into the grid
+			$sidx 	= $_REQUEST['sidx']; // get index row - i.e. user click to sort
+			$sord 	= $_REQUEST['sord']; // get the direction
+			if($sidx == '') $sidx = 'statut';
+			if($sord == '') $sidx = 'ASC';
+			
+			// search on
+			$searchOn = $_REQUEST['_search'];
+			
+			// filter
+			$filterOn = $_REQUEST['filters'];
+			
+			$search_name 		= $_REQUEST['nom'];
+			$search_firstname 	= $_REQUEST['prenom'];
+			$search_address 	= $_REQUEST['address'];
+			$search_telephone	= $_REQUEST['telephone'];
+			$search_gsm			= $_REQUEST['gsm'];
+			$search_mail		= $_REQUEST['mail'];
+			$search_description	= $_REQUEST['description'];
+			$search_date		= $_REQUEST['date_derniere_modification'];
+			$search_statut		= $_REQUEST['statut'];
+			
+			    // add simple search
+		    if ($search_name != "") {
+		        $wh .= "AND nom like '%".$search_name."%'";
+		    }
+			if ($search_firstname != "") {
+		        $wh .= "AND prenom like '%".$search_firstname."%'";
+		    }
+			if ($search_address != "") {
+		        $wh .= "AND (rue like '%".$search_address."%' OR code_postal like '%".$search_address."%' OR commune like '%".$search_address."%')";
+		    }		    
+			if ($search_telephone != "") {
+		        $wh .= "AND telephone like '%".$search_telephone."%'";
+		    }
+			if ($search_gsm != "") {
+		        $wh .= "AND gsm like '%".$search_gsm."%'";
+		    }
+			if ($search_mail != "") {
+		        $wh .= "AND mail like '%".$search_mail."%'";
+		    }
+			if ($search_description != "") {
+		        $wh .= "AND description like '%".$search_description."%'";
+		    }		    
+			if ($search_date != "") {
+		        $wh .= "AND date_derniere_modification like '%".$search_date."%'";
+		    }
+			if ($search_statut != "") {
+		        $wh .= "AND statut like '%".$search_statut."%'";
+		    }
+		
+			
+			// pagination
+			$count = $prevention->countTraite();
+			$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
+			$page = ($page > $total_pages) ? $total_pages : $page;
+			$start = $limit * $page - $limit;			
+			$start = ($start < 0) ? 0 : $start;
+			
+			//$sqlglobal= "select * FROM user WHERE ".$wh." ORDER BY ".$sidx." ".$sord." LIMIT ".$start.",".$limit;
+			$sqlglobal= "SELECT pa.nom, pa.prenom, concat(pa.rue,' ',pa.code_postal,' ',pa.commune) as address, pa.telephone, pa.gsm, pa.mail, mp.description as description, pi.date_derniere_modification, pi.statut, pi.id_motif,pi.id_patient FROM mp_pile pi, patients pa, medecine_preventive mp WHERE statut='termine' AND pa.id = pi.id_patient AND mp.motif_ID = pi.id_motif ".$wh." ORDER BY ".$sidx." ".$sord;
+			$fp = fopen('data.txt', 'w');
+fwrite($fp, $sqlglobal);
+
+fclose($fp);
+			
+			$responce->page = $page;
+			$responce->total = $total_pages;
+			$responce->records = $count;
+			
+			$responce->rows = $prevention->get_jsonTraite($sqlglobal,$langfile,'management_prevention.php');
+			
+			echo json_encode($responce);
+			
+		break;	
 		
 		default:
 	    	$title = $langfile["navigation_title_management_prevention_status"];
