@@ -16,12 +16,17 @@ function print_courriel_test (id) {
 }
 
 function print_courriel_contact() {
+	window.location.href='management_prevention.php?action=list';
+	location.assign(location.href);
+	location.reload();
+	//location.reload();
 	if (id_list !="") {
 		//iframe = "<iframe name='' SRC='./management_prevention.php?action=print_courriel_contact&id_list=" + escape(id_list) + "' scrolling='no' height='1' width='1' FRAMEBORDER='no'></iframe>";
 		window.open("./management_prevention.php?action=print_courriel_contact&id_list=" + escape(id_list)); 
 		//jQuery('print').html(iframe);
 		jQuery(':[type=checkbox]').attr('checked', false); 
 		id_list="";
+		
 	}
 }
 

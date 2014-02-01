@@ -293,7 +293,6 @@
 			}
 
 			$pdf->output();
-			
 			break;
 			
 		case "mailing_contact":
@@ -563,7 +562,7 @@
 			        
 			}
 			
-	$search_name 		= $_REQUEST['nom'];
+			$search_name 		= $_REQUEST['nom'];
 			$search_firstname 	= $_REQUEST['prenom'];
 			$search_address 	= $_REQUEST['address'];
 			$search_telephone	= $_REQUEST['telephone'];
@@ -689,10 +688,6 @@
 			
 			//$sqlglobal= "select * FROM user WHERE ".$wh." ORDER BY ".$sidx." ".$sord." LIMIT ".$start.",".$limit;
 			$sqlglobal= "SELECT pa.nom, pa.prenom, concat(pa.rue,' ',pa.code_postal,' ',pa.commune) as address, pa.telephone, pa.gsm, pa.mail, mp.description as description, pi.date_derniere_modification, pi.statut, pi.id_motif,pi.id_patient FROM mp_pile pi, patients pa, medecine_preventive mp WHERE statut='termine' AND pa.id = pi.id_patient AND mp.motif_ID = pi.id_motif ".$wh." ORDER BY ".$sidx." ".$sord;
-			$fp = fopen('data.txt', 'w');
-fwrite($fp, $sqlglobal);
-
-fclose($fp);
 			
 			$responce->page = $page;
 			$responce->total = $total_pages;
