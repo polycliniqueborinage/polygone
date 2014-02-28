@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery191="yes" js_jquery_ui="yes" js_jqgrid="yes"  js_common="yes" js_rico="yes" js_prevention="yes"}
+{include file="template_header.tpl" js_jquery191="yes" js_jquery_ui_171="yes" js_jqgrid="yes"  js_common="yes" js_rico="yes" js_prevention="yes"}
 
 	<div id="print">
 	</div>
