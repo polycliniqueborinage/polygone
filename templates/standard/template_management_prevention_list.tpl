@@ -305,7 +305,7 @@
                     
                     //reading the data at once
                     //gridview: false,
-                    rowNum:12000, 
+                    rowNum:1000, 
                     rowList:[200,400,600], 
                     //sortname: 'familyname', 
                     //sortorder: "desc", 
