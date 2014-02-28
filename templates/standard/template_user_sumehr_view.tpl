@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery191="yes" js_jquery_ui_171="yes" js_ajax="yes" js_jqmodal="yes" js_jquery_prettyphoto="no" js_jquery_prettyphoto3="yes" js_rico="yes" js_sumehr="yes" js_protocol="yes"}
+{include file="template_header.tpl" js_jquery191="yes" js_jqgrid="yes" js_jquery_ui_171="yes" js_ajax="yes" js_jqmodal="yes" js_jquery_prettyphoto="no" js_jquery_prettyphoto3="yes" js_sumehr="yes" js_protocol="yes"}
 
 	<div id="middle">
     	
@@ -131,7 +131,7 @@
 							<div id="messagecookie">
 								
 								<div class="table_head">
-									
+								<!--	
 									<table id="sumehrlist" class="ricoLiveGrid" cellpadding="0" cellspacing="0" width="100%">
 										<tr>
 											<td class="b" style="width:15%">#</td>
@@ -141,7 +141,17 @@
 											<td class="b" style="width:10%">{#dico_sumehr_search_colum_export#}</td>
 										</tr>
 									</table>
-									
+								-->	
+								
+								<table width='97%'>
+									<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
+									<table id="colr">
+									</table>
+									<div id="pcolr" class="scroll"></div> 
+									</td></tr>
+								</table>	
+								<div class="clear_both"></div> {*required ... do not delete this row*}
+								
 								</div>
 					
 								<div class="table_body">
@@ -221,7 +231,7 @@
 			
 			jQuery("#confirmbox").jqm({});
 		});
-		
+		/*
 		Rico.loadModule('LiveGridAjax','LiveGridMenu','grayedout.css');
 
 		var orderGrid,buffer;
@@ -240,6 +250,104 @@
 			orderGrid.menu=new Rico.GridMenu();
 		
 		});
+		 */
+		 
+		jQuery(document).ready(function(){
+            
+        	jQuery("#colr").jqGrid({
+                    // display all
+                    scroll: 1,
+                    //Column Reordering
+                    sortable: true,
+                    url:'user_sumehr.php?action=json_view&patient_id='+{/literal}{$patient_id}{literal},
+                    datatype: 'json', 
+                    mtype: 'POST',
+                    colNames:[
+                    	'{/literal}#{literal}',
+                    	'{/literal}{#dico_sumehr_search_colum_user#}{literal}',
+                    	'{/literal}{#dico_sumehr_search_colum_doctor#}{literal}',
+                    	'{/literal}{#dico_sumehr_search_colum_protocol_date#}{literal}',
+                    	'{/literal}{#dico_sumehr_search_colum_export#}{literal}'
+                    	],
+                    colModel :[ 
+                        {
+                        	name:'id',
+                        	index:'id',
+                        	width:10,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {	name:'user',
+                        	index:'user',                         
+                        	width:100,    
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        }, 
+                        {
+                        	name:'doctor',
+                        	index:'doctor',
+                        	width:100,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'protocole_date',
+                        	index:'protocole_date',
+                        	width:80,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'export',
+                        	index:'export',
+                        	width:80,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+					], 
+                    
+                    rowNum:12000, 
+                    rowList:[200,400,600],
+                    viewrecords: true,
+                    multiselect: false, 
+                    width: "1000", 
+                    height: "300", 
+                    caption: "Protocoles",
+                    shrinkToFit :true,
+                    // fit screen size
+                    autowidth: true,
+                    // add row in the bottom
+                    footerrow : false, 
+                    userDataOnFooter : true, 
+                    altRows : true,
+                    cellEdit: false,
+                    repeatitems:false,
+                    pager:'#pcolr',
+                    
+                    edit : {
+						width:1000,
+					},
+                    
+                    
+                  });
+        
+        	jQuery("#colr").jqGrid('navGrid','#pcolr',{del:false,add:false,edit:false,search:true});	
+        }); 		 
 		 
 	</script>
 	{/literal}
