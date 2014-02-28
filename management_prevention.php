@@ -603,7 +603,7 @@
 		    }
 			
 			// pagination
-			$count = $prevention->countGeneral();
+			$count = $prevention->countGeneral($wh);
 			$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
 			$page = ($page > $total_pages) ? $total_pages : $page;
 			$start = $limit * $page - $limit;			
@@ -680,7 +680,7 @@
 		
 			
 			// pagination
-			$count = $prevention->countTraite();
+			$count = $prevention->countTraite($wh);
 			$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
 			$page = ($page > $total_pages) ? $total_pages : $page;
 			$start = $limit * $page - $limit;			

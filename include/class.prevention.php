@@ -467,9 +467,9 @@ class prevention
 
 	}
 	
-	function countGeneral(){
+	function countGeneral($filter){
 		
-		$sel = mysql_query("SELECT count(id_patient) AS total FROM `mp_pile` WHERE statut!='termine'");
+		$sel = mysql_query("SELECT count(id_patient) AS total FROM `mp_pile` WHERE statut!='termine '.$filter");
 		
         $count = mysql_fetch_array($sel);
         
@@ -480,9 +480,9 @@ class prevention
         }
 	}
 	
-	function countTraite(){
+	function countTraite($filter){
 		
-		$sel = mysql_query("SELECT count(id_patient) AS total FROM `mp_pile` WHERE statut='termine'");
+		$sel = mysql_query("SELECT count(id_patient) AS total FROM `mp_pile` WHERE statut='termine '.$filter");
 		
         $count = mysql_fetch_array($sel);
         

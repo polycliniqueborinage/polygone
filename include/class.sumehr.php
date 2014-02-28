@@ -368,6 +368,69 @@ class sumehr
         
     }
     
+	function count($filter, $userid, $patientid){
+		
+		$sql = "SELECT DISTINCT count(pr.ID) FROM protocol pr, user uss, user usr1, user usr2, user usr3, user usr4, user usr5, protocol_assigned pr_a, `group` gr, group_assigned gr_a WHERE gr_a.user ='$userid' AND pr.patient_ID = '$patientid' AND pr.user_sender_ID = uss.ID AND pr.user_recipient1_ID = usr1.ID AND pr.user_recipient2_ID = usr2.ID AND pr.user_recipient3_ID = usr3.ID AND pr.user_recipient4_ID = usr4.ID AND pr.user_recipient5_ID = usr5.ID AND pr_a.protocol = pr.ID AND pr_a.group = gr_a.group ".$wh;
+		$sel = mysql_query($sql);
+		
+        $count = mysql_fetch_array($sel);
+        
+        if (!empty($count)) {
+            return $count['total'];
+        } else {
+            return 0;
+        }
+	}
+	
+	function get_json($sql,$langfile,$url) {
+   		
+		$tool_html_alt = $langfile["dico_sumehr_export_html"];
+		$tool_pdf_alt  = $langfile["dico_sumehr_export_pdf"];
+		$tool_rtf_alt  = $langfile["dico_sumehr_export_rtf"];
+		$tool_txt_alt  = $langfile["dico_sumehr_export_txt"];
+		$tool_xml_alt  = $langfile["dico_sumehr_export_xml"];
+		
+		$tool_html1 = "<a onclick=javascript=exportProtocol(";
+		$tool_html2 = ",'html') ><img width='16' height='16' src='./templates/standard/images/butn-html-hover.png' alt='".$tool_html_alt."' title='".$tool_html_alt."' border=0 />";
+		
+		$tool_pdf1 = "<a onclick=javascript=exportProtocol(";
+		$tool_pdf2 = ",'pdf') ><img width='16' height='16' src='./templates/standard/images/butn-pdf-hover.gif' alt='".$tool_pdf_alt."' title='".$tool_pdf_alt."' border=0 />";
+		
+		$tool_word1 = "<a onclick=javascript=exportProtocol(";
+		$tool_word2 = ",'rtf') ><img width='16' height='16' src='./templates/standard/images/butn-word-hover.png' alt='".$tool_rtf_alt."' title='".$tool_rtf_alt."' border=0 />";
+		
+		$tool_txt1 = "<a onclick=javascript=exportProtocol(";
+		$tool_txt2 = ",'txt')><img width='16' height='16' src='./templates/standard/images/butn-txt-hover.png' alt='".$tool_txt_alt."' title='".$tool_txt_alt."' border=0 />";
+		
+		$tool_xml1 = "<a onclick=javascript=exportProtocol(";
+		$tool_xml2 = ",'xml') ><img width='16' height='16' src='./templates/standard/images/butn-xml-hover.png' alt='".$tool_xml_alt."' title='".$tool_xml_alt."' border=0 />";
+		
+		$i = 0;
+		$rows = array();
+		
+        $sel = mysql_query($sql);
+        
+        while ($res = mysql_fetch_array($sel)) {        	
+        	$rows[$i]['id']=$res["id"];
+        	$res["export"] = $tool_html1.$res["id"].$tool_html2." ".$tool_pdf1.$res["id"].$tool_pdf2." ".$tool_word1.$res["id"].$tool_word2." ".$tool_txt1.$res["id"].$tool_txt2." ".$tool_xml1.$res["id"].$tool_xml2;
+        	$rows[$i]['cell']=array(
+				$res["id"],
+			    $res["user"],
+			    $res["doctor"],
+				$res["protocole_date"],
+			    $res["export"]
+			);
+			$i++;
+        }
+        
+        if (!empty($rows)) {
+            return $rows;
+        } else {
+            return false;
+        }
+        
+    }
+    
    	function getFile($key,$userID,$currentUserID) {
    		
    		// select one file with the key for the current id
