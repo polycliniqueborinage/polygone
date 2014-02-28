@@ -300,6 +300,61 @@
 			
 		break;
 	  	
+	  	case "json_view":
+			$examp 	= $_REQUEST["q"]; //query number
+			$page 	= $_REQUEST['page']; // get the requested page
+			$limit 	= $_REQUEST['rows']; // get how many rows we want to have into the grid
+			$sidx 	= $_REQUEST['sidx']; // get index row - i.e. user click to sort
+			$sord 	= $_REQUEST['sord']; // get the direction
+			
+			if($sidx == '') $sidx = 'id';
+			if($sord == '') $sidx = 'ASC';
+			
+			// search on
+			$searchOn = $_REQUEST['_search'];
+			
+			// filter
+			$filterOn = $_REQUEST['filters'];
+			
+			$search_id	 			= $_REQUEST['id'];
+			$search_user	 		= $_REQUEST['user'];
+			$search_doctor 			= $_REQUEST['doctor'];
+			$search_protocole_date	= $_REQUEST['protocole_date'];
+			
+			    // add simple search
+		    if ($search_id != "") {
+		        $wh .= "AND id like '%".$search_id."%'";
+		    }
+			if ($search_user != "") {
+		        $wh .= "AND user like '%".$search_user."%'";
+		    }		    
+			if ($search_doctor != "") {
+		        $wh .= "AND doctor like '%".$search_doctor."%'";
+		    }
+			if ($search_protocole_date != "") {
+		        $wh .= "AND protocole_date like '%".$search_protocole_date."%'";
+		    }
+		    	
+			// pagination
+			$count = $sumehr->count($wh, $userid, $patientID);
+			$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
+			$page = ($page > $total_pages) ? $total_pages : $page;
+			$start = $limit * $page - $limit;			
+			$start = ($start < 0) ? 0 : $start;
+			
+			//$sqlglobal= "select * FROM user WHERE ".$wh." ORDER BY ".$sidx." ".$sord." LIMIT ".$start.",".$limit;
+			$sqlglobal = "SELECT DISTINCT pr.ID as id, LOWER(CONCAT(uss.firstname, ' ', uss.familyname)) as user, LOWER(CONCAT(usr1.familyname, ' ', usr1.firstname,' ',usr2.familyname, ' ', usr2.firstname,' ',usr3.familyname, ' ', usr3.firstname,' ',usr4.familyname, ' ', usr4.firstname,' ',usr5.familyname, ' ', usr5.firstname)) as doctor, date_format(pr.date, '%d/%m/%Y') as protocole_date FROM protocol pr, user uss, user usr1, user usr2, user usr3, user usr4, user usr5, protocol_assigned pr_a, `group` gr, group_assigned gr_a WHERE gr_a.user ='$userid' AND pr.patient_ID = '$patientID' AND pr.user_sender_ID = uss.ID AND pr.user_recipient1_ID = usr1.ID AND pr.user_recipient2_ID = usr2.ID AND pr.user_recipient3_ID = usr3.ID AND pr.user_recipient4_ID = usr4.ID AND pr.user_recipient5_ID = usr5.ID AND pr_a.protocol = pr.ID AND pr_a.group = gr_a.group ".$wh." ORDER BY ".$sidx." ".$sord;
+			
+			$responce->page = $page;
+			$responce->total = $total_pages;
+			$responce->records = $count;
+			
+			$responce->rows = $sumehr->get_json($sqlglobal,$langfile,'user_sumehr.php');
+			
+			echo json_encode($responce);
+			
+		break;
+		
 		case "view":
 			
 			$title = $langfile["navigation_title_user_sumehr_view"];
@@ -359,6 +414,7 @@
 			}
 			
 			$template->assign("user_id", $userid);
+			$template->assign("patient_id", $patientID);
 			$template->assign("sumehrs", $sumehrs);
 			$template->display("template_user_sumehr_view.tpl");
 			
