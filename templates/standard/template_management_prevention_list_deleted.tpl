@@ -85,6 +85,7 @@
 									<div id="pcolr"></div> 
 									</td></tr>
 								</table>	
+								<div id="gridpager"></div> 
 									<div class="clear_both"></div> {*required ... do not delete this row*}
 									
 								</div>
@@ -235,28 +236,30 @@
                         },
 					], 
                     
-                    pager: jQuery('#pcolr'), 
+                     
                     //reading the data at once
                     gridview: false,
-                    rowNum:50, 
-                    rowList:[10,20,30], 
+                    //rowNum:50, 
+                    //rowList:[10,20,30], 
                     //sortname: 'familyname', 
                     //sortorder: "desc", 
+                    pager: 'gridpager',
                     viewrecords: true,
                     multiselect: false, 
                     width: 1000, 
                     height: "300", 
                     caption: "Pr&eacute;vention Trait&eacute;s",
                     shrinkToFit :true,
+                    //pager: '#pcolr', 
                     // fit screen size
                     autowidth: true,
                     // add row in the bottom
                     footerrow : false, 
-                    userDataOnFooter : false, 
+                    //userDataOnFooter : false, 
                     altRows : true,
                     cellEdit: false,
                     //editurl: "admin_people_user.php?action=action_cost_center",
-                    
+          
                     edit : {
 						width:1000,
 					},

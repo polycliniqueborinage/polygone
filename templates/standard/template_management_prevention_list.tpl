@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery132="yes" js_jquery191="yes" js_jquery_ui_171="yes" js_jqgrid="yes"  js_common="yes" js_rico="yes" js_prevention="yes"}
+{include file="template_header.tpl" js_jquery191="yes" js_jquery_ui="yes" js_jqgrid="yes"  js_common="yes" js_rico="yes" js_prevention="yes"}
 
 	<div id="print">
 	</div>
@@ -94,7 +94,7 @@
 										<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
 										<table id="colr">
 										</table>
-										<div id="pcolr"></div> 
+										<div id="pcolr" class="scroll"></div> 
 										</td></tr>
 									</table>	
 									<div class="clear_both"></div> {*required ... do not delete this row*}
@@ -303,16 +303,15 @@
                         },  
 					], 
                     
-                    pager: jQuery('#pcolr'), 
                     //reading the data at once
-                    gridview: false,
-                    rowNum:50, 
-                    rowList:[10,20,30], 
+                    //gridview: false,
+                    rowNum:12000, 
+                    rowList:[200,400,600], 
                     //sortname: 'familyname', 
                     //sortorder: "desc", 
                     viewrecords: true,
                     multiselect: false, 
-                    width: 1000, 
+                    width: "1000", 
                     height: "300", 
                     caption: "Pr&eacute;vention",
                     shrinkToFit :true,
@@ -320,9 +319,11 @@
                     autowidth: true,
                     // add row in the bottom
                     footerrow : false, 
-                    userDataOnFooter : false, 
+                    userDataOnFooter : true, 
                     altRows : true,
                     cellEdit: false,
+                    repeatitems:false,
+                    pager:'#pcolr',
                     //editurl: "admin_people_user.php?action=action_cost_center",
                     
                     edit : {
@@ -332,7 +333,7 @@
                     
                   });
         
-        	jQuery("#colr").jqGrid('navGrid','#pcolr',{del:false,add:false,edit:false,search:true}); 
+        	jQuery("#colr").jqGrid('navGrid','#pcolr',{del:false,add:false,edit:false,search:true});
         	//jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false}); 
         	jQuery("#colr").jqGrid('filterToolbar', { searchOperators: true, stringResult: false, searchOnEnter: false });
         	      
