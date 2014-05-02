@@ -1612,7 +1612,7 @@
 			    					//fwrite($Handle,  is_numeric(substr($data[$i],0, 6)));
 			    				    
 			    					if((is_numeric(substr($data[$i], 0, 6))) && (substr($data[$i], 7, 1) == '-')){
-							        	$libelle = substr($data[$i], 9, $data[$i].length);
+							        	$libelle = htmlentities(substr($data[$i], 9, $data[$i].length), ENT_QUOTES, "UTF-8");
 					        			$date   = $annee_c.'-'.$mois_c.'-01';
 							        	$numero  = substr($data[$i], 0, 6);
 							        	$debit  = Str_replace ( ';', '.', Str_replace ( '.', '', Str_replace ( ',', ';', $data[$i+1])));
