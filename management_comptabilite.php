@@ -1640,7 +1640,7 @@
 									        $ins  = mysql_query($sql);	
 									        $prev_mois = $comptabilite->get_previous_month($prev_mois);
 										}
-			    					}    
+			    					}else{echo $data[$i];}    
 			    				}    
 		        			
 					    
