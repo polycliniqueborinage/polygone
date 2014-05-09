@@ -1603,6 +1603,8 @@
         			case "autre":
         				$header_line = 14;
         				$cursor      = 0;
+        				$debug = fopen('debug.txt', 'w');
+						
 		        		while (!feof($handle)){ 
 		        			
 			        			$data = fgetcsv($handle, 3072, ";");
@@ -1640,11 +1642,12 @@
 									        $ins  = mysql_query($sql);	
 									        $prev_mois = $comptabilite->get_previous_month($prev_mois);
 										}
-			    					}else{echo $data[$i];}    
+			    					}else{fwrite($data[$i]);}    
 			    				}    
 		        			
 					    
 		        		} 
+						fclose($fp);
 		        		break;
         		}	
 
