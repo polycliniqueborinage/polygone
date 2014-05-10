@@ -1520,7 +1520,8 @@
 	        if($error == 0){
 	        	
 	        	$datei_final = CL_ROOT . "/files/" . CL_CONFIG . "/command/" . $fname;
-	        	
+	        	$debug = fopen('debug.txt', 'w');
+	        	fwrite($debug, $datei_final);
 	        	if (move_uploaded_file($tmp_name, $datei_final));
 	        	else print 'Erreur lors de l\'ouverture du fichier...';
 			        
@@ -1603,7 +1604,7 @@
         			case "autre":
         				$header_line = 14;
         				$cursor      = 0;
-        				$debug = fopen('debug.txt', 'w');
+        				
 						
 		        		while (!feof($handle)){ 
 		        			
@@ -1642,14 +1643,16 @@
 									        $ins  = mysql_query($sql);	
 									        $prev_mois = $comptabilite->get_previous_month($prev_mois);
 										}
-			    					}else{fwrite($data[$i]);}    
+			    					}else{fwrite($debug, $data[$i]);}    
 			    				}    
 		        			
 					    
 		        		} 
-						fclose($fp);
+						
 		        		break;
-        		}	
+        		}
+        		fclose($handle);
+        		fclose($debug);	
 
 				$mylog->add('product','flow',"add command");
 				
