@@ -1615,11 +1615,13 @@
   
 			    					if((is_numeric(substr($data[$i], 0, 6))) && (substr($data[$i], 7, 1) == '-')){
 							        	
-			    						$libelle = htmlentities(substr($data[$i], 9, $data[$i].length), ENT_QUOTES | ENT_IGNORE, "UTF-8");
+			    						$libelle = substr($data[$i], 9, $data[$i].length);
 					        			$date   = $annee_c.'-'.$mois_c.'-01';
 							        	$numero  = substr($data[$i], 0, 6);
 							        	$debit  = Str_replace ( ';', '.', Str_replace ( '.', '', Str_replace ( ',', ';', $data[$i+1])));
 							        	$credit = Str_replace ( ';', '.', Str_replace ( '.', '', Str_replace ( ',', ';', $data[$i+2])));
+							        	if($debit == '') 	$debit  = 0;
+							        	if($credit == '') 	$credit = 0;
 			    						if($mois_c != '01'){
 							        		$prev_mois = $comptabilite->get_previous_month($mois_c);
 			    							if($numero[0] != '6' && $numero[0] != '7')
