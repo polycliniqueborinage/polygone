@@ -1613,7 +1613,7 @@
 			    				for($i=0; $i<count($data); $i++){ 
 			    					
 			    					//fwrite($Handle,  is_numeric(substr($data[$i],0, 6)));
-			    				    
+			    			fwrite($debug, $data[$i]);	    
 			    					if((is_numeric(substr($data[$i], 0, 6))) && (substr($data[$i], 7, 1) == '-')){
 							        	$libelle = "";
 			    						//$libelle = htmlentities(substr($data[$i], 9, $data[$i].length), ENT_QUOTES | ENT_IGNORE, "UTF-8");
@@ -1635,7 +1635,7 @@
 										}
 								       	$sql  = "INSERT INTO comptes (`numero`, `mois`, `annee`, `libelle`, `date`, `debit`, `credit`) VALUES ('$numero', '$mois_c', '$annee_c','$libelle', '$date', '$debit', '$credit')";
 								        $ins  = mysql_query($sql);
-								        fwrite($debug, $sql);
+								        
 
 										while(!$comptabilite->get_account($numero, $prev_mois, $annee_c) && $prev_mois != ''){
 											
