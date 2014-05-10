@@ -1520,8 +1520,7 @@
 	        if($error == 0){
 	        	
 	        	$datei_final = CL_ROOT . "/files/" . CL_CONFIG . "/command/" . $fname;
-	        	$debug = fopen('debug.txt', 'w');
-	        	fwrite($debug, $datei_final);
+	        	
 	        	if (move_uploaded_file($tmp_name, $datei_final));
 	        	else print 'Erreur lors de l\'ouverture du fichier...';
 			        
@@ -1613,10 +1612,10 @@
 			    				for($i=0; $i<count($data); $i++){ 
 			    					
 			    					//fwrite($Handle,  is_numeric(substr($data[$i],0, 6)));
-			    			fwrite($debug, $data[$i]);	    
+  
 			    					if((is_numeric(substr($data[$i], 0, 6))) && (substr($data[$i], 7, 1) == '-')){
-							        	$libelle = "";
-			    						//$libelle = htmlentities(substr($data[$i], 9, $data[$i].length), ENT_QUOTES | ENT_IGNORE, "UTF-8");
+							        	
+			    						$libelle = htmlentities(substr($data[$i], 9, $data[$i].length), ENT_QUOTES | ENT_IGNORE, "UTF-8");
 					        			$date   = $annee_c.'-'.$mois_c.'-01';
 							        	$numero  = substr($data[$i], 0, 6);
 							        	$debit  = Str_replace ( ';', '.', Str_replace ( '.', '', Str_replace ( ',', ';', $data[$i+1])));
@@ -1653,7 +1652,6 @@
 		        		break;
         		}
         		fclose($handle);
-        		fclose($debug);	
 
 				$mylog->add('product','flow',"add command");
 				
