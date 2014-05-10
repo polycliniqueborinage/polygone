@@ -1640,10 +1640,11 @@
 											
 											$date   = $annee_c.'-'.$prev_mois.'-01';
 											$sql  = "INSERT INTO comptes (`numero`, `mois`, `annee`, `libelle`, `date`, `debit`, `credit`) VALUES ('$numero', '$prev_mois', '$annee_c','$libelle', '$date', '0', '0')";
-									        $ins  = mysql_query($sql);	
+									        $ins  = mysql_query($sql);
+									        fwrite($debug, $sql);	
 									        $prev_mois = $comptabilite->get_previous_month($prev_mois);
 										}
-			    					}else{fwrite($debug, $data[$i]);}    
+			    					}    
 			    				}    
 		        			
 					    
