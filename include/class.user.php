@@ -26,7 +26,7 @@ class user
     function create_calendar_table($insid)
     {
 	    //CREATE DATABASE FOR CALENDAR
-        $sql1 = "CREATE TABLE `agenda_".$insid."` (
+        /*$sql1 = "CREATE TABLE `agenda_".$insid."` (
 					`ID` int(11) NOT NULL auto_increment,
 					`date` date NOT NULL,
   					`midday` varchar(32) NOT NULL,
@@ -38,6 +38,22 @@ class user
   					`position` int(11) NOT NULL,
   					`brothers` varchar(32) NOT NULL,
   					`number_brothers` int(11) NOT NULL,
+  					`color1` varchar(7) NOT NULL,
+  					`color2` varchar(7) NOT NULL,
+  					`patient` varchar(32) NOT NULL,
+  					`patient_ID` int(11) NOT NULL default '0',
+  					`motif` varchar(32) NOT NULL,
+  					`motif_ID` int(11) NOT NULL default '0',
+  					`location` varchar(32) NOT NULL,
+  					`comment` varchar(256) NOT NULL,
+  					PRIMARY KEY  (`ID`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+			*/
+    		$sql1 = "CREATE TABLE `agenda_".$insid."` (
+					`ID` int(11) NOT NULL auto_increment,
+  					`type` varchar(32) NOT NULL,
+ 					`start_date` int(11) NOT NULL,
+  					`end_date` int(11) NOT NULL,
   					`color1` varchar(7) NOT NULL,
   					`color2` varchar(7) NOT NULL,
   					`patient` varchar(32) NOT NULL,
@@ -667,6 +683,18 @@ class user
             if (isset($profile["wsr_refdate"]))
             {
                 $profile["wsr_refdate"] = htmlentities(stripcslashes($profile["wsr_refdate"]));
+            }
+        	if (isset($profile["gender"]))
+            {
+                $profile["gender"] = htmlentities(stripcslashes($profile["gender"]));
+            }
+        	if (isset($profile["mobilephone"]))
+            {
+                $profile["mobilephone"] = htmlentities(stripcslashes($profile["mobilephone"]));
+            }
+        	if (isset($profile["email"]))
+            {
+                $profile["email"] = htmlentities(stripcslashes($profile["email"]));
             }
             return $profile;
         }
