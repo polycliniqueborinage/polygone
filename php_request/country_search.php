@@ -1,9 +1,9 @@
 <?php 
 
 	include("../init.php");
-	header('Content-Type: text/html; charset=utf-8');
+	header('Content-Type: text/html; charset=utf-8'); 
 
-  if (!isset($_SESSION['userid'])) {
+	if (!session_is_registered("userid")){
 		$template->assign("loginerror", 0);
 		$template->display("login.tpl");
 	    die();

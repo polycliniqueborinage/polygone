@@ -1,9 +1,9 @@
 <? 
 	require("./init.php");
-
-
-
-if (!isset($_SESSION['userid'])) {
+	
+	
+	
+	if (!session_is_registered("userid")){
 		$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();

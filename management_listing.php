@@ -2,7 +2,7 @@
 
 	require("./init.php");
 
-  if (!isset($_SESSION['userid'])) {
+	if (!session_is_registered("userid")){
 		$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();
@@ -62,13 +62,13 @@
 			include("./include/class.fpdf.php");
 			
     		$title1 = "Total";
-			$title2 = "Mï¿½decin";
+			$title2 = "Médecin";
 			$title3 = "Polyclinique";
-			$title4 = "Ticket modï¿½rateur";
+			$title4 = "Ticket modérateur";
 
-			$title31 = "Mï¿½decin";
+			$title31 = "Médecin";
 			$title32 = "Total";
-			$title33 = "Mï¿½d.";
+			$title33 = "Méd.";
 			$title34 = "Poly";
 			$title35 = "T.M.";
 			
@@ -171,9 +171,9 @@
 				$pdf->Cell($width[3],$row_height,'Patient','LTB');
 				$pdf->Cell($width[4],$row_height,'Matricule','LTB');
 				$pdf->Cell($width[5],$row_height,'Titulaire','LTB');	
-				$pdf->Cell($width[6],$row_height,'Mï¿½decin.','LTB');
+				$pdf->Cell($width[6],$row_height,'Médecin.','LTB');
 				$pdf->Cell($width[7],$row_height,'Cecodi','LTB');
-				$pdf->Cell($width[8],$row_height,'Coï¿½t','LRTB');
+				$pdf->Cell($width[8],$row_height,'Coût','LRTB');
 				$pdf->Ln();
 				
 				$sqlglobal= "SELECT td.id as tarification_detail_id, ta.cloture as tarification_date_cloture, DATE_FORMAT(ta.date, GET_FORMAT(DATE, 'EUR')) as tarification_date, ta.mutuelle_code as tarification_mutuelle_code, ta.patient_matricule as tarification_patient_matricule, concat(ta.ct1, '/' ,ta.ct2) as tarification_patient_cts, ta.titulaire_matricule as tarification_titulaire_matricule, ta.medecin_inami as tarification_medecin_inami, pa.nom as patient_nom, pa.prenom as patient_prenom, ti.nom as titulaire_nom, ti.prenom as titulaire_prenom, me.nom as medecin_nom, me.prenom as medecin_prenom, td.cecodi as cecodi, round((td.cout_mutuelle - td.cout),2) as cout 
@@ -200,9 +200,9 @@
 						$pdf->Cell($width[3],$row_height,'Patient','LTB');
 						$pdf->Cell($width[4],$row_height,'Matricule','LTB');
 						$pdf->Cell($width[5],$row_height,'Titulaire','LTB');	
-						$pdf->Cell($width[6],$row_height,'Mï¿½decin.','LTB');
+						$pdf->Cell($width[6],$row_height,'Médecin.','LTB');
 						$pdf->Cell($width[7],$row_height,'Cecodi','LTB');
-						$pdf->Cell($width[8],$row_height,'Coï¿½t','LRTB');
+						$pdf->Cell($width[8],$row_height,'Coût','LRTB');
 						$pdf->Ln();
 				
 			
@@ -248,7 +248,7 @@
 
 			// Titre
 			$pdf->SetFont('Arial','B',16);
-			$pdf->Cell(18,10,"Rï¿½capitulatif");
+			$pdf->Cell(18,10,"Récapitulatif");
 			$pdf->Ln();
 			$pdf->Ln();
 			$pdf->Ln();

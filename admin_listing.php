@@ -2,7 +2,7 @@
 
 	require("./init.php");
 
-  if (!isset($_SESSION['userid'])) {
+	if (!session_is_registered("userid")){
 		$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();
@@ -282,13 +282,13 @@
 			include("./include/class.fpdf.php");
 			 
     		$title1 = "Total";
-			$title2 = "Mï¿½decin";
+			$title2 = "Médecin";
 			$title3 = "Polyclinique";
-			$title4 = "Ticket modï¿½rateur";
+			$title4 = "Ticket modérateur";
 
-			$title31 = "Mï¿½decin";
+			$title31 = "Médecin";
 			$title32 = "Total";
-			$title33 = "Mï¿½d.";
+			$title33 = "Méd.";
 			$title34 = "Poly";
 			$title35 = "T.M.";
 			$title36 = "Code Analytique";
@@ -373,9 +373,9 @@
 				$pdf->Cell($width[1],$row_height,'Mut','LTB');
 				$pdf->Cell($width[2],$row_height,'Patient','LTB');
 				$pdf->Cell($width[3],$row_height,'Matricule','LTB');
-				$pdf->Cell($width[4],$row_height,'% Mï¿½d.','LTB');
+				$pdf->Cell($width[4],$row_height,'% Méd.','LTB');
 				$pdf->Cell($width[5],$row_height,'Cecodi','LTB');	
-				$pdf->Cell($width[6],$row_height,'Mï¿½d.','LTB');
+				$pdf->Cell($width[6],$row_height,'Méd.','LTB');
 				$pdf->Cell($width[7],$row_height,'Poly','LRTB');
 				//$pdf->Cell($width[8],$row_height,'T.M.','LRTB');
 				$pdf->Ln();
@@ -401,9 +401,9 @@
 						$pdf->Cell($width[1],$row_height,'Mut','LTB');
 						$pdf->Cell($width[2],$row_height,'Patient','LTB');
 						$pdf->Cell($width[3],$row_height,'Matricule','LTB');
-						$pdf->Cell($width[4],$row_height,'% Mï¿½d.','LTB');
+						$pdf->Cell($width[4],$row_height,'% Méd.','LTB');
 						$pdf->Cell($width[5],$row_height,'Cecodi','LTB');	
-						$pdf->Cell($width[6],$row_height,'Mï¿½d.','LTB');
+						$pdf->Cell($width[6],$row_height,'Méd.','LTB');
 						$pdf->Cell($width[7],$row_height,'Poly','LRTB');
 						//$pdf->Cell($width[8],$row_height,'T.M.','LRTB');
 						$pdf->Ln();
@@ -458,7 +458,7 @@
 
 			// Titre
 			$pdf->SetFont('Arial','B',16);
-			$pdf->Cell(18,10,"Rï¿½capitulatif");
+			$pdf->Cell(18,10,"Récapitulatif");
 			$pdf->Ln();
 			$pdf->Ln();
 			$pdf->Ln();
@@ -540,10 +540,10 @@
 			
 		    $pdf->Output("listing-medecin.pdf", "d");
 		    
-		    // Envoi mail ï¿½ ponchon
+		    // Envoi mail ˆ ponchon
 		    $mail .= "</table></html>";
 		    $maildate = date('Y-m-d h:m:s');
-		    $mailing_id = $mailing->add('listing','polygone','polygone@polycliniqueborinage.org','Michel Ponchon','mponchon@gmail.com',$maildate,'Impression du listing des mï¿½decins',$mail);
+		    $mailing_id = $mailing->add('listing','polygone','polygone@polycliniqueborinage.org','Michel Ponchon','mponchon@gmail.com',$maildate,'Impression du listing des mŽdecins',$mail);
 			
 			break;
 
@@ -553,13 +553,13 @@
 			include("./include/class.fpdf.php");
 			
     		$title1 = "Total";
-			$title2 = "Mï¿½decin";
+			$title2 = "Médecin";
 			$title3 = "Polyclinique";
-			$title4 = "Ticket modï¿½rateur";
+			$title4 = "Ticket modérateur";
 
-			$title31 = "Mï¿½decin";
+			$title31 = "Médecin";
 			$title32 = "Total";
-			$title33 = "Mï¿½d.";
+			$title33 = "Méd.";
 			$title34 = "Poly";
 			$title35 = "T.M.";
 			$title36 = "Code Analytique";
@@ -656,9 +656,9 @@
 				$pdf->Cell($width[1],$row_height,'Mut','LTB');
 				$pdf->Cell($width[2],$row_height,'Patient','LTB');
 				$pdf->Cell($width[3],$row_height,'Matricule','LTB');
-				$pdf->Cell($width[4],$row_height,'% Mï¿½d.','LTB');
+				$pdf->Cell($width[4],$row_height,'% Méd.','LTB');
 				$pdf->Cell($width[5],$row_height,'Cecodi','LTB');	
-				$pdf->Cell($width[6],$row_height,'Mï¿½d.','LTB');
+				$pdf->Cell($width[6],$row_height,'Méd.','LTB');
 				$pdf->Cell($width[7],$row_height,'Poly','LRTB');
 				//$pdf->Cell($width[8],$row_height,'T.M.','LRTB');
 				$pdf->Ln();
@@ -685,9 +685,9 @@
 						$pdf->Cell($width[1],$row_height,'Mut','LTB');
 						$pdf->Cell($width[2],$row_height,'Patient','LTB');
 						$pdf->Cell($width[3],$row_height,'Matricule','LTB');
-						$pdf->Cell($width[4],$row_height,'% Mï¿½d.','LTB');
+						$pdf->Cell($width[4],$row_height,'% Méd.','LTB');
 						$pdf->Cell($width[5],$row_height,'Cecodi','LTB');	
-						$pdf->Cell($width[6],$row_height,'Mï¿½d.','LTB');
+						$pdf->Cell($width[6],$row_height,'Méd.','LTB');
 						$pdf->Cell($width[7],$row_height,'Poly','LRTB');
 						//$pdf->Cell($width[8],$row_height,'T.M.','LRTB');
 						$pdf->Ln();
@@ -743,7 +743,7 @@
 
 			// Titre
 			$pdf->SetFont('Arial','B',16);
-			$pdf->Cell(18,10,"Rï¿½capitulatif");
+			$pdf->Cell(18,10,"Récapitulatif");
 			$pdf->Ln();
 			$pdf->Ln();
 			$pdf->Ln();
@@ -827,10 +827,10 @@
 			
 		    $pdf->Output("listing-medecin.pdf", "d");
 		    
-		    // Envoi mail ï¿½ ponchon
+		    // Envoi mail ˆ ponchon
 		    $mail .= "</table></html>";
 		    $maildate = date('Y-m-d h:m:s');
-		    $mailing_id = $mailing->add('listing','polygone','polygone@polycliniqueborinage.org','Michel Ponchon','mponchon@gmail.com',$maildate,'Impression du listing des mï¿½decins',$mail);
+		    $mailing_id = $mailing->add('listing','polygone','polygone@polycliniqueborinage.org','Michel Ponchon','mponchon@gmail.com',$maildate,'Impression du listing des mŽdecins',$mail);
 			
 			break;	
 				

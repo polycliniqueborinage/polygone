@@ -7,7 +7,7 @@
 	$mode = getArrayVal($_GET, "mode");
 	
 	if ($action != "login" and $action != "login_bckg" and $action != "logout") {
-    if (!isset($_SESSION['userid'])) {
+		if (!session_is_registered("userid"))
 		{
 			$locale = getArrayVal($_GET, "locale");
 			if (!empty($locale)){

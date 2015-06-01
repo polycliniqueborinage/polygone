@@ -1,7 +1,7 @@
 <?php
 	require("./init.php");
 
-  if (!isset($_SESSION['userid'])) {
+	if (!session_is_registered("userid")){
 		$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();
@@ -767,15 +767,15 @@
 			//A supprimer pour prod
 			//ftp_chdir($conn_id, "Documents");ftp_chdir($conn_id, "TestsFTP"); 
 			
-			// Rï¿½cupï¿½ration du contenu d'un dossier
+			// RŽcupŽration du contenu d'un dossier
 			$contents = ftp_nlist($conn_id, ".");
 			for($i=0; $i<count($contents); $i++){
 				$remote_file = $contents[$i];
 				$local_file  = $inputLocation.$contents[$i];
 			
-				// Ouverture du fichier pour ï¿½criture
+				// Ouverture du fichier pour Žcriture
 				$handleLocal = fopen($local_file, 'w');
-				// Tente de tï¿½lï¿½chargement le fichier $remote_file et de le sauvegarder dans $handle
+				// Tente de tŽlŽchargement le fichier $remote_file et de le sauvegarder dans $handle
 				//ftp_fget($conn_id, $handleLocal, $remote_file, FTP_ASCII, 0);
 				if (ftp_fget($conn_id, $handleLocal, $remote_file, FTP_ASCII, 0)) {
 					fclose($handleLocal);
@@ -849,7 +849,7 @@
 					        }
 					    }
 					    /*if (!feof($handle)) {
-					        echo "Erreur: fgets() a ï¿½chouï¿½\n";
+					        echo "Erreur: fgets() a ŽchouŽ\n";
 					    }*/
 					    fclose($handle);
 					    copy($inputLocation.$filename, $endLocation.$filename);
@@ -859,7 +859,7 @@
 			    
 			    closedir($handle);
 			}
-				echo"Chargement terminï¿½.";	
+				echo"Chargement terminŽ.";	
 				$loc = $url . "user_menu.php";
 			    header("Location: $loc");
 			break;

@@ -2,7 +2,7 @@
 
 	require("./init.php");
 
-  if (!isset($_SESSION['userid'])) {
+	if (!session_is_registered("userid")){
 		$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();
@@ -846,7 +846,7 @@
 			// set document information
 			$pdf->SetCreator(PDF_CREATOR);
 			$pdf->SetAuthor('MariqueCalcus');
-			$pdf->SetTitle('Statut comptabilitï¿½');
+			$pdf->SetTitle('Statut comptabilit');
 			$pdf->SetSubject($mois.' - '.$annee);
 			
 			// set default header data
@@ -2035,7 +2035,7 @@
 					$curseur = $i;
 						
 				$h[$i]->init(255,255,0,
-				"sï¿½rie 1",
+				"srie 1",
 				array($comptabilite->get_cumul('1', '01', $curseur, $annee_de), 
 					  $comptabilite->get_cumul('2', '01', $curseur, $annee_de), 
 				 	  $comptabilite->get_cumul('3', '01', $curseur, $annee_de), 
@@ -2051,7 +2051,7 @@
 			
 			$h1 = new TGDListeCouleur;
 			$h1->init(255,255,255,
-			"sï¿½rie 1",
+			"srie 1",
 			array("classe1", "classe2", "classe3", "classe4", "classe5",
 			      "Benefice (+)"));
 			$maitre->add($h1); 
@@ -2087,7 +2087,7 @@
 					$curseur = $i;
 						
 				$h[$i]->init(255,255,0,
-				"sï¿½rie 2",
+				"srie 2",
 				array($comptabilite->get_cumul('60', '01', $curseur, $annee_de), 
 					  $comptabilite->get_cumul('61', '01', $curseur, $annee_de), 
 				 	  $comptabilite->get_cumul('62', '01', $curseur, $annee_de), 
@@ -2102,7 +2102,7 @@
 			
 			$h2 = new TGDListeCouleur;
 			$h2->init(255,255,255,
-			"sï¿½rie 2",
+			"srie 2",
 			array("classe60", "classe61", "classe62", "classe63", "classe64",
 			      "classe66", "classe67"));
 			$maitre->add($h2); 
@@ -2153,7 +2153,7 @@
 				$marge_brute = -1 * ( $comptabilite->get_cumul('70', '01', $curseur, $annee_de) + $comptabilite->get_cumul('72', '01', $curseur, $annee_de) ) - 
 			    		            $comptabilite->get_cumul('60', '01', $curseur, $annee_de);                         
 				$h[$i]->init(255,255,0,
-				"sï¿½rie 3",
+				"srie 3",
 				array(-1 * $comptabilite->get_cumul('70', '01', $curseur, $annee_de),
 					  -1 * $comptabilite->get_cumul('72', '01', $curseur, $annee_de), 
 					  -1 * $comptabilite->get_cumul('74', '01', $curseur, $annee_de), 
@@ -2169,7 +2169,7 @@
 			
 			$h3 = new TGDListeCouleur;
 			$h3->init(255,255,255,
-			"sï¿½rie 3",
+			"srie 3",
 			array("classe70", "classe72", "classe74", "classe75", "classe76", "Benefice FR", "Marge brute"));
 			$maitre->add($h3); 
 			

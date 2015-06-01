@@ -9,7 +9,7 @@ $mode = getArrayVal($_GET, "mode");
 
 if ($action != "login" and $action != "logout")
 {
-  if (!isset($_SESSION['userid'])) {
+    if (!session_is_registered("userid"))
     {
         $template->assign("loginerror", 0);
         $template->display("login.tpl");

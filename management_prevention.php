@@ -2,7 +2,7 @@
 
 	require("./init.php");
 
-  if (!isset($_SESSION['userid'])) {
+	if (!session_is_registered("userid")){
 		$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();
@@ -451,7 +451,7 @@
 					
 					//Un record existe deja pour ce motif et cette personne
 					// Si status = contacte
-					// Si le patient a ete contactï¿½ depuis plus de la moiter du temps du rappel
+					// Si le patient a ete contactŽ depuis plus de la moiter du temps du rappel
 					if($recurrence < $prevention->getDiffDay($contact['date_derniere_modification'],$today)){
 							//supprimer l'ancien record and ajouter le nouveau
 							$sql = "UPDATE `mp_pile` SET statut='a_contacter', date_derniere_modification='$today', date_derniere_verification='$today' WHERE id_motif = ".$id." AND id_patient = ".$record['id']."  AND statut != 'deleted'";
@@ -496,7 +496,7 @@
 					
 			}
 			
-			//quid de suppression qui n'ont pas ï¿½tï¿½ touchï¿½s et donc ne sont plus valides
+			//quid de suppression qui n'ont pas ŽtŽ touchŽs et donc ne sont plus valides
 			$sql = "UPDATE `mp_pile` SET date_derniere_modification='$today', date_derniere_verification='$today', `statut`='termine' WHERE `date_derniere_verification` < '$today' AND `statut` != 'termine'  AND `id_motif` = '$id'";
 			$result = mysql_query($sql); 
 			$reponse['deleted'] = mysql_affected_rows();
