@@ -769,11 +769,11 @@ class user
             $_SESSION['adminstate'] = $chk['admin'];
             $_SESSION['lastlogin'] = $now;
             $_SESSION['userlocale'] = $chk['locale'];
-            session_register('userid');
-            session_register('username');
-            session_register('adminstate');
-            session_register('lastlogin');
-            session_register('userlocale');
+            //session_register('userid');
+            //session_register('username');
+            //session_register('adminstate');
+            //session_register('lastlogin');
+            //session_register('userlocale');
             $userid = $_SESSION['userid'];
             $seid = session_id();
             $staylogged = getArrayVal($_POST, 'staylogged');
