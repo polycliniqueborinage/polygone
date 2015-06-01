@@ -1,3 +1,5 @@
+files/standard/command/
+files/traitedfiles/
 templates_c/*
 templates_c/
 config/standard/config.php
