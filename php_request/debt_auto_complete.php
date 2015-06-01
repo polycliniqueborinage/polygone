@@ -1,8 +1,8 @@
 <?php
 
 	include("../init.php");
-	
-	if (!session_is_registered("userid")){
+
+  if (!isset($_SESSION['userid'])) {
 		$template->assign("loginerror", 0);
 		$template->display("login.tpl");
 	    die();
@@ -52,7 +52,7 @@
   $reponse['email'] = utf8_encode($email);
   
   // on a notre objet $reponse (un array en fait)
-  // reste juste ˆ l'encoder en JSON et l'envoyer
+  // reste juste ï¿½ l'encoder en JSON et l'envoyer
 
   header('Content-Type: application/json');
   echo json_encode($reponse);

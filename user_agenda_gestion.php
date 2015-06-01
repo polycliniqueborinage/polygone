@@ -1,7 +1,7 @@
 <?php
 	require("./init.php");
-	
-	if (!session_is_registered("userid")){
+
+if (!isset($_SESSION['userid'])) {
 	    $template->assign("loginerror", 0);
 	    $mode = getArrayVal($_GET, "mode");
 	    $template->assign("mode", $mode);
@@ -127,7 +127,7 @@
 			$day = strtok("-");
 			
     		if ($dayofweek != 0) {
-    			// si dimanche datenaumber = 0 mais devrait tre 7
+    			// si dimanche datenaumber = 0 mais devrait ï¿½tre 7
 				$dateNumber =  date("w", mktime(0, 0, 0, $month, $day, $year)); 
 				if ($dateNumber == 0) $dateNumber = 7;
 				$temp = ($dayofweek - $dateNumber);
@@ -220,7 +220,7 @@
    		case "agenda_event":
 
    			if ($dayofweek != 0) {
-    			// si dimanche datenaumber = 0 mais devrait tre 7
+    			// si dimanche datenaumber = 0 mais devrait ï¿½tre 7
 				$dateNumber =  date("w", mktime(0, 0, 0, $currentMonth, $currentDay, $currentYear)); 
 				if ($dateNumber == 0) $dateNumber = 7;
 				$temp = ($dayofweek - $dateNumber);

@@ -3,7 +3,7 @@
 require("../../init.php");
 
 
-if (!session_is_registered("userid"))
+if (!isset($_SESSION['userid'])) {
 {
     $template->assign("loginerror", 0);
     $mode = getArrayVal($_GET, "mode");

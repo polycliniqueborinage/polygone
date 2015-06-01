@@ -41,7 +41,7 @@ $template->assign("myversion", CL_VERSION);
 $template->assign("cl_config",CL_CONFIG);
 
 // Assign globals to all templates
-if (session_is_registered("userid")) {
+if (isset($_SESSION['userid'])) {
 	$userid = $_SESSION["userid"];
 	$username = $_SESSION["username"];
 	$adminstate = $_SESSION["adminstate"];
