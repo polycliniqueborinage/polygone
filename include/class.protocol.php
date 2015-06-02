@@ -258,7 +258,7 @@ class protocol
 		$find_protocol_date->nodeValue = $date;
 		$find_protocol_time->nodeValue = "12:00";
 		
-		$text = utf8_encode(html_entity_decode($text));
+		$text = utf8_encode(html_entity_decode ($text, ENT_COMPAT | ENT_HTML401, 'ISO-8859-1'));
 		
 		$f = $doc->createDocumentFragment();
 		$f->appendXML($text);
