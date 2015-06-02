@@ -650,9 +650,9 @@ class sumehr
     function subHTML($html) {
     	$maxchar = 256;
     	if (strlen($html)>$maxchar) {
-    		return substr(html_entity_decode($html),0,$maxchar)."...";
+    		return substr(html_entity_decode($html, ENT_COMPAT | ENT_HTML401, 'ISO-8859-1'),0,$maxchar)."...";
     	} else {
-    		return substr(html_entity_decode($html),0,$maxchar);
+    		return substr(html_entity_decode($html, ENT_COMPAT | ENT_HTML401, 'ISO-8859-1'),0,$maxchar);
     	}
     }
 
