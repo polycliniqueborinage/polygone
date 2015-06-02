@@ -263,8 +263,8 @@ $template->assign("loginerror", 0);
 			
 			if($searchOn || $filterOn) {
 			    
-			    $searchString = html_entity_decode($_REQUEST['filters']);
-			    $wh= constructWhere($searchString);
+			$searchString = html_entity_decode ($_REQUEST['filters'], ENT_COMPAT | ENT_HTML401, 'ISO-8859-1');
+			$wh= constructWhere($searchString);
 			    
 			}
 
