@@ -2,7 +2,7 @@
 
 	require("./init.php");
 
-	if (!session_is_registered("userid")){
+	if (!$_SESSION['userid']){
 		$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();
@@ -36,9 +36,10 @@
 	}
 	
 	$mylog = (object) new mylog();
-	$workschedule = (object) new workschedule();
-	$user_group   = (object) new user_group();
-	$user         = (object) new user(); 
+	$workschedule   = (object) new workschedule();
+	$user_group     = (object) new user_group();
+	$user           = (object) new user();
+	$timemanagement = (object) new timemanagement(); 
 	
 	switch ($action) {
 		case "teamcalendar":
@@ -120,6 +121,51 @@
 			
 		break;
 		
+	case "json_list_groupes":
+			
+			$examp 	= $_REQUEST["q"]; //query number
+			$page 	= $_REQUEST['page']; // get the requested page
+			$limit 	= $_REQUEST['rows']; // get how many rows we want to have into the grid
+			$sidx 	= $_REQUEST['sidx']; // get index row - i.e. user click to sort
+			$sord 	= $_REQUEST['sord']; // get the direction
+			if($sidx == '') $sidx = 'nom';
+			if($sord == '') $sidx = 'ASC';
+			
+			// search on
+			$searchOn = $_REQUEST['_search'];
+			
+			// filter
+			$filterOn = $_REQUEST['filters'];
+			
+			$search_nom 	= $_REQUEST['nom'];
+			$search_leader 	= $_REQUEST['leader'];
+			
+			    // add simple search
+		    if ($search_nom != "") {
+		        $wh .= " AND description like '%".$search_nom."%' ";
+		    }
+			if ($search_leader != "") {
+		        $wh .= " AND ( u.familyname like '%".$search_leader."%' OR u.firstname like '%".$search_leader."%' ) ";
+		    }
+			
+			// pagination
+			$count = $user_group->countGroup($wh);
+			$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
+			$page = ($page > $total_pages) ? $total_pages : $page;
+			$start = $limit * $page - $limit;			
+			$start = ($start < 0) ? 0 : $start;
+			
+			$sqlglobal = "select ug.id, ug.description, concat(u.familyname, ' ', u.firstname) as leader FROM user_group ug, user u WHERE ug.leader = u.ID ".$wh;
+			
+			$responce->page = $page;
+			$responce->total = $total_pages;
+			$responce->records = $count;
+			
+			$responce->rows = $user_group->get_jsonGroup($sqlglobal,$langfile,'admin_grh.php');
+			
+			echo json_encode($responce);
+			
+		break;		
 		    
 		case "delete_ug":
 			
@@ -174,7 +220,57 @@
 			$template->display("template_admin_usergroup_assignment_list.tpl");
 			
 		break;	
-/*A continuer ici*/
+		
+	case "json_list_assignments":
+			
+			$examp 	= $_REQUEST["q"]; //query number
+			$page 	= $_REQUEST['page']; // get the requested page
+			$limit 	= $_REQUEST['rows']; // get how many rows we want to have into the grid
+			$sidx 	= $_REQUEST['sidx']; // get index row - i.e. user click to sort
+			$sord 	= $_REQUEST['sord']; // get the direction
+			if($sidx == '') $sidx = 'nom';
+			if($sord == '') $sidx = 'ASC';
+			
+			// search on
+			$searchOn = $_REQUEST['_search'];
+			
+			// filter
+			$filterOn = $_REQUEST['filters'];
+			
+			$search_nom 	= $_REQUEST['nom'];
+			$search_leader 	= $_REQUEST['leader'];
+			$search_member 	= $_REQUEST['member'];
+			
+			    // add simple search
+		    if ($search_nom != "") {
+		        $wh .= " AND description like '%".$search_nom."%' ";
+		    }
+			if ($search_leader != "") {
+		        $wh .= " AND ( u2.familyname like '%".$search_leader."%' OR u2.firstname like '%".$search_leader."%' ) ";
+		    }
+			if ($search_member != "") {
+		        $wh .= " AND ( u.familyname like '%".$search_member."%' OR u.firstname like '%".$search_member."%' ) ";
+		    }
+			
+			// pagination
+			$count = $user_group->countAssignment($wh);
+			$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
+			$page = ($page > $total_pages) ? $total_pages : $page;
+			$start = $limit * $page - $limit;			
+			$start = ($start < 0) ? 0 : $start;
+			
+			$sqlglobal = "select u.id, ug.description, concat(u2.familyname, ' ', u2.firstname) as leader, concat(u.familyname, ' ', u.firstname) as member FROM user u, user u2, user_group ug, group_assignment ga WHERE ga.user_id = u.ID AND ga.group_id = ug.id AND u2.ID = ug.leader ".$wh;
+			
+			$responce->page = $page;
+			$responce->total = $total_pages;
+			$responce->records = $count;
+			
+			$responce->rows = $user_group->get_jsonAssignment($sqlglobal,$langfile,'admin_grh.php');
+			
+			echo json_encode($responce);
+			
+		break;		
+
 		case 'wsr_pdf':
             
 			require_once('./libraries/tcpdf/config/lang/eng.php');
@@ -364,6 +460,39 @@
 			$template->assign("title", $title);
 			$template->display("template_management_workschedule_wsr_list.tpl");	
 		break;	
+		
+		case "leave_overview":
+			$title = $langfile["dico_management_admin_people_search_leave"];
+			$template->assign("title", $title);
+			$template->display("template_admin_people_leave_search.tpl");	
+		break;
+		
+		case "delete_request":
+			$requestid  = $_GET["requestid"];	
+			if($requestid != ""){
+				$timemanagement->removeAbsence($requestid);
+			}
+			$message = $langfile["dico_management_request_deleted"];
+			$loc = $url . "admin_grh.php?action=leave_overview&message=".html_entity_decode(stripslashes($message));
+		    header("Location: $loc");
+		break;
+		
+		case "modulesearch":
+
+			$request = $timemanagement->modulesearchRequestByUser($id,$value,$limit);
+			
+			$template->assign("request", $request);
+
+			if ($type == 'complete') {
+				$template->display("template_management_gestion_complete_search.tpl");
+			} else {
+				if ($type == 'simple') {
+					$template->display("template_management_gestion_simple_search.tpl");
+				} else {
+				}
+			}
+			
+		break;
 
 		default:
 			

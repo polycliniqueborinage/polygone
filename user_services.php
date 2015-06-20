@@ -2,7 +2,7 @@
 
 	require("./init.php");
 
-	if (!session_is_registered("userid")){
+	if (!$_SESSION['userid']){
 		$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();
@@ -94,6 +94,7 @@
 					$next_date = $year."-02-01";
 					$year = $year - 1;
 					$prev_date = $year."-12-01";
+					$year = $year + 1;
 					break;
 				case "02":
 					$prev_date = $year."-01-01";
@@ -139,6 +140,7 @@
 					$prev_date = $year."-11-01";
 					$year = $year + 1;
 					$next_date = $year."-01-01";
+					$year = $year - 1;
 					break;											
 			}
 			$absences = array();
@@ -206,7 +208,12 @@
 					if(count($absence) > 1){
 						$groupmembers[$i][$d*8+4]["daycolor"]	 	= $langfile["dico_user_myservices_leaverequest_multipled"];
 					}	
-						
+					
+					
+					}
+					
+					if($workschedule->isPublicHoliday($d, $month, $year)){
+						$groupmembers[$i][$d*8+4]["daycolor"]	 	= $langfile["dico_user_myservices_leaverequest_pubhol"];
 					}
 						
 					if($i == 0){
@@ -224,6 +231,7 @@
 	
 				}
 			}
+			
 			$title = $langfile["navigation_title_management_daily_wsr_liste"];
 			$template->assign("title", $title);
 			$template->assign("groupmembers", $groupmembers);
@@ -278,6 +286,39 @@
 					$template->assign("mois", $langfile["december"]);
 					break;				
 			}
+			
+			$legendes = array();
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_working"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_working_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_pending"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_pending_label"];
+			array_push($legendes, $legende);
+			
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_weekend"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_weekend_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_multipled"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_multipled_label"];
+			array_push($legendes, $legende);
+			
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_pubhol"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_pubhol_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_rejected"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_rejected_label"];
+			array_push($legendes, $legende);
+			
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_nowork"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_nowork_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_approved"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_approved_label"];
+			array_push($legendes, $legende);
+			
+			
+			$template->assign("legendes", $legendes);
+			
 			$template->display("template_user_teamcalendar.tpl");
 			
 			break;
@@ -295,6 +336,7 @@
 					$next_date = $year."-02-01";
 					$year = $year - 1;
 					$prev_date = $year."-12-01";
+					$year = $year + 1;
 					break;
 				case "02":
 					$prev_date = $year."-01-01";
@@ -340,6 +382,7 @@
 					$prev_date = $year."-11-01";
 					$year = $year + 1;
 					$next_date = $year."-01-01";
+					$year = $year - 1;
 					break;											
 			}
 			$absences = array();
@@ -407,6 +450,13 @@
 					if(count($absence) > 1){
 						$myTeamMembers[$i][$d*8+4]["daycolor"]	 	= $langfile["dico_user_myservices_leaverequest_multipled"];
 					}	
+					
+					
+						
+					}
+					
+				if($workschedule->isPublicHoliday($d, $month, $year)){
+						$groupmembers[$i][$d*8+4]["daycolor"]	 	= $langfile["dico_user_myservices_leaverequest_pubhol"];
 						
 					}
 						
@@ -482,6 +532,39 @@
 					$template->assign("mois", $langfile["december"]);
 					break;				
 			}
+			
+			$legendes = array();
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_working"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_working_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_pending"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_pending_label"];
+			array_push($legendes, $legende);
+			
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_weekend"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_weekend_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_multipled"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_multipled_label"];
+			array_push($legendes, $legende);
+			
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_pubhol"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_pubhol_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_rejected"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_rejected_label"];
+			array_push($legendes, $legende);
+			
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_nowork"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_nowork_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_approved"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_approved_label"];
+			array_push($legendes, $legende);
+			
+			
+			$template->assign("legendes", $legendes);
+			
 			$template->display("template_user_teamcalendar.tpl");
 			
 			break;	
@@ -510,6 +593,8 @@
 					}	
 				}	
 			}
+			$template->assign("begda", $begda);
+			$template->assign("endda", $endda);
 			$template->assign("absences", $absences);
 			$template->assign("quotas", $quotas);
 			$template->assign("ismanager", $isManager);
@@ -517,6 +602,7 @@
 			break;	
 			
 		case "submit_absence_request":
+			$requestid  = $_POST["requestid"];
 			$begda 		= $_POST["begda"];
 			$endda 		= $_POST["endda"];
 			$absenceid 	= $_POST["absenceid"];
@@ -524,6 +610,9 @@
 			$endhr	 	= $_POST["endhr"];
 			$comment 	= $_POST["textcomment"];
 			
+			if($requestid != ""){
+				$timemanagement->removeAbsence($requestid);
+			}
 			$timemanagement->submitAbsence("submit", $myuser, $absenceid, $begda, $endda, $beghr, $endhr, $comment, '1', $groupchief["ID"]);
 			
 			$loc = $url . "user_services.php?action=leave_overview";
@@ -542,13 +631,21 @@
 		case "leave_overview":
 			$begda			= date("Y-m-d");
 			$endda			= date("Y-m-d");
+			$today			= date("Y-m-d");
 			
 			$absences = $timemanagement->getPendingAbsencesUser($myuser);
 			//$quotas   = $timemanagement->getUserActualQuotas($myuser, $begda, $endda);
+			for($i=0; $i<count($absences); $i++){
+				if(strtotime($absences[$i]["begda"]) > strtotime($today))
+					$absences[$i]["delstatus"] = "1";
+				else	
+					$absences[$i]["delstatus"] = "0";
+			}
 			
 			$template->assign("absences", $absences);
 			$template->assign("quotas", $quotas);
 			$template->assign("ismanager", $isManager);
+			$template->assign("message", $_GET["message"]);
 			$template->display("template_user_leaverequest_overview.tpl");
 			break;
 
@@ -558,6 +655,8 @@
 			
 			$tasks = $mss_services->getPendingTasksUser($myuser);
 			$requests = array();
+	
+			mysql_query($sql);
 			for($i=0; $i<count($tasks); $i++){
 				$status = explode('|', $tasks[$i]["nextstatus"]);
 				$request["actions"] = "<table><tr>";
@@ -600,7 +699,7 @@
 					if($timemanagement->processAbsence($requestid, $nextstatus)){
 						$request = $timemanagement->getRequestInfo($requestid);
 						$status  = $mss_services->getWFStatus($request["wf_id"], $nextstatus);
-						$message = $langfile["dico_management_tasks_request"]." ".stripslashes($status["description"]);
+						$message = $langfile["dico_management_tasks_request"]." ".html_entity_decode(stripslashes($status["description"]));
 						
 						if($nextstatus == 100){
 							$timemanagement->submitAbsence("approve", $request["requester"], $request["absenceid"], $request["begda"], $request["endda"], $request["beghr"], $request["endhr"], "", "", "");
@@ -617,12 +716,77 @@
 		    header("Location: $loc");
 		    
 		    break;
+
+		case "modify_request":
+			$requestid  = $_GET["requestid"];
+			$request = $timemanagement->getRequestInfo($requestid);
+			$begda			= substr($request["begda"], 6, 4)."-".substr($request["begda"],3, 2)."-".substr($request["begda"], 0, 2);
+			$endda			= substr($request["endda"], 6, 4)."-".substr($request["endda"],3, 2)."-".substr($request["endda"], 0, 2);
+			$myuser       	= $_SESSION["userid"];
+			$myuserdetails	= $user->getProfile($myuser);
+			$absences       = $timemanagement->getAllAbsences($myuserdetails["timegroupe"]);
+			//$quotas 		= $timemanagement->getUserActualQuotas($myuser, $begda, $endda);
+			for($i=0; $i< count($absences); $i++){
+				$quota = $timemanagement->getRemainingQuota($myuser, $absences[$i]["id"], $begda, $endda);
+				
+				if($quota >= 0){ 
+						$absences[$i]["description"] .= " (".$langfile["dico_user_myservices_remainingquota"]." ".$quota;
+						switch($absences[$i]["type"]){
+							case 'H':
+								$absences[$i]["description"] .= " ".$langfile["dico_userservices_remainingquota_hours"].")";
+								break;
+							case 'D':
+								$absences[$i]["description"] .= " ".$langfile["dico_userservices_remainingquota_days"].")";
+								break;	
+							default:
+								break;
+					}	
+				}	
+			}
+			$template->assign("begda", $begda);
+			$template->assign("endda", $endda);
+			$template->assign("request", $request);
+			$template->assign("absences", $absences);
+			$template->assign("quotas", $quotas);
+			$template->assign("ismanager", $isManager);
+			$template->display("template_user_leaverequest.tpl");
+			break;
+				    
+		case "delete_request":
+			$requestid  = $_GET["requestid"];	
+			if($requestid != ""){
+				$timemanagement->removeAbsence($requestid);
+			}
+			$message = $langfile["dico_management_request_deleted"];
+			$loc = $url . "user_services.php?action=leave_overview&message=".html_entity_decode(stripslashes($message));
+		    header("Location: $loc");
+			break;    
 			
 		case "modulesearch":
 
 			$employees = $mss_services->modulesearch($id,$value,$limit);
+			sort($myTeamMembers); 
+			$finalEmployees = array();
+			for($i=0; $i < count($employees); $i++){
+				for($j=0; $j<count($myTeamMembers); $j++){
+					if($myTeamMembers[$j]["ID"] == $employees[$i]["ID"]){
+						array_push($finalEmployees, $employees[$i]);
+						break;
+					}	
+				}
+			}
 			
-			$template->assign("employees", $employees);
+			if(count($finalEmployees) == 1){
+				$finalEmployees[0]["mon"] = $langfile["monday"];
+				$finalEmployees[0]["tue"] = $langfile["tuesday"];
+				$finalEmployees[0]["wed"] = $langfile["wednesday"];
+				$finalEmployees[0]["thu"] = $langfile["thursday"];
+				$finalEmployees[0]["fri"] = $langfile["friday"];
+				$finalEmployees[0]["sat"] = $langfile["saturday"];
+				$finalEmployees[0]["sun"] = $langfile["sunday"];
+			}
+			
+			$template->assign("employees", $finalEmployees);
 
 			if ($type == 'complete') {
 				$template->display("template_management_gestion_complete_search.tpl");
@@ -634,6 +798,150 @@
 			}
 			
 			break;
+
+		case "modulesearchworkday":
+			$workingEmployees = array();
+			$requestedDay = getArrayVal($_GET, "value");
+    		//$requestedDay = substr($requestedDay, 8, 2)."-".substr($requestedDay, 5, 2)."-".substr($requestedDay, 0, 4);
+			for($i=0; $i<count($myTeamMembers); $i++){
+				$dailyWSR = $workschedule->get_wsr_ondate($myTeamMembers[$i]["wsr_id"], $requestedDay, 
+							substr($myTeamMembers[$i]["wsr_refdate"], 8, 2)."-".substr($myTeamMembers[$i]["wsr_refdate"], 5, 2)."-".substr($myTeamMembers[$i]["wsr_refdate"], 0, 4));
+				
+				if($dailyWSR["nb_hours"] > 0){ 
+					$workingEmployee["ID"] 					= $myTeamMembers[$i]["ID"];
+		        	$workingEmployee["firstname"] 			= $myTeamMembers[$i]["firstname"];
+		            $workingEmployee["familyname"]    		= $myTeamMembers[$i]["familyname"];
+		            $workingEmployee["wsr_id"]  			= $myTeamMembers[$i]["wsr_id"];
+		            $workingEmployee["wsr_refdate"]			= $myTeamMembers[$i]["wsr_refdate"];
+		            $workingEmployee["user_group"]			= $myTeamMembers[$i]["description"];
+		            $workingEmployee["user_group_id"]		= $myTeamMembers[$i]["user_group_id"];
+				    $workingEmployee["dailywsrid"]          = $dailyWSR["id"];
+			        $workingEmployee["description"] 		= $dailyWSR["description"];
+			        $workingEmployee["begtime"]     		= $dailyWSR["begtime"];
+			        $workingEmployee["endtime"]     		= $dailyWSR["endtime"];
+			        $workingEmployee["begbreak"]    		= $dailyWSR["begbreak"];
+			        $workingEmployee["endbreak"]    		= $dailyWSR["endbreak"];
+		            $workingEmployee["nb_hours"]	 		= $dailyWSR["nb_hours"];
+		            
+		            $employeeAbsences = $timemanagement->isUserAbsentOnDay($myTeamMembers[$i]["ID"], $requestedDay);
+		            
+		            if(count($employeeAbsences) == 0 || empty($employeeAbsences)){
+		            	$workingEmployee["color"] = $langfile["dico_user_myservices_leaverequest_neutral"];
+		            }else{
+		            	if(count($employeeAbsences) > 1){
+		            		$workingEmployee["color"] = $langfile["dico_user_myservices_leaverequest_multipled"];
+		            	} else { 
+		            		switch($employeeAbsences[0]["status"]){
+		            			case "100": //Approved
+		            				$workingEmployee["color"] = $langfile["dico_user_myservices_leaverequest_approved"];
+		            				break;
+		            			case "0":   //Rejected
+		            				$workingEmployee["color"] = $langfile["dico_user_myservices_leaverequest_rejected"];
+		            				break;	
+		            			default:
+		            				$workingEmployee["color"] = $langfile["dico_user_myservices_leaverequest_pending"];	
+		            		}
+		            	}	
+		            }
+		            
+		            array_push($workingEmployees, $workingEmployee);
+		         
+				$employeeAbsences 	= "";
+		        $dailyWSR 			= "";
+		        $workingEmployee 	= "";   
+				}
+			}
+			
+			$legendes = array();
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_pending"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_pending_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_multipled"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_multipled_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_rejected"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_rejected_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_approved"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_approved_label"];
+			array_push($legendes, $legende);
+			
+			$template->assign("workingemployees", $workingEmployees);
+			$template->assign("legendes", $legendes);
+			$template->display("template_management_gestion_simple_search.tpl");
+			
+			break;
+
+		case "modulesearchworkdaycalendar":
+			$workingEmployees = array();
+			$earliest = '24:00:00';
+			$latest   = '00:00:00';
+			for($i=0; $i<count($myTeamMembers); $i++){
+				$requestedDay = getArrayVal($_GET, "value"); 
+				
+				$dailyWSR = $workschedule->get_wsr_ondate($myTeamMembers[$i]["wsr_id"], $requestedDay, $myTeamMembers[$i]["wsr_refdate"]);
+				
+				if($dailyWSR["nb_hours"] > 0){ 
+					$workingEmployee["ID"] 					= $myTeamMembers[$i]["ID"];
+		        	$workingEmployee["firstname"] 			= $myTeamMembers[$i]["firstname"];
+		            $workingEmployee["familyname"]    		= $myTeamMembers[$i]["familyname"];
+		            $workingEmployee["wsr_id"]  			= $myTeamMembers[$i]["wsr_id"];
+		            $workingEmployee["wsr_refdate"]			= $myTeamMembers[$i]["wsr_refdate"];
+		            $workingEmployee["user_group"]			= $myTeamMembers[$i]["description"];
+		            $workingEmployee["user_group_id"]		= $myTeamMembers[$i]["user_group_id"];
+				    $workingEmployee["dailywsrid"]          = $dailyWSR["id"];
+			        $workingEmployee["description"] 		= $dailyWSR["description"];
+			        $workingEmployee["begtime"]     		= $dailyWSR["begtime"];
+			        $workingEmployee["endtime"]     		= $dailyWSR["endtime"];
+			        $workingEmployee["begbreak"]    		= $dailyWSR["begbreak"];
+			        $workingEmployee["endbreak"]    		= $dailyWSR["endbreak"];
+		            $workingEmployee["nb_hours"]	 		= $dailyWSR["nb_hours"];
+		            
+		            if($workingEmployee["begtime"] < $earliest)
+		            	$earliest 	=  $workingEmployee["begtime"];
+		            if($workingEmployee["endtime"] > $latest)
+		            	$latest		=  $workingEmployee["endtime"];	
+		            
+		            $workingEmployee["absences"] = $timemanagement->isUserAbsentOnDay($myTeamMembers[$i]["ID"], $requestedDay);
+		            
+		            array_push($workingEmployees, $workingEmployee);
+		         
+		        $dailyWSR 			= "";
+		        $workingEmployee 	= "";   
+				}
+			}
+			
+			$legendes = array();
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_pending"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_pending_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_multipled"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_multipled_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_rejected"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_rejected_label"];
+			array_push($legendes, $legende);
+			$legende["color"] = $langfile["dico_user_myservices_leaverequest_approved"];
+			$legende["label"] = $langfile["dico_user_myservices_leaverequest_approved_label"];
+			array_push($legendes, $legende);
+			
+			$scheduleTable = array();
+			$nbHours = $timemanagement->getNbHours($latest, $earliest);
+			if($nbHours<=6)
+				$timeCell = '00:15:00';
+			else
+				$timeCell = '00:30:00';;
+					
+			for($i=0;$i<count($workingEmployees); $i++){
+				$currentTime = $earliestTime;
+				$scheduleTable[$i]["line"] = "<div>".substr($workingEmployees[$i]['firstname'], 0, 1)." ".substr($workingEmployees[$i]['familyname'], 0, 1)."</div>";
+			}
+			
+			$template->assign("workingemployees", $workingEmployees);
+			$template->assign("legendes", $legendes);
+			$template->display("template_management_gestion_simple_search.tpl");
+			
+			break;	
 			
 		default:
 	    	$loc = $url . "user_services.php?action=team_calendar";
