@@ -44,6 +44,16 @@
 			</li>
 	{/section}
 	
+	{section name=medecin loop=$medecins}
+		{if $smarty.section.medecin.index % 2 == 0}
+			<li class="bg_a">
+		{else}
+			<li class="bg_b">
+		{/if}
+				<a href="#" onclick="javascript:doctorAutoComplete({$medecins[medecin].id})" title="">{$medecins[medecin].prenom} {$medecins[medecin].nom}</a>
+			</li>
+	{/section}
+	
 		
 	{section name=debt loop=$debts}
 		{if $smarty.section.debt.index % 2 == 0}

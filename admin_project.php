@@ -2,8 +2,8 @@
 
 	require("./init.php");
 
-	if (!session_is_registered("userid")){
-		$template->assign("loginerror", 0);
+		  if (!isset($_SESSION['userid'])) {
+$template->assign("loginerror", 0);
 		$template->display("template_login.tpl");
 		die();
 	}
@@ -263,8 +263,8 @@
 			
 			if($searchOn || $filterOn) {
 			    
-			    $searchString = html_entity_decode($_REQUEST['filters']);
-			    $wh= constructWhere($searchString);
+			$searchString = html_entity_decode ($_REQUEST['filters'], ENT_COMPAT | ENT_HTML401, 'ISO-8859-1');
+			$wh= constructWhere($searchString);
 			    
 			}
 

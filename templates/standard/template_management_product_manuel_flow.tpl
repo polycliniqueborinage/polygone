@@ -94,6 +94,7 @@
 											<input type = "hidden" value = "{$ID}" name = "id" id="id" />
 											<input type = "hidden" value = "{$product_ID}" name = "product_id" id="product_id" />
 											<input type = "hidden" value = "" name = "client_id" id="client_id" />
+											<input type = "hidden" value = "" name = "consumer_id" id="consumer_id" />
 											
 											<div id="1" style="display:none">{#dico_management_product_unit1#}</div>
 											<div id="2" style="display:none">{#dico_management_product_unit2#}</div>
@@ -124,13 +125,13 @@
 											
 											<div class="row"><label for = "date" class="mandatory">{#dico_management_product_date#}<span class="mandatory">*</span>:</label><input type = "text" value = "{$date}" name = "date" id="date" class="{$errors.date}" realname="{#dico_management_product_date#}" onkeyup="javascript:valuedate = checkDate(this, '', '');" onfocus="javascript:this.select()" autocomplete="off"/></div>
 											
-											<div class="row"><label for = "consumer_name">{#dico_management_product_consumer#}:</label><input type = "text" value = "{$product.consumer_name}" name = "consumer_name" id="consumer_name" realname ="{#dico_management_product_consumer#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
-											
+											<div class="row"><label for = "consumer_name">{#dico_management_product_consumer#}:</label><input type = "text" value = "{$product.consumer_name}" name = "consumer_name" id="consumer_name" realname ="{#dico_management_product_consumer#}" onfocus="javascript:this.select()" onkeyup="javascript:doctorAutoComplete();doctorSimpleSearch(this.value);" autocomplete="off"/></div>
+											<!--
 											<div class="row"><label for = "consumer_type">{#dico_management_product_consumer_type#}:</label><input type = "text" value = "{$product.consumer_type}" name = "consumer_type" id="consumer_type" realname ="{#dico_management_product_consumer_type#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
 											
 											<div class="row"><label for = "client">{#dico_management_product_proprietaire#}:</label><input type = "text" value = "{$product.proprietaire}" name = "client" id="client" realname ="{#dico_management_product_client#}" onfocus="javascript:this.select()" onkeyup="javascript:clientAutoComplete('',this.value);" autocomplete="off"/>
 											</div>
-											
+											-->
 											<div class="row"><label for = "lot_number">{#dico_management_product_lot_number#}:</label><input type = "text" value = "{$product.lot_number}" name = "lot_number" id="lot_number" realname ="{#dico_management_product_lot_number#}" onfocus="javascript:this.select()" autocomplete="off"/></div>
 
 											<div class="row"><label for = "comment">{#dico_management_product_comment#}:</label><textarea name="comment" id="comment" realname="{#dico_management_product_comment#}" rows="3" cols="1" >{$product.comment}</textarea></div>
@@ -171,7 +172,7 @@
 
 	</div>
 	
-	{include file="template_left.tpl" client_search="yes" product_search="yes"}
+	{include file="template_left.tpl" doctor_search="yes" product_search="yes"}
 
 	{literal}
 	<script type="text/javascript">
@@ -189,7 +190,7 @@
 		    $("form").validate({
 			rules: {
 				name: { required:true, product:true },
-				date : { required:true, date: true},
+				date : { required:true},
 			    quantity: "required"
    			},
    			messages: {

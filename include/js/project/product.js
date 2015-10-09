@@ -107,6 +107,45 @@ function productSimpleSearch(value) {
 	$("#informationProduct").load("management_product.php?action=modulesearch", {value:value,limit:5,type:'simple'});
 }
 
+function doctorSimpleSearch(value) {
+	$('#findDoctorForm').show();
+	$("#informationDoctor").load("management_product.php?action=modulesearchDoctor", {value:value,limit:5,type:'simple'});
+}
+
+function doctorAutoComplete(id) {
+	
+	var value = $('#consumer_name').val();
+	
+	$.ajax({
+  		type: "POST",
+  		url: "management_product.php?action=doctorautocomplete&id="+id,
+  		data: "value="+value,
+  		dataType: "json",
+  		success: function(data){
+  			if (data.id!=null && data.id!='' && data.id >= 0) {
+  				$("#consumer_id").val(data.id);
+	      		try {
+		      		$("#consumer_name").val(data.prenom+" "+data.nom);
+	      			
+	      		} catch(err) {}
+	      		/*try {
+		      		$("#consumer_name").html($("#"+data.consumer_name).html());
+	      		} catch(err) {}*/
+    		}/* else {
+    			$("#consumer_id").val('');
+	      		try {
+		      		$("#consumer_name").val('');
+	      		} catch(err) {}
+	      		try {
+	      			$("#consumer_name").html('');
+	      		} catch(err) {}
+    		}*/
+    		
+  		}
+	});
+  
+}
+
 function viewProduct(id) {
 	window.location.href='management_product.php?action=view&id='+id;
 }

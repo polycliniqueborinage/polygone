@@ -359,6 +359,30 @@
 					<br/>
 					{/if}
 					
+					{if $doctor_search == "yes"}
+    	    		<a class="taskControl" href="#">{#dico_global_left_doctor_title#}</a>
+				
+					<div class="boxglobal">
+					
+						<div class="boxsearch">
+							<a onclick="$('#findDoctorForm').toggle()" href="#" class="controls" style="display: block;">{#dico_global_left_search#}</a>
+						</div>
+
+						<div id="findDoctorForm" class="inlineForm" style="display: none;">
+							
+							<form onsubmit="">
+	                  			<input autocomplete="off" class="text-input" id="findDoctorInput" type="text" onFocus="this.select()" onKeyUp="javascript:doctorSimpleSearch('',this.value)">
+    	              			<input class="button" name="commit" value="" type="submit" >
+        	          		</form>
+                			
+                			<div id="informationDoctor" class="boxresult"></div>
+                			
+						</div>
+						
+					</div>
+					<br/>
+					{/if}					
+					
 					
 					{if $user_search == "yes"}
     	    		<a class="taskControl" href="#">{#dico_global_left_user_title#}</a>

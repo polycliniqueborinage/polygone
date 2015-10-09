@@ -3,7 +3,7 @@
 	include("../init.php");
 	header('Content-Type: text/html; charset=utf-8'); 
 
-	if (!session_is_registered("userid")){
+  if (!isset($_SESSION['userid'])) {
 		$template->assign("loginerror", 0);
 		$template->display("login.tpl");
 	    die();

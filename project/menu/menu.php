@@ -3,9 +3,8 @@
 require("../../init.php");
 
 
-if (!session_is_registered("userid"))
-{
-    $template->assign("loginerror", 0);
+      if (!isset($_SESSION['userid'])) {
+$template->assign("loginerror", 0);
     $mode = getArrayVal($_GET, "mode");
     $template->assign("mode", $mode);
     $template->display("login.tpl");

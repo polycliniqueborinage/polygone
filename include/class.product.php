@@ -83,8 +83,8 @@ class product
         $product_ID = (int) $product_ID;
         $client_ID = (int) $client_ID;
         
-        $sql = "INSERT INTO product_flow (`product_ID`, `date`, `type`, `quantity`, `patient_ID`, `consumer_name`, `consumer_type`, `lot_number`, `comment`) VALUES ('$product_ID', '$date', '$type', '$quantity', '$client_ID', '$consumerName', '$consumerType', '$lotNumber', '$comment')";
-		
+        $sql = "INSERT INTO product_flow (`product_ID`, `date`, `type`, `quantity`, `consumer_ID`, `consumer_name`, `consumer_type`, `lot_number`, `comment`) VALUES ('$product_ID', '$date', '$type', '$quantity', '$client_ID', '$consumerName', '$consumerType', '$lotNumber', '$comment')";
+		echo $sql;
         $ins = mysql_query($sql);
         
         if ($ins) {
@@ -315,89 +315,181 @@ class product
 
     }
     
+    /** Make a search
+     *
+     * @param value
+     * @return array
+     */
+    function modulesearchDoctor($id,$value, $limit) {
+    
+    	if ($id!='undefined' && $id!='undefined' && $id!= null)
+    		$sql = "SELECT m.id as id,
+    		m.nom as nom,
+    		m.prenom as prenom,
+    		m.inami as inami
+    		FROM medecins AS m
+    		WHERE m.id =$id GROUP BY m.id";
+    	else
+    		$sql = "SELECT m.id as id,
+    		m.nom as nom,
+    		m.prenom as prenom,
+    		m.inami as inami
+    		FROM medecins AS m
+    		WHERE lower(concat(m.nom, ' ' ,m.prenom)) regexp '$value' GROUP BY m.id LIMIT $limit";
+    
+    		$sel = mysql_query($sql);
+    
+    		$medecins = array();
+    
+    		while ($medecin = mysql_fetch_array($sel)) {
+    		 
+    		$medecin["id"] 		= stripslashes($medecin["id"]);
+    		$medecin["nom"] 	= stripslashes($medecin["nom"]);
+    		$medecin["prenom"] 	= stripslashes($medecin["prenom"]);
+    		$medecin["inami"] 	= stripslashes($medecin["inami"]);
+    		
+    		array_push($medecins, $medecin);
+    
+    	}
+    
+        if (!empty($medecins))  {
+            return $medecins;
+    	} else  {
+    	return false;
+        }
+    
+    	}
+    
+    	/** Make a autocomplete
+    	 *
+    	 * @param value
+    	 * @return array
+    	 */
+    	function autocomplete($value,$id) {
+    		 
+    		if ($id!='undefined' && $id!= null)
+    			$sql = "SELECT
+    			p.ID as ID,
+    			p.name as name,
+    			p.unit as unit,
+    			p.size as size,
+    			p.dose as dose,
+    			p.stock as stock,
+    			ROUND(p.sail_price_htva,2) as sail_price_htva,
+    			p.tva as tva,
+    			ROUND(p.sail_price,2) as sail_price,
+    			p.description as description,
+    			ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock,
+    			ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2) as total_price
+    			FROM product AS p
+    			LEFT JOIN product_flow AS pf
+    			ON p.ID = pf.product_ID
+    			WHERE p.ID =$id
+    			GROUP BY p.ID";
+    			else
+    			$sql = "SELECT p.ID AS ID,
+    			p.name as name,
+    			p.unit as unit,
+    			p.size as size,
+    			p.dose as dose,
+    			p.stock as stock,
+    			p.sail_price_htva as sail_price_htva,
+    			p.tva as tva,
+    			p.sail_price as sail_price,
+    			p.description as description,
+    			ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock,
+    			ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2) as total_price
+    			FROM product AS p
+    			LEFT JOIN product_flow AS pf
+    			ON p.ID = pf.product_ID
+    			WHERE lower(p.name) regexp '$value' GROUP BY p.ID";
+    	
+    			$result = mysql_query($sql);
+    	
+    			if(mysql_num_rows($result)==1) {
+    	
+    			$data = mysql_fetch_assoc($result);
+    			$ID = $data['ID'];
+    			$name = $data['name'];
+    			$size = $data['size'];
+    			$unit = $data['unit'];
+    			$dose = $data['dose'];
+    		$stock = $data['stock'];
+    		$sailPrice = $data['sail_price']." Euro ( HTVA = ".$data['sail_price_htva']." Euro - TVA = ".$data['tva']."%)";
+    		$description = $data['description'];
+    				$currentStock = $data['current_stock'];
+    				$stockSailPrice = $data['total_price']." Euro";
+    					
+    		}
+    	
+    		// get lot
+    				$lot_number = '';
+    						$sql = "SELECT lot_number as lot_number FROM product_flow WHERE product_ID =$ID ORDER BY date DESC, ID DESC";
+    						$sel = mysql_query($sql);
+    				if(mysql_num_rows($sel)>=1) {
+			$data = mysql_fetch_assoc($sel);
+    				$lot_number = $data['lot_number'];
+    	}
+    	
+    	
+    	$reponse['ID'] 					= $ID;
+    	$reponse['name']	 			= utf8_encode($name);
+    	$reponse['unit'] 				= utf8_encode($unit);
+    	$reponse['size'] 				= utf8_encode($size);
+    	$reponse['dose']	 			= utf8_encode($dose);
+    	$reponse['stock'] 				= utf8_encode($stock);
+    	$reponse["sail_price"] 			= utf8_encode($sailPrice);
+    	$reponse['description'] 		= utf8_encode($description);
+    			$reponse['current_stock'] 		= utf8_encode($currentStock);
+    			$reponse["stock_sail_price"] 	= utf8_encode($stockSailPrice);
+    			$reponse['lot_number']    		= utf8_encode($lot_number);
+    	
+		header('Content-Type: application/json');
+    			echo json_encode($reponse);
+    	
+    	}	
+    	
 	/** Make a autocomplete
      *
      * @param value
      * @return array
      */
-    function autocomplete($value,$id) {
+    function doctorAutoComplete($value,$id) {
     	
 	    if ($id!='undefined' && $id!= null)
-	    	$sql = "SELECT 
-	    			p.ID as ID, 
-	    			p.name as name, 
-	    			p.unit as unit, 
-	    			p.size as size, 
-	    			p.dose as dose,
-	    			p.stock as stock, 
-	    			ROUND(p.sail_price_htva,2) as sail_price_htva, 
-	    			p.tva as tva, 
-	    			ROUND(p.sail_price,2) as sail_price, 
-	    			p.description as description, 
-	    			ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, 
-	    			ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2) as total_price 
-	    			FROM product AS p
-	    			LEFT JOIN product_flow AS pf
-	    			ON p.ID = pf.product_ID 
-	    			WHERE p.ID =$id 
-	    			GROUP BY p.ID";
+	    	$sql = "SELECT m.id as id,
+    		m.nom as nom,
+    		m.prenom as prenom,
+    		m.inami as inami
+    		FROM medecins AS m
+    		WHERE m.id =$id GROUP BY m.id";
 	    else
-	    	$sql = "SELECT p.ID AS ID, 
-	    			p.name as name, 
-	    			p.unit as unit, 
-	    			p.size as size, 
-	    			p.dose as dose,
-	    			p.stock as stock, 
-	    			p.sail_price_htva as sail_price_htva, 
-	    			p.tva as tva, 
-	    			p.sail_price as sail_price, 
-	    			p.description as description, 
-	    			ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, 
-	    			ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2) as total_price 
-	    			FROM product AS p
-	    			LEFT JOIN product_flow AS pf
-	    			ON p.ID = pf.product_ID 
-	    			WHERE lower(p.name) regexp '$value' GROUP BY p.ID";
+	    	$sql = "SELECT m.id as id,
+    		m.nom as nom,
+    		m.prenom as prenom,
+    		m.inami as inami
+    		FROM medecins AS m
+    		WHERE lower(concat(m.nom, ' ' ,m.prenom)) regexp '$value' GROUP BY m.id LIMIT $limit";
 
 		$result = mysql_query($sql);
 	
 		if(mysql_num_rows($result)==1) {
 		
 			$data = mysql_fetch_assoc($result);
-			$ID = $data['ID'];
-			$name = $data['name'];
-			$size = $data['size'];
-			$unit = $data['unit'];
-			$dose = $data['dose'];
-			$stock = $data['stock'];
-			$sailPrice = $data['sail_price']." Euro ( HTVA = ".$data['sail_price_htva']." Euro - TVA = ".$data['tva']."%)";
-			$description = $data['description'];
-			$currentStock = $data['current_stock'];
-			$stockSailPrice = $data['total_price']." Euro";
+			$id = $data['id'];
+			$nom = $data['nom'];
+			$prenom = $data['prenom'];
+			$inami = $data['inami'];
 			
+
+			$reponse['id'] 					= $id;
+			$reponse['nom']	 				= utf8_encode($nom);
+			$reponse['prenom'] 				= utf8_encode($prenom);
+			$reponse['inami'] 				= utf8_encode($inami);
+		} else{
+			$reponse['id'] 					= -1;
 		}
-		
-		// get lot
-        $lot_number = '';
-        $sql = "SELECT lot_number as lot_number FROM product_flow WHERE product_ID =$ID ORDER BY date DESC, ID DESC";
-		$sel = mysql_query($sql);
-	    if(mysql_num_rows($sel)>=1) {
-			$data = mysql_fetch_assoc($sel);
-		    $lot_number = $data['lot_number'];
-	   	}
-		
 	
-		$reponse['ID'] 					= $ID;
-		$reponse['name']	 			= utf8_encode($name);
-		$reponse['unit'] 				= utf8_encode($unit);
-		$reponse['size'] 				= utf8_encode($size);
-		$reponse['dose']	 			= utf8_encode($dose);
-		$reponse['stock'] 				= utf8_encode($stock);
-		$reponse["sail_price"] 			= utf8_encode($sailPrice);
-		$reponse['description'] 		= utf8_encode($description);           
-		$reponse['current_stock'] 		= utf8_encode($currentStock);
-        $reponse["stock_sail_price"] 	= utf8_encode($stockSailPrice);
-		$reponse['lot_number']    		= utf8_encode($lot_number);
 		
 		header('Content-Type: application/json');
 		echo json_encode($reponse);
@@ -489,6 +581,70 @@ class product
 				return array(substr($str, 0, $i-1), substr($str, $i+1, strlen($str)));
 			}
 			$i++;
+		}
+	}
+	
+	function countProduct($product_name){
+		$sqlcount = "SELECT count(ID) FROM product WHERE name LIKE '%".$product_name."%'";
+			
+		$sel = mysql_query($sqlcount);
+		$res = mysql_fetch_array($sel);
+		return $res["total"];
+	}
+	
+	function get_json_product($sql, $langfile, $url){
+		
+		$unit1 = $langfile["dico_management_product_unit1"];
+		$unit2 = $langfile["dico_management_product_unit2"];
+		$unit3 = $langfile["dico_management_product_unit3"];
+		$unit4 = $langfile["dico_management_product_unit4"];
+		$unit5 = $langfile["dico_management_product_unit5"];
+		
+		$i = 0;
+		$rows = array();
+		
+		$sel = mysql_query($sql);
+		
+		while ($res = mysql_fetch_array($sel)) {
+			
+			$rows[$i]['id']=$res[ID];
+			switch ($res["unit"]){
+				case "1" :
+					$res["unit"] = $unit1;
+					break;
+				case "2" :
+					$res["unit"] = $unit2;
+					break;
+				case "3" :
+					$res["unit"] = $unit3;
+					break;
+				case "4" :
+					$res["unit"] = $unit4;
+					break;
+				case "5" :
+					$res["unit"] = $unit5;
+					break;
+			}
+			
+			$rows[$i]['cell']=array(
+					"<a href=\"./".$url."?action=detail&id=".$res[ID]."\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-view-hover.png\" border=\"0\" /></a><a href=\"./".$url."?action=edit&id=".$res[ID]."\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-edit-hover.png\" border=\"0\" /></a>",
+					$res[name],
+					$res[unit],
+					$res[size],
+					$res[dose],
+					$res[price_htva],
+					$res[sail_price],
+					$res[stock],
+					$res[current_stock],
+					$res[stock_sail_price]
+			);
+			$i++;
+		}
+		
+		if (!empty($rows)) {
+			return $rows;
+		} else {
+			return false;
 		}
 	}
 }

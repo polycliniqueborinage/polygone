@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_rico="yes" js_product="yes"}
+{include file="template_header.tpl" js_jquery191="yes" js_jquery142="yes" js_jquery_ui_171="yes" js_jqgrid="yes" js_product="yes"}
 
 	<div id="middle">
 		
@@ -43,30 +43,15 @@
 								</div>
 								
 								<div id="useredit">
-								
-									<div class="table_head">
-										<table id="productlist" class="ricoLiveGrid" cellpadding="0" cellspacing="0" width="100%">
-											<tr>
-												<td class="b" style="width:4%">{#dico_management_product_search_colum_action#}</td>
-												<td class="b" style="width:16%">{#dico_management_product_search_colum_name#}</td>
-												<td class="b" style="width:10%">{#dico_management_product_search_colum_unit#}</td>
-												<td class="b" style="width:10%">{#dico_management_product_search_colum_size#}</td>
-												<td class="b" style="width:8%">{#dico_management_product_search_colum_dose#}</td>
-												<td class="b" style="width:5%">{#dico_management_product_sail_price_htva#}</td>
-												<td class="b" style="width:5%">{#dico_management_product_tva#}</td>
-												<td class="b" style="width:5%">{#dico_management_product_sail_price#}</td>
-												<td class="b" style="width:10%">{#dico_management_product_search_colum_stock#}</td>
-												<td class="b" style="width:8%">{#dico_management_product_search_colum_current_stock#}</td>
-												<td class="b" style="width:8%">{#dico_management_product_search_colum_stock_sail_price#}</td>
-												<td class="b" style="width:12%">{#dico_management_product_search_colum_commande#}</td>
-											</tr>
-										</table>
-									</div>
 					
-									<div class="table_body">
-									
-										
-									</div> {*Table_Body End*}
+								
+								<table width='97%'>
+									<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
+									<table id="colr">
+									</table>
+									<div id="pcolr"></div> 
+									</td></tr>
+								</table>
 									
 									<div class="clear_both"></div> {*required ... do not delete this row*}
 									
@@ -87,25 +72,168 @@
 	{literal}
 	<script type='text/javascript'>
 		
-		Rico.loadModule('LiveGridAjax','LiveGridMenu','grayedout.css');
-
-		var orderGrid,buffer;
-		//{type:'date'}
-
-		Rico.onLoad( function() {
-			var opts = {  
-			    useUnformattedColWidth: true,
-			    FilterLocation:   -1,     // put filter on a new header row
-    			columnSpecs:  [,{filterUI:'t',width:150},,,,{filterUI:'t',width:100},{filterUI:'t',width:100},{filterUI:'t',width:100},,,,{filterUI:'t',width:100}]
-		  	};
-	  	
-			buffer=new Rico.Buffer.AjaxSQL('include/js/rico/ricoXMLquery.php', {TimeOut:0});
-	
-			orderGrid=new Rico.LiveGrid ('productlist', buffer, opts);
+		jQuery(document).ready(function(){
+            
+        	jQuery("#colr").jqGrid({
+        	
+                    // display all
+                    scroll: 1,
+                    //Column Reordering
+                    sortable: true,
+                    url:'management_product.php?action=json_product_list',
+                    datatype: 'json', 
+                    mtype: 'POST',
+                    colNames:[
+                    
+                    	'{/literal}{#dico_management_product_search_colum_action#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_name#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_unit#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_size#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_dose#}{literal}',
+                    	'{/literal}{#dico_management_product_sail_price_htva#}{literal}',
+                    	'{/literal}{#dico_management_product_sail_price#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_stock#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_current_stock#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_stock_sail_price#}{literal}'
+                    	],
+                    colModel :[ 
+                        {
+                        	name:'action',
+                        	index:'action',
+                        	width:40,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:false, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {	name:'product_name',
+                        	index:'product_name',                         
+                        	width:80,    
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        }, 
+                        {
+                        	name:'product_unit',
+                        	index:'product_unit',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'product_size',
+                        	index:'product_size',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'product_dose',
+                        	index:'product_dose',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'price_htva',
+                        	index:'price_htva',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'price',
+                        	index:'price',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'stock',
+                        	index:'stock',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'current_stock',
+                        	index:'current_stock',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'stock_sail_price',
+                        	index:'stock_sail_price',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+					], 
+                    
+                    pager: jQuery('#pcolr'), 
+                    //reading the data at once
+                    gridview: false,
+                    rowNum:50, 
+                    rowList:[10,20,30], 
+                    sortname: 'product_name', 
+                    sortorder: "desc", 
+                    viewrecords: true,
+                    multiselect: false, 
+                    width: 600, 
+                    height: "300", 
+                    caption: "Liste produits",
+                    shrinkToFit :true,
+                    // fit screen size
+                    autowidth: true,
+                    // add row in the bottom
+                    footerrow : false, 
+                    userDataOnFooter : false, 
+                    altRows : true,
+                    cellEdit: false,
+                    //editurl: "admin_people_user.php?action=action_cost_center",
+                    edit : {
+						width:600,
+					},
+                    
+                    
+                  });
+        
+        	jQuery("#colr").jqGrid('navGrid','#pcolr',{del:false,add:false,edit:false,search:false});
+        	
+        	jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false}); 
+        	
+        	jQuery("#colr").jqGrid('filterToolbar'); 
+        	      
+		}); 
 		
-			orderGrid.menu=new Rico.GridMenu();
-		
-		});
 	</script>
 	{/literal}
 

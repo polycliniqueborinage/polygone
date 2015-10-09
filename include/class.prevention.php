@@ -547,7 +547,7 @@ class prevention
 			    $mp["mail"],
 			    //stripcslashes($mp["description"]),
 			    //$mp["description"],
-			    html_entity_decode($tmp),
+                            html_entity_decode ($tmp, ENT_COMPAT | ENT_HTML401, 'ISO-8859-1'),
 			    substr($mp["date_derniere_modification"], 8, 2)."/".substr($mp["date_derniere_modification"], 5, 2)."/".substr($mp["date_derniere_modification"], 0, 4),
 			    $mp["statut"],
 			    $mp["select"],
@@ -617,7 +617,7 @@ class prevention
 			    $mp["mail"],
 			    //stripcslashes($mp["description"]),
 			    //$mp["description"],
-			    html_entity_decode($tmp),
+		            html_entity_decode ($tmp, ENT_COMPAT | ENT_HTML401, 'ISO-8859-1'),
 			    substr($mp["date_derniere_modification"], 8, 2)."/".substr($mp["date_derniere_modification"], 5, 2)."/".substr($mp["date_derniere_modification"], 0, 4),
 			);
 			$i++;
