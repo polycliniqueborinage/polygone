@@ -5,7 +5,7 @@
 		{include file="template_primary_tabs_management_current.tpl"}   
       
 	  	<div id="main">
-        
+         
 			<div id="tab_panel">
 			
 				<div class="secondary_tabs">
