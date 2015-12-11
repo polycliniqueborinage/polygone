@@ -61,6 +61,7 @@
 					<span>{#dico_management_product_menu_edit#}</span> 
 					{/if}
 						
+					<a href="./management_product.php?action=stock_critique">{#dico_management_product_menu_stock_critique#}</a>
     				<a href="./management_product.php?action=automatic_flow">{#dico_management_product_menu_automatic_flow#}</a>
 
 				</div>

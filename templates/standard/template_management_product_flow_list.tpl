@@ -1,4 +1,4 @@
-{include file="template_header.tpl" js_jquery="yes" js_form="yes" js_jquery_validate="yes" js_rico="yes" js_product="yes"}
+{include file="template_header.tpl" js_daterangepicker="yes" js_jquery191="yes" js_jquery142="yes" js_jquery_ui_171="yes" js_jqgrid="yes" js_product="yes"}
 
 	<div id="middle">
 		
@@ -19,6 +19,8 @@
 	  				<a href="./management_product.php?action=list">{#dico_management_product_menu_list#}</a>
 
 					<span>{#dico_management_product_menu_flow_list#}</span> 
+
+					<a href="./management_product.php?action=stock_critique">{#dico_management_product_menu_stock_critique#}</a>
 
     				<a href="./management_product.php?action=automatic_flow">{#dico_management_product_menu_automatic_flow#}</a>
 
@@ -51,11 +53,13 @@
 										<fieldset>
 									
 										<div>
+		
 											<label>{#dico_management_product_report_begda#}:</label>
-											<input type = "text" value = "{$begda}" name = "begda" id="begda" class="{$errors.begda}" realname="{#dico_management_product_report_begda#}" onkeyup="javascript:valuebegda = checkDate(this, '', '');" onfocus="javascript:this.select()" autocomplete="off"/>
+											<input type = "text" value = "{$begda}" name = "begda" id="begda" class="text" realname="{#dico_management_product_report_begda#}" onkeyup="javascript:valuebegda = checkDate(this, '', '');" onfocus="javascript:this.select()" autocomplete="off"/>
 											<label>{#dico_management_product_report_endda#}:</label>
-											<input type = "text" value = "{$endda}" name = "endda" id="endda" class="{$errors.endda}" realname="{#dico_management_product_report_endda#}" onkeyup="javascript:valueendda = checkDate(this, '', '');" onfocus="javascript:this.select()" autocomplete="off"/>
-											<input type="submit" name="validate" id="valideate" value="{#dico_management_product_report_submit#}" onfocus="javascript:this.select()" autocomplete="off"/>
+											<input type = "text" value = "{$endda}" name = "endda" id="endda" class="text" realname="{#dico_management_product_report_endda#}" onkeyup="javascript:valueendda = checkDate(this, '', '');" onfocus="javascript:this.select()" autocomplete="off"/>
+											
+											<!--<input type="submit" name="validate" id="valideate" value="{#dico_management_product_report_submit#}" onfocus="javascript:this.select()" autocomplete="off"/>-->
 										</div>
 											
 										</fieldset>
@@ -66,35 +70,17 @@
 								
 								<div id="messagecookie">
 								
-								
-									<div class="table_head">
-										<table id="productflowlist" class="ricoLiveGrid" cellpadding="0" cellspacing="0" width="100%">
-											<tr>
-												<td class="b" style="width:9%">{#dico_management_product_search_colum_date#}</td>
-												<td class="b" style="width:18%">{#dico_management_product_search_colum_name#}</td>
-												<td class="b" style="width:12%">{#dico_management_product_search_colum_unit#}</td>
-												<td class="b" style="width:8%">{#dico_management_product_search_colum_size#}</td>
-												<td class="b" style="width:8%">{#dico_management_product_search_colum_es#}</td>
-												<!--<td class="b" style="width:8%">{#dico_management_product_sail_price_htva#}</td>-->
-												<!--<td class="b" style="width:8%">{#dico_management_product_tva#}</td>-->
-												<!--<td class="b" style="width:8%">{#dico_management_product_sail_price#}</td>-->
-												<td class="b" style="width:12%">{#dico_management_product_search_colum_consumer_name#}</td>
-												<td class="b" style="width:8%">{#dico_management_product_consumer_type#}</td>
-												<td class="b" style="width:10%">{#dico_management_product_search_colum_proprietaire_name#}</td>
-												<td class="b" style="width:14%">{#dico_management_product_search_colum_proprietaire_adresse#}</td>
-												<td class="b" style="width:10%">{#dico_management_product_search_colum_lot_number#}</td>
-												<td class="b" style="width:12%">{#dico_management_product_search_colum_comment#}</td>
-											</tr>
-										</table>
-									</div>
 					
-									<div class="table_body">
-									
-										
-									</div> {*Table_Body End*}
+									<table width='97%'>
+										<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
+											<table id="colr">
+											</table>
+										<div id="pcolr"></div> 
+										</td></tr>
+									</table>
 									
 									<div class="clear_both"></div> {*required ... do not delete this row*}
-									
+					
 								</div>
 			        		    
 							</div> {*IN end*}
@@ -111,29 +97,179 @@
 	
 	{literal}
 	<script type='text/javascript'>
-		
-		var valuebegda = null;
-		var valueendda = null;
-
-		Rico.loadModule('LiveGridAjax','LiveGridMenu','grayedout.css');
-
-		var orderGrid,buffer;
-		//{type:'date'}
-
-		Rico.onLoad( function() {
-			var opts = {  
-			    useUnformattedColWidth: true,
-			    FilterLocation:   -1,     // put filter on a new header row
-    			columnSpecs:  [{filterUI:'t',width:90},{filterUI:'t',width:170},{width:70},{width:70},{filterUI:'t',width:50}, {width:150}, {filterUI:'t',width:50}, {width:100},{width:150},{filterUI:'t',width:70}, {filterUI:'t',width:150}]
-		  	};
-		  	
-			buffer=new Rico.Buffer.AjaxSQL('include/js/rico/ricoXMLquery.php', {TimeOut:0});
 	
-			orderGrid=new Rico.LiveGrid ('productflowlist', buffer, opts);
+	jQuery(document).ready(function(){
+            
+        	jQuery("#colr").jqGrid({
+        	
+                    // display all
+                    scroll: 1,
+                    //Column Reordering
+                    sortable: true,
+                    url:'management_product.php?action=json_flow_list',
+                    datatype: 'json', 
+                    mtype: 'POST',
+                    colNames:[
+                    
+                    	'{/literal}{#dico_management_product_search_colum_date#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_name#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_unit#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_size#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_es#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_sail_price#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_consumer_name#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_lot_number#}{literal}',
+                    	'{/literal}{#dico_management_product_search_colum_comment#}{literal}'
+                    	],
+                    colModel :[ 
+                        {
+                        	name:'flowdate',
+                        	index:'flowdate',
+                        	width:40,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {	name:'name',
+                        	index:'name',                         
+                        	width:80,    
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        }, 
+                        {
+                        	name:'unit',
+                        	index:'unit',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'size',
+                        	index:'size',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'quantity',
+                        	index:'quantity',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'sail_price',
+                        	index:'sail_price',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:false,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'consumer_name',
+                        	index:'consumer_name',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+                        {
+                        	name:'lot_number',
+                        	index:'lot_number',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:true, 
+                        	resizable:true,
+                        	editable:true,
+                        },  
+                        {
+                        	name:'flowcomment',
+                        	index:'flowcomment',
+                        	width:50,     
+                        	hidden:false, 
+                        	search:true,         
+                        	sortable:false, 
+                        	resizable:true,
+                        	editable:false,
+                        },  
+					], 
+                    
+                    pager: jQuery('#pcolr'), 
+                    //reading the data at once
+                    gridview: false,
+                    rowNum:50, 
+                    rowList:[10,20,30], 
+                    sortname: 'flowdate', 
+                    sortorder: "desc", 
+                    viewrecords: true,
+                    multiselect: false, 
+                    width: 600, 
+                    height: "300", 
+                    caption: "Liste des transactions",
+                    shrinkToFit :true,
+                    // fit screen size
+                    autowidth: true,
+                    // add row in the bottom
+                    footerrow : false, 
+                    userDataOnFooter : false, 
+                    altRows : true,
+                    cellEdit: false,
+                    //editurl: "admin_people_user.php?action=action_cost_center",
+                    edit : {
+						width:600,
+					},
+                    
+                    
+                  });
+        
+        	jQuery("#colr").jqGrid('navGrid','#pcolr',{del:false,add:false,edit:false,search:true});
+        	
+        	jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : true}); 
+        	
+        	jQuery("#colr").jqGrid('filterToolbar'); 
+        	      
+		}); 	
 		
-			orderGrid.menu=new Rico.GridMenu();
-		
-		});
+	
+		jQuery(document).ready(function(){
+    	   	jQuery('input.text').daterangepicker({
+    	   		presetRanges: [
+					{text: 'Aujourd\'hui', dateStart: 'today', dateEnd: 'today' },
+					{text: 'Hier', dateStart: 'yesterday', dateEnd: 'yesterday' },
+					{text: '1ere Quinzaine', dateStart: function(){ var x= Date.parse('today'); x.setDate(1); return x; }, dateEnd: function(){ var x= Date.parse('today'); x.setDate(15); return x; } },
+					{text: '2ere Quinzaine', dateStart: function(){ var x= Date.parse('today'); x.setDate(16); return x; }, dateEnd: function(){ return Date.parse('today').moveToLastDayOfMonth(); } },
+					{text: 'Mois', dateStart: function(){ var x= Date.parse('today'); x.setDate(1); return x; }, dateEnd: function(){ return Date.parse('today').moveToLastDayOfMonth(); } },
+					{text: '1ere Quinzaine Mois Pr&eacute;c&eacute;dent', dateStart: function(){ var x= Date.parse('today'); x.setDate(1); x.setMonth(x.getMonth()-1); return x; }, dateEnd: function(){ var x= Date.parse('today'); x.setMonth(x.getMonth()-1); x.setDate(15); return x; } },
+					{text: '2ere Quinzaine Mois Pr&eacute;c&eacute;dent', dateStart: function(){ var x= Date.parse('today'); x.setDate(16); x.setMonth(x.getMonth()-1); return x; }, dateEnd: function(){ var x= Date.parse('today'); x.setMonth(x.getMonth()-1); x.moveToLastDayOfMonth(); return x; } },
+					{text: 'Mois Pr&eacute;c&eacute;dent', dateStart: function(){ var x= Date.parse('today'); x.setDate(1); x.setMonth(x.getMonth()-1); return x; }, dateEnd: function(){ var x= Date.parse('today'); x.setMonth(x.getMonth()-1); x.moveToLastDayOfMonth(); return x;  } }
+				], 
+    	   		dateFormat: 'yy-mm-dd', 
+    	   		posX: 70, 
+    	   		posY: 275,
+				onClose: function(){
+					document.forms.form.submit();
+				}    	   		
+    	   	}); 
+	     });		
 		
 	</script>
 	{/literal}

@@ -282,36 +282,21 @@ $template->assign("loginerror", 0);
 			
 		case "flowlist":
 			
-			$unit1 = $langfile["dico_management_product_unit1"];
-			$unit2 = $langfile["dico_management_product_unit2"];
-			$unit3 = $langfile["dico_management_product_unit3"];
-			$unit4 = $langfile["dico_management_product_unit4"];
-			$unit5 = $langfile["dico_management_product_unit5"];
-			
-			$edit_alt = $langfile["dico_management_product_edit_alt"];
-			$detail_alt = $langfile["dico_management_product_detail_alt"];
-		
-			$begda = utf8_decode(trim(getArrayVal($_POST, "begda")));
-			$endda = utf8_decode(trim(getArrayVal($_POST, "endda")));
+			$begda = getArrayVal($_POST, "begda");
+			$endda = getArrayVal($_POST, "endda");
 			
 			if($begda == '')
-				$begda = '1900-01-01';
-			else {
-				$template->assign("begda", $begda);
-				$begda = substr($begda, 6, 4).'-'.substr($begda, 3, 2).'-'.substr($begda, 0, 2);
-			}
+				$begda = date("Y").'-01-01';
+			
 				
 			if($endda == '')
-				$endda = '9999-12-31';
-			else {
-				$template->assign("endda", $endda);
-				$endda = substr($endda, 6, 4).'-'.substr($endda, 3, 2).'-'.substr($endda, 0, 2);
-			}
+				$endda = date("Y").'-12-31';
+			
 																																																																																																																																																											
-			$sql = "SELECT CONCAT('<div style=display:none>',pf.date,'</div>',date_format(pf.date, '%d/%m/%Y')), p.name, REPLACE(REPLACE(REPLACE(REPLACE(REPLACE( p.unit, '4', '$unit4' ),'3','$unit3'),'2','$unit2'),'1','$unit5'),'1','$unit5'), p.size, REPLACE(CONCAT('+',ROUND(pf.quantity * SIGN(pf.type),2)),'+-','-'), ROUND((pf.quantity * SIGN(pf.type) * p.sail_price_htva),2), CONCAT(p.tva,'%'), ROUND((pf.quantity * SIGN(pf.type) * p.sail_price),2), pf.consumer_name, pf.lot_number, pf.comment FROM product p, product_flow pf WHERE pf.quantity!=0 AND p.ID = pf.product_ID AND date_format(pf.date, '%Y-%m-%d') BETWEEN '$begda' AND '$endda' ORDER BY pf.date DESC, pf.id DESC";
+			//$sql = "SELECT CONCAT('<div style=display:none>',pf.date,'</div>',date_format(pf.date, '%d/%m/%Y')), p.name, REPLACE(REPLACE(REPLACE(REPLACE(REPLACE( p.unit, '4', '$unit4' ),'3','$unit3'),'2','$unit2'),'1','$unit5'),'1','$unit5'), p.size, REPLACE(CONCAT('+',ROUND(pf.quantity * SIGN(pf.type),2)),'+-','-'), ROUND((pf.quantity * SIGN(pf.type) * p.sail_price_htva),2), CONCAT(p.tva,'%'), ROUND((pf.quantity * SIGN(pf.type) * p.sail_price),2), pf.consumer_name, pf.lot_number, pf.comment FROM product p, product_flow pf WHERE pf.quantity!=0 AND p.ID = pf.product_ID AND date_format(pf.date, '%Y-%m-%d') BETWEEN '$begda' AND '$endda' ORDER BY pf.date DESC, pf.id DESC";
 			//$sql = "SELECT CONCAT('<div style=display:none>',pf.date,'</div>',date_format(pf.date, '%d/%m/%Y')), p.name, REPLACE(REPLACE(REPLACE(REPLACE(REPLACE( p.unit, '4', '$unit4' ),'3','$unit3'),'2','$unit2'),'1','$unit5'),'1','$unit5'), p.size, REPLACE(CONCAT('+',ROUND(pf.quantity * SIGN(pf.type),2)),'+-','-'), pf.consumer_name, pf.consumer_type, CONCAT(patients.prenom, ' ', patients.nom) as proprietaire, CONCAT(patients.rue, ' ', patients.code_postal, ' ', patients.commune) as adresse, pf.lot_number, pf.comment FROM product p, product_flow pf LEFT JOIN patients ON patients.id = pf.patient_ID WHERE pf.quantity!=0 AND p.ID = pf.product_ID AND date_format(pf.date, '%Y-%m-%d') BETWEEN '$begda' AND '$endda' ORDER BY pf.date DESC, pf.id DESC";
 		
-			$_SESSION['productflowlist']=$sql;
+			//$_SESSION['productflowlist']=$sql;
 			$_SESSION['begda'] = $begda;
 			$_SESSION['endda'] = $endda;
 						
@@ -319,6 +304,8 @@ $template->assign("loginerror", 0);
 	
 			$template->assign("title", $title);
 			$template->assign("workspaceclass", "fullpage");
+			$template->assign("begda", $begda);
+			$template->assign("endda", $endda);
 			
 			$template->display("template_management_product_flow_list.tpl");
 			
@@ -348,7 +335,7 @@ $template->assign("loginerror", 0);
 				 
 				// add simple search
 				if ($product_name) {
-					$wh .= "AND name like '%".$name."%'";
+					$wh .= "AND name like '%".$product_name."%'";
 				}
 				 
 			}
@@ -360,28 +347,14 @@ $template->assign("loginerror", 0);
 			$start = $limit * $page - $limit;
 			$start = ($start < 0) ? 0 : $start;
 
-			$unit1 = $langfile["dico_management_product_unit1"];
-			$unit2 = $langfile["dico_management_product_unit2"];
-			$unit3 = $langfile["dico_management_product_unit3"];
-			$unit4 = $langfile["dico_management_product_unit4"];
-			$unit5 = $langfile["dico_management_product_unit5"];
-			
-			$edit_alt = $langfile["dico_management_product_edit_alt"];
-			$detail_alt = $langfile["dico_management_product_detail_alt"];
-			
-			$detail1 = "<a onclick=\"javascript=viewProduct(";
-			$detail2 = ")\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-view-hover.png\" alt=\"".$detail_alt."\" title=\"".$detail_alt."\" border=\"0\" /></a>";
-			 	
-			$edit1 = "<a onclick=\"javascript=editProduct(";
-			$edit2 = ")\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-edit-hover.png\" alt=\"".$edit_alt."\" title=\"".$edit_alt."\" border=\"0\" /></a>";
-			 	
-			
-			$sqlglobal= "SELECT p.ID, p.name, p.unit, p.size, p.dose, CONCAT(p.sail_price_htva,' Euro') as price_htva, CONCAT(p.tva,' %') as tva, CONCAT(p.sail_price,' Euro') as sail_price, p.stock as stock, ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, CONCAT(ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2),' Euro') as stock_sail_price FROM product p, product_flow pf WHERE p.ID = pf.product_ID GROUP BY p.ID";;
+			$sqlglobal= "SELECT p.ID, p.name, p.unit, p.size, p.dose, CONCAT(p.sail_price_htva,' Euro') as price_htva, CONCAT(p.tva,' %') as tva, CONCAT(p.sail_price,' Euro') as sail_price, p.stock as stock, ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, CONCAT(ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2),' Euro') as stock_sail_price FROM product p, product_flow pf WHERE p.ID = pf.product_ID AND ".$wh." GROUP BY p.ID";;
 			//$sqlglobal= "SELECT concat('$edit1',p.ID,'$edit2',' ','$detail1',p.ID,'$detail2'), p.name, REPLACE(REPLACE(REPLACE(REPLACE(REPLACE( p.unit, '4', '$unit4' ),'3','$unit3'),'2','$unit2'),'1','$unit1'),'5','$unit5'), p.size, p.dose, CONCAT(p.sail_price_htva,' Euro'), CONCAT(p.tva,' %'), CONCAT(p.sail_price,' Euro') , p.stock, ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, CONCAT(ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2),' Euro') as stock_sail_price, REPLACE(CONCAT('+',ROUND(-1*(p.stock - SUM( pf.quantity * SIGN(pf.type) )),2)),'+-','-') as commande, p.description FROM product p, product_flow pf WHERE p.ID = pf.product_ID GROUP BY p.ID";
+			
+			$_SESSION['productlist']=$sqlglobal;
 			
 			$responce->page = $page;
 			$responce->total = $total_pages;
-			$responce->records = $count;
+			$responce->records = $product->countProduct($product_name);
 				
 			$responce->rows = $product->get_json_product($sqlglobal, $langfile,'management_product.php');
 				
@@ -389,6 +362,149 @@ $template->assign("loginerror", 0);
 			
 			break;
 			
+		case "json_flow_list":
+			$examp 	= $_REQUEST["q"]; //query number
+			$page 	= $_REQUEST['page']; // get the requested page
+			$limit 	= 15;//$_REQUEST['rows']; // get how many rows we want to have into the grid
+			$sidx 	= $_REQUEST['sidx']; // get index row - i.e. user click to sort
+			$sord 	= $_REQUEST['sord']; // get the direction
+		
+			$product_name		= $_REQUEST['name']; // get the search
+			$date				= $_REQUEST['flowdate']; // get the search
+			$product_es			= $_REQUEST['quantity']; // get the search
+			$consumer_name		= $_REQUEST['consumer_name']; // get the search
+			$product_lot		= $_REQUEST['lot_number']; // get the search
+			$product_comment	= $_REQUEST['flowcomment']; // get the search
+		
+			// search on
+			$searchOn = $_REQUEST['_search'];
+		
+			// filter
+			$filterOn = $_REQUEST['filters'];
+			
+			$begda = $_SESSION['begda'];
+			$endda = $_SESSION['endda'];
+			$wh = "AND date_format(pf.date, '%Y-%m-%d') BETWEEN '$begda' AND '$endda'";
+			
+			//$wh = " 1 = 1 ";
+		
+			if($searchOn  || $filterOn) {
+					
+				$searchString = html_entity_decode ($_REQUEST['filters'], ENT_COMPAT | ENT_HTML401, 'ISO-8859-1');
+					
+				// add simple search
+				if ($product_name) {
+					$wh .= "AND name like '%".$product_name."%'";
+				}
+				
+				// add simple search
+				if ($product_es) {
+					if($product_es == '-')
+					$wh .= "AND pf.type < 0";
+					elseif ($product_es == '+')
+					$wh .= "AND pf.type > 0";
+					else 
+					$wh .= "AND quantity = ".$product_es;
+				}
+				// add simple search
+				if ($consumer_name) {
+					$wh .= "AND consumer_name like '%".$consumer_name."%'";
+				}
+				// add simple search
+				if ($product_comment) {
+					$wh .= "AND flowcomment like '%".$product_comment."%'";
+				}
+				// add simple search
+				if ($product_lot) {
+					$wh .= "AND lot_number like '%".$product_lot."%'";
+				}
+				
+					
+			}
+		
+			// pagination
+			$count = $product->countFlow($wh);
+			$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
+			$page = ($page > $total_pages) ? $total_pages : $page;
+			$start = $limit * $page - $limit;
+			$start = ($start < 0) ? 0 : $start;
+				
+			//$sqlglobal= "SELECT p.ID, pf.date as flowdate, p.name, p.unit, p.size, p.dose, CONCAT(p.sail_price_htva,' Euro') as price_htva, CONCAT(p.tva,' %') as tva, CONCAT(p.sail_price,' Euro') as sail_price, p.stock as stock, ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, CONCAT(ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2),' Euro') as stock_sail_price, pf.consumer_name as consumer_name, pf.lot_number as lot_number, pf.comment as flowcomment FROM product p, product_flow pf WHERE p.ID = pf.product_ID ".$wh;
+			//$sqlglobal= "SELECT concat('$edit1',p.ID,'$edit2',' ','$detail1',p.ID,'$detail2'), p.name, REPLACE(REPLACE(REPLACE(REPLACE(REPLACE( p.unit, '4', '$unit4' ),'3','$unit3'),'2','$unit2'),'1','$unit1'),'5','$unit5'), p.size, p.dose, CONCAT(p.sail_price_htva,' Euro'), CONCAT(p.tva,' %'), CONCAT(p.sail_price,' Euro') , p.stock, ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, CONCAT(ROUND(SUM( pf.quantity * SIGN(pf.type) * p.sail_price ),2),' Euro') as stock_sail_price, REPLACE(CONCAT('+',ROUND(-1*(p.stock - SUM( pf.quantity * SIGN(pf.type) )),2)),'+-','-') as commande, p.description FROM product p, product_flow pf WHERE p.ID = pf.product_ID GROUP BY p.ID";
+			$sqlglobal = "SELECT p.ID, pf.date as flowdate, p.name, p.unit, p.size, REPLACE(CONCAT('+',ROUND((pf.quantity * SIGN(pf.type)),2)),'+-','-') as quantity, CONCAT(ROUND(pf.quantity * SIGN(pf.type) * p.sail_price,2),' Euro') as sail_price, pf.consumer_name, pf.lot_number, pf.comment as flowcomment FROM product p, product_flow pf WHERE pf.quantity!=0 AND p.ID = pf.product_ID ".$wh." ORDER BY pf.date DESC, sail_price ASC ";
+			$_SESSION['productflowlist']=$sqlglobal;
+				
+			$responce->page = $page;
+			$responce->total = $total_pages;
+			$responce->records = $count;
+		
+			$responce->rows = $product->getJsonFlowProduct($sqlglobal, $langfile,'management_product.php');
+		//echo $sqlglobal;
+			echo json_encode($responce);
+				
+			break;
+			
+			case "jsonStockCritique":
+				$examp 	= $_REQUEST["q"]; //query number
+				$page 	= $_REQUEST['page']; // get the requested page
+				$limit 	= 15;//$_REQUEST['rows']; // get how many rows we want to have into the grid
+				$sidx 	= $_REQUEST['sidx']; // get index row - i.e. user click to sort
+				$sord 	= $_REQUEST['sord']; // get the direction
+			
+				$product_name		= $_REQUEST['product_name']; // get the search
+			
+				// search on
+				$searchOn = $_REQUEST['_search'];
+			
+				// filter
+				$filterOn = $_REQUEST['filters'];
+					
+					
+				$wh = " 1 = 1 ";
+			
+				if($searchOn  || $filterOn) {
+						
+					$searchString = html_entity_decode ($_REQUEST['filters'], ENT_COMPAT | ENT_HTML401, 'ISO-8859-1');
+						
+					// add simple search
+					if ($product_name) {
+						$wh .= "AND name like '%".$product_name."%'";
+					}
+						
+				}
+			
+				// pagination
+				$count = $product->countStockCritique($wh);
+				$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
+				$page = ($page > $total_pages) ? $total_pages : $page;
+				$start = $limit * $page - $limit;
+				$start = ($start < 0) ? 0 : $start;
+			
+				$sql = "SELECT p.ID, p.name, p.sail_price, p.stock as stock_minimum, ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, REPLACE(CONCAT('+',ROUND(-1*(p.stock - SUM( pf.quantity * SIGN(pf.type) )),2)),'+-','-') as commande, REPLACE(CONCAT('+',ROUND(-1*(p.stock - SUM( pf.quantity * SIGN(pf.type) )) * p.sail_price,2)),'+-','-') as stock_sail_price FROM product p, product_flow pf WHERE p.ID = pf.product_ID AND ".$wh." GROUP BY p.ID HAVING commande <= 0";
+					
+				$_SESSION['stockcritique'] = $sql;
+			
+				$responce->page = $page;
+				$responce->total = $total_pages;
+				$responce->records = $count;
+			
+				$responce->rows = $product->getJsonStockCritique($sql, $langfile,'management_product.php');
+		//echo $sql;
+				echo json_encode($responce);
+			
+				break;			
+			
+			case "stock_critique":
+				
+				$title = $langfile["navigation_title_management_product_stock_critique"];
+			
+				$template->assign("title", $title);
+				$template->assign("workspaceclass", "fullpage");
+					
+				$template->display("template_management_product_stock_critique.tpl");
+					
+				break;
+		
 		case "modulesearch":
 			
 			$unit1 = $langfile["dico_management_product_unit1"];
@@ -447,12 +563,12 @@ $template->assign("loginerror", 0);
 			$begda = $_SESSION['begda'];
 			$endda = $_SESSION['endda'];
 			
-			$w=array(50, 150, 100, 30, 30, 80, 60, 105, 130, 40);
+			$w=array(50, 150, 120, 30, 50, 65, 100, 50, 150);
 			
 			$begda = substr($begda, 8, 2).'/'.substr($begda, 5, 2).'/'.substr($begda, 0, 4);
 			$endda = substr($endda, 8, 2).'/'.substr($endda, 5, 2).'/'.substr($endda, 0, 4);
 			
-			$sql = explode('LIMIT',$_SESSION['latestrequest']);
+			$sql = explode('LIMIT',$_SESSION['productflowlist']);
 			$sel = mysql_query($sql[0]);
 			
 			$trans = get_html_translation_table(HTML_ENTITIES);
@@ -463,17 +579,17 @@ $template->assign("loginerror", 0);
 			$title3 = strtr($langfile["dico_management_product_search_colum_unit"], $trans);
 			$title4 = strtr($langfile["dico_management_product_search_colum_size_light"], $trans);
 			$title5 = strtr($langfile["dico_management_product_search_colum_es"], $trans);
-			$title6 = strtr($langfile["dico_management_product_search_colum_consumer_name"], $trans);
-			$title7 = strtr($langfile["dico_management_product_consumer_type"], $trans);
-			$title8 = strtr($langfile["dico_management_product_search_colum_proprietaire_name"], $trans);
-			$title9 = strtr($langfile["dico_management_product_search_colum_proprietaire_adresse"], $trans);
-			$title10 = strtr($langfile["dico_management_product_search_colum_lot_number"], $trans);
-			$title11 = strtr($langfile["dico_management_product_pdf_title_part1"], $trans);
-			$title12 = strtr($langfile["dico_management_product_pdf_title_part2"], $trans);
+			$title6 = strtr($langfile["dico_management_product_search_colum_sail_price"], $trans);
+			$title7 = strtr($langfile["dico_management_product_search_colum_consumer_name"], $trans);
+			$title8 = strtr($langfile["dico_management_product_search_colum_lot_number"], $trans);
+			$title9 = strtr($langfile["dico_management_product_search_colum_comment"], $trans);
 
-			$intro1 = strtr("Cabinet V&eacute;t&eacute;rinaire", $trans);
-			$intro2 = strtr("SPRL", $trans);
-			$intro3 = strtr("Rue d'Orl&eacute;ans, 42 - 6000 Charleroi", $trans);
+			$title10 = strtr($langfile["dico_management_product_pdf_title_part1"], $trans);
+			$title11 = strtr($langfile["dico_management_product_pdf_title_part2"], $trans);
+			
+			$intro1 = strtr("La Polyclinique du Borinage", $trans);
+			//$intro2 = strtr("SPRL", $trans);
+			$intro3 = strtr("Route Provinciale, 15A - 7340 Colfontaine", $trans);
 			
 		    $pdf = (object) new pdfhtml('L', 'pt', 'A4');
 		    
@@ -491,7 +607,7 @@ $template->assign("loginerror", 0);
 			$pdf->Ln();
 			
 			$pdf->SetFont('Arial', 'BU', '13');
-			$pdf->Cell(800, 12, $title11." ".$begda." ".$title12." ".$endda, '', 2, 'C');
+			$pdf->Cell(800, 12, $title10." ".$begda." ".$title11." ".$endda, '', 2, 'C');
 	
 			$pdf->Ln();
 			$pdf->Ln();
@@ -499,17 +615,16 @@ $template->assign("loginerror", 0);
 			
 			$pdf->SetFont('Arial', 'B', '8');
 			
-			$header=array($title1,$title2,$title3,$title4,$title5,$title6,$title7,$title8,$title9,$title10);
-		    $pdf->Cell($w[0], 9, $header[0], 'LR');
-		    $pdf->Cell($w[1], 9, $header[1], 'LR');
-		    $pdf->Cell($w[2], 9, $header[2], 'LR');
-		    $pdf->Cell($w[3], 9, $header[3], 'LR');
-		    $pdf->Cell($w[4], 9, $header[4], 'LR');
-		    $pdf->Cell($w[5], 9, $header[5], 'LR');
-		    $pdf->Cell($w[6], 9, $header[6], 'LR');
-		    $pdf->Cell($w[7], 9, $header[7], 'LR');
-			$pdf->Cell($w[8], 9, $header[8], 'LR');
-		    $pdf->Cell($w[9], 9, $header[9], 'LR');
+			$header=array($title1,$title2,$title3,$title4,$title5,$title6,$title7,$title8,$title9);
+		    $pdf->Cell($w[0], 9, stripcslashes(mysql_escape_string($header[0])), 'LR');
+		    $pdf->Cell($w[1], 9, stripcslashes(mysql_escape_string($header[1])), 'LR');
+		    $pdf->Cell($w[2], 9, stripcslashes(mysql_escape_string($header[2])), 'LR');
+		    $pdf->Cell($w[3], 9, stripcslashes(mysql_escape_string($header[3])), 'LR');
+		    $pdf->Cell($w[4], 9, stripcslashes(mysql_escape_string($header[4])), 'LR');
+		    $pdf->Cell($w[5], 9, stripcslashes(mysql_escape_string($header[5])), 'LR');
+		    $pdf->Cell($w[6], 9, stripcslashes(mysql_escape_string($header[6])), 'LR');
+		    $pdf->Cell($w[7], 9, stripcslashes(mysql_escape_string($header[7])), 'LR');
+			$pdf->Cell($w[8], 9, stripcslashes(mysql_escape_string($header[8])), 'LR');
 		    $pdf->Ln();
 		    $pdf->Cell(array_sum($w),0,'','T');
 		    $pdf->Ln(); 
@@ -521,16 +636,16 @@ $template->assign("loginerror", 0);
 			WHILE($product = mysql_fetch_row($sel)){
       	
 		        $p_date = explode('</div>',$product[0]);
-		  		$pdf->Cell($w[0], 9, $p_date[1], 'LR');
-		        $pdf->Cell($w[1], 9, $product[1], 'LR');
-		        $pdf->Cell($w[2], 9, strtr($product[2], $trans), 'LR');
-		        $pdf->Cell($w[3], 9, $product[3], 'LR');
-		        $pdf->Cell($w[4], 9, $product[4], 'LR');
-		        $pdf->Cell($w[5], 9, $product[5], 'LR');
-		        $pdf->Cell($w[6], 9, $product[6], 'LR');
-		        $pdf->Cell($w[7], 9, $product[7], 'LR');
-				$pdf->Cell($w[8], 9, $product[8], 'LR');
-		        $pdf->Cell($w[9], 9, $product[9], 'LR');
+		        //$pdf->Cell($w[0], 9, $p_date[1], 'LR');
+		        $pdf->Cell($w[0], 9, $begda = substr($product[1], 8, 2).'/'.substr($product[1], 5, 2).'/'.substr($product[1], 0, 4), 'LR');
+		        $pdf->Cell($w[1], 9, stripcslashes($product[2]), 'LR');
+		        $pdf->Cell($w[2], 9, strtr($langfile["dico_management_product_unit".$product[3]], $trans), 'LR');
+		        $pdf->Cell($w[3], 9, $product[4], 'LR');
+		        $pdf->Cell($w[4], 9, $product[5], 'LR');
+		        $pdf->Cell($w[5], 9, $product[6], 'LR');
+		        $pdf->Cell($w[6], 9, $product[7], 'LR');
+		        $pdf->Cell($w[7], 9, $product[8], 'LR');
+				$pdf->Cell($w[8], 9, $product[9], 'LR');
 		        $pdf->Ln();
         
 		        $i++;
@@ -548,7 +663,6 @@ $template->assign("loginerror", 0);
 				    $pdf->Cell($w[6], 9, $header[6], 'LR');
 				    $pdf->Cell($w[7], 9, $header[7], 'LR');
 				    $pdf->Cell($w[8], 9, $header[8], 'LR');
-				    $pdf->Cell($w[9], 9, $header[9], 'LR');
 				    $pdf->Ln();
 				    $pdf->Cell(array_sum($w),0,'','T');
 				    $pdf->Ln();
@@ -570,7 +684,7 @@ $template->assign("loginerror", 0);
 			
 			$w=array(170, 120, 100, 100, 100, 100);
 			
-			$sql = explode('LIMIT',$_SESSION['latestrequest']);
+			$sql = explode('LIMIT',$_SESSION['productlist']);
 			$sel = mysql_query($sql[0]);
 			
 			$trans = get_html_translation_table(HTML_ENTITIES);
@@ -584,9 +698,9 @@ $template->assign("loginerror", 0);
 			$title6 = strtr($langfile["dico_management_product_search_colum_stock_sail_price"], $trans);
 			$title7 = strtr($langfile["dico_management_product_pdfstock_title"], $trans);
 
-			$intro1 = strtr("Cabinet V&eacute;t&eacute;rinaire", $trans);
-			$intro2 = strtr("Catherine Dufrane SPRL", $trans);
-			$intro3 = strtr("Dr&egrave;ve du proph&egrave;te, 10 - 7000 Mons", $trans);
+			$intro1 = strtr("La Polyclinique du Borinage", $trans);
+			//$intro2 = strtr("SPRL", $trans);
+			$intro3 = strtr("Route Provinciale, 15A - 7340 Colfontaine", $trans);
 			
 		    $pdf = (object) new pdfhtml('L', 'pt', 'A4');
 		    
@@ -684,6 +798,128 @@ $template->assign("loginerror", 0);
 		    $pdf->Output("stock_gestion.pdf", "d");
 			
 			break;
+			
+			
+			case "pdfstockcritique":
+				include("./include/class.fpdf.php");
+					
+				$w=array(170, 120, 100, 100, 100, 100);
+					
+				$sql = explode('LIMIT',$_SESSION['stockcritique']);
+				$sel = mysql_query($sql[0]);
+					
+				$trans = get_html_translation_table(HTML_ENTITIES);
+				$trans = array_flip($trans);
+										
+				$title1 = strtr($langfile["dico_management_product_search_colum_name"], $trans);
+				$title2 = strtr($langfile["dico_management_product_sail_price"], $trans);
+				$title3 = strtr($langfile["dico_management_product_stock"], $trans);
+				$title4 = strtr($langfile["dico_management_product_search_colum_current_stock"], $trans);
+				$title5 = strtr($langfile["dico_management_product_search_colum_commande"], $trans);
+				$title6 = strtr($langfile["dico_management_product_search_colum_command_price"], $trans);
+				$title7 = strtr($langfile["dico_management_product_pdfstockcritique_title"], $trans);
+			
+				$intro1 = strtr("La Polyclinique du Borinage", $trans);
+				//$intro2 = strtr("SPRL", $trans);
+				$intro3 = strtr("Route Provinciale, 15A - 7340 Colfontaine", $trans);
+					
+				$pdf = (object) new pdfhtml('L', 'pt', 'A4');
+			
+				$pdf->AddPage();
+			
+				$pdf->Image('./templates/standard/img/logo/mariquecalcus.jpg', '750', '525', 45, 30);
+			
+				$pdf->SetFont('Arial', '', '13');
+			
+				$pdf->Cell(500, 12, $intro1, 'L', 2, 'L');
+				$pdf->Cell(500, 12, $intro2, 'L', 2, 'L');
+				$pdf->Cell(500, 12, $intro3, 'L', 2, 'L');
+			
+				$pdf->Ln();
+				$pdf->Ln();
+					
+				$datedujour = date("d")."/".date("m")."/".date("Y");
+					
+				$pdf->SetFont('Arial', 'BU', '13');
+				$pdf->Cell(800, 12, $title7." ".$datedujour, '', 2, 'C');
+			
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Ln();
+					
+				$pdf->SetFont('Arial', 'B', '8');
+					
+				$total = 0;
+					
+				$header=array($title1,$title2,$title3,$title4,$title5,$title6);
+				$pdf->Cell($w[0], 9, $header[0], 'LR');
+				$pdf->Cell($w[1], 9, $header[1], 'LR');
+				$pdf->Cell($w[2], 9, $header[2], 'LR');
+				$pdf->Cell($w[3], 9, $header[3], 'LR');
+				$pdf->Cell($w[4], 9, $header[4], 'LR');
+				$pdf->Cell($w[5], 9, $header[5], 'LR');
+					
+				$pdf->Ln();
+				$pdf->Cell(array_sum($w),0,'','T');
+				$pdf->Ln();
+			
+				$pdf->SetFont('Arial', '', '8');
+			
+				$i = 12;
+			
+				WHILE($product = mysql_fetch_row($sel)){
+					 
+					//$p_date = explode('</div>',$product[0]);
+					$pdf->Cell($w[0], 9, $product[1],  'LR');
+					$pdf->Cell($w[1], 9, $product[2],  'LR');
+					$pdf->Cell($w[2], 9, $product[3],  'LR');
+					$pdf->Cell($w[3], 9, $product[4],  'LR');
+					$pdf->Cell($w[4], 9, $product[5],  'LR');
+					$pdf->Cell($w[5], 9, $product[6], 'LR');
+					$pdf->Ln();
+			
+					$total += $product[10];
+			
+					$i++;
+			
+					if($i%50 == 0){
+						 
+						$pdf->AddPage();
+						$pdf->SetFont('Arial', 'B', '8');
+						$pdf->Cell($w[0], 9, $header[0], 'LR');
+						$pdf->Cell($w[1], 9, $header[1], 'LR');
+						$pdf->Cell($w[2], 9, $header[2], 'LR');
+						$pdf->Cell($w[3], 9, $header[3], 'LR');
+						$pdf->Cell($w[4], 9, $header[4], 'LR');
+						$pdf->Cell($w[5], 9, $header[5], 'LR');
+						$pdf->Ln();
+						$pdf->Cell(array_sum($w),0,'','T');
+						$pdf->Ln();
+						$pdf->SetFont('Arial', '', '8');
+			
+						$pdf->Image('./templates/standard/img/logo/mariquecalcus.jpg', '750', '525', 45, 30);
+						$i = 0;
+							
+					}
+			
+				}
+			
+				$pdf->SetFont('Arial', 'B', '8');
+				$pdf->Cell(array_sum($w),0,'','T');
+				$pdf->Ln();
+			/*
+				$pdf->Cell($w[0], 9, "Montant total du stock",  'LR');
+				$pdf->Cell($w[1], 9, '',  'LR');
+				$pdf->Cell($w[2], 9, '',  'LR');
+				$pdf->Cell($w[3], 9, '',  'LR');
+				$pdf->Cell($w[4], 9, '',  'LR');
+				$pdf->Cell($w[5], 9, $total." Euro", 'LR');
+				$pdf->Ln();
+			*/
+				$pdf->Output("stock_gestion.pdf", "d");
+					
+				break;			
+			
 						
 		
 		case "view":

@@ -19,6 +19,8 @@
 	  				<a href="./management_product.php?action=list">{#dico_management_product_menu_list#}</a>
 
 	  				<a href="./management_product.php?action=flowlist">{#dico_management_product_menu_flow_list#}</a>
+	  				
+	  				<a href="./management_product.php?action=stock_critique">{#dico_management_product_menu_stock_critique#}</a>
 
     				<a href="./management_product.php?action=automatic_flow">{#dico_management_product_menu_automatic_flow#}</a>
 

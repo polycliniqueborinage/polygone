@@ -592,6 +592,24 @@ class product
 		return $res["total"];
 	}
 	
+	function countFlow($wh){
+		$sql = "SELECT count(pf.date) as total FROM product p, product_flow pf WHERE pf.quantity!=0 AND p.ID = pf.product_ID ".$wh." ORDER BY pf.date DESC, pf.id DESC";
+		//$sqlcount = "SELECT count(ID) FROM product WHERE name LIKE '%".$product_name."%'";
+			
+		$sel = mysql_query($sql);
+		$res = mysql_fetch_array($sel);
+		return $res["total"];
+	}
+	
+	function countStockCritique($wh){
+		$sql = "SELECT count(p.ID) as total, p.name, p.stock, ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, REPLACE(CONCAT('+',ROUND(-1*(p.stock - SUM( pf.quantity * SIGN(pf.type) )),2)),'+-','-') as commande, REPLACE(CONCAT('+',ROUND(-1*(p.stock - SUM( pf.quantity * SIGN(pf.type) )) * p.sail_price,2)),'+-','-') as stock_sail_price FROM product p, product_flow pf WHERE p.ID = pf.product_ID AND ".$wh." GROUP BY p.ID HAVING commande <= 0";
+		//$sqlcount = "SELECT count(ID) FROM product WHERE name LIKE '%".$product_name."%'";
+			
+		$sel = mysql_query($sql);
+		$res = mysql_fetch_array($sel);
+		return $res["total"];
+	}
+	
 	function get_json_product($sql, $langfile, $url){
 		
 		$unit1 = $langfile["dico_management_product_unit1"];
@@ -628,7 +646,7 @@ class product
 			
 			$rows[$i]['cell']=array(
 					"<a href=\"./".$url."?action=detail&id=".$res[ID]."\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-view-hover.png\" border=\"0\" /></a><a href=\"./".$url."?action=edit&id=".$res[ID]."\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-edit-hover.png\" border=\"0\" /></a>",
-					$res[name],
+					stripcslashes($res[name]),
 					$res[unit],
 					$res[size],
 					$res[dose],
@@ -641,6 +659,90 @@ class product
 			$i++;
 		}
 		
+		if (!empty($rows)) {
+			return $rows;
+		} else {
+			return false;
+		}
+	}
+	
+	function getJsonFlowProduct($sql, $langfile, $url){
+	
+		$unit1 = $langfile["dico_management_product_unit1"];
+		$unit2 = $langfile["dico_management_product_unit2"];
+		$unit3 = $langfile["dico_management_product_unit3"];
+		$unit4 = $langfile["dico_management_product_unit4"];
+		$unit5 = $langfile["dico_management_product_unit5"];
+	
+		$i = 0;
+		$rows = array();
+	//echo $sql;
+		$sel = mysql_query($sql);
+	
+		while ($res = mysql_fetch_array($sel)) {
+				
+			$rows[$i]['id']=$res["ID"];
+			switch ($res["unit"]){
+				case "1" :
+					$res["unit"] = $unit1;
+					break;
+				case "2" :
+					$res["unit"] = $unit2;
+					break;
+				case "3" :
+					$res["unit"] = $unit3;
+					break;
+				case "4" :
+					$res["unit"] = $unit4;
+					break;
+				case "5" :
+					$res["unit"] = $unit5;
+					break;
+			}
+				
+			$rows[$i]['cell']=array(
+					stripcslashes(date("d-m-Y", strtotime($res["flowdate"]))),
+					stripcslashes($res["name"]),
+					stripcslashes(mysql_escape_string($res["unit"])),
+					$res["size"],
+					$res["quantity"],
+					$res["sail_price"],
+					stripcslashes($res["consumer_name"]),
+					$res["lot_number"],
+					stripcslashes($res["flowcomment"])
+			);
+			$i++;
+		}
+	
+		if (!empty($rows)) {
+			return $rows;
+		} else {
+			return false;
+		}
+	}
+	
+	
+	function getJsonStockCritique($sql, $langfile, $url){
+	
+		$i = 0;
+		$rows = array();
+		//echo $sql;
+		$sel = mysql_query($sql);
+	
+		while ($res = mysql_fetch_array($sel)) {
+			$rows[$i]['id']=$res["ID"];
+	
+			$rows[$i]['cell']=array(
+					stripcslashes($res["name"]),
+					$res["sail_price"],
+					$res["stock_minimum"],
+					$res["current_stock"],
+					$res["commande"],
+					stripcslashes($res["stock_sail_price"])
+			);
+			$i++;
+		}
+	
 		if (!empty($rows)) {
 			return $rows;
 		} else {
