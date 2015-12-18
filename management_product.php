@@ -335,7 +335,7 @@ $template->assign("loginerror", 0);
 				 
 				// add simple search
 				if ($product_name) {
-					$wh .= "AND name like '%".$product_name."%'";
+					$wh .= " AND name like '%".$product_name."%'";
 				}
 				 
 			}
@@ -384,7 +384,7 @@ $template->assign("loginerror", 0);
 			
 			$begda = $_SESSION['begda'];
 			$endda = $_SESSION['endda'];
-			$wh = "AND date_format(pf.date, '%Y-%m-%d') BETWEEN '$begda' AND '$endda'";
+			$wh = " AND date_format(pf.date, '%Y-%m-%d') BETWEEN '$begda' AND '$endda'";
 			
 			//$wh = " 1 = 1 ";
 		
@@ -394,29 +394,29 @@ $template->assign("loginerror", 0);
 					
 				// add simple search
 				if ($product_name) {
-					$wh .= "AND name like '%".$product_name."%'";
+					$wh .= " AND name like '%".$product_name."%'";
 				}
 				
 				// add simple search
 				if ($product_es) {
 					if($product_es == '-')
-					$wh .= "AND pf.type < 0";
+					$wh .= " AND pf.type < 0";
 					elseif ($product_es == '+')
-					$wh .= "AND pf.type > 0";
+					$wh .= " AND pf.type > 0";
 					else 
-					$wh .= "AND quantity = ".$product_es;
+					$wh .= " AND quantity = ".$product_es;
 				}
 				// add simple search
 				if ($consumer_name) {
-					$wh .= "AND consumer_name like '%".$consumer_name."%'";
+					$wh .= " AND consumer_name like '%".$consumer_name."%'";
 				}
 				// add simple search
 				if ($product_comment) {
-					$wh .= "AND flowcomment like '%".$product_comment."%'";
+					$wh .= " AND flowcomment like '%".$product_comment."%'";
 				}
 				// add simple search
 				if ($product_lot) {
-					$wh .= "AND lot_number like '%".$product_lot."%'";
+					$wh .= " AND lot_number like '%".$product_lot."%'";
 				}
 				
 					
