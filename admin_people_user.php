@@ -249,7 +249,67 @@
 			
 			$template->display("template_admin_people_user_list.tpl");
 			
-		break;   
+		break;  
+
+		case "json_user":
+				
+				$examp 	= $_REQUEST["q"]; //query number
+				$page 	= $_REQUEST['page']; // get the requested page
+				$limit 	= 15;//$_REQUEST['rows']; // get how many rows we want to have into the grid
+				$sidx 	= $_REQUEST['sidx']; // get index row - i.e. user click to sort
+				$sord 	= $_REQUEST['sord']; // get the direction
+			
+				$user_familyname	= $_REQUEST['familyname']; // get the search
+				$user_name			= $_REQUEST['name']; // get the search
+				$user_firstname		= $_REQUEST['firstname']; // get the search
+			
+				// search on
+				$searchOn = $_REQUEST['_search'];
+			
+				// filter
+				$filterOn = $_REQUEST['filters'];
+					
+					
+				$wh = " 1 = 1 ";
+			
+				if($searchOn  || $filterOn) {
+						
+					$searchString = html_entity_decode ($_REQUEST['filters'], ENT_COMPAT | ENT_HTML401, 'ISO-8859-1');
+						
+					// add simple search
+					if ($user_familyname) {
+						$wh .= " AND familyname like '%".$user_familyname."%'";
+					}
+					if ($user_name) {
+						$wh .= " AND name like '%".$user_name."%'";
+					}
+					if ($user_firstname) {
+						$wh .= " AND firstname like '%".$user_firstname."%'";
+					}
+						
+				}
+			
+				// pagination
+				$count = $user->count($wh);
+				$total_pages = ($count > 0) ? ceil($count/$limit) : 0;
+				$page = ($page > $total_pages) ? $total_pages : $page;
+				$start = $limit * $page - $limit;
+				$start = ($start < 0) ? 0 : $start;
+			
+				//$sql = "SELECT p.ID, p.name, p.sail_price, p.stock as stock_minimum, ROUND(SUM( pf.quantity * SIGN(pf.type) ),2) as current_stock, REPLACE(CONCAT('+',ROUND(-1*(p.stock - SUM( pf.quantity * SIGN(pf.type) )),2)),'+-','-') as commande, REPLACE(CONCAT('+',ROUND(-1*(p.stock - SUM( pf.quantity * SIGN(pf.type) )) * p.sail_price,2)),'+-','-') as stock_sail_price FROM product p, product_flow pf WHERE p.ID = pf.product_ID AND ".$wh." GROUP BY p.ID HAVING commande <= 0";
+				$sql = "SELECT ID, name, firstname, familyname, address1, zip1, city1, email, REPLACE(REPLACE(REPLACE(REPLACE(REPLACE( admin, '0', '$right0' ),'1','$right1'),'3','$right3'),'4','$right4'),'5','$right5'), speciality, inami FROM `poly`.`user` WHERE ".$wh."  ORDER BY familyname, firstname";
+				
+				$_SESSION['userlist'] = $sql;
+			
+				$responce->page = $page;
+				$responce->total = $total_pages;
+				$responce->records = $count;
+			
+				$responce->rows = $user->get_json($sql, $langfile,'management_people_user.php');
+		//echo $sql;
+				echo json_encode($responce);
+				
+			break;
     
     	case "massassign":
 	    	$groups = $_POST['groups'];

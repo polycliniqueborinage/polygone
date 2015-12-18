@@ -1014,7 +1014,7 @@ class user
         	
         	$rows[$i]['id']=$user[ID];
 			$rows[$i]['cell']=array(
-				"<a href=\"./".$url."?action=detail&id=".$user[ID]."\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-view-hover.png\" border=\"0\" /></a><a href=\"./".$url."?action=edit&id=".$user[ID]."\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-edit-hover.png\" border=\"0\" /></a>",
+				"<a href=\"./admin_people_user.php?action=detail&id=".$user[ID]."\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-view-hover.png\" border=\"0\" /></a><a href=\"./admin_people_user.php?action=edit&id=".$user[ID]."\" ><img width=\"16\" height=\"16\" src=\"./templates/standard/images/butn-edit-hover.png\" border=\"0\" /></a>",
 				$user[name],
 			    $user[firstname],
 			    $user[familyname],
