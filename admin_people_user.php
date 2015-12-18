@@ -27,6 +27,7 @@
 	$type = getArrayVal($_POST, "type");
 	$limit = getArrayVal($_POST, "limit");
 	$value = strtolower(utf8_decode(trim(getArrayVal($_POST, "value"))));
+	$letter = getArrayVal($_GET, "letter");
 	
 	$mainclasses = array("user" => "user", "management_current" => "management", "management_no_current" => "management", "admin" => "admin_active", "logout" => "logout");
 	$template->assign("mainclasses", $mainclasses);
@@ -242,7 +243,7 @@
 				
 			$_SESSION['userlist']=$sql;
 			
-			$title = $langfile["navigation_title_management_product_list"];
+			$title = $langfile["dico_admin_people_user_administration"];
 	
 			$template->assign("title", $title);
 			$template->assign("workspaceclass", "fullpage");
@@ -380,6 +381,49 @@
 			$template->display("template_admin_people_user_detail.tpl");
 		
 			break;
+
+		case "view":
+
+			$title = $langfile['navigation_title_admin_people_user_view'];
+			$users = $user->getAllUsersByLetter($letter);
+			$groups = $group->getGroups(1, 10000);
+			 
+			$i2 = 0;
+			
+			if (!empty($users)) {
+			
+				foreach($users as $usr)  {
+			
+					$i = 0;
+					$groups = $group->getGroups(1, 10000);
+					if (!empty($groups)) {
+						foreach ($groups as $grp) {
+							if (chkgroup($usr["ID"], $grp["ID"])) {
+								$chk = 1;
+							} else {
+								$chk = 0;
+							}
+							$groups[$i]['assigned'] = $chk;
+							$i = $i + 1;
+						}
+					}
+					$users[$i2]['groups'] = $groups;
+					if (!empty($users[$i2]['lastlogin'])) {
+						$users[$i2]["lastlogin"] = date("d.m.y / H:i:s", $users[$i2]['lastlogin']);
+					}
+					$groups = $group->getGroups(1, 10000);
+					$i2 = $i2 + 1;
+				}
+			}
+			 
+			$template->assign("title", $title);
+			$template->assign("mode", $mode);
+			SmartyPaginate::assign($template);
+			$template->assign("users", $users);
+			$template->assign("groups", $groups);
+			 
+			$template->display("template_admin_people_user_view.tpl");
+			break;	
 			
 		default:
 		
